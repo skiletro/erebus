@@ -23,3 +23,6 @@ FEATURES
 INSTALLATION
   I wouldn't recommend using the system configurations as they are tailored to my needs, however feel free to import
   the repository as an input in *your* flake to use its packages!
+
+ACKNOWLEDGEMENTS
+  https://github.com/different-name/nix-files
