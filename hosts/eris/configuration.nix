@@ -8,4 +8,12 @@
 
     desktop.gnome.enable = true;
   };
+
+  home-manager.sharedModules = [
+    {
+      erebus.programs = {
+        discord.enable = true;
+      };
+    }
+  ];
 }
