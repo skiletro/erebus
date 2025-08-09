@@ -26,6 +26,6 @@
       profiles."default" = {}; # TODO: Declare extensions
     };
 
-    # stylix.targets.zen-browser.profileNames = lib.singleton "default"; # TODO
+    stylix.targets.zen-browser.profileNames = lib.singleton "default";
   };
 }
