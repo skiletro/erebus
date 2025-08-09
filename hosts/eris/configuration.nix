@@ -13,6 +13,7 @@
     {
       erebus.programs = {
         discord.enable = true;
+        ghostty.enable = true;
       };
     }
   ];
