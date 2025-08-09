@@ -10,6 +10,8 @@
 
     import-tree.url = "github:vic/import-tree";
 
+    flake-schemas.url = "github:DeterminateSystems/flake-schemas";
+
     ### Modules
     home-manager = {
       url = "github:nix-community/home-manager";
