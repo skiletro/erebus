@@ -1,6 +1,5 @@
 {
   config,
-  inputs',
   lib,
   pkgs,
   ...
@@ -10,7 +9,6 @@
   config = lib.mkIf config.erebus.programs.ghostty.enable {
     programs.ghostty = {
       enable = true;
-      package = inputs'.ghostty.packages.default;
       settings = let
         padding = 6;
       in {
