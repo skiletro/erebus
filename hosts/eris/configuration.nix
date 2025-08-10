@@ -1,23 +1,10 @@
 {
-  erebus = {
-    system = {
-      autologin.enable = true;
-      boot.enable = true;
-      locale.enable = true;
-      user.enable = true;
-    };
-
-    desktop.gnome.enable = true;
+  erebus.profiles = {
+    base.enable = true;
+    gaming.enable = true;
+    graphical.enable = true;
+    terminal.enable = true;
   };
 
-  home-manager.sharedModules = [
-    {
-      erebus.programs = {
-        discord.enable = true;
-        ghostty.enable = true;
-        zen.enable = true;
-        pwa.enable = true;
-      };
-    }
-  ];
+  erebus.system.autologin.enable = true;
 }
