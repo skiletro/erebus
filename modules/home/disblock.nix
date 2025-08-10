@@ -3,8 +3,7 @@
   config,
   inputs,
   ...
-}:
-let
+}: let
   cfg = config.services.disblock;
 
   disblockOriginSettings = {
@@ -101,33 +100,30 @@ let
     };
   };
 
-  mkSetting =
-    name: setting:
+  mkSetting = name: setting:
     lib.mkOption {
       inherit (setting) description default;
       type = lib.types.bool;
     };
 
-  settingToCss =
-    name: value:
-    let
-      setting = disblockOriginSettings.${name};
+  settingToCss = name: value: let
+    setting = disblockOriginSettings.${name};
 
-      prefix = if setting.isBool then "bool" else "display";
+    prefix =
+      if setting.isBool
+      then "bool"
+      else "display";
 
-      css-value =
-        if setting.isBool then
-          lib.boolToString value
-        else if value then
-          "unset"
-        else
-          "none";
-    in
-    "--${prefix}-${name}: ${css-value};";
-in
-{
+    css-value =
+      if setting.isBool
+      then lib.boolToString value
+      else if value
+      then "unset"
+      else "none";
+  in "--${prefix}-${name}: ${css-value};";
+in {
   imports = [inputs.nixcord.homeModules.nixcord];
-  
+
   options.services.disblock = {
     enable = lib.mkEnableOption "Disblock Origin";
     settings = lib.mapAttrs mkSetting disblockOriginSettings;
