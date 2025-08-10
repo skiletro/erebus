@@ -1,6 +1,7 @@
 {
   erebus = {
     system = {
+      autologin.enable = true;
       boot.enable = true;
       locale.enable = true;
       user.enable = true;

@@ -55,6 +55,10 @@
     #   url = "github:Gerg-L/spicetify-nix";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
+    diffy = {
+      url = "github:different-name/nix-files";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     zen = {
       url = "github:0xc000022070/zen-browser-flake";
