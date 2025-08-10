@@ -15,6 +15,7 @@
         discord.enable = true;
         ghostty.enable = true;
         zen.enable = true;
+        pwa.enable = true;
       };
     }
   ];
