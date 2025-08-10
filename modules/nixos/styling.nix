@@ -65,6 +65,13 @@
           "org/gnome/desktop/interface".color-scheme = lib.mkForce "prefer-dark";
         };
       };
+
+      stylix.iconTheme = {
+        enable = true;
+        package = pkgs.morewaita-icon-theme;
+        dark = "MoreWaita";
+        light = "MoreWaita";
+      };
     };
   };
 }
