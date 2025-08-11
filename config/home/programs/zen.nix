@@ -47,7 +47,7 @@
           "zen.tabs.vertical.right-side" = true;
           "browser.toolbars.bookmarks.visiblity" = "always";
         };
-        search.default = "DuckDuckGo";
+        search.default = "ddg";
       };
     };
 
