@@ -193,7 +193,7 @@
           };
 
           "org/gnome/shell/extensions/unite" = {
-            "hide-activites-button" = "never";
+            "hide-activities-button" = "never";
             "use-activities-text" = false;
             "show-desktop-name" = false;
             "hide-window-titlebars" = "never";
