@@ -11,6 +11,7 @@
     home-manager.sharedModules = lib.singleton {
       erebus.programs = {
         discord.enable = true;
+        blender.enable = true;
         ghostty.enable = true;
         zen.enable = true;
         pwa.enable = true;
