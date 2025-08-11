@@ -10,6 +10,7 @@
       erebus.programs = {
         bat.enable = true;
         beets.enable = true;
+        direnv.enable = true;
         eza.enable = true;
         fish.enable = true;
       };
