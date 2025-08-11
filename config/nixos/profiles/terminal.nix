@@ -9,6 +9,7 @@
     lib.mkIf config.erebus.profiles.terminal.enable {
       erebus.programs = {
         bat.enable = true;
+        beets.enable = true;
         fish.enable = true;
       };
     };
