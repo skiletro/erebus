@@ -30,6 +30,7 @@
           fixSpotifyEmbeds.enable = true;
           fixYoutubeEmbeds.enable = true;
           noSystemBadge.enable = true;
+          messageLogger.enable = true;
           openInApp.enable = true;
           serverInfo.enable = true;
           unindent.enable = true;
