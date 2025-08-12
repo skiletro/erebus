@@ -2,7 +2,6 @@
   lib,
   config,
   self,
-  pkgs,
   ...
 }: {
   imports = [self.homeModules.disblock];
@@ -12,7 +11,8 @@
   config = lib.mkIf config.erebus.programs.discord.enable {
     programs.nixcord = {
       enable = true;
-      discord = {
+      discord.enable = false;
+      vesktop = {
         enable = true;
         autoscroll.enable = true;
       };
@@ -49,21 +49,9 @@
       };
     };
 
-    xdg.configFile."discord/settings.json".source = (pkgs.formats.json {}).generate "discord-settings.json" {
-      DANGEROUS_ENABLE_DEVTOOLS_ONLY_ENABLE_IF_YOU_KNOW_WHAT_YOURE_DOING = true; # i haven't a clue what i'm doing
-      offloadAdmControls = false;
-      chromiumSwitches = {};
-      SKIP_HOST_UPDATE = true;
-      trayBalloonShown = true;
-      openasar = {
-        setup = true;
-        quickstart = true;
-      };
-    };
-
     xdg.autostart.entries =
       config.lib.erebus.autostartEntry
       "Discord Silent"
-      "discord --start-minimized";
+      "${lib.getExe config.programs.nixcord.vesktop.package} --start-minimized";
   };
 }
