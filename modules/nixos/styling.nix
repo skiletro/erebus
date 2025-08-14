@@ -3,6 +3,7 @@
   config,
   pkgs,
   inputs,
+  self',
   ...
 }: {
   options.erebus.system.styling = {
@@ -36,13 +37,13 @@
       };
       fonts = {
         sansSerif = {
-          package = pkgs.nerd-fonts."m+";
-          name = "M+2 Nerd Font";
+          package = self'.packages.space-grotesk;
+          name = "Space Grotesk";
         };
         serif = config.stylix.fonts.sansSerif; # Set serif font to the same as the sans-serif
         monospace = {
-          package = pkgs.nerd-fonts."m+";
-          name = "M+1Code Nerd Font";
+          package = pkgs.nerd-fonts.space-mono;
+          name = "SpaceMono Nerd Font";
         };
         emoji = {
           package = pkgs.noto-fonts-color-emoji;
