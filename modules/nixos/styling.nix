@@ -37,25 +37,25 @@
       };
       fonts = {
         sansSerif = {
-          package = self'.packages.space-grotesk;
-          name = "Space Grotesk";
+          package = pkgs.aporetic-bin;
+          name = "Aporetic Sans";
         };
         serif = config.stylix.fonts.sansSerif; # Set serif font to the same as the sans-serif
         monospace = {
-          package = pkgs.nerd-fonts.space-mono;
-          name = "SpaceMono Nerd Font";
+          package = pkgs.nerd-fonts.zed-mono;
+          name = "ZedMono Nerd Font";
         };
         emoji = {
-          package = pkgs.noto-fonts-color-emoji;
-          name = "Noto Color Emoji";
+          package = self'.packages.apple-emoji;
+          name = "Apple Color Emoji";
         };
 
-        sizes = {
-          applications = 10;
-          desktop = 10;
-          popups = 10;
-          terminal = 12;
-        };
+        # sizes = {
+        #   applications = 10;
+        #   desktop = 10;
+        #   popups = 10;
+        #   terminal = 12;
+        # };
       };
     };
 
