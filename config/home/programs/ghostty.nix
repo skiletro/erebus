@@ -9,6 +9,7 @@
   config = lib.mkIf config.erebus.programs.ghostty.enable {
     programs.ghostty = {
       enable = true;
+      package = lib.mkIf pkgs.stdenvNoCC.hostPlatform.isDarwin pkgs.ghostty-bin;
       settings = let
         padding = 6;
       in {

@@ -11,9 +11,8 @@
 
   config = lib.mkIf config.erebus.system.user.enable {
     users.users.jamie = {
-      isNormalUser = true;
-      password = "pwd"; # TODO: Change me to hashedPasswordFile, embedded in a secret.
-      extraGroups = ["users" "networkmanager" "wheel" "libvirtd" "gamemode"];
+      name = "jamie";
+      home = "/Users/jamie";
       openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINnFEMa0S9zuA5cVg+Ktazz9gEevkDCNYIDX0WAMxcAC eos"
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIcAzqMv0//j1mUVb/NBUiMgv2brdPv9HbNs83OkQZzq moirai"
@@ -24,17 +23,15 @@
       useGlobalPkgs = true;
       useUserPackages = true;
       extraSpecialArgs = {inherit inputs inputs' self self';};
-      users.jamie.imports = [
-        self.homeModules.erebus
-        self.homeModules.autostart
-        {
-          home = {
-            username = "jamie";
-            homeDirectory = "/home/jamie";
-            stateVersion = "25.05";
-          };
-        }
-      ];
+      users.jamie = {
+        home.stateVersion = "25.11";
+        imports = [
+          self.homeModules.erebus
+          self.homeModules.autostart
+          # inputs.chaotic.homeModules.default
+          inputs.stylix.homeModules.stylix
+        ];
+      };
     };
   };
 }
