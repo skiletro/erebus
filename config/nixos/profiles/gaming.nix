@@ -7,6 +7,7 @@
 
   config = lib.mkIf config.erebus.profiles.gaming.enable {
     erebus.programs = {
+      gamemode.enable = true;
       steam.enable = true;
     };
   };
