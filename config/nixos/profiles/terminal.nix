@@ -16,6 +16,7 @@
         beets.enable = true;
         direnv.enable = true;
         eza.enable = true;
+        helix.enable = true;
       };
     };
   };

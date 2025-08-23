@@ -34,10 +34,10 @@
     ### Individual Packages
     determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
 
-    # helix = {
-    #   url = "github:helix-editor/helix";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    helix = {
+      url = "github:helix-editor/helix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     nixcord = {
       url = "github:kaylorben/nixcord";
