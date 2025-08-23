@@ -18,7 +18,6 @@
   };
 in {
   imports = map genModuleAttrs [
-    "flake"
     "home"
     "nixos"
   ];
