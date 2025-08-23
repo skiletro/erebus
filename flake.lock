@@ -164,6 +164,26 @@
         "type": "github"
       }
     },
+    "cachy-proton": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1755315272,
+        "narHash": "sha256-ECIGlBf+pyctICtCYsYgQv2v92qccUVU8Xt/hQF1S/M=",
+        "owner": "jackgrahn",
+        "repo": "cachy-proton-nix",
+        "rev": "def8244af29dd84de81211cbd3104dd254bc7e19",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jackgrahn",
+        "repo": "cachy-proton-nix",
+        "type": "github"
+      }
+    },
     "catppuccin": {
       "inputs": {
         "nixpkgs": [
@@ -1874,6 +1894,7 @@
     },
     "root": {
       "inputs": {
+        "cachy-proton": "cachy-proton",
         "chaotic": "chaotic",
         "cursors": "cursors",
         "determinate": "determinate",
@@ -1886,6 +1907,7 @@
         "nix-darwin": "nix-darwin",
         "nixcord": "nixcord",
         "nixpkgs": "nixpkgs_6",
+        "steam-config-nix": "steam-config-nix_2",
         "stylix": "stylix",
         "treefmt-nix": "treefmt-nix_2",
         "zen": "zen"
@@ -1958,6 +1980,27 @@
         "type": "github"
       }
     },
+    "steam-config-nix_2": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "systems": "systems_7"
+      },
+      "locked": {
+        "lastModified": 1755397491,
+        "narHash": "sha256-i0bbanUo7UOg114PZW7qoX/h9PxELPRhB9FRS/baP28=",
+        "owner": "different-name",
+        "repo": "steam-config-nix",
+        "rev": "6cb665de4ccacb9cfc05be26be9f1e6c58b6da67",
+        "type": "github"
+      },
+      "original": {
+        "owner": "different-name",
+        "repo": "steam-config-nix",
+        "type": "github"
+      }
+    },
     "stylix": {
       "inputs": {
         "base16": "base16",
@@ -1971,7 +2014,7 @@
           "nixpkgs"
         ],
         "nur": "nur_2",
-        "systems": "systems_7",
+        "systems": "systems_8",
         "tinted-foot": "tinted-foot",
         "tinted-kitty": "tinted-kitty",
         "tinted-schemes": "tinted-schemes",
@@ -2083,6 +2126,21 @@
       }
     },
     "systems_7": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "systems_8": {
       "locked": {
         "lastModified": 1681028828,
         "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",

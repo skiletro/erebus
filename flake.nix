@@ -65,6 +65,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    cachy-proton = {
+      url = "github:jackgrahn/cachy-proton-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    steam-config-nix = {
+      url = "github:different-name/steam-config-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     ### Theming
     # Inputs that provide themes or anything to do with the style of the system(s).
     cursors.url = "github:lilleaila/nix-cursors";
