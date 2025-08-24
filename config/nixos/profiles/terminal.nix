@@ -16,6 +16,7 @@
         beets.enable = true;
         direnv.enable = true;
         eza.enable = true;
+        fastfetch.enable = true;
         helix.enable = true;
         yazi.enable = true;
       };
