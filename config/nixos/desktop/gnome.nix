@@ -101,7 +101,7 @@
 
           "org/gnome/desktop/wm/preferences" = {
             auto-raise = true;
-            button-layout = ":minimize,maximize,close";
+            button-layout = "close,minimize,maximize:";
             focus-mode = "click";
             num-workspaces = 1;
             resize-with-right-button = true;
@@ -181,7 +181,8 @@
           "org/gnome/shell/extensions/search-light" = with config.lib.stylix.colors; let
             mkColor = r: g: b: mkTuple (map builtins.fromJSON [r g b] ++ [1.0]);
           in {
-            "shortcut-search" = ["<Super>d"];
+            "shortcut-search" = ["<Super>space"];
+            "secondary-shortcut-search" = ["<Super>d"];
             "border-radius" = 1.1;
             "background-color" = mkColor base00-dec-r base00-dec-g base00-dec-b;
             "text-color" = mkColor base05-dec-r base05-dec-g base05-dec-b;
