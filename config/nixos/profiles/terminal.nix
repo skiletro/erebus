@@ -17,6 +17,7 @@
         direnv.enable = true;
         eza.enable = true;
         helix.enable = true;
+        yazi.enable = true;
       };
     };
   };
