@@ -22,7 +22,10 @@
       programs.fish = {
         enable = true;
         interactiveShellInit = ''
-          set fish_greeting
+          set fish_greeting # disable prompt
+
+          set -U fish_color_cwd "${config.lib.stylix.colors.base0E}"
+          set -U fish_color_user "${config.lib.stylix.colors.base0E}"
         '';
 
         functions = {
@@ -49,15 +52,6 @@
                   set args $args "nixpkgs#$arg"
                 end
                 NIXPKGS_ALLOW_UNFREE=1 nix shell $args --impure
-              end
-            '';
-
-          "process_replays" =
-            # fish
-            ''
-              for file in Replay_*.mp4
-                set output Processed_$file
-                ffmpeg -i $file $output
               end
             '';
         };
