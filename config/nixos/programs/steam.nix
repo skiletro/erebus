@@ -4,13 +4,17 @@
   pkgs,
   inputs,
   inputs',
+  self,
   ...
 }: {
+  imports = [self.nixosModules.steam];
+
   options.erebus.programs.steam.enable = lib.mkEnableOption "Steam and Steam tools";
 
   config = lib.mkIf config.erebus.programs.steam.enable {
     programs.steam = {
       enable = true;
+      stylix.enable = true;
       extraCompatPackages = with pkgs; [
         proton-ge-bin # GloriousEggroll
         steam-play-none # Allows you to run a game without Proton if it is otherwise forced.
