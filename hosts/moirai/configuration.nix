@@ -6,7 +6,6 @@
   home-manager.sharedModules = [
     {
       erebus.programs.helix.enable = true;
-      erebus.system.styling.enable = true;
       erebus.programs.ghostty.enable = true;
     }
   ];

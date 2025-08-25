@@ -29,7 +29,6 @@
           self.homeModules.erebus
           self.homeModules.autostart
           # inputs.chaotic.homeModules.default
-          inputs.stylix.homeModules.stylix
         ];
       };
     };
