@@ -21,13 +21,17 @@
     home-manager.sharedModules = lib.singleton {
       programs.fish = {
         enable = true;
-        interactiveShellInit = ''
-          set fish_greeting # disable prompt
+        interactiveShellInit =
+          # fish
+          ''
+            set fish_greeting # disable prompt
 
-          set -U fish_color_cwd "${config.lib.stylix.colors.base0E}"
-          set -U fish_color_user "${config.lib.stylix.colors.base0E}"
-        '';
+            function starship_transient_prompt_func
+              starship module character
+            end
 
+            ${lib.getExe pkgs.nix-your-shell} fish | source
+          '';
         functions = {
           "," =
             # fish
@@ -57,6 +61,23 @@
         };
 
         shellAbbrs.n = "cd ~/.nix_config/";
+      };
+
+      # prompt
+      programs.starship = {
+        enable = true;
+        enableTransience = true;
+        settings = {
+          character = {
+            success_symbol = "[](bold purple)";
+            error_symbol = "[](bold red)";
+          };
+          nix_shell = {
+            symbol = "";
+            impure_msg = "";
+            heuristic = true;
+          };
+        };
       };
     };
   };
