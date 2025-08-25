@@ -23,7 +23,7 @@
   config = lib.mkIf config.erebus.system.styling.enable {
     stylix = {
       enable = true;
-      base16Scheme = "${pkgs.base16-schemes}/share/themes/${config.erebus.system.styling.colorScheme}.yaml";
+      base16Scheme = "${self'.packages.base16-schemes-unstable}/share/themes/${config.erebus.system.styling.colorScheme}.yaml";
       image = pkgs.runCommand "output.png" {} "${lib.getExe pkgs.lutgen} apply ${config.erebus.system.styling.wallpaper} -o $out -- ${builtins.concatStringsSep " " config.lib.stylix.colors.toList}";
       cursor = {
         package = with config.lib.stylix.colors.withHashtag;
@@ -37,25 +37,25 @@
       };
       fonts = {
         sansSerif = {
-          package = pkgs.aporetic-bin;
-          name = "Aporetic Sans";
+          package = pkgs.work-sans;
+          name = "Work Sans";
         };
         serif = config.stylix.fonts.sansSerif; # Set serif font to the same as the sans-serif
         monospace = {
-          package = pkgs.nerd-fonts.zed-mono;
-          name = "ZedMono Nerd Font";
+          package = self'.packages.liga-sfmono-nerd-font;
+          name = "Liga SFMono Nerd Font";
         };
         emoji = {
           package = self'.packages.apple-emoji;
           name = "Apple Color Emoji";
         };
 
-        # sizes = {
-        #   applications = 10;
-        #   desktop = 10;
-        #   popups = 10;
-        #   terminal = 12;
-        # };
+        sizes = {
+          applications = 10;
+          desktop = 10;
+          popups = 10;
+          terminal = 12;
+        };
       };
     };
 

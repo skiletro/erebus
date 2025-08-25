@@ -7,10 +7,10 @@
 
   erebus.system.styling = {
     enable = true;
-    colorScheme = "catppuccin-mocha";
+    colorScheme = "penumbra-dark-contrast-plus-plus";
     wallpaper = pkgs.fetchurl {
-      url = "https://w.wallhaven.cc/full/13/wallhaven-13reow.png";
-      sha256 = "1lns86p10wqnnx4h3lcr08p323c7s5n5mkzgz941anm21gja1ngh";
+      url = "https://w.wallhaven.cc/full/qz/wallhaven-qzrgg5.jpg";
+      sha256 = "0c7cfx3c71dcpdmncc66v2v2kvf2fd2rbl41xpjgazxgkl6w6c2k";
     };
   };
 }
