@@ -5,6 +5,7 @@
   inputs',
   self,
   self',
+  pkgs,
   ...
 }: {
   options.erebus.system.user.enable = lib.mkEnableOption "Jamie user";
@@ -19,6 +20,18 @@
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIcAzqMv0//j1mUVb/NBUiMgv2brdPv9HbNs83OkQZzq moirai"
       ];
     };
+
+    # set default shell to fish
+    programs.fish.enable = true; # For autocompletions. We will use the home manager module for configuration.
+
+    # Set as default shell. See https://wiki.nixos.org/wiki/Fish#Setting_fish_as_default_shell
+    programs.bash.interactiveShellInit = ''
+      if [[ $(${lib.getExe' pkgs.procps "ps"} --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
+      then
+        shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
+        exec ${lib.getExe pkgs.fish} $LOGIN_OPTION
+      fi
+    '';
 
     home-manager = {
       useGlobalPkgs = true;
