@@ -5,8 +5,17 @@
 
   home-manager.sharedModules = [
     {
-      erebus.programs.helix.enable = true;
-      erebus.programs.ghostty.enable = true;
+      erebus.programs = {
+        bat.enable = true;
+        direnv.enable = true;
+        eza.enable = true;
+        fastfetch.enable = true;
+        fish.enable = true;
+        ghostty.enable = true;
+        git.enable = true;
+        helix.enable = true;
+        yazi.enable = true;
+      };
     }
   ];
 
