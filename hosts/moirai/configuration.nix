@@ -15,6 +15,7 @@
         git.enable = true;
         helix.enable = true;
         yazi.enable = true;
+        zen.enable = true;
       };
     }
   ];

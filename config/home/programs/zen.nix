@@ -2,6 +2,7 @@
   inputs,
   lib,
   config,
+  pkgs,
   ...
 }: {
   imports = [inputs.zen.homeModules.twilight];
@@ -44,13 +45,16 @@
         name = "default";
         settings = {
           "zen.welcome-screen.seen" = true;
-          "zen.tabs.vertical.right-side" = true;
+          "zen.tabs.vertical.right-side" = false;
           "browser.toolbars.bookmarks.visiblity" = "always";
         };
         search.default = "ddg";
       };
     };
 
-    stylix.targets.zen-browser.profileNames = lib.singleton "default";
+    stylix.targets.zen-browser = {
+      enable = lib.mkIf pkgs.stdenvNoCC.hostPlatform.isDarwin false; # disable if on mac
+      profileNames = lib.singleton "default";
+    };
   };
 }
