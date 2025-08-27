@@ -112,7 +112,7 @@
             "X" = "select_line_above";
             "C-e" = [
               ":sh rm -f /tmp/hx-unique-file"
-              ":insert-output ${lib.getExe pkgs.yazi} %{buffer_name} --chooser-file=/tmp/hx-unique-file"
+              ":insert-output ${lib.getExe config.programs.yazi.package} %{buffer_name} --chooser-file=/tmp/hx-unique-file"
               ":insert-output echo '\\x1b[?1049h\\x1b[?2004h' > /dev/tty"
               ":open %sh{cat /tmp/hx-unique-file}"
               ":redraw"
