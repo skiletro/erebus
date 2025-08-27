@@ -14,7 +14,7 @@
     users.users.jamie = {
       isNormalUser = true;
       password = "pwd"; # TODO: Change me to hashedPasswordFile, embedded in a secret.
-      extraGroups = ["users" "networkmanager" "wheel" "libvirtd" "gamemode"];
+      extraGroups = ["users" "networkmanager" "wheel" "libvirtd" "gamemode" "docker"];
       openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINnFEMa0S9zuA5cVg+Ktazz9gEevkDCNYIDX0WAMxcAC eos"
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIcAzqMv0//j1mUVb/NBUiMgv2brdPv9HbNs83OkQZzq moirai"

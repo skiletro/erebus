@@ -10,6 +10,7 @@
       desktop.gnome.enable = true;
       system = {
         fonts.enable = true;
+        virtualisation.enable = true;
       };
     };
 
