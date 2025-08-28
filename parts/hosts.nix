@@ -6,6 +6,7 @@
   ...
 }: let
   nixosHosts = {
+    eris = "x86_64-linux";
     vm = "x86_64-linux";
   };
 
