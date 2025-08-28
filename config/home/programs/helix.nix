@@ -119,6 +119,13 @@
               ":set-option mouse false"
               ":set-option mouse true"
             ];
+            "C-g" = [
+              ":insert-output ${lib.getExe config.programs.lazygit.package}"
+              ":insert-output echo '\\x1b[?1049h\\x1b[?2004h' > /dev/tty"
+              ":redraw"
+              ":set-option mouse false"
+              ":set-option mouse true"
+            ];
           };
           select = {
             "X" = "select_line_above";
