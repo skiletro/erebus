@@ -26,9 +26,18 @@
     ### Package Repositories
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
-    # nixos-hardware.url = "github:NixOS/nixos-hardware";
+    nixos-hardware.url = "github:NixOS/nixos-hardware";
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    nixpkgs-xr = {
+      url = "github:nix-community/nixpkgs-xr";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        treefmt-nix.follows = "treefmt-nix";
+        flake-compat.follows = "";
+      };
+    };
 
     ### Parts Modules
     treefmt-nix = {
@@ -38,11 +47,6 @@
 
     ### Individual Packages
     determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
-
-    helix = {
-      url = "github:helix-editor/helix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     nixcord = {
       url = "github:kaylorben/nixcord";

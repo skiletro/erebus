@@ -9,6 +9,7 @@
     erebus.programs = {
       gamemode.enable = true;
       steam.enable = true;
+      wivrn.enable = true;
     };
   };
 }

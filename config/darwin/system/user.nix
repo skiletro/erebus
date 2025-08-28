@@ -31,7 +31,7 @@
         imports = [
           self.homeModules.erebus
           self.homeModules.autostart
-          # inputs.chaotic.homeModules.default
+          inputs.chaotic.homeManagerModules.default
           {
             programs.ghostty.settings.command = lib.getExe pkgs.fish;
           }

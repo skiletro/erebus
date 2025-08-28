@@ -6,7 +6,7 @@
 }: {
   options.erebus.system.virtualisation.enable = lib.mkEnableOption "Virtualisation and virt tooling";
 
-  config = lib.mkif config.erebus.system.virtualisation.enable {
+  config = lib.mkIf config.erebus.system.virtualisation.enable {
     virtualisation = {
       libvirtd = {
         enable = true;

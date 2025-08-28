@@ -15,7 +15,7 @@
 
     programs.helix = {
       enable = true;
-      package = inputs'.helix.packages.default;
+      package = pkgs.helix_git; # from chaotic
       defaultEditor = true;
       languages = {
         language-server = {

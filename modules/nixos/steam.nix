@@ -23,14 +23,14 @@
           ${lib.getExe pkgs.adwsteamgtk} -i -o "win_controls_layout:${winControlSettings}"
         '';
       in {
-        updateSteamTheme = config.lib.dag.entryAfter ["writeBoundary" "dconfSettings"] ''
+        updateSteamTheme = attrs.config.lib.dag.entryAfter ["writeBoundary" "dconfSettings"] ''
           run ${applySteamTheme}
         '';
       };
 
       dconf.settings."io/github/Foldex/AdwSteamGtk".prefs-install-custom-css = true;
 
-      xdg.configFile."AdwSteamGtk/custom.css".text = with config.lib.stylix.scheme; ''
+      xdg.configFile."AdwSteamGtk/custom.css".text = with config.lib.stylix.colors; ''
         :root
         {
           /* The main accent color and the matching text value */
