@@ -12,10 +12,22 @@
         enable = true;
         userName = "skiletro";
         userEmail = "19377854+skiletro@users.noreply.github.com";
-        difftastic.enable = true;
+        diff-so-fancy.enable = true;
       };
 
-      lazygit.enable = true;
+      lazygit = {
+        enable = true;
+        settings = {
+          gui = {
+            nerdFontsVersion = "3";
+            spinner.frames = ["◜" "◝" "◞" "◟"];
+          };
+          git = {
+            paging.pager = "diff-so-fancy";
+          };
+          disableStartupPopups = true;
+        };
+      };
       fish.shellAbbrs.lg = "lazygit";
     };
   };
