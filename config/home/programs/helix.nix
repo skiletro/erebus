@@ -2,7 +2,6 @@
   lib,
   config,
   pkgs,
-  inputs',
   ...
 }: {
   options.erebus.programs.helix.enable = lib.mkEnableOption "Helix editor";
