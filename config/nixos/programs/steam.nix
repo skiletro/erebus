@@ -14,6 +14,13 @@
   config = lib.mkIf config.erebus.programs.steam.enable {
     programs.steam = {
       enable = true;
+      package = pkgs.steam.override {
+        extraProfile = ''
+          export PROTON_ENABLE_WAYLAND=1
+          export PRESSURE_VESSEL_FILESYSTEMS_RW="$XDG_RUNTIME_DIR/wivrn/comp_ipc"
+          unset TZ
+        '';
+      };
       stylix.enable = true;
       extraCompatPackages = with pkgs; [
         proton-ge-bin # GloriousEggroll
