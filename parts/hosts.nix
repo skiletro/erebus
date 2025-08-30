@@ -25,7 +25,6 @@
 
         # Modules
         chaotic.nixosModules.default
-        determinate.nixosModules.default
         home-manager.nixosModules.default
         stylix.nixosModules.stylix
 

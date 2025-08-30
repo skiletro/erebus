@@ -10,8 +10,6 @@
 
     import-tree.url = "github:vic/import-tree";
 
-    flake-schemas.url = "github:DeterminateSystems/flake-schemas";
-
     ### Modules
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -46,8 +44,6 @@
     };
 
     ### Individual Packages
-    determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
-
     nixcord = {
       url = "github:kaylorben/nixcord";
       inputs.nixpkgs.follows = "nixpkgs";
