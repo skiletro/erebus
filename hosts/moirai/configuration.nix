@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   erebus = {
     system.user.enable = true;
   };
@@ -8,6 +8,7 @@
       erebus.programs = {
         bat.enable = true;
         direnv.enable = true;
+        discord.enable = true;
         eza.enable = true;
         fastfetch.enable = true;
         fish.enable = true;
@@ -25,6 +26,8 @@
     enableKeyMapping = true;
     remapCapsLockToControl = true;
   };
+
+  environment.systemPackages = with pkgs; [utm];
 
   system.stateVersion = 6; # do not change
 }
