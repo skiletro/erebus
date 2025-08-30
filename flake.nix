@@ -55,10 +55,11 @@
       inputs.flake-compat.follows = "";
     };
 
-    # spicetify = {
-    #   url = "github:Gerg-L/spicetify-nix";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    spicetify = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     diffy = {
       url = "github:different-name/nix-files";
       inputs.nixpkgs.follows = "nixpkgs";

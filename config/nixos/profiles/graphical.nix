@@ -19,6 +19,7 @@
         discord.enable = true;
         blender.enable = true;
         ghostty.enable = true;
+        spotify.enable = true;
         zen.enable = true;
         pwa.enable = true;
       };
