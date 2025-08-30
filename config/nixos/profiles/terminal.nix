@@ -17,6 +17,7 @@
         fish.enable = true;
         git.enable = true;
         helix.enable = true;
+        tmux.enable = true;
         yazi.enable = true;
       };
 
