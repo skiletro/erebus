@@ -11,6 +11,10 @@
   options.erebus.system.user.enable = lib.mkEnableOption "Jamie user";
 
   config = lib.mkIf config.erebus.system.user.enable {
+    nixpkgs.overlays = [inputs.chaotic.overlays.default];
+
+    system.primaryUser = "jamie";
+
     users.users.jamie = {
       name = "jamie";
       home = "/Users/jamie";
