@@ -2,45 +2,70 @@
   lib,
   config,
   pkgs,
+  inputs',
   ...
 }: {
   options.erebus.programs.helix.enable = lib.mkEnableOption "Helix editor";
 
   config = lib.mkIf config.erebus.programs.helix.enable {
-    home.packages = with pkgs; [
-      alejandra
-      nil
-    ];
-
     programs.helix = {
       enable = true;
-      package = pkgs.helix_git; # from chaotic
+      # package = inputs'.helix.packages.helix;
+      package = let
+        language-servers = with pkgs; [
+          typescript-language-server # TS
+          vscode-langservers-extracted # TS/JS/HTML
+          prettier # HTML/CSS/JS
+          rust-analyzer # Rust
+          rustfmt # Rust
+          clippy # Rust
+          alejandra # Nix
+          deadnix # Nix
+          nixd # Nix
+          nil # Nix
+          gopls # Go
+          bash-language-server # Bash
+          docker-compose-language-service # Docker Compose
+          dockerfile-language-server-nodejs # Dockerfile
+          marksman # Markdown
+          taplo # TOML
+          yaml-language-server # YAML
+          omnisharp-roslyn # C#
+        ];
+      in
+        with pkgs;
+          runCommand "helix" {buildInputs = [makeWrapper];} ''
+            makeWrapper ${lib.getExe inputs'.helix.packages.helix} $out/bin/hx \
+              --suffix PATH : "${
+              lib.makeBinPath language-servers
+            }"
+          '';
       defaultEditor = true;
       languages = {
         language-server = {
           emmet-lsp = {
-            command = "emmet-language-server";
+            command = lib.getExe pkgs.emmet-language-server;
             args = ["--stdio"];
           };
           gopls.config.gofumpt = true;
         };
         language = [
-          # {
-          #   name = "html";
-          #   formatter = {
-          #     command = "prettier";
-          #     args = ["--parser" "html"];
-          #   };
-          #   language-servers = ["vscode-html-language-server" "emmet-lsp"];
-          # }
-          # (lib.mkIf t.web.enable {
-          #   name = "tsx";
-          #   formatter = {
-          #     command = "prettier";
-          #     args = ["--parser" "typescript"];
-          #   };
-          #   language-servers = ["vscode-html-language-server" "emmet-lsp"];
-          # })
+          {
+            name = "html";
+            formatter = {
+              command = "prettier";
+              args = ["--parser" "html"];
+            };
+            language-servers = ["vscode-html-language-server" "emmet-lsp"];
+          }
+          {
+            name = "tsx";
+            formatter = {
+              command = "prettier";
+              args = ["--parser" "typescript"];
+            };
+            language-servers = ["vscode-html-language-server" "emmet-lsp"];
+          }
           {
             name = "nix";
             formatter = {
@@ -49,20 +74,20 @@
               auto-format = true;
             };
           }
-          # {
-          #   name = "fish";
-          #   formatter.command = "fish_indent";
-          #   auto-format = true;
-          # }
-          # (lib.mkIf t.go.enable {
-          #   name = "go";
-          #   auto-format = true;
-          # })
-          # {
-          #   name = "c";
-          #   formatter.command = lib.getExe' pkgs.clang-tools "clang-format";
-          #   language-servers = ["clangd"];
-          # }
+          {
+            name = "fish";
+            formatter.command = "fish_indent";
+            auto-format = true;
+          }
+          {
+            name = "go";
+            auto-format = true;
+          }
+          {
+            name = "c";
+            formatter.command = lib.getExe' pkgs.clang-tools "clang-format";
+            language-servers = ["clangd"];
+          }
         ];
       };
       settings = {

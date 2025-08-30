@@ -66,6 +66,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    helix = {
+      url = "github:helix-editor/helix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     cachy-proton = {
       url = "github:jackgrahn/cachy-proton-nix";
       inputs.nixpkgs.follows = "nixpkgs";
