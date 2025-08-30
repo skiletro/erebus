@@ -11,8 +11,7 @@
   config = lib.mkIf config.erebus.programs.discord.enable {
     programs.nixcord = {
       enable = true;
-      discord.enable = false;
-      vesktop = {
+      discord = {
         enable = true;
         autoscroll.enable = true;
       };
