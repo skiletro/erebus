@@ -22,7 +22,6 @@
       };
 
       home.packages = with pkgs; [
-        alejandra # nix linter
         du-dust # fancy du
         fd # find files
         file # identify files
@@ -31,6 +30,7 @@
         just # make file but better
         libnotify # notifs through scripts
         ngrok # reverse proxy
+        nixfmt # nix formatter
         ouch # cli for compressing and decompressing formats
         outfieldr # `tldr` client
         playerctl # control media w/ cli

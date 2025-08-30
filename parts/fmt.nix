@@ -7,9 +7,9 @@
     treefmt = {
       flakeCheck = true;
       programs = {
-        alejandra.enable = true;
         deadnix.enable = true;
         just.enable = true;
+        nixfmt.enable = true;
         statix.enable = true;
       };
     };

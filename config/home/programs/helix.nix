@@ -19,7 +19,6 @@
           rust-analyzer # Rust
           rustfmt # Rust
           clippy # Rust
-          alejandra # Nix
           deadnix # Nix
           nixd # Nix
           nil # Nix
@@ -69,8 +68,7 @@
           {
             name = "nix";
             formatter = {
-              command = "alejandra";
-              args = ["--quiet"];
+              command = lib.getExe pkgs.nixfmt;
               auto-format = true;
             };
           }
