@@ -1,9 +1,12 @@
-{lib, ...}: let
-  isImportable = path: type:
+{ lib, ... }:
+let
+  isImportable =
+    path: type:
     (type == "directory" && lib.pathExists (lib.path.append path "default.nix"))
     || (type == "regular" && lib.hasSuffix ".nix" path);
 
-  importModules = dir:
+  importModules =
+    dir:
     builtins.readDir dir
     |> lib.filterAttrs (name: type: isImportable (lib.path.append dir name) type)
     |> lib.mapAttrs' (
@@ -16,7 +19,8 @@
   genModuleAttrs = type: {
     flake."${type}Modules" = importModules ./${type};
   };
-in {
+in
+{
   imports = map genModuleAttrs [
     "home"
     "nixos"

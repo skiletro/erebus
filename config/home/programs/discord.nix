@@ -3,8 +3,9 @@
   config,
   self,
   ...
-}: {
-  imports = [self.homeModules.disblock];
+}:
+{
+  imports = [ self.homeModules.disblock ];
 
   options.erebus.programs.discord.enable = lib.mkEnableOption "Discord (+ Nixcord/Vencord)";
 
@@ -49,9 +50,6 @@
       };
     };
 
-    xdg.autostart.entries =
-      config.lib.erebus.autostartEntry
-      "Discord Silent"
-      "${lib.getExe config.programs.nixcord.vesktop.package} --start-minimized";
+    xdg.autostart.entries = config.lib.erebus.autostartEntry "Discord Silent" "${lib.getExe config.programs.nixcord.vesktop.package} --start-minimized";
   };
 }

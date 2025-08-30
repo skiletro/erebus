@@ -2,11 +2,12 @@
   lib,
   config,
   ...
-}: {
+}:
+{
   options.services.desktopManager.gnome = {
     extensions = lib.mkOption {
       type = lib.types.listOf lib.types.package;
-      default = [];
+      default = [ ];
     };
   };
 
@@ -19,7 +20,9 @@
         settings = {
           "org/gnome/shell" = {
             disable-user-extensions = false;
-            enabled-extensions = map (ext: ext.extensionUuid) config.services.desktopManager.gnome.extensions ++ lib.optional config.stylix.enable "user-theme@gnome-shell-extensions.gcampax.github.com";
+            enabled-extensions =
+              map (ext: ext.extensionUuid) config.services.desktopManager.gnome.extensions
+              ++ lib.optional config.stylix.enable "user-theme@gnome-shell-extensions.gcampax.github.com";
           };
         };
       };

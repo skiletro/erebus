@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   erebus = {
     system.user.enable = true;
   };
@@ -27,7 +28,7 @@
     remapCapsLockToControl = true;
   };
 
-  environment.systemPackages = with pkgs; [utm];
+  environment.systemPackages = with pkgs; [ utm ];
 
   system.stateVersion = 6; # do not change
 }

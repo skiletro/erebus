@@ -4,8 +4,9 @@
   config,
   pkgs,
   ...
-}: {
-  imports = [inputs.zen.homeModules.twilight];
+}:
+{
+  imports = [ inputs.zen.homeModules.twilight ];
 
   options.erebus.programs.zen.enable = lib.mkEnableOption "Zen Browser";
 

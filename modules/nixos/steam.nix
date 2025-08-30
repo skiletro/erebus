@@ -3,30 +3,37 @@
   lib,
   config,
   ...
-}: {
+}:
+{
   options.programs.steam.stylix.enable = lib.mkEnableOption "Stylix for Steam";
 
   config = lib.mkIf config.programs.steam.stylix.enable {
     home-manager.sharedModules = lib.singleton (attrs: {
-      home.activation = let
-        winControlSettings =
-          if attrs.config.dconf.settings."org/gnome/desktop/wm/preferences".button-layout == "close,minimize,maximize:"
-          then "macos"
-          else "windows";
-        applySteamTheme = pkgs.writeShellScript "applySteamTheme" ''
-          # This file gets copied with read-only permission from the nix store
-          # if it is present, it causes an error when the theme is applied. Delete it.
-          custom="$HOME/.cache/AdwSteamInstaller/extracted/custom/custom.css"
-          if [[ -f "$custom" ]]; then
-            rm -f "$custom"
-          fi
-          ${lib.getExe pkgs.adwsteamgtk} -i -o "win_controls_layout:${winControlSettings}"
-        '';
-      in {
-        updateSteamTheme = attrs.config.lib.dag.entryAfter ["writeBoundary" "dconfSettings"] ''
-          run ${applySteamTheme}
-        '';
-      };
+      home.activation =
+        let
+          winControlSettings =
+            if
+              attrs.config.dconf.settings."org/gnome/desktop/wm/preferences".button-layout
+              == "close,minimize,maximize:"
+            then
+              "macos"
+            else
+              "windows";
+          applySteamTheme = pkgs.writeShellScript "applySteamTheme" ''
+            # This file gets copied with read-only permission from the nix store
+            # if it is present, it causes an error when the theme is applied. Delete it.
+            custom="$HOME/.cache/AdwSteamInstaller/extracted/custom/custom.css"
+            if [[ -f "$custom" ]]; then
+              rm -f "$custom"
+            fi
+            ${lib.getExe pkgs.adwsteamgtk} -i -o "win_controls_layout:${winControlSettings}"
+          '';
+        in
+        {
+          updateSteamTheme = attrs.config.lib.dag.entryAfter [ "writeBoundary" "dconfSettings" ] ''
+            run ${applySteamTheme}
+          '';
+        };
 
       dconf.settings."io/github/Foldex/AdwSteamGtk".prefs-install-custom-css = true;
 

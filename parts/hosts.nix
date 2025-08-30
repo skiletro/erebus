@@ -4,7 +4,8 @@
   self,
   withSystem,
   ...
-}: let
+}:
+let
   nixosHosts = {
     eris = "x86_64-linux";
     vm = "x86_64-linux";
@@ -14,9 +15,10 @@
     moirai = "aarch64-darwin";
   };
 
-  mkNixos = hostName: system:
+  mkNixos =
+    hostName: system:
     inputs.nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs self;};
+      specialArgs = { inherit inputs self; };
 
       modules = with inputs; [
         # Our own configuration files
@@ -33,9 +35,10 @@
       ];
     };
 
-  mkDarwin = hostName: system:
+  mkDarwin =
+    hostName: system:
     inputs.nix-darwin.lib.darwinSystem {
-      specialArgs = {inherit inputs self;};
+      specialArgs = { inherit inputs self; };
 
       modules = with inputs; [
         # Our own configuration files
@@ -54,58 +57,68 @@
   helperModules = hostName: system: {
     # Useful helper function that lets us use self' and inputs' in replace of self and inputs.
     # For example, instead of inputs.helix.packages.x86_64-linux.helix, we could do inputs'.helix.packages.helix!
-    _module.args = withSystem system ({
-      self',
-      inputs',
-      ...
-    }: {inherit self' inputs';});
+    _module.args = withSystem system (
+      {
+        self',
+        inputs',
+        ...
+      }:
+      {
+        inherit self' inputs';
+      }
+    );
     # Sets some stuff that we need that doesn't really make sense elsewhere.
-    networking = {inherit hostName;};
+    networking = { inherit hostName; };
     nixpkgs.hostPlatform = system;
   };
 
   # TODO: I should probably move this into its own flake parts module but it's fine here for now.
-  stylingModules = {
-    self',
-    pkgs,
-    config,
-    ...
-  }: {
-    stylix = {
-      enable = true;
-      base16Scheme = "${self'.packages.base16-schemes-unstable}/share/themes/penumbra-dark-contrast-plus-plus.yaml";
-      image = let
-        wallpaper = pkgs.fetchurl {
-          url = "https://w.wallhaven.cc/full/qz/wallhaven-qzrgg5.jpg";
-          sha256 = "0c7cfx3c71dcpdmncc66v2v2kvf2fd2rbl41xpjgazxgkl6w6c2k";
-        };
-      in
-        pkgs.runCommand "output.png" {} "${lib.getExe pkgs.lutgen} apply ${wallpaper} -o $out -- ${builtins.concatStringsSep " " config.lib.stylix.colors.toList}";
-      fonts = {
-        sansSerif = {
-          package = pkgs.work-sans;
-          name = "Work Sans";
-        };
-        serif = config.stylix.fonts.sansSerif; # Set serif font to the same as the sans-serif
-        monospace = {
-          package = self'.packages.liga-sfmono-nerd-font;
-          name = "Liga SFMono Nerd Font";
-        };
-        emoji = {
-          package = self'.packages.apple-emoji;
-          name = "Apple Color Emoji";
-        };
+  stylingModules =
+    {
+      self',
+      pkgs,
+      config,
+      ...
+    }:
+    {
+      stylix = {
+        enable = true;
+        base16Scheme = "${self'.packages.base16-schemes-unstable}/share/themes/penumbra-dark-contrast-plus-plus.yaml";
+        image =
+          let
+            wallpaper = pkgs.fetchurl {
+              url = "https://w.wallhaven.cc/full/qz/wallhaven-qzrgg5.jpg";
+              sha256 = "0c7cfx3c71dcpdmncc66v2v2kvf2fd2rbl41xpjgazxgkl6w6c2k";
+            };
+          in
+          pkgs.runCommand "output.png" { }
+            "${lib.getExe pkgs.lutgen} apply ${wallpaper} -o $out -- ${builtins.concatStringsSep " " config.lib.stylix.colors.toList}";
+        fonts = {
+          sansSerif = {
+            package = pkgs.work-sans;
+            name = "Work Sans";
+          };
+          serif = config.stylix.fonts.sansSerif; # Set serif font to the same as the sans-serif
+          monospace = {
+            package = self'.packages.liga-sfmono-nerd-font;
+            name = "Liga SFMono Nerd Font";
+          };
+          emoji = {
+            package = self'.packages.apple-emoji;
+            name = "Apple Color Emoji";
+          };
 
-        sizes = {
-          applications = 10;
-          desktop = 10;
-          popups = 10;
-          terminal = 12;
+          sizes = {
+            applications = 10;
+            desktop = 10;
+            popups = 10;
+            terminal = 12;
+          };
         };
       };
     };
-  };
-in {
+in
+{
   flake = {
     nixosConfigurations = lib.mapAttrs mkNixos nixosHosts;
     darwinConfigurations = lib.mapAttrs mkDarwin darwinHosts;

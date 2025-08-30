@@ -3,7 +3,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   options.erebus.programs.tmux.enable = lib.mkEnableOption "tmux terminal multiplexer";
 
   config = lib.mkIf config.erebus.programs.tmux.enable {

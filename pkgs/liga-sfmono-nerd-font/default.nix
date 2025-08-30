@@ -14,7 +14,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     hash = "sha256-AYjKrVLISsJWXN6Cj74wXmbJtREkFDYOCRw1t2nVH2w=";
   };
 
-  phases = ["installPhase"];
+  phases = [ "installPhase" ];
 
   installPhase = ''
     mkdir -p $out/share/fonts/opentype

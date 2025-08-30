@@ -3,8 +3,9 @@
   lib,
   config,
   ...
-}: {
-  imports = [inputs.diffy.nixosModules.tty1Autologin];
+}:
+{
+  imports = [ inputs.diffy.nixosModules.tty1Autologin ];
 
   options.erebus.system.autologin.enable = lib.mkEnableOption "autologin user 'jamie'";
 

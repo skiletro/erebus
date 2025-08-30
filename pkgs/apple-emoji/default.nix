@@ -12,7 +12,7 @@ stdenvNoCC.mkDerivation (_finalAttrs: {
     sha256 = "sha256-pP0He9EUN7SUDYzwj0CE4e39SuNZ+SVz7FdmUviF6r0=";
   };
 
-  phases = ["installPhase"];
+  phases = [ "installPhase" ];
 
   installPhase = ''
     mkdir -p $out/share/fonts/truetype

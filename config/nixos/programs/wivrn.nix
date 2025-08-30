@@ -4,7 +4,8 @@
   lib,
   inputs',
   ...
-}: {
+}:
+{
   options.erebus.programs.wivrn.enable = lib.mkEnableOption "WiVRn";
 
   config = lib.mkIf config.erebus.programs.wivrn.enable {
@@ -21,7 +22,8 @@
 
     home-manager.sharedModules = lib.singleton (userAttrs: {
       # This assumes a WiVRn configuration
-      xdg.configFile."openxr/1/active_runtime.json".source = "${config.services.wivrn.package}/share/openxr/1/openxr_wivrn.json";
+      xdg.configFile."openxr/1/active_runtime.json".source =
+        "${config.services.wivrn.package}/share/openxr/1/openxr_wivrn.json";
 
       xdg.configFile."openvr/openvrpaths.vrpath".text = ''
         {
@@ -43,7 +45,7 @@
         }
       '';
 
-      xdg.configFile."wlxoverlay/wayvr.yaml".source = (pkgs.formats.yaml {}).generate "wayvr.yaml" {
+      xdg.configFile."wlxoverlay/wayvr.yaml".source = (pkgs.formats.yaml { }).generate "wayvr.yaml" {
         version = 1;
         run_compositor_at_start = false;
         auto_hide = true;

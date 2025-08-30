@@ -7,14 +7,22 @@
   self',
   pkgs,
   ...
-}: {
+}:
+{
   options.erebus.system.user.enable = lib.mkEnableOption "Jamie user";
 
   config = lib.mkIf config.erebus.system.user.enable {
     users.users.jamie = {
       isNormalUser = true;
       password = "pwd"; # TODO: Change me to hashedPasswordFile, embedded in a secret.
-      extraGroups = ["users" "networkmanager" "wheel" "libvirtd" "gamemode" "docker"];
+      extraGroups = [
+        "users"
+        "networkmanager"
+        "wheel"
+        "libvirtd"
+        "gamemode"
+        "docker"
+      ];
       openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINnFEMa0S9zuA5cVg+Ktazz9gEevkDCNYIDX0WAMxcAC eos"
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIcAzqMv0//j1mUVb/NBUiMgv2brdPv9HbNs83OkQZzq moirai"
@@ -36,7 +44,14 @@
     home-manager = {
       useGlobalPkgs = true;
       useUserPackages = true;
-      extraSpecialArgs = {inherit inputs inputs' self self';};
+      extraSpecialArgs = {
+        inherit
+          inputs
+          inputs'
+          self
+          self'
+          ;
+      };
       users.jamie.imports = [
         self.homeModules.erebus
         self.homeModules.autostart

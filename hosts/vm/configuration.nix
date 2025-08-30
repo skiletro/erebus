@@ -1,6 +1,8 @@
-{lib, ...}: let
+{ lib, ... }:
+let
   inherit (lib) mkForce;
-in {
+in
+{
   erebus = {
     profiles = {
       base.enable = true;
@@ -18,5 +20,5 @@ in {
     system.autologin.enable = true; # It's getting annoying typing in the pwd
   };
 
-  home-manager.sharedModules = lib.singleton {erebus.programs.discord.enable = mkForce false;};
+  home-manager.sharedModules = lib.singleton { erebus.programs.discord.enable = mkForce false; };
 }

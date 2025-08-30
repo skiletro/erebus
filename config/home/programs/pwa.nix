@@ -3,8 +3,9 @@
   lib,
   config,
   ...
-}: {
-  imports = [self.homeModules.pwa];
+}:
+{
+  imports = [ self.homeModules.pwa ];
 
   options.erebus.programs.pwa.enable = lib.mkEnableOption "Progressive Web Apps";
 
@@ -15,19 +16,23 @@
         "Proton Mail" = {
           url = "https://mail.proton.me";
           manifestUrl = "https://mail.proton.me/manifest.json";
-          categories = ["Office" "Network" "Email"];
+          categories = [
+            "Office"
+            "Network"
+            "Email"
+          ];
           icon = "proton-mail";
         };
         "WhatsApp" = {
           url = "https://web.whatsapp.com";
           manifestUrl = "https://web.whatsapp.com/manifest.json";
-          categories = ["Network"];
+          categories = [ "Network" ];
           icon = "whatsapp";
         };
         "Instagram" = {
           url = "https://instagram.com";
           manifestUrl = "https://instagram.com/manifest.json";
-          categories = ["Network"];
+          categories = [ "Network" ];
           icon = "facebook-messenger";
         };
       };

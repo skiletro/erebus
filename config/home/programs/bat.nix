@@ -2,7 +2,8 @@
   lib,
   config,
   ...
-}: {
+}:
+{
   options.erebus.programs.bat.enable = lib.mkEnableOption "Bat, the cat clone with wings";
 
   config = lib.mkIf config.erebus.programs.bat.enable {

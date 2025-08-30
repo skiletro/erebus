@@ -3,7 +3,8 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+{
   options.erebus.programs.fish.enable = lib.mkEnableOption "Fish shell configuration";
 
   config = lib.mkIf config.erebus.programs.fish.enable {

@@ -6,8 +6,16 @@
   nix = {
     channel.enable = false;
     settings = {
-      experimental-features = ["nix-command" "flakes" "pipe-operators"];
-      trusted-users = ["jamie" "root" "@wheel"]; # Fixes some "cannot connect to socket" issues
+      experimental-features = [
+        "nix-command"
+        "flakes"
+        "pipe-operators"
+      ];
+      trusted-users = [
+        "jamie"
+        "root"
+        "@wheel"
+      ]; # Fixes some "cannot connect to socket" issues
       warn-dirty = false;
       http-connections = 50;
       log-lines = 50;

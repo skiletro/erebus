@@ -1,4 +1,5 @@
-{inputs, ...}: {
+{ inputs, ... }:
+{
   imports = with inputs.nixos-hardware.nixosModules; [
     common-cpu-amd
     common-cpu-amd-pstate
@@ -8,11 +9,18 @@
   ];
 
   # Boot Hardware
-  boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod"];
-  boot.initrd.kernelModules = [];
-  boot.kernelModules = ["kvm-amd"];
-  boot.extraModulePackages = [];
-  boot.supportedFilesystems = ["ntfs"];
+  boot.initrd.availableKernelModules = [
+    "nvme"
+    "xhci_pci"
+    "ahci"
+    "usbhid"
+    "usb_storage"
+    "sd_mod"
+  ];
+  boot.initrd.kernelModules = [ ];
+  boot.kernelModules = [ "kvm-amd" ];
+  boot.extraModulePackages = [ ];
+  boot.supportedFilesystems = [ "ntfs" ];
 
   # Drives
   fileSystems."/" = {
@@ -23,11 +31,14 @@
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/F4AF-09F7";
     fsType = "vfat";
-    options = ["fmask=0077" "dmask=0077"];
+    options = [
+      "fmask=0077"
+      "dmask=0077"
+    ];
   };
 
   swapDevices = [
-    {device = "/dev/disk/by-uuid/ae2dc9bc-8451-48f4-a42b-916e449f30b8";}
+    { device = "/dev/disk/by-uuid/ae2dc9bc-8451-48f4-a42b-916e449f30b8"; }
   ];
 
   hardware.enableRedistributableFirmware = true;

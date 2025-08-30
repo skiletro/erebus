@@ -2,7 +2,8 @@
   lib,
   config,
   ...
-}: {
+}:
+{
   options.erebus.programs.git.enable = lib.mkEnableOption "Git and git tooling";
 
   config = lib.mkIf config.erebus.programs.git.enable {
@@ -20,7 +21,12 @@
         settings = {
           gui = {
             nerdFontsVersion = "3";
-            spinner.frames = ["◜" "◝" "◞" "◟"];
+            spinner.frames = [
+              "◜"
+              "◝"
+              "◞"
+              "◟"
+            ];
           };
           git = {
             paging.pager = "diff-so-fancy";

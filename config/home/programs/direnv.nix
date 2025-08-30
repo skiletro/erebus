@@ -2,7 +2,8 @@
   lib,
   config,
   ...
-}: {
+}:
+{
   options.erebus.programs.direnv.enable = lib.mkEnableOption "Direnv";
 
   config = lib.mkIf config.erebus.programs.direnv.enable {

@@ -3,7 +3,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   options.erebus.services.rnnoise.enable = lib.mkEnableOption "RNNoise Microphone Noise Cancelling";
 
   # TODO: convert to module, and figure out a way to prioritis/select Blue Snowball

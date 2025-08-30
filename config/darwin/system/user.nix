@@ -7,11 +7,12 @@
   self',
   pkgs,
   ...
-}: {
+}:
+{
   options.erebus.system.user.enable = lib.mkEnableOption "Jamie user";
 
   config = lib.mkIf config.erebus.system.user.enable {
-    nixpkgs.overlays = [inputs.chaotic.overlays.default];
+    nixpkgs.overlays = [ inputs.chaotic.overlays.default ];
 
     system.primaryUser = "jamie";
 
@@ -29,7 +30,14 @@
     home-manager = {
       useGlobalPkgs = true;
       useUserPackages = true;
-      extraSpecialArgs = {inherit inputs inputs' self self';};
+      extraSpecialArgs = {
+        inherit
+          inputs
+          inputs'
+          self
+          self'
+          ;
+      };
       users.jamie = {
         home.stateVersion = "25.11";
         imports = [

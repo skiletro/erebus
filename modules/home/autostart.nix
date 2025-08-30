@@ -2,12 +2,14 @@
   lib,
   pkgs,
   ...
-}: {
-  lib.erebus.autostartEntry = entryName: entryCommand: let
-    name = lib.toCamelCase entryName;
-  in
-    lib.singleton
-    (
+}:
+{
+  lib.erebus.autostartEntry =
+    entryName: entryCommand:
+    let
+      name = lib.toCamelCase entryName;
+    in
+    lib.singleton (
       (pkgs.makeDesktopItem {
         desktopName = entryName;
         inherit name;

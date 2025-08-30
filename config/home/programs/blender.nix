@@ -4,7 +4,8 @@
   inputs,
   inputs',
   ...
-}: {
+}:
+{
   imports = [
     inputs.diffy.homeModules.blender
   ];

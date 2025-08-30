@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   erebus.profiles = {
     base.enable = true;
     gaming.enable = true;

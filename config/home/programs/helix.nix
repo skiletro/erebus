@@ -4,47 +4,47 @@
   pkgs,
   inputs',
   ...
-}: {
+}:
+{
   options.erebus.programs.helix.enable = lib.mkEnableOption "Helix editor";
 
   config = lib.mkIf config.erebus.programs.helix.enable {
     programs.helix = {
       enable = true;
       # package = inputs'.helix.packages.helix;
-      package = let
-        language-servers = with pkgs; [
-          typescript-language-server # TS
-          vscode-langservers-extracted # TS/JS/HTML
-          prettier # HTML/CSS/JS
-          rust-analyzer # Rust
-          rustfmt # Rust
-          clippy # Rust
-          deadnix # Nix
-          nixd # Nix
-          nil # Nix
-          gopls # Go
-          bash-language-server # Bash
-          docker-compose-language-service # Docker Compose
-          dockerfile-language-server-nodejs # Dockerfile
-          marksman # Markdown
-          taplo # TOML
-          yaml-language-server # YAML
-          omnisharp-roslyn # C#
-        ];
-      in
+      package =
+        let
+          language-servers = with pkgs; [
+            typescript-language-server # TS
+            vscode-langservers-extracted # TS/JS/HTML
+            prettier # HTML/CSS/JS
+            rust-analyzer # Rust
+            rustfmt # Rust
+            clippy # Rust
+            deadnix # Nix
+            nixd # Nix
+            nil # Nix
+            gopls # Go
+            bash-language-server # Bash
+            docker-compose-language-service # Docker Compose
+            dockerfile-language-server-nodejs # Dockerfile
+            marksman # Markdown
+            taplo # TOML
+            yaml-language-server # YAML
+            omnisharp-roslyn # C#
+          ];
+        in
         with pkgs;
-          runCommand "helix" {buildInputs = [makeWrapper];} ''
-            makeWrapper ${lib.getExe inputs'.helix.packages.helix} $out/bin/hx \
-              --suffix PATH : "${
-              lib.makeBinPath language-servers
-            }"
-          '';
+        runCommand "helix" { buildInputs = [ makeWrapper ]; } ''
+          makeWrapper ${lib.getExe inputs'.helix.packages.helix} $out/bin/hx \
+            --suffix PATH : "${lib.makeBinPath language-servers}"
+        '';
       defaultEditor = true;
       languages = {
         language-server = {
           emmet-lsp = {
             command = lib.getExe pkgs.emmet-language-server;
-            args = ["--stdio"];
+            args = [ "--stdio" ];
           };
           gopls.config.gofumpt = true;
         };
@@ -53,17 +53,29 @@
             name = "html";
             formatter = {
               command = "prettier";
-              args = ["--parser" "html"];
+              args = [
+                "--parser"
+                "html"
+              ];
             };
-            language-servers = ["vscode-html-language-server" "emmet-lsp"];
+            language-servers = [
+              "vscode-html-language-server"
+              "emmet-lsp"
+            ];
           }
           {
             name = "tsx";
             formatter = {
               command = "prettier";
-              args = ["--parser" "typescript"];
+              args = [
+                "--parser"
+                "typescript"
+              ];
             };
-            language-servers = ["vscode-html-language-server" "emmet-lsp"];
+            language-servers = [
+              "vscode-html-language-server"
+              "emmet-lsp"
+            ];
           }
           {
             name = "nix";
@@ -84,7 +96,7 @@
           {
             name = "c";
             formatter.command = lib.getExe' pkgs.clang-tools "clang-format";
-            language-servers = ["clangd"];
+            language-servers = [ "clangd" ];
           }
         ];
       };
@@ -96,7 +108,7 @@
           color-modes = true;
           line-number = "relative";
           rainbow-brackets = true;
-          rulers = [120];
+          rulers = [ 120 ];
           cursor-shape = {
             insert = "bar";
             normal = "block";
@@ -124,9 +136,21 @@
               select = "SELECT";
             };
             separator = " ";
-            left = ["mode" "separator" "read-only-indicator" "file-modification-indicator"];
-            center = ["file-name"];
-            right = ["spinner" "version-control" "position" "file-encoding" "file-line-ending" "file-type"];
+            left = [
+              "mode"
+              "separator"
+              "read-only-indicator"
+              "file-modification-indicator"
+            ];
+            center = [ "file-name" ];
+            right = [
+              "spinner"
+              "version-control"
+              "position"
+              "file-encoding"
+              "file-line-ending"
+              "file-type"
+            ];
           };
         };
         keys = {

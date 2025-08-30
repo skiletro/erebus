@@ -3,7 +3,8 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+{
   options.erebus.system.boot.enable = lib.mkEnableOption "boot configuration";
 
   config = lib.mkIf config.erebus.system.boot.enable {

@@ -2,7 +2,8 @@
   config,
   lib,
   ...
-}: {
+}:
+{
   options.erebus.system.locale.enable = lib.mkEnableOption "locale configuration";
 
   config = lib.mkIf config.erebus.system.locale.enable {

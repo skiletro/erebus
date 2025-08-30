@@ -3,7 +3,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   options.erebus.system.fonts.enable = lib.mkEnableOption "Fonts";
 
   config = lib.mkIf config.erebus.system.fonts.enable {
