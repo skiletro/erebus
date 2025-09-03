@@ -19,6 +19,7 @@
         yazi.enable = true;
         spotify.enable = true;
         zen.enable = true;
+        prismlauncher.enable = true;
       };
     }
   ];

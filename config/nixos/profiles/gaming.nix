@@ -19,5 +19,9 @@
         sunshine.enable = true;
       };
     };
+
+    home-manager.sharedModules = lib.singleton {
+      erebus.programs.prismlauncher.enable = true;
+    };
   };
 }
