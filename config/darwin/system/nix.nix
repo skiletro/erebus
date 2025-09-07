@@ -4,6 +4,7 @@
   };
 
   nix = {
+    enable = false; # managed by determinate nix
     channel.enable = false;
     settings = {
       experimental-features = [
@@ -21,7 +22,7 @@
       log-lines = 50;
       builders-use-substitutes = true;
       accept-flake-config = true;
+      lazy-trees = true;
     };
-    optimise.automatic = true;
   };
 }
