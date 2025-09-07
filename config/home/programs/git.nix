@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }:
 {
@@ -36,5 +37,7 @@
       };
       fish.shellAbbrs.lg = "lazygit";
     };
+
+    home.packages = [ pkgs.gh ];
   };
 }
