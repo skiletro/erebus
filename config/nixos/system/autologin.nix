@@ -9,15 +9,18 @@
 
   options.erebus.system.autologin.enable = lib.mkEnableOption "autologin user 'jamie'";
 
-  config = lib.mkIf config.erebus.system.autologin.enable {
-    # services.tty1Autologin = {
-    #   enable = true;
-    #   user = "jamie";
-    # };
-
-    services.displayManager.autoLogin = {
+  config =
+    let
       enable = true;
       user = "jamie";
+    in
+    lib.mkIf config.erebus.system.autologin.enable {
+      services.tty1Autologin = {
+        inherit enable user;
+      };
+
+      services.displayManager.autoLogin = {
+        inherit enable user;
+      };
     };
-  };
 }
