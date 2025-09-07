@@ -23,7 +23,7 @@
             {
               name = "Steam Big Picture";
               detached = [
-                "${lib.getExe' pkgs.util-linux "setsid"} ${lib.getExe pkgs.steam} steam://open/bigpicture"
+                "${lib.getExe' pkgs.util-linux "setsid"} ${lib.getExe config.programs.steam.package} steam://open/bigpicture"
               ]; # TODO: This doesn't work all of the time.
             }
             {
@@ -39,27 +39,23 @@
               prep-cmd =
                 let
                   kscreen = lib.getExe pkgs.kdePackages.libkscreen;
-                  grandr = lib.getExe pkgs.gnome-randr;
+                  gnome-randr = lib.getExe pkgs.gnome-randr;
 
-                  gnome = config.erebus.desktop.gnome.enable;
+                  monitor = "DP-3";
 
-                  do =
-                    if gnome then
-                      "sh -c \"${grandr} modify -m \${SUNSHINE_CLIENT_WIDTH}x\${SUNSHINE_CLIENT_HEIGHT}@\${SUNSHINE_CLIENT_FPS} DP-3\""
-                    else
-                      "sh -c \"${kscreen} output.DP-3.mode.\${SUNSHINE_CLIENT_WIDTH}x\${SUNSHINE_CLIENT_HEIGHT}@\${SUNSHINE_CLIENT_FPS}\"";
-
-                  undo =
-                    if gnome then
-                      "${grandr} modify -m 3440x1440@165.001+vrr DP-3"
-                    else
-                      "${kscreen} output.DP-2.mode.3440x1440@165";
+                  defaultMode = "3440x1440@165";
+                  sunshineMode = "\${SUNSHINE_CLIENT_WIDTH}x\${SUNSHINE_CLIENT_HEIGHT}\${SUNSHINE_CLIENT_FPS}";
                 in
-                [
+                if config.erebus.desktop.gnome.enable then
                   {
-                    inherit do undo;
+                    do = ''sh -c "${gnome-randr} modify -m ${sunshineMode} ${monitor}"'';
+                    undo = "${gnome-randr} modify -m ${defaultMode}.001+vrr ${monitor}";
                   }
-                ];
+                else
+                  {
+                    do = ''sh -c "${kscreen}" output.${monitor}.mode.${sunshineMode}'';
+                    undo = "${kscreen} output.${monitor}.mode.${defaultMode}";
+                  };
             }
           );
     };
