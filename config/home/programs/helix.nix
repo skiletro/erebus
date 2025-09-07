@@ -11,34 +11,28 @@
   config = lib.mkIf config.erebus.programs.helix.enable {
     programs.helix = {
       enable = true;
-      # package = inputs'.helix.packages.helix;
-      package =
-        let
-          language-servers = with pkgs; [
-            typescript-language-server # TS
-            vscode-langservers-extracted # TS/JS/HTML
-            prettier # HTML/CSS/JS
-            rust-analyzer # Rust
-            rustfmt # Rust
-            clippy # Rust
-            deadnix # Nix
-            nixd # Nix
-            nil # Nix
-            gopls # Go
-            bash-language-server # Bash
-            docker-compose-language-service # Docker Compose
-            dockerfile-language-server-nodejs # Dockerfile
-            marksman # Markdown
-            taplo # TOML
-            yaml-language-server # YAML
-            omnisharp-roslyn # C#
-          ];
-        in
-        with pkgs;
-        runCommand "helix" { buildInputs = [ makeWrapper ]; } ''
-          makeWrapper ${lib.getExe inputs'.helix.packages.helix} $out/bin/hx \
-            --suffix PATH : "${lib.makeBinPath language-servers}"
-        '';
+      package = inputs'.helix.packages.helix;
+      extraPackages = with pkgs; [
+        typescript-language-server # TS
+        vscode-langservers-extracted # TS/JS/HTML
+        prettier # HTML/CSS/JS
+        rust-analyzer # Rust
+        rustfmt # Rust
+        clippy # Rust
+        deadnix # Nix
+        nixd # Nix
+        nil # Nix
+        gopls # Go
+        bash-language-server # Bash
+        docker-compose-language-service # Docker Compose
+        dockerfile-language-server-nodejs # Dockerfile
+        marksman # Markdown
+        taplo # TOML
+        yaml-language-server # YAML
+        omnisharp-roslyn # C#
+        csharpier # C#
+        netcoredbg # C#
+      ];
       defaultEditor = true;
       languages = {
         language-server = {
@@ -47,6 +41,11 @@
             args = [ "--stdio" ];
           };
           gopls.config.gofumpt = true;
+          harper = {
+            command = lib.getExe pkgs.harper;
+            args = [ "--studio" ];
+            config.harper-ls.dialect = "British";
+          };
         };
         language = [
           {
@@ -97,6 +96,13 @@
             name = "c";
             formatter.command = lib.getExe' pkgs.clang-tools "clang-format";
             language-servers = [ "clangd" ];
+          }
+          {
+            name = "markdown";
+            language-servers = [
+              "marksman"
+              "harper"
+            ];
           }
         ];
       };
