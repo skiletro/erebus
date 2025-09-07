@@ -10,8 +10,8 @@
 
   environment.systemPackages = with pkgs; [
     delfin # Jellyfin Client
+    element-desktop # Matrix Client
     flare-signal # Signal Client
-    fractal # Matrix Client
     fsearch # Fast File Search
     ghex # Hex Editor
     gimp3-with-plugins
