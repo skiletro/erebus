@@ -1,18 +1,9 @@
 export NH_FLAKE := justfile_directory()
-system := if os() == "macos" { "darwin" } else { "os " }
+system := if os() == "macos" { "darwin" } else { "os" }
 
 [private]
 default:
     @just -l -u
-
-# [group("rebuild")]
-# [private]
-# builder goal *args:
-#     {{ rebuild }} {{ goal }} \
-#       --flake {{ flake }} \
-#       {{ system-args }} \
-#       {{ args }} \
-#       |& {{ nom-cmd }}
 
 [group("rebuild")]
 [private]
