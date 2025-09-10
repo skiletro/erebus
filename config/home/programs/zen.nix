@@ -5,12 +5,16 @@
   pkgs,
   ...
 }:
+let
+  inherit (lib) mkIf singleton;
+  inherit (pkgs.stdenvNoCC.hostPlatform) isDarwin;
+in
 {
   imports = [ inputs.zen.homeModules.twilight ];
 
   options.erebus.programs.zen.enable = lib.mkEnableOption "Zen Browser";
 
-  config = lib.mkIf config.erebus.programs.zen.enable {
+  config = mkIf config.erebus.programs.zen.enable {
     programs.zen-browser = {
       enable = true;
       policies = {
@@ -49,13 +53,12 @@
           "zen.tabs.vertical.right-side" = false;
           "browser.toolbars.bookmarks.visiblity" = "always";
         };
-        search.default = "ddg";
       };
     };
 
     stylix.targets.zen-browser = {
-      enable = lib.mkIf pkgs.stdenvNoCC.hostPlatform.isDarwin false; # disable if on mac
-      profileNames = lib.singleton "default";
+      enable = mkIf isDarwin false; # disable if on mac
+      profileNames = mkIf isDarwin singleton "default";
     };
   };
 }
