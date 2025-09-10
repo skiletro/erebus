@@ -24,11 +24,6 @@
     }
   ];
 
-  system.keyboard = {
-    enableKeyMapping = true;
-    remapCapsLockToControl = true;
-  };
-
   environment.systemPackages = with pkgs; [ utm ];
 
   system.stateVersion = 6; # do not change
