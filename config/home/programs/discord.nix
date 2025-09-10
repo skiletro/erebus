@@ -2,6 +2,7 @@
   lib,
   config,
   self,
+  pkgs,
   ...
 }:
 {
@@ -18,10 +19,7 @@
       };
       config = {
         useQuickCss = true;
-        themeLinks = [
-          "https://chloecinders.github.io/visual-refresh-compact-title-bar/browser.css"
-          "https://raw.githubusercontent.com/Krammeth/css-snippets/refs/heads/main/PopoutsRevamped.css"
-        ];
+        themeLinks = lib.optional pkgs.stdenvNoCC.hostPlatform.isLinux "https://chloecinders.github.io/visual-refresh-compact-title-bar/browser.css";
         plugins = {
           betterGifPicker.enable = true;
           crashHandler.enable = true;
