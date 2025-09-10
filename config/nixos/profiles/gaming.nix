@@ -11,6 +11,7 @@
     erebus = {
       programs = {
         gamemode.enable = true;
+        gsr.enable = true;
         steam.enable = true;
         wivrn.enable = true;
       };
