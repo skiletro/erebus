@@ -178,6 +178,8 @@
               ":set-option mouse false"
               ":set-option mouse true"
             ];
+            "B" =
+              ":sh git log -n 5 --format='format:%%h (%%an: %%ar) %%s' --no-patch -L%{cursor_line},+1:%{buffer_name}";
           };
           select = {
             "X" = "select_line_above";
