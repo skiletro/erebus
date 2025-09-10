@@ -15,6 +15,7 @@
         userName = "skiletro";
         userEmail = "19377854+skiletro@users.noreply.github.com";
         diff-so-fancy.enable = true;
+        ignores = [ ".DS_Store .envrc" ];
       };
 
       lazygit = {
