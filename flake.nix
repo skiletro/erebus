@@ -83,6 +83,15 @@
 
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
 
+    mac-app-util = {
+      url = "github:hraban/mac-app-util";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-compat.follows = "";
+        treefmt-nix.follows = "treefmt-nix";
+      };
+    };
+
     ### Theming
     # Inputs that provide themes or anything to do with the style of the system(s).
     cursors.url = "github:lilleaila/nix-cursors";
