@@ -24,7 +24,52 @@
     }
   ];
 
-  environment.systemPackages = with pkgs; [ utm ];
+  environment.systemPackages = with pkgs; [
+    ffmpeg
+    fzf
+    lazygit
+    moonlight-qt
+    obsidian
+    utm
+    yt-dlp
+  ];
+
+  homebrew = {
+    # TODO: install as many of these as i can with nix instead of homebrew
+    casks = [
+      "aerospace"
+      "betterdisplay"
+      "blender"
+      "elmedia-player"
+      "ente"
+      "godot"
+      "handbrake-app"
+      "jordanbaird-ice" # hides some icons in menu bar
+      "microsoft-office"
+      "microsoft-teams"
+      "orion"
+      "pearcleaner"
+      "plex"
+      "proton-drive"
+      "proton-mail"
+      "proton-pass"
+      "protonvpn"
+      "qbittorrent"
+      "qlvideo"
+      "raycast"
+      "rectangle"
+      "signal"
+      "tomatobar" # pomodoro timer
+      "unity-hub"
+      "whatsapp"
+    ];
+
+    brews = [
+      "cava"
+      "sketchybar" # TODO: actually configure this with nix
+      "skhd-zig" # TODO: probably just replace this with aerospace once configured
+    ];
+  };
 
   system.stateVersion = 6; # do not change
 }
