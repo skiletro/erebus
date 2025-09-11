@@ -1,9 +1,12 @@
 {
   lib,
   config,
+  self,
   ...
 }:
 {
+  imports = [ self.nixosModules.gsr ];
+
   options.erebus.programs.gsr.enable =
     lib.mkEnableOption "gpu-screen-recorder & it's shadowplay inspired UI";
 
