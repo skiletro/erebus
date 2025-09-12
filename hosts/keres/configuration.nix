@@ -10,9 +10,20 @@
 
   services.caddy = {
     enable = true;
-    virtualHosts."violet.fyi".extraConfig = ''
-      reverse_proxy :3000
-    '';
+    virtualHosts = {
+      "violet.fyi".extraConfig = ''
+        	header Content-Type text/html
+        	respond <<HTML
+        		<html>
+        			<body><a href="https://kerakeep.violet.fyi">kerakeep</a></body>
+        		</html>
+        		HTML 200
+      '';
+
+      "kerakeep.violet.fyi".extraConfig = ''
+        reverse_proxy :3000
+      '';
+    };
   };
 
   services.karakeep = {
