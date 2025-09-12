@@ -2,7 +2,7 @@
 {
   imports = [ ./hardware.nix ];
 
-  boot.kernelPackages = pkgs.linuxPackages_cachyos-server;
+  boot.kernelPackages = pkgs.linuxPackages_zen;
 
   erebus.profiles.base.enable = true;
 
