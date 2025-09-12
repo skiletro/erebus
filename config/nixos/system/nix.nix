@@ -4,7 +4,7 @@
   };
 
   nix = {
-    enable = false; # managed by determinate nix
+    enable = true;
     channel.enable = false;
     settings = {
       experimental-features = [
@@ -24,5 +24,6 @@
       accept-flake-config = true;
       lazy-trees = true;
     };
+    optimise.automatic = true;
   };
 }
