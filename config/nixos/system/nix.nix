@@ -1,4 +1,28 @@
 {
-  # options.erebus.system.nix.enable = lib.mkEnableOption "Nix options";
-  config.nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    config.allowUnfree = true;
+  };
+
+  nix = {
+    enable = false; # managed by determinate nix
+    channel.enable = false;
+    settings = {
+      experimental-features = [
+        "nix-command"
+        "flakes"
+        "pipe-operators"
+      ];
+      trusted-users = [
+        "jamie"
+        "root"
+        "@wheel"
+      ]; # Fixes some "cannot connect to socket" issues
+      warn-dirty = false;
+      http-connections = 50;
+      log-lines = 50;
+      builders-use-substitutes = true;
+      accept-flake-config = true;
+      lazy-trees = true;
+    };
+  };
 }
