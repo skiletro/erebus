@@ -4,12 +4,7 @@
 
   boot.kernelPackages = pkgs.linuxPackages_cachyos-server;
 
-  erebus = {
-    system = {
-      user.enable = true;
-      locale.enable = true;
-    };
-  };
+  erebus.profiles.base.enable = true;
 
   environment.systemPackages = [ pkgs.ghostty.terminfo ];
 
