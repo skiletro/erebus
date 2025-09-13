@@ -8,6 +8,7 @@
     {
       erebus.programs = {
         bat.enable = true;
+        carapace.enable = true;
         direnv.enable = true;
         discord.enable = true;
         eza.enable = true;
