@@ -1,7 +1,5 @@
 { pkgs, ... }:
 {
-  imports = [ ./hardware.nix ];
-
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   erebus.profiles.base.enable = true;
@@ -20,7 +18,7 @@
         		HTML 200
       '';
 
-      "kerakeep.violet.fyi".extraConfig = ''
+      "karakeep.violet.fyi".extraConfig = ''
         reverse_proxy :3000
       '';
     };
