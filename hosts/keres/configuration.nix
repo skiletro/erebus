@@ -1,5 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
+  imports = [ inputs.disko.nixosModules.default ];
+
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   erebus.profiles.base.enable = true;
