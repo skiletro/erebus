@@ -21,6 +21,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     ### Package Repositories
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
