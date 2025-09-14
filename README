@@ -16,15 +16,12 @@ FEATURES
   - Support for multiple architectures.
 
 TODO
-  This flake is currently not in use for my primary system (eris).
-  The following is what I need to do before I can make the swap, in no particular order.
-
   - Game Configs (CS2, VRChat, etc)
   - Add "Fix Steam Icons" to the Steam module. (https://github.com/beedywool/Gnome-Steam-Shortcut-Fixer/)
   - Proton Drive rclone service
   - KDE Plasma
   - Other gaming packages and options (https://github.com/skiletro/nixfiles/blob/master/modules/pc/gaming/misc.nix)
-  - Chromium (or chromium-like browser, this is for web dev testing in mutliple engines)
+  - Chromium (or chromium-like browser, this is for web dev testing in multiple engines)
   - Secrets (most likely using sops-nix, needed for GitHub Access Token, Rclone private key, system user password)
 
   And the following is some "nice to haves"
