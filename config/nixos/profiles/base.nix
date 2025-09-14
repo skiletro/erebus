@@ -14,6 +14,8 @@
         locale.enable = true;
         user.enable = true;
       };
+
+      services.tailscale.enable = true;
     };
   };
 }
