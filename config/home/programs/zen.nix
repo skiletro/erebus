@@ -6,8 +6,8 @@
   ...
 }:
 let
-  inherit (lib) mkIf singleton;
-  inherit (pkgs.stdenvNoCC.hostPlatform) isDarwin;
+  inherit (lib) mkIf;
+  inherit (pkgs.stdenvNoCC.hostPlatform) isDarwin isLinux;
 in
 {
   imports = [ inputs.zen.homeModules.twilight ];
@@ -58,7 +58,7 @@ in
 
     stylix.targets.zen-browser = {
       enable = mkIf isDarwin false; # disable if on mac
-      profileNames = mkIf isDarwin singleton "default";
+      profileNames = mkIf isLinux [ "default" ];
     };
   };
 }
