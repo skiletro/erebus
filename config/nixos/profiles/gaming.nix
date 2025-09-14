@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }:
 {
@@ -21,8 +22,17 @@
       };
     };
 
+    environment.systemPackages = with pkgs; [
+      bs-manager
+      dolphin-emu
+      lutris
+      osu-lazer-bin
+      r2modman
+    ];
+
     home-manager.sharedModules = lib.singleton {
       erebus.programs.prismlauncher.enable = true;
+      programs.mangohud.enable = true;
     };
   };
 }
