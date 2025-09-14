@@ -1,14 +1,8 @@
-{ config, ... }:
 {
   nix = {
-    # set nix path properly
-    nixPath = [
-      "nixos-config=/home/jamie/Projects/erebus/flake.nix"
-      "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
-    ];
-
+    enable = true;
+    channel.enable = false;
     settings = {
-      auto-optimise-store = true;
       experimental-features = [
         "nix-command"
         "flakes"

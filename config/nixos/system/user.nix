@@ -29,6 +29,11 @@
       ];
     };
 
+    services.openssh = {
+      enable = true;
+      settings.PasswordAuthentication = false;
+    };
+
     # set default shell to fish
     programs.fish.enable = true; # For autocompletions. We will use the home manager module for configuration.
 
