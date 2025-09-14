@@ -105,12 +105,12 @@
             "org/gnome/shell".favorite-apps = [
               "zen-twilight.desktop"
               "org.gnome.Nautilus.desktop"
-              "thunderbird.desktop"
+              "FFPWA-012345678940AECB988852FB57.desktop" # protonmail
               "com.mitchellh.ghostty.desktop"
-              "vesktop.desktop"
+              "discord.desktop"
               "spotify.desktop"
               "steam.desktop"
-              "chrome-fjpeaicnionajpipomepndgbcpchdmlb-Default.desktop" # Instagram PWA
+              "FFPWA-01234567892E23DB21B95DEF0A.desktop" # instagram-pwa
               "writer.desktop"
               "calc.desktop"
             ];
