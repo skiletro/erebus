@@ -25,9 +25,6 @@ TODO
   - KDE Plasma
   - Other gaming packages and options (https://github.com/skiletro/nixfiles/blob/master/modules/pc/gaming/misc.nix)
   - Chromium (or chromium-like browser, this is for web dev testing in mutliple engines)
-  - LACT (AMD GPU Overclocking)
-  - Localsend (Open source file sending, should also try and figure out if an Airdrop-compatible solution is avail.)
-  - Vial, or VIA.
   - Secrets (most likely using sops-nix, needed for GitHub Access Token, Rclone private key, system user password)
 
   And the following is some "nice to haves"
