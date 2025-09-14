@@ -37,5 +37,7 @@ in
       capabilities = "cap_setuid+ep";
       source = lib.getExe' package "gsr-global-hotkeys";
     };
+
+    systemd.user.services.gpu-screen-recorder-ui.wantedBy = [ "default.target" ]; # Start on startup
   };
 }
