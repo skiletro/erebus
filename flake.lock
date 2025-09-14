@@ -181,26 +181,6 @@
         "type": "github"
       }
     },
-    "cachy-proton": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1756134364,
-        "narHash": "sha256-72rYen+1/q0vc/4BFHeLDcodEEGsT3sO6lb1Gb2C32A=",
-        "owner": "jackgrahn",
-        "repo": "cachy-proton-nix",
-        "rev": "d1ccf59493e573047571702c7eae209f3a27518f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "jackgrahn",
-        "repo": "cachy-proton-nix",
-        "type": "github"
-      }
-    },
     "catppuccin": {
       "inputs": {
         "nixpkgs": [
@@ -1852,7 +1832,6 @@
     },
     "root": {
       "inputs": {
-        "cachy-proton": "cachy-proton",
         "chaotic": "chaotic",
         "cursors": "cursors",
         "diffy": "diffy",

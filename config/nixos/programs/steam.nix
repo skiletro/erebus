@@ -24,9 +24,9 @@
       };
       stylix.enable = true;
       extraCompatPackages = with pkgs; [
-        proton-ge-bin # GloriousEggroll
+        proton-cachyos_x86_64_v3
+        proton-ge-custom
         steam-play-none # Allows you to run a game without Proton if it is otherwise forced.
-        inputs'.cachy-proton.packages.proton-cachyos # Proton-CachyOS, optimised a bit better
       ];
       extest.enable = true;
       protontricks.enable = true;

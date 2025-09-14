@@ -71,11 +71,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    cachy-proton = {
-      url = "github:jackgrahn/cachy-proton-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     steam-config-nix = {
       url = "github:different-name/steam-config-nix";
       inputs.nixpkgs.follows = "nixpkgs";
