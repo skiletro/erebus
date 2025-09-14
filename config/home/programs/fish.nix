@@ -49,7 +49,7 @@
           '';
       };
 
-      shellAbbrs.n = "cd ~/.nix_config/";
+      shellAbbrs.n = "cd ~/Projects/erebus";
     };
 
     # prompt
