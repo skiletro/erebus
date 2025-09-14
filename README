@@ -23,7 +23,6 @@ TODO
   - Add "Fix Steam Icons" to the Steam module. (https://github.com/beedywool/Gnome-Steam-Shortcut-Fixer/)
   - Proton Drive rclone service
   - KDE Plasma
-  - GSR-UI
   - Other gaming packages and options (https://github.com/skiletro/nixfiles/blob/master/modules/pc/gaming/misc.nix)
   - Chromium (or chromium-like browser, this is for web dev testing in mutliple engines)
   - LACT (AMD GPU Overclocking)
