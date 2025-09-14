@@ -41,11 +41,14 @@
     { device = "/dev/disk/by-uuid/ae2dc9bc-8451-48f4-a42b-916e449f30b8"; }
   ];
 
-  hardware.enableRedistributableFirmware = true;
-
-  # Bluetooth
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
+  hardware = {
+    enableRedistributableFirmware = true;
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
+    amdgpu.overdrive.enable = true;
   };
+
+  system.stateVersion = "25.11";
 }
