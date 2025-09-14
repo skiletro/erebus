@@ -17,7 +17,7 @@
       package = pkgs.steam.override {
         extraProfile = ''
           export PROTON_ENABLE_WAYLAND=1
-          export PRESSURE_VESSEL_FILESYSTEMS_RW="$XDG_RUNTIME_DIR/wivrn/comp_ipc"
+          export PRESSURE_VESSEL_IMPORT_OPENXR_1_RUNTIMES=1
           unset TZ
         '';
       };
