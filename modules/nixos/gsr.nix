@@ -5,7 +5,7 @@
   ...
 }:
 let
-  package = self'.packages.gpu-screen-recorder-ui {
+  package = self'.packages.gpu-screen-recorder-ui.override {
     inherit (config.security) wrapperDir;
   };
 in

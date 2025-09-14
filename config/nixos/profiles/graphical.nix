@@ -14,6 +14,9 @@
         fonts.enable = true;
         virtualisation.enable = true;
       };
+      programs = {
+        vial.enable = true;
+      };
     };
 
     home-manager.sharedModules = lib.singleton {
