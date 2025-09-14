@@ -15,6 +15,7 @@
         virtualisation.enable = true;
       };
       programs = {
+        lact.enable = true;
         vial.enable = true;
       };
     };
