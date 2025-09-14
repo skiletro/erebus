@@ -34,6 +34,7 @@
         libnotify # notifs through scripts
         ngrok # reverse proxy
         nixfmt # nix formatter
+        ncdu
         ouch # cli for compressing and decompressing formats
         outfieldr # `tldr` client
         playerctl # control media w/ cli
