@@ -46,7 +46,44 @@
       xorg.xprop # fixes notif spam with unite extension
     ];
 
-    home-manager.sharedModules = lib.singleton {
+    environment = {
+      systemPackages = with pkgs; [
+        adwaita-icon-theme # fixes some missing icons
+        adwaita-icon-theme-legacy # fixes some missing icons
+        gapless
+        gjs # fixes ding ext
+        libheif
+        libheif.out # HEIC Image Previews
+        mission-center # Task Manager
+        papers
+        showtime # Video Player
+        smile
+
+        # Thumbnailers
+        ffmpegthumbnailer # fixes video thumbnails without totem
+        bign-handheld-thumbnailer # for nintendo ds and 3ds roms
+        nufraw-thumbnailer # for raw images
+        gnome-epub-thumbnailer # for epub and mobi books
+      ];
+      pathsToLink = [ "share/thumbnailers" ];
+    };
+
+    services.udev.packages = [ pkgs.gnome-settings-daemon ];
+
+    nixpkgs.overlays = [
+      (_final: prev: {
+        nautilus = prev.nautilus.overrideAttrs (nprev: {
+          buildInputs =
+            nprev.buildInputs
+            ++ (with pkgs.gst_all_1; [
+              gst-plugins-good
+              gst-plugins-bad
+            ]);
+        });
+      })
+    ];
+
+    home-manager.sharedModules = lib.singleton (userArgs: {
       dconf = {
         enable = true;
         settings =
@@ -121,6 +158,84 @@
                 ])
               ];
               xkb-options = [ ];
+            };
+
+            "org/gnome/settings-daemon/plugins/media-keys" = {
+              # TODO: Write a function that makes this a bit nicer.
+              custom-keybindings = [
+                "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+                "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
+                "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
+                "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/"
+                "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/"
+                "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/"
+              ];
+              home = [ "<Super>e" ];
+              www = [ "<Super>f" ];
+              calculator = [ "<Super>c" ];
+            };
+
+            # TODO: Probably also a function that generates these a bit nicer, preferably so I don't have to do the fuckery above ^^
+            "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+              binding = "<Super>Return";
+              command = "${lib.getExe userArgs.config.programs.ghostty.package}";
+              name = "Launch Terminal";
+            };
+
+            "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+              binding = "<Super>period";
+              command = "smile";
+              name = "Open Emoji Picker";
+            };
+
+            "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
+              binding = "Launch9"; # F18
+              command = "${lib.getExe pkgs.playerctl} -p spotify volume 0.02+";
+              name = "Spotify Volume Up";
+            };
+
+            "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
+              binding = "Launch8"; # F17
+              command = "${lib.getExe pkgs.playerctl} -p spotify volume 0.02-";
+              name = "SpotifyVolumeDown";
+            };
+
+            # Only enable these keybindings if we have GSR!
+            "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4" =
+              lib.mkIf config.erebus.profiles.gaming.enable
+                {
+                  binding = "<Shift><Alt>F9";
+                  command = "gsr-ui-cli replay-save";
+                  name = "Capture Replay with GSR UI";
+                };
+
+            "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5" =
+              lib.mkIf config.erebus.profiles.gaming.enable
+                {
+                  binding = "<Super>z";
+                  command = "gsr-ui-cli toggle-show";
+                  name = "Launch GSR UI";
+                };
+
+            "org/gnome/shell/keybindings" = {
+              show-screenshot-ui = [ "<Shift><Super>s" ];
+            };
+
+            "org/gnome/desktop/wm/keybindings" = {
+              close = [ "<Shift><Super>q" ];
+              show-desktop = [ "<Shift><Super>d" ];
+              switch-to-workspace-1 = [ "<Super>1" ];
+              switch-to-workspace-2 = [ "<Super>2" ];
+              switch-to-workspace-3 = [ "<Super>3" ];
+              switch-to-workspace-4 = [ "<Super>4" ];
+              switch-to-workspace-5 = [ "<Super>5" ];
+              minimize = [ "<Shift><Super>c" ];
+              move-to-workspace-1 = [ "<Shift><Super>1" ];
+              move-to-workspace-2 = [ "<Shift><Super>2" ];
+              move-to-workspace-3 = [ "<Shift><Super>3" ];
+              move-to-workspace-4 = [ "<Shift><Super>4" ];
+              move-to-workspace-5 = [ "<Shift><Super>5" ];
+              toggle-fullscreen = [ "<Shift><Super>f" ];
             };
 
             # Extensions
@@ -242,6 +357,6 @@
             };
           };
       };
-    };
+    });
   };
 }
