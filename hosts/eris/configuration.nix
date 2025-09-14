@@ -22,6 +22,7 @@
     itch # Itch.io Client
     kdiskmark # Drive Benchmark Tool
     libreoffice # Office Suite
+    localsend
     ludusavi # Game Save Backup Manager
     obs-studio # Screen Recording and Broadcast Suite
     proton-pass # Password manager
