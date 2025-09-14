@@ -48,6 +48,6 @@
       };
     };
 
-    xdg.autostart.entries = config.lib.erebus.autostartEntry "Discord Silent" "${lib.getExe config.programs.nixcord.vesktop.package} --start-minimized";
+    xdg.autostart.entries = config.lib.erebus.autostartEntry "Discord Silent" "${lib.getExe config.programs.nixcord.discord.package} --start-minimized";
   };
 }
