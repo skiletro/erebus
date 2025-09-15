@@ -9,7 +9,6 @@ let
   nixosHosts = {
     eris = "x86_64-linux";
     keres = "aarch64-linux";
-    vm = "x86_64-linux";
   };
 
   darwinHosts = {
