@@ -9,7 +9,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    btop-rocm
     delfin # Jellyfin Client
     element-desktop # Matrix Client
     flare-signal # Signal Client

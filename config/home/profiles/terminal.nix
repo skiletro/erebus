@@ -12,6 +12,7 @@
     erebus.programs = {
       bat.enable = true;
       beets.enable = lib.mkIf pkgs.stdenvNoCC.hostPlatform.isLinux true;
+      btop.enable = true;
       carapace.enable = true;
       direnv.enable = true;
       eza.enable = true;
