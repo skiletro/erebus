@@ -1,38 +1,17 @@
 { pkgs, ... }:
 {
   erebus = {
-    system.user.enable = true;
+    profiles = {
+      base.enable = true;
+      graphical.enable = true;
+      terminal.enable = true;
+    };
   };
 
-  home-manager.sharedModules = [
-    {
-      erebus.programs = {
-        bat.enable = true;
-        carapace.enable = true;
-        direnv.enable = true;
-        discord.enable = true;
-        eza.enable = true;
-        fastfetch.enable = true;
-        fish.enable = true;
-        ghostty.enable = true;
-        git.enable = true;
-        helix.enable = true;
-        yazi.enable = true;
-        spotify.enable = true;
-        zen.enable = true;
-        prismlauncher.enable = true;
-      };
-    }
-  ];
-
   environment.systemPackages = with pkgs; [
-    ffmpeg
-    fzf
-    lazygit
     moonlight-qt
     obsidian
     utm
-    yt-dlp
   ];
 
   homebrew = {

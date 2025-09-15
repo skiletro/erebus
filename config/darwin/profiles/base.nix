@@ -10,12 +10,9 @@
   config = lib.mkIf config.erebus.profiles.base.enable {
     erebus = {
       system = {
-        boot.enable = true;
-        locale.enable = true;
         user.enable = true;
       };
-
-      services.tailscale.enable = lib.mkDefault true;
     };
+    services.tailscale.enable = true;
   };
 }

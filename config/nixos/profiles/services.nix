@@ -10,6 +10,7 @@
     erebus.services = {
       rnnoise.enable = true;
       wireguard.enable = true;
+      tailscale.enable = true;
     };
   };
 }

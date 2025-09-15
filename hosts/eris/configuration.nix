@@ -31,9 +31,5 @@
     tenacity # Audio Editor
     video-trimmer # Trims Videos
     vlc # Media Player, mostly used for m3u files
-
-    # Terminal
-    ffmpeg # Manipulate Video
-    imagemagick # Manipulate Images
   ];
 }
