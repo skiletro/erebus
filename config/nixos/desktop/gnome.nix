@@ -20,7 +20,6 @@
         appindicator
         color-picker
         dash-to-dock
-        gtk4-desktop-icons-ng-ding
         mpris-label
         search-light
         smile-complementary-extension
@@ -330,15 +329,6 @@
                 "scale-height" = 0.2;
                 "popup-at-cursor-monitor" = true;
               };
-
-            # Ding
-            "org/gnome/shell/extensions/gtk4-ding" = {
-              start-corner = "top-right";
-              show-drop-place = false;
-              show-home = false;
-              show-trash = false;
-              show-volumes = false;
-            };
 
             # Smile (Emoji Selector)
             "it/mijorus/smile" = {
