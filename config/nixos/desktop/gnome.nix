@@ -24,7 +24,6 @@
         mpris-label
         search-light
         smile-complementary-extension
-        unite
         weather-oclock
       ];
     };
@@ -43,7 +42,6 @@
       seahorse
       simple-scan
       totem
-      xorg.xprop # fixes notif spam with unite extension
     ];
 
     environment = {
@@ -332,15 +330,6 @@
                 "scale-height" = 0.2;
                 "popup-at-cursor-monitor" = true;
               };
-
-            "org/gnome/shell/extensions/unite" = {
-              "hide-activities-button" = "never";
-              "use-activities-text" = false;
-              "show-desktop-name" = false;
-              "hide-window-titlebars" = "never";
-              "show-window-buttons" = "never";
-              "show-window-title" = "never";
-            };
 
             # Ding
             "org/gnome/shell/extensions/gtk4-ding" = {
