@@ -282,8 +282,6 @@
               hot-keys = false;
             };
 
-            "org/gnome/shell/extensions/blur-my-shell/dash-to-dock".pipeline = "pipeline_default";
-
             "org/gnome/shell/extensions/mpris-label" = {
               divider-string = " - ";
               extension-place = "center";
