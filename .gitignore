@@ -2,3 +2,5 @@
 .envrc
 result
 *.qcow2
+.DS_Store
+**/.DS_Store
