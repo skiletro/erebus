@@ -15,6 +15,7 @@
 
     services.desktopManager.gnome = {
       enable = true;
+      fixes.enable = true;
       extensions = with pkgs.gnomeExtensions; [
         accent-directories
         appindicator
@@ -25,69 +26,15 @@
         smile-complementary-extension
         weather-oclock
       ];
-    };
-
-    environment.gnome.excludePackages = with pkgs; [
-      epiphany
-      evince
-      geary
-      gnome-connections
-      gnome-contacts
-      gnome-console
-      gnome-maps
-      gnome-music
-      gnome-tour
-      gnome-software
-      seahorse
-      simple-scan
-      totem
-    ];
-
-    environment = {
-      systemPackages = with pkgs; [
-        adwaita-icon-theme # fixes some missing icons
-        adwaita-icon-theme-legacy # fixes some missing icons
-        gapless
-        gjs # fixes ding ext
-        libheif
-        libheif.out # HEIC Image Previews
-        mission-center # Task Manager
-        papers
-        showtime # Video Player
-        smile
-
-        # Thumbnailers
+      thumbnailers = with pkgs; [
         ffmpegthumbnailer # fixes video thumbnails without totem
         bign-handheld-thumbnailer # for nintendo ds and 3ds roms
         nufraw-thumbnailer # for raw images
         gnome-epub-thumbnailer # for epub and mobi books
       ];
-      pathsToLink = [ "share/thumbnailers" ];
     };
 
-    services.udev.packages = [ pkgs.gnome-settings-daemon ];
-
-    nixpkgs.overlays = [
-      (_final: prev: {
-        nautilus = prev.nautilus.overrideAttrs (nprev: {
-          buildInputs =
-            nprev.buildInputs
-            ++ (with pkgs.gst_all_1; [
-              gst-plugins-good
-              gst-plugins-bad
-            ]);
-        });
-      })
-    ];
-
     home-manager.sharedModules = lib.singleton (userArgs: {
-      stylix.iconTheme = {
-        enable = true;
-        package = pkgs.morewaita-icon-theme;
-        dark = "MoreWaita";
-        light = "MoreWaita";
-      };
-
       dconf = {
         enable = true;
         settings =
