@@ -19,6 +19,10 @@
         lact.enable = true;
         vial.enable = true;
       };
+      services = {
+        rnnoise.enable = true;
+        wireguard.enable = true;
+      };
     };
 
     environment.systemPackages = with pkgs; [ wineWowPackages.stable ];

@@ -4,7 +4,6 @@
     base.enable = true;
     gaming.enable = true;
     graphical.enable = true;
-    services.enable = true;
     terminal.enable = true;
   };
 
