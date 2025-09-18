@@ -43,7 +43,7 @@
           gopls.config.gofumpt = true;
           harper = {
             command = lib.getExe pkgs.harper;
-            args = [ "--studio" ];
+            args = [ "--stdio" ];
             config.harper-ls.dialect = "British";
           };
         };
