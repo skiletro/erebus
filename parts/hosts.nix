@@ -92,6 +92,7 @@ let
       stylix = {
         enable = true;
         base16Scheme = "${self'.packages.base16-schemes-unstable}/share/themes/penumbra-dark-contrast-plus-plus.yaml";
+        polarity = "dark";
         image =
           let
             wallpaper = pkgs.fetchurl {
