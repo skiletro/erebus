@@ -20,7 +20,7 @@
             type = listOf str;
           };
           icon = lib.mkOption {
-            type = str; # TODO: this option can also technically include paths :)
+            type = nullOr (either str path);
           };
         };
       });

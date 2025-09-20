@@ -2,6 +2,7 @@
   self,
   lib,
   config,
+  pkgs,
   ...
 }:
 {
@@ -23,7 +24,10 @@
           url = "https://instagram.com";
           manifestUrl = "https://instagram.com/manifest.json";
           categories = [ "Network" ];
-          icon = "facebook-messenger";
+          icon = pkgs.fetchurl {
+            url = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/1920px-Instagram_logo_2016.svg.png";
+            sha256 = "02fd9v778x91b2i2ywhj50lfsqzax5fkc723npzbmh990l80cwjm";
+          };
         };
       };
     };
