@@ -56,7 +56,7 @@
             "org/gnome/shell".favorite-apps = [
               "zen-twilight.desktop"
               "org.gnome.Nautilus.desktop"
-              "FFPWA-012345678940AECB988852FB57.desktop" # protonmail
+              "proton-mail.desktop"
               "com.mitchellh.ghostty.desktop"
               "discord.desktop"
               "spotify.desktop"

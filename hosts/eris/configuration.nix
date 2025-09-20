@@ -25,6 +25,7 @@
     ludusavi # Game Save Backup Manager
     obs-studio # Screen Recording and Broadcast Suite
     proton-pass # Password manager
+    protonmail-desktop # Mail App
     qbittorrent # Torrent Client
     tenacity # Audio Editor
     video-trimmer # Trims Videos

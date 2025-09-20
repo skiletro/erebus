@@ -13,16 +13,6 @@
     programs.firefoxpwa = {
       enable = true;
       webapps = {
-        "Proton Mail" = {
-          url = "https://mail.proton.me";
-          manifestUrl = "https://mail.proton.me/manifest.json";
-          categories = [
-            "Office"
-            "Network"
-            "Email"
-          ];
-          icon = "proton-mail";
-        };
         "WhatsApp" = {
           url = "https://web.whatsapp.com";
           manifestUrl = "https://web.whatsapp.com/manifest.json";
