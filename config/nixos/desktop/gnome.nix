@@ -194,7 +194,7 @@
               icon-opacity = 255;
               icon-size = 0;
               legacy-tray-enabled = false;
-              tray-pos = "center";
+              tray-pos = "right";
             };
 
             "org/gnome/shell/extensions/dash-to-dock" = {
