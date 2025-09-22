@@ -92,6 +92,11 @@
       };
     };
 
+    nix-minecraft = {
+      url = "github:Infinidoge/nix-minecraft";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     ### Theming
     # Inputs that provide themes or anything to do with the style of the system(s).
     cursors.url = "github:lilleaila/nix-cursors";
