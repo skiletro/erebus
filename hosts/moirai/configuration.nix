@@ -9,46 +9,53 @@
   };
 
   environment.systemPackages = with pkgs; [
+    betterdisplay
+    grandperspective
+    hidden-bar
+    iina # media player
+    inkscape
+    m-cli
     moonlight-qt
     obsidian
+    qbittorrent
+    raycast
+    rectangle
+    shortcat
+    signal-desktop-bin
+    skhd # simple hotkey daemon
     utm
+    whatsapp-for-mac
+    xbar
   ];
 
   homebrew = {
-    # TODO: install as many of these as i can with nix instead of homebrew
+    # tui
     casks = [
-      "aerospace"
-      "betterdisplay"
       "blender"
-      "elmedia-player"
       "ente"
       "godot"
-      "handbrake-app"
-      "jordanbaird-ice" # hides some icons in menu bar
+      "handbrake-app" # broken
       "microsoft-office"
       "microsoft-teams"
       "orion"
       "pearcleaner"
+      "pinta"
       "plex"
       "proton-drive"
       "proton-mail"
       "proton-pass"
       "protonvpn"
-      "qbittorrent"
-      "qlvideo"
-      "raycast"
-      "rectangle"
-      "signal"
       "tomatobar" # pomodoro timer
       "unity-hub"
-      "whatsapp"
     ];
 
-    brews = [
-      "cava"
-      "sketchybar" # TODO: actually configure this with nix
-      "skhd-zig" # TODO: probably just replace this with aerospace once configured
-    ];
+    # cli
+    brews = [ ];
+
+    # app store
+    masApps = {
+      Xcode = 497799835;
+    };
   };
 
   system.stateVersion = 6; # do not change

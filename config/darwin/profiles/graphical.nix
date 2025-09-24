@@ -8,6 +8,12 @@
     lib.mkEnableOption "graphical applications that are generally wanted on non-headless systems";
 
   config = lib.mkIf config.erebus.profiles.graphical.enable {
+    erebus = {
+      services = {
+        skhd.enable = true;
+      };
+    };
+
     home-manager.sharedModules = lib.singleton {
       erebus.profiles.graphical.enable = true;
     };
