@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 {
   home-manager.sharedModules = lib.singleton (
     {
@@ -9,7 +9,7 @@
     {
       home.activation."setWallpaper" = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
         echo "Setting wallpaper..."
-        /usr/bin/osascript -e "tell application \"Finder\" to set desktop picture to POSIX file \"${config.stylix.image}\""
+        ${lib.getExe pkgs.m-cli} wallpaper ${config.stylix.image}
       '';
 
       # Increase the system font size for macOS to compensate for the
