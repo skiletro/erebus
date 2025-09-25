@@ -20,4 +20,11 @@
       };
     }
   );
+
+  system.defaults.NSGlobalDomain = {
+    AppleInterfaceStyle = "Dark";
+    AppleInterfaceStyleSwitchesAutomatically = false;
+    NSStatusItemSpacing = 8; # default=12
+    NSStatusItemSelectionPadding = 6; # default=6
+  };
 }
