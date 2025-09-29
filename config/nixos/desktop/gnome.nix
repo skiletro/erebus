@@ -15,7 +15,6 @@
 
     services.desktopManager.gnome = {
       enable = true;
-      fixes.enable = true;
       extensions = with pkgs.gnomeExtensions; [
         accent-directories
         appindicator
@@ -32,262 +31,214 @@
         nufraw-thumbnailer # for raw images
         gnome-epub-thumbnailer # for epub and mobi books
       ];
-    };
 
-    home-manager.sharedModules = lib.singleton (userArgs: {
-      dconf = {
-        enable = true;
-        settings =
-          let
-            inherit (lib.gvariant) mkTuple;
-          in
+      settings = {
+        pinned-apps = [
+          "zen-twilight.desktop"
+          "org.gnome.Nautilus.desktop"
+          "proton-mail.desktop"
+          "com.mitchellh.ghostty.desktop"
+          "discord.desktop"
+          "spotify.desktop"
+          "steam.desktop"
+          "FFPWA-01234567892E23DB21B95DEF0A.desktop" # instagram-pwa
+          "writer.desktop"
+          "calc.desktop"
+        ];
+
+        custom-keybindings = [
           {
-            "org/gnome/mutter" = {
-              attach-modal-dialogs = false;
-              center-new-windows = true;
-              dynamic-workspaces = true;
-              edge-tiling = true;
-              experimental-features = [
-                "scale-monitor-framebuffer"
-                "variable-refresh-rate"
-              ];
-            };
+            binding = "<Super>Return";
+            command = "ghostty";
+            name = "Launch Terminal";
+          }
 
-            "org/gnome/shell".favorite-apps = [
-              "zen-twilight.desktop"
-              "org.gnome.Nautilus.desktop"
-              "proton-mail.desktop"
-              "com.mitchellh.ghostty.desktop"
-              "discord.desktop"
-              "spotify.desktop"
-              "steam.desktop"
-              "FFPWA-01234567892E23DB21B95DEF0A.desktop" # instagram-pwa
-              "writer.desktop"
-              "calc.desktop"
-            ];
+          {
+            binding = "<Super>period";
+            command = "smile";
+            name = "Open Emoji Picker";
+          }
 
-            "org/gnome/TextEditor" = {
-              restore-session = false;
-              style-variant = "light";
-            };
+          {
+            binding = "Launch9"; # F18
+            command = "${lib.getExe pkgs.playerctl} -p spotify volume 0.02+";
+            name = "Spotify Volume Up";
+          }
 
-            "org/gnome/desktop/interface" = {
-              accent-color = "pink"; # Set this to whatever matches the colour scheme best.
-              clock-format = "12h";
-              clock-show-weekday = true;
-              enable-animations = true;
-              enable-hot-corners = false;
-              gtk-enable-primary-paste = false;
-            };
-
-            "org/gnome/desktop/media-handling" = {
-              autorun-never = true;
-            };
-
-            "org/gnome/desktop/peripherals/mouse" = {
-              accel-profile = "flat";
-              speed = 0.7;
-            };
-
-            "org/gnome/desktop/peripherals/touchpad" = {
-              two-finger-scrolling-enabled = true;
-            };
-
-            "org/gnome/desktop/wm/preferences" = {
-              auto-raise = true;
-              button-layout = "close,minimize,maximize:";
-              focus-mode = "click";
-              num-workspaces = 1;
-              resize-with-right-button = true;
-            };
-
-            "org/gnome/desktop/input-sources" = {
-              sources = [
-                (mkTuple [
-                  "xkb"
-                  "gb"
-                ])
-              ];
-              xkb-options = [ ];
-            };
-
-            "org/gnome/settings-daemon/plugins/media-keys" = {
-              # TODO: Write a function that makes this a bit nicer.
-              custom-keybindings = [
-                "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
-                "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
-                "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
-                "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/"
-                "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/"
-                "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/"
-              ];
-              home = [ "<Super>e" ];
-              www = [ "<Super>f" ];
-              calculator = [ "<Super>c" ];
-            };
-
-            # TODO: Probably also a function that generates these a bit nicer, preferably so I don't have to do the fuckery above ^^
-            "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-              binding = "<Super>Return";
-              command = "${lib.getExe userArgs.config.programs.ghostty.package}";
-              name = "Launch Terminal";
-            };
-
-            "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
-              binding = "<Super>period";
-              command = "smile";
-              name = "Open Emoji Picker";
-            };
-
-            "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
-              binding = "Launch9"; # F18
-              command = "${lib.getExe pkgs.playerctl} -p spotify volume 0.02+";
-              name = "Spotify Volume Up";
-            };
-
-            "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
-              binding = "Launch8"; # F17
-              command = "${lib.getExe pkgs.playerctl} -p spotify volume 0.02-";
-              name = "SpotifyVolumeDown";
-            };
-
-            # Only enable these keybindings if we have GSR!
-            "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4" =
-              lib.mkIf config.erebus.profiles.gaming.enable
-                {
-                  binding = "<Shift><Alt>F9";
-                  command = "gsr-ui-cli replay-save";
-                  name = "Capture Replay with GSR UI";
-                };
-
-            "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5" =
-              lib.mkIf config.erebus.profiles.gaming.enable
-                {
-                  binding = "<Super>z";
-                  command = "gsr-ui-cli toggle-show";
-                  name = "Launch GSR UI";
-                };
-
-            "org/gnome/shell/keybindings" = {
-              show-screenshot-ui = [ "<Shift><Super>s" ];
-            };
-
-            "org/gnome/desktop/wm/keybindings" = {
-              close = [ "<Shift><Super>q" ];
-              show-desktop = [ "<Shift><Super>d" ];
-              switch-to-workspace-1 = [ "<Super>1" ];
-              switch-to-workspace-2 = [ "<Super>2" ];
-              switch-to-workspace-3 = [ "<Super>3" ];
-              switch-to-workspace-4 = [ "<Super>4" ];
-              switch-to-workspace-5 = [ "<Super>5" ];
-              minimize = [ "<Shift><Super>c" ];
-              move-to-workspace-1 = [ "<Shift><Super>1" ];
-              move-to-workspace-2 = [ "<Shift><Super>2" ];
-              move-to-workspace-3 = [ "<Shift><Super>3" ];
-              move-to-workspace-4 = [ "<Shift><Super>4" ];
-              move-to-workspace-5 = [ "<Shift><Super>5" ];
-              toggle-fullscreen = [ "<Shift><Super>f" ];
-            };
-
-            # Extensions
-            "org/gnome/shell/extensions/appindicator" = {
-              icon-opacity = 255;
-              icon-size = 0;
-              legacy-tray-enabled = false;
-              tray-pos = "right";
-            };
-
-            "org/gnome/shell/extensions/dash-to-dock" = {
-              apply-custom-theme = false;
-              background-color = "rgb(36,31,49)";
-              background-opacity = 0.8;
-              click-action = "minimize-or-previews";
-              custom-background-color = false;
-              custom-theme-shrink = false;
-              dash-max-icon-size = 40;
-              disable-overview-on-startup = true;
-              dock-fixed = false;
-              dock-position = "LEFT";
-              extend-height = false;
-              height-fraction = 0.9;
-              icon-size-fixed = true;
-              intellihide-mode = "ALL_WINDOWS";
-              middle-click-action = "quit";
-              preferred-monitor = -2;
-              preferred-monitor-by-connector = "DP-2";
-              preview-size-scale = 0.0;
-              running-indicator-style = "DOT";
-              scroll-action = "do-nothing";
-              shift-click-action = "launch";
-              shift-middle-click-action = "launch";
-              show-apps-at-top = false;
-              show-mounts = true;
-              show-mounts-only-mounted = true;
-              show-show-apps-button = false;
-              show-trash = false;
-              transparency-mode = "DEFAULT";
-              hot-keys = false;
-            };
-
-            "org/gnome/shell/extensions/mpris-label" = {
-              divider-string = " - ";
-              extension-place = "center";
-              icon-padding = 5;
-              left-click-action = "play-pause";
-              left-padding = 0;
-              middle-click-action = "none";
-              mpris-sources-blacklist = "Mozilla zen,Mozilla zen-twilight,Chromium";
-              right-click-action = "open-menu";
-              right-padding = 0;
-              second-field = "";
-              show-icon = "left";
-              thumb-backward-action = "none";
-              thumb-forward-action = "none";
-              use-whitelisted-sources-only = false;
-              extension-index = 0;
-            };
-
-            # Search Light
-            "org/gnome/shell/extensions/search-light" =
-              with config.lib.stylix.colors;
-              let
-                mkColor =
-                  r: g: b:
-                  mkTuple (
-                    map builtins.fromJSON [
-                      r
-                      g
-                      b
-                    ]
-                    ++ [ 1.0 ]
-                  );
-              in
-              {
-                "shortcut-search" = [ "<Super>space" ];
-                "secondary-shortcut-search" = [ "<Super>d" ];
-                "border-radius" = 1.1;
-                "background-color" = mkColor base00-dec-r base00-dec-g base00-dec-b;
-                "text-color" = mkColor base05-dec-r base05-dec-g base05-dec-b;
-                "border-color" = mkColor base01-dec-r base01-dec-g base01-dec-b;
-                "border-thickness" = 1;
-                "scale-width" = 0.17;
-                "scale-height" = 0.2;
-                "popup-at-cursor-monitor" = true;
-              };
-
-            # Smile (Emoji Selector)
-            "it/mijorus/smile" = {
-              is-first-run = false;
-              load-hidden-on-startup = true;
-            };
-
-            "org/gnome/shell/extensions/color-picker" = {
-              enable-shortcut = true;
-              color-picker-shortcut = [ "<Super>l" ];
-              enable-systray = false;
-            };
-          };
+          {
+            binding = "Launch8"; # F17
+            command = "${lib.getExe pkgs.playerctl} -p spotify volume 0.02-";
+            name = "Spotify Volume Down";
+          }
+          {
+            binding = "<Shift><Alt>F9";
+            command = "gsr-ui-cli replay-save";
+            name = "Capture Replay with GSR UI";
+          }
+          {
+            binding = "<Super>z";
+            command = "gsr-ui-cli toggle-show";
+            name = "Launch GSR UI";
+          }
+        ];
       };
-    });
+
+      dconf-settings = {
+        "org/gnome/mutter" = {
+          attach-modal-dialogs = false;
+          center-new-windows = true;
+          dynamic-workspaces = true;
+          edge-tiling = true;
+          experimental-features = [
+            "scale-monitor-framebuffer"
+            "variable-refresh-rate"
+          ];
+        };
+
+        "org/gnome/TextEditor" = {
+          restore-session = false;
+          style-variant = "light";
+        };
+
+        "org/gnome/desktop/interface" = {
+          accent-color = "pink"; # Set this to whatever matches the colour scheme best.
+          clock-format = "12h";
+          clock-show-weekday = true;
+          enable-animations = true;
+          enable-hot-corners = false;
+          gtk-enable-primary-paste = false;
+        };
+
+        "org/gnome/desktop/media-handling" = {
+          autorun-never = true;
+        };
+
+        "org/gnome/desktop/peripherals/mouse" = {
+          accel-profile = "flat";
+          speed = 0.7;
+        };
+
+        "org/gnome/desktop/peripherals/touchpad" = {
+          two-finger-scrolling-enabled = true;
+        };
+
+        "org/gnome/desktop/wm/preferences" = {
+          auto-raise = true;
+          button-layout = "close,minimize,maximize:";
+          focus-mode = "click";
+          num-workspaces = 1;
+          resize-with-right-button = true;
+        };
+
+        "org/gnome/desktop/input-sources" = {
+          sources = [
+            (lib.gvariant.mkTuple [
+              "xkb"
+              "gb"
+            ])
+          ];
+          xkb-options = [ ];
+        };
+
+        "org/gnome/settings-daemon/plugins/media-keys" = {
+          home = [ "<Super>e" ];
+          www = [ "<Super>f" ];
+          calculator = [ "<Super>c" ];
+        };
+
+        "org/gnome/shell/keybindings" = {
+          show-screenshot-ui = [ "<Shift><Super>s" ];
+        };
+
+        "org/gnome/desktop/wm/keybindings" = {
+          close = [ "<Shift><Super>q" ];
+          show-desktop = [ "<Shift><Super>d" ];
+          switch-to-workspace-1 = [ "<Super>1" ];
+          switch-to-workspace-2 = [ "<Super>2" ];
+          switch-to-workspace-3 = [ "<Super>3" ];
+          switch-to-workspace-4 = [ "<Super>4" ];
+          switch-to-workspace-5 = [ "<Super>5" ];
+          minimize = [ "<Shift><Super>c" ];
+          move-to-workspace-1 = [ "<Shift><Super>1" ];
+          move-to-workspace-2 = [ "<Shift><Super>2" ];
+          move-to-workspace-3 = [ "<Shift><Super>3" ];
+          move-to-workspace-4 = [ "<Shift><Super>4" ];
+          move-to-workspace-5 = [ "<Shift><Super>5" ];
+          toggle-fullscreen = [ "<Shift><Super>f" ];
+        };
+
+        # Extensions
+        # Tray
+        "org/gnome/shell/extensions/appindicator" = {
+          icon-opacity = 255;
+          icon-size = 0;
+          legacy-tray-enabled = false;
+          tray-pos = "right";
+        };
+
+        # Dash to Dock
+        "org/gnome/shell/extensions/dash-to-dock" = {
+          click-action = "minimize-or-previews";
+          dash-max-icon-size = 40;
+          disable-overview-on-startup = true;
+          dock-fixed = false;
+          dock-position = "LEFT";
+          extend-height = false;
+          height-fraction = 0.9;
+          icon-size-fixed = true;
+          intellihide-mode = "ALL_WINDOWS";
+          middle-click-action = "quit";
+          preview-size-scale = 0.0;
+          running-indicator-style = "DOT";
+          scroll-action = "do-nothing";
+          shift-click-action = "launch";
+          shift-middle-click-action = "launch";
+          show-apps-at-top = false;
+          show-mounts = true;
+          show-mounts-only-mounted = true;
+          show-show-apps-button = false;
+          show-trash = false;
+          hot-keys = false;
+        };
+
+        "org/gnome/shell/extensions/mpris-label" = {
+          divider-string = " - ";
+          extension-place = "center";
+          icon-padding = 5;
+          left-click-action = "play-pause";
+          left-padding = 0;
+          middle-click-action = "none";
+          mpris-sources-blacklist = "Mozilla zen,Mozilla zen-twilight,Chromium";
+          right-click-action = "open-menu";
+          right-padding = 0;
+          second-field = "";
+          show-icon = "left";
+          thumb-backward-action = "none";
+          thumb-forward-action = "none";
+          use-whitelisted-sources-only = false;
+          extension-index = 0;
+        };
+
+        # Search Light
+        "org/gnome/shell/extensions/search-light" = {
+          "shortcut-search" = [ "<Super>space" ];
+          "secondary-shortcut-search" = [ "<Super>d" ];
+          "popup-at-cursor-monitor" = true;
+        };
+
+        # Smile (Emoji Selector)
+        "it/mijorus/smile" = {
+          is-first-run = false;
+          load-hidden-on-startup = true;
+        };
+
+        # Color Picker
+        "org/gnome/shell/extensions/color-picker" = {
+          enable-shortcut = true;
+          color-picker-shortcut = [ "<Super>l" ];
+          enable-systray = false;
+        };
+      };
+    };
   };
 }
