@@ -7,6 +7,9 @@
           git
           just
           nh
+          ssh-to-age
+          sops
+          nixos-rebuild
         ];
         shellHook =
           let
