@@ -2,6 +2,7 @@
   lib,
   config,
   pkgs,
+  self',
   ...
 }:
 {
@@ -37,6 +38,7 @@
       ncdu
       ouch # cli for compressing and decompressing formats
       outfieldr # `tldr` client
+      self'.packages.owo-sh
       unrar
       wget
       ffmpeg
