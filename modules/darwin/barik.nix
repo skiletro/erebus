@@ -23,10 +23,6 @@
     home-manager.sharedModules = lib.singleton {
       home.file.".barik-config.toml".source = (pkgs.formats.toml { }).generate "barik-config" (
         lib.mergeAttrsList [
-          {
-            aerospace.path = lib.mkIf config.services.aerospace.enable config.services.aerospace.package;
-            yabai.path = lib.mkIf config.services.yabai.enable config.services.yabai.package;
-          }
           config.services.barik.settings
         ]
       );
