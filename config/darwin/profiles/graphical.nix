@@ -10,6 +10,7 @@
   config = lib.mkIf config.erebus.profiles.graphical.enable {
     erebus = {
       services = {
+        aerospace.enable = true; # wm
         skhd.enable = true;
       };
     };
