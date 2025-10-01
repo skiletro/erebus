@@ -25,6 +25,7 @@
               sha256 = "sha256-fECoZKRQeSzEoDjQTaxB0b9HAb1li8F4Kqxfxs4FITs=";
             }
           );
+          macos-titlebar-style = lib.mkIf pkgs.stdenvNoCC.hostPlatform.isDarwin "hidden";
         };
     };
   };
