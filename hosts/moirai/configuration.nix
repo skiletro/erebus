@@ -11,7 +11,6 @@
   environment.systemPackages = with pkgs; [
     betterdisplay
     grandperspective
-    hidden-bar
     iina # media player
     inkscape
     m-cli
@@ -19,10 +18,7 @@
     obsidian
     qbittorrent
     raycast
-    rectangle
-    shortcat
     signal-desktop-bin
-    skhd # simple hotkey daemon
     utm
     whatsapp-for-mac
   ];
@@ -44,7 +40,6 @@
       "proton-mail"
       "proton-pass"
       "protonvpn"
-      "tomatobar" # pomodoro timer
       "unity-hub"
     ];
 
