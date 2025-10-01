@@ -4,7 +4,6 @@
     ../config
     ../modules
     ../pkgs
-
-    inputs.home-manager.flakeModules.home-manager
+    (inputs.import-tree ../modules/flake)
   ];
 }

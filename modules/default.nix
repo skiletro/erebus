@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, inputs, ... }:
 let
   isImportable =
     path: type:
@@ -21,8 +21,13 @@ let
   };
 in
 {
-  imports = map genModuleAttrs [
-    "home"
-    "nixos"
-  ];
+  imports =
+    (map genModuleAttrs [
+      "home"
+      "nixos"
+      "darwin"
+    ])
+    ++ [
+      inputs.home-manager.flakeModules.home-manager
+    ];
 }
