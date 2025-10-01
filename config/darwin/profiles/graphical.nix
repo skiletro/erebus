@@ -12,6 +12,7 @@
       services = {
         aerospace.enable = true; # wm
         skhd.enable = true;
+        barik.enable = true; # bar
       };
     };
 
