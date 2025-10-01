@@ -25,7 +25,6 @@
     skhd # simple hotkey daemon
     utm
     whatsapp-for-mac
-    xbar
   ];
 
   homebrew = {
