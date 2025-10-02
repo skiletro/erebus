@@ -14,7 +14,7 @@
       settings = {
         after-startup-command = [
           "exec-and-forget open -a Barik.app"
-          "exec-and-forget ${lib.getExe pkgs.jankyborders} active_color=0xff${config.lib.stylix.colors.base0B} inactive_color=0xff${config.lib.stylix.colors.base00} width=4.0"
+          "exec-and-forget ${lib.getExe pkgs.jankyborders} active_color=0xff${config.lib.stylix.colors.base05} inactive_color=0xff${config.lib.stylix.colors.base00} width=4.0"
         ];
 
         enable-normalization-flatten-containers = true;
