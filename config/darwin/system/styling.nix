@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, config, ... }:
 {
   home-manager.sharedModules = lib.singleton (
     {
@@ -26,5 +26,6 @@
     AppleInterfaceStyleSwitchesAutomatically = false;
     NSStatusItemSpacing = 8; # default=12
     NSStatusItemSelectionPadding = 6; # default=6
+    _HIHideMenuBar = if config.erebus.services.aerospace.enable then true else false;
   };
 }
