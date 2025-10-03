@@ -2,6 +2,7 @@
   lib,
   config,
   pkgs,
+  self',
   ...
 }:
 {
@@ -14,18 +15,17 @@
   };
 
   config = lib.mkIf config.services.barik.enable {
-    # TODO: package this, as to not have to rely on homebrew.
-    homebrew = {
-      casks = [ "barik" ];
-      taps = [ "mocki-toki/formulae" ];
-    };
+    environment.systemPackages = [ self'.packages.barik ];
 
     home-manager.sharedModules = lib.singleton {
-      home.file.".barik-config.toml".source = (pkgs.formats.toml { }).generate "barik-config" (
-        lib.mergeAttrsList [
-          config.services.barik.settings
-        ]
-      );
+      home.file.".barik-config.toml" = {
+        source = (pkgs.formats.toml { }).generate "barik-config" config.services.barik.settings;
+        onChange = # sh
+          ''
+            ${lib.getExe' pkgs.toybox "pkill"} Barik
+            open -a Barik.app
+          '';
+      };
     };
   };
 }
