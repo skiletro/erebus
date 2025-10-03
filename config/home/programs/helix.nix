@@ -25,7 +25,7 @@
         gopls # Go
         bash-language-server # Bash
         docker-compose-language-service # Docker Compose
-        dockerfile-language-server-nodejs # Dockerfile
+        dockerfile-language-server # Dockerfile
         marksman # Markdown
         taplo # TOML
         yaml-language-server # YAML
