@@ -46,51 +46,71 @@
             };
           };
 
-        mode.main.binding = lib.mapAttrs' (n: v: lib.nameValuePair "cmd-${n}" v) {
-          enter = "exec-and-forget open -a Ghostty.app";
-          shift-s = "exec-and-forget screencapture -i -c";
+        on-window-detected = [
+          {
+            "if".app-id = "org.godotengine.godot";
+            run = [ "layout floating" ];
+          }
+        ];
 
-          left = "focus left";
-          right = "focus right";
-          up = "focus up";
-          down = "focus down";
+        mode = {
+          main.binding = lib.mapAttrs' (n: v: lib.nameValuePair "cmd-${n}" v) {
+            enter = "exec-and-forget open -a Ghostty.app";
+            shift-s = "exec-and-forget screencapture -i -c";
 
-          shift-left = "move left";
-          shift-right = "move right";
-          shift-up = "move up";
-          shift-down = "move down";
+            left = "focus left";
+            right = "focus right";
+            up = "focus up";
+            down = "focus down";
 
-          minus = "resize smart -50";
-          equal = "resize smart +50";
-          "1" = "workspace 1";
-          "2" = "workspace 2";
-          "3" = "workspace 3";
-          "4" = "workspace 4";
-          "5" = "workspace 5";
-          "6" = "workspace 6";
-          "7" = "workspace 7";
-          "8" = "workspace 8";
-          "9" = "workspace 9";
+            shift-left = "move left";
+            shift-right = "move right";
+            shift-up = "move up";
+            shift-down = "move down";
 
-          shift-1 = "move-node-to-workspace 1";
-          shift-2 = "move-node-to-workspace 2";
-          shift-3 = "move-node-to-workspace 3";
-          shift-4 = "move-node-to-workspace 4";
-          shift-5 = "move-node-to-workspace 5";
-          shift-6 = "move-node-to-workspace 6";
-          shift-7 = "move-node-to-workspace 7";
-          shift-8 = "move-node-to-workspace 8";
-          shift-9 = "move-node-to-workspace 9";
+            minus = "resize smart -50";
+            equal = "resize smart +50";
 
-          shift-space = [
-            "layout floating tiling"
-            "mode main"
-          ];
+            "1" = "workspace 1";
+            "2" = "workspace 2";
+            "3" = "workspace 3";
+            "4" = "workspace 4";
+            "5" = "workspace 5";
+            "6" = "workspace 6";
+            "7" = "workspace 7";
+            "8" = "workspace 8";
+            "9" = "workspace 9";
+
+            shift-1 = "move-node-to-workspace 1";
+            shift-2 = "move-node-to-workspace 2";
+            shift-3 = "move-node-to-workspace 3";
+            shift-4 = "move-node-to-workspace 4";
+            shift-5 = "move-node-to-workspace 5";
+            shift-6 = "move-node-to-workspace 6";
+            shift-7 = "move-node-to-workspace 7";
+            shift-8 = "move-node-to-workspace 8";
+            shift-9 = "move-node-to-workspace 9";
+
+            shift-space = [
+              "layout floating tiling"
+              "mode main"
+            ];
+
+            r = "mode resize";
+          };
+
+          resize.binding = {
+            left = "resize width -50";
+            right = "resize width +50";
+            up = "resize height +50";
+            down = "resize height -50";
+            enter = "mode main";
+            esc = "mode main";
+          };
         };
 
       };
     };
-
     erebus.services.barik.enable = lib.mkDefault true;
   };
 }
