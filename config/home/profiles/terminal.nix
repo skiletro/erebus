@@ -38,6 +38,7 @@
       ncdu
       ouch # cli for compressing and decompressing formats
       outfieldr # `tldr` client
+      pik # Interactive pkill
       self'.packages.owo-sh
       unrar
       wget
