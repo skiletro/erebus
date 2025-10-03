@@ -19,7 +19,7 @@
           displayed = [
             "default.spaces"
             "spacer"
-            "default.nowplaying"
+            # "default.nowplaying" # causing a lot of crashing
             "default.network"
             "default.battery"
             # "divider"
