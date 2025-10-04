@@ -59,6 +59,20 @@
     };
     date = "2025-10-03";
   };
+  liga-sf-mono-nerd-font = {
+    pname = "liga-sf-mono-nerd-font";
+    version = "dc5a3e6fcc2e16ad476b7be3c3c17c2273b260ea";
+    src = fetchgit {
+      url = "https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized.git";
+      rev = "dc5a3e6fcc2e16ad476b7be3c3c17c2273b260ea";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-AYjKrVLISsJWXN6Cj74wXmbJtREkFDYOCRw1t2nVH2w=";
+    };
+    date = "2023-07-01";
+  };
   owo-sh = {
     pname = "owo-sh";
     version = "d6ffda964cd6c81030f8e5516ca57c80a5a5dcb2";

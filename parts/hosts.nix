@@ -109,7 +109,7 @@ let
           };
           serif = config.stylix.fonts.sansSerif; # Set serif font to the same as the sans-serif
           monospace = {
-            package = self'.packages.liga-sfmono-nerd-font;
+            package = self'.packages.liga-sf-mono-nerd-font;
             name = "Liga SFMono Nerd Font";
           };
           emoji = {

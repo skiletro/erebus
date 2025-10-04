@@ -89,6 +89,26 @@
         },
         "version": "ccf96030da52bf344b21b349812792961dfd0fc7"
     },
+    "liga-sf-mono-nerd-font": {
+        "cargoLocks": null,
+        "date": "2023-07-01",
+        "extract": null,
+        "name": "liga-sf-mono-nerd-font",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "dc5a3e6fcc2e16ad476b7be3c3c17c2273b260ea",
+            "sha256": "sha256-AYjKrVLISsJWXN6Cj74wXmbJtREkFDYOCRw1t2nVH2w=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized.git"
+        },
+        "version": "dc5a3e6fcc2e16ad476b7be3c3c17c2273b260ea"
+    },
     "owo-sh": {
         "cargoLocks": null,
         "date": "2023-04-10",

@@ -23,3 +23,7 @@ fetch.git = "https://owo.codes/whats-this/owo.sh.git"
 [apple-emoji]
 src.github = "samuelngs/apple-emoji-linux"
 fetch.url = "https://github.com/samuelngs/apple-emoji-linux/releases/download/$ver/AppleColorEmoji.ttf"
+
+[liga-sf-mono-nerd-font]
+src.git = "https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized.git"
+fetch.git = "https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized.git"
