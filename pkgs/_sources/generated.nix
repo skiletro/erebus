@@ -43,11 +43,11 @@
     src = fetchgit {
       url = "https://repo.dec05eba.com/gpu-screen-recorder-ui";
       rev = "ccf96030da52bf344b21b349812792961dfd0fc7";
-      fetchSubmodules = false;
+      fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-P0e0N6IHqJM6XmGKPQqLih1Lp+xPn8lSZwZBuIrt8Pw=";
+      sha256 = "sha256-Ul/jEcgmMiO3EK2wl9MLLBccLEOjV8kgWy+glLrss/4=";
     };
     date = "2025-10-03";
   };

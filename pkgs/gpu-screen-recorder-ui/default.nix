@@ -1,7 +1,7 @@
 {
   lib,
   stdenv,
-  fetchgit,
+  sources,
   pkg-config,
   meson,
   ninja,
@@ -24,14 +24,7 @@
 }:
 
 stdenv.mkDerivation rec {
-  pname = "gpu-screen-recorder-ui";
-  version = "1.6.1";
-
-  src = fetchgit {
-    url = "https://repo.dec05eba.com/${pname}";
-    tag = version;
-    hash = "sha256-HKUbxX6EXLR4N/ag7gLIqitxBRU+1aLtlqDiSS7LK5I=";
-  };
+  inherit (sources.gpu-screen-recorder-ui) pname version src;
 
   postPatch = ''
     substituteInPlace depends/mglpp/depends/mgl/src/gl.c \
