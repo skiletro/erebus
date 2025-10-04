@@ -1,4 +1,19 @@
 {
+    "apple-emoji": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "apple-emoji",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-pP0He9EUN7SUDYzwj0CE4e39SuNZ+SVz7FdmUviF6r0=",
+            "type": "url",
+            "url": "https://github.com/samuelngs/apple-emoji-linux/releases/download/v18.4/AppleColorEmoji.ttf"
+        },
+        "version": "v18.4"
+    },
     "barik": {
         "cargoLocks": null,
         "date": null,

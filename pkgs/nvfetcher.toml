@@ -19,3 +19,7 @@ git.fetchSubmodules = true
 [owo-sh]
 src.git = "https://owo.codes/whats-this/owo.sh.git"
 fetch.git = "https://owo.codes/whats-this/owo.sh.git"
+
+[apple-emoji]
+src.github = "samuelngs/apple-emoji-linux"
+fetch.url = "https://github.com/samuelngs/apple-emoji-linux/releases/download/$ver/AppleColorEmoji.ttf"
