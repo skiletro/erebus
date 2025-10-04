@@ -1,21 +1,16 @@
 {
-  fetchzip,
+  sources,
   lib,
   stdenvNoCC,
+  unzip,
   ...
 }:
-let
-  pname = "barik";
-  version = "0.5.1";
-in
 stdenvNoCC.mkDerivation {
-  inherit pname version;
+  inherit (sources.barik) pname version src;
 
-  src = fetchzip {
-    url = "https://github.com/mocki-toki/barik/releases/download/${version}/Barik.zip";
-    sha256 = "sha256-UtC4IL8tEqkLh2HVhlATw8NhGjkD5Uhjkf0kar3BVHc=";
-    stripRoot = false;
-  };
+  unpackPhase = ''
+    ${lib.getExe unzip} $src
+  '';
 
   installPhase = ''
     mkdir -p $out/Applications
@@ -23,7 +18,9 @@ stdenvNoCC.mkDerivation {
   '';
 
   meta = {
+    description = "macOS menu bar replacement, with yabai and AeroSpace support";
     homepage = "https://github.com/mocki-toki/barik";
+    maintainers = with lib.maintainers; [ skiletro ];
     platforms = lib.platforms.darwin;
     sourceProvenance = [ lib.sourceTypes.binaryNativeCode ];
   };
