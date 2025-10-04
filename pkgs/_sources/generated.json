@@ -89,6 +89,21 @@
         },
         "version": "ccf96030da52bf344b21b349812792961dfd0fc7"
     },
+    "helium-browser-bin": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "helium-browser-bin",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-3j4souWY+4EGPSQR6uURjyqu3bkB5G9xuJbvOk9cZd8=",
+            "type": "url",
+            "url": "https://github.com/imputnet/helium-macos/releases/download/0.4.13.1/helium_0.4.13.1_arm64-macos.dmg"
+        },
+        "version": "0.4.13.1"
+    },
     "liga-sf-mono-nerd-font": {
         "cargoLocks": null,
         "date": "2023-07-01",

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, self', ... }:
 {
   erebus = {
     profiles = {
@@ -11,6 +11,7 @@
   environment.systemPackages = with pkgs; [
     betterdisplay
     grandperspective
+    self'.packages.helium-browser-bin
     iina # media player
     inkscape
     m-cli

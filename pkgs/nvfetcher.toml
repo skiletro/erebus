@@ -31,3 +31,7 @@ fetch.git = "https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized.git"
 [wheelwizard]
 src.github = "TeamWheelWizard/WheelWizard"
 fetch.git = "https://github.com/TeamWheelWizard/WheelWizard.git"
+
+[helium-browser-bin]
+src.github = "imputnet/helium-macos"
+fetch.url = "https://github.com/imputnet/helium-macos/releases/download/$ver/helium_$ver_arm64-macos.dmg"

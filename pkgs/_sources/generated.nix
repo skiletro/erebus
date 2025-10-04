@@ -59,6 +59,14 @@
     };
     date = "2025-10-03";
   };
+  helium-browser-bin = {
+    pname = "helium-browser-bin";
+    version = "0.4.13.1";
+    src = fetchurl {
+      url = "https://github.com/imputnet/helium-macos/releases/download/0.4.13.1/helium_0.4.13.1_arm64-macos.dmg";
+      sha256 = "sha256-3j4souWY+4EGPSQR6uURjyqu3bkB5G9xuJbvOk9cZd8=";
+    };
+  };
   liga-sf-mono-nerd-font = {
     pname = "liga-sf-mono-nerd-font";
     version = "dc5a3e6fcc2e16ad476b7be3c3c17c2273b260ea";
