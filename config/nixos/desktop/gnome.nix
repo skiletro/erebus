@@ -20,9 +20,11 @@
         appindicator
         color-picker
         dash-to-dock
+        keep-awake
         mpris-label
         search-light
         smile-complementary-extension
+        tiling-assistant
         weather-oclock
       ];
       thumbnailers = with pkgs; [
