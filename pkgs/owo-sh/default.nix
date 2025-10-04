@@ -1,20 +1,12 @@
 {
   pkgs,
   stdenv,
-  fetchFromGitLab,
+  sources,
+  lib,
   ...
 }:
-stdenv.mkDerivation (finalAttrs: {
-  pname = "owo-sh";
-  version = finalAttrs.src.rev;
-
-  src = fetchFromGitLab {
-    domain = "owo.codes";
-    owner = "whats-this";
-    repo = "owo.sh";
-    rev = "d6ffda964cd6c81030f8e5516ca57c80a5a5dcb2";
-    hash = "sha256-vwvUiM7mOixyNERjITwcS90jz15QFkwxCEtYzqm+hdg=";
-  };
+stdenv.mkDerivation {
+  inherit (sources.owo-sh) pname version src;
 
   makeFlags = [
     "PREFIX=${placeholder "out"}"
@@ -32,4 +24,4 @@ stdenv.mkDerivation (finalAttrs: {
   '';
 
   nativeBuildInputs = [ pkgs.curl ];
-})
+}
