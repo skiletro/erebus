@@ -1,7 +1,7 @@
 {
   lib,
   stdenv,
-  fetchgit,
+  sources,
   pkg-config,
   meson,
   ninja,
@@ -15,15 +15,8 @@
   ...
 }:
 
-stdenv.mkDerivation rec {
-  pname = "gpu-screen-recorder-notification";
-  version = "1.0.7";
-
-  src = fetchgit {
-    url = "https://repo.dec05eba.com/${pname}";
-    tag = version;
-    hash = "sha256-hdsbQewnqSJvWEW9HaFuVf6vDAY5CDCGxVFsxZJ4Yh8=";
-  };
+stdenv.mkDerivation {
+  inherit (sources.gpu-screen-recorder-notification) pname version src;
 
   postPatch = ''
     substituteInPlace depends/mglpp/depends/mgl/src/gl.c \
@@ -50,7 +43,7 @@ stdenv.mkDerivation rec {
 
   meta = {
     description = "Notification in the style of ShadowPlay";
-    homepage = "https://git.dec05eba.com/${pname}/about/";
+    homepage = "https://git.dec05eba.com/gpu-screen-recorder-notification/about/";
     license = lib.licenses.gpl3Only;
     mainProgram = "gsr-notify";
     platforms = lib.platforms.linux;

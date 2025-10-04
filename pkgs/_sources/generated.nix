@@ -29,11 +29,11 @@
     src = fetchgit {
       url = "https://repo.dec05eba.com/gpu-screen-recorder-notification";
       rev = "a205222cf499e4f4ec701b91c3323499c424e8e8";
-      fetchSubmodules = false;
+      fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-c+7Q270ftnJaoLbc8ocE6I623cbfy1C62sn7JZwC70g=";
+      sha256 = "sha256-ODifZ046DEBNiGT3+S6pQyF8ekrb6LIHWton8nv1MBo=";
     };
     date = "2025-09-28";
   };

@@ -9,6 +9,7 @@ fetch.git = "https://github.com/tinted-theming/schemes.git"
 [gpu-screen-recorder-notification]
 src.git = "https://repo.dec05eba.com/gpu-screen-recorder-notification"
 fetch.git = "https://repo.dec05eba.com/gpu-screen-recorder-notification"
+git.fetchSubmodules = true
 
 [gpu-screen-recorder-ui]
 src.git = "https://repo.dec05eba.com/gpu-screen-recorder-ui"
