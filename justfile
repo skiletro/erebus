@@ -27,6 +27,8 @@ test *args: (builder "test" args)
 update *input:
     @echo -e "\e[35m>\e[0m Updating flake inputs..."
     @nix flake update {{ input }} --refresh
+    @echo -e "\e[35m>\e[0m Update nvfetcher sources..."
+    @nvfetcher -c ./pkgs/nvfetcher.toml -o ./pkgs/_sources/
 
 [group("housekeeping")]
 repl *args: (builder "repl" args)
