@@ -7,6 +7,7 @@
           git
           just
           nh
+          nvfetcher
         ];
         shellHook =
           let

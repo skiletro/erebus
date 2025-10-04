@@ -1,0 +1,19 @@
+[barik]
+src.github = "mocki-toki/barik"
+fetch.url = "https://github.com/mocki-toki/barik/releases/download/$ver/Barik.zip"
+
+[base16-schemes]
+src.git = "https://github.com/tinted-theming/schemes.git"
+fetch.git = "https://github.com/tinted-theming/schemes.git"
+
+[gpu-screen-recorder-notification]
+src.git = "https://repo.dec05eba.com/gpu-screen-recorder-notification"
+fetch.git = "https://repo.dec05eba.com/gpu-screen-recorder-notification"
+
+[gpu-screen-recorder-ui]
+src.git = "https://repo.dec05eba.com/gpu-screen-recorder-ui"
+fetch.git = "https://repo.dec05eba.com/gpu-screen-recorder-ui"
+
+[owo-sh]
+src.git = "https://owo.codes/whats-this/owo.sh.git"
+fetch.git = "https://owo.codes/whats-this/owo.sh.git"
