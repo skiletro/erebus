@@ -15,6 +15,8 @@
         ''
           set fish_greeting # disable prompt
 
+          ulimit -n 10240 # increase file descriptor limit
+
           function starship_transient_prompt_func
             ${lib.getExe config.programs.starship.package} module character
           end
