@@ -2,6 +2,7 @@
   lib,
   config,
   pkgs,
+  self',
   ...
 }:
 {
@@ -28,6 +29,7 @@
       lutris
       osu-lazer-bin
       r2modman
+      self'.packages.wheelwizard
     ];
 
     home-manager.sharedModules = lib.singleton {
