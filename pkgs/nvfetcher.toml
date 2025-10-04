@@ -27,3 +27,7 @@ fetch.url = "https://github.com/samuelngs/apple-emoji-linux/releases/download/$v
 [liga-sf-mono-nerd-font]
 src.git = "https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized.git"
 fetch.git = "https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized.git"
+
+[wheelwizard]
+src.github = "TeamWheelWizard/WheelWizard"
+fetch.git = "https://github.com/TeamWheelWizard/WheelWizard.git"

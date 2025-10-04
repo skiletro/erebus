@@ -87,4 +87,17 @@
     };
     date = "2023-04-10";
   };
+  wheelwizard = {
+    pname = "wheelwizard";
+    version = "2.3.3";
+    src = fetchgit {
+      url = "https://github.com/TeamWheelWizard/WheelWizard.git";
+      rev = "2.3.3";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-DuEI6bmvNP6wRuZX9Do0FGDsu80ldy0SCefBk6gqT9s=";
+    };
+  };
 }

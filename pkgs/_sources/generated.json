@@ -128,5 +128,25 @@
             "url": "https://owo.codes/whats-this/owo.sh.git"
         },
         "version": "d6ffda964cd6c81030f8e5516ca57c80a5a5dcb2"
+    },
+    "wheelwizard": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "wheelwizard",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "2.3.3",
+            "sha256": "sha256-DuEI6bmvNP6wRuZX9Do0FGDsu80ldy0SCefBk6gqT9s=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/TeamWheelWizard/WheelWizard.git"
+        },
+        "version": "2.3.3"
     }
 }
