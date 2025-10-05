@@ -24,5 +24,12 @@ buildDotnetModule {
   dotnet-sdk = dotnetCorePackages.sdk_8_0;
   dotnet-runtime = dotnetCorePackages.runtime_8_0;
 
+  postInstall = ''
+    install -Dm644 $src/Flatpak/io.github.TeamWheelWizard.WheelWizard.desktop \
+      $out/share/applications/io.github.TeamWheelWizard.WheelWizard.desktop
+    install -Dm644 $src/Flatpak/io.github.TeamWheelWizard.WheelWizard.png \
+      $out/share/icons/hicolor/256x256/apps/io.github.TeamWheelWizard.WheelWizard.png
+  '';
+
   meta.description = "WheelWizard, Retro Rewind Launcher";
 }
