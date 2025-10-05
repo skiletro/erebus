@@ -17,7 +17,6 @@ FEATURES
 
 TODO
   - Game Configs (CS2, VRChat, etc)
-  - Add "Fix Steam Icons" to the Steam module. (https://github.com/beedywool/Gnome-Steam-Shortcut-Fixer/)
   - Proton Drive rclone service
   - KDE Plasma
   - Other gaming packages and options (https://github.com/skiletro/nixfiles/blob/master/modules/pc/gaming/misc.nix)

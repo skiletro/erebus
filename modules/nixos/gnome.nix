@@ -2,6 +2,7 @@
   lib,
   config,
   pkgs,
+  self',
   ...
 }:
 let
@@ -93,7 +94,7 @@ in
       })
     ];
 
-    home-manager.sharedModules = lib.singleton {
+    home-manager.sharedModules = lib.singleton (userAttrs: {
       stylix.iconTheme = {
         enable = true;
         package = pkgs.morewaita-icon-theme;
@@ -166,6 +167,13 @@ in
             cfg.dconf-settings
           ];
       };
-    };
+
+      home.activation.gnome-steam-shortcut-fixer = mkIf config.erebus.programs.steam.enable (
+        userAttrs.lib.hm.dag.entryAfter [ "writeBoundary" ] # sh
+          ''
+            run ${lib.getExe self'.packages.gnome-steam-shortcut-fixer} -f
+          ''
+      );
+    });
   };
 }
