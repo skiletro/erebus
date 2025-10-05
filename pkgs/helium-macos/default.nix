@@ -6,7 +6,9 @@
   ...
 }:
 stdenvNoCC.mkDerivation {
-  inherit (sources.helium-browser-bin) pname version src;
+  pname = "helium-macos";
+
+  inherit (sources.helium-aarch64-darwin) version src;
 
   phases = [
     "unpackPhase"

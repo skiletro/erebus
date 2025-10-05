@@ -59,12 +59,20 @@
     };
     date = "2025-10-05";
   };
-  helium-browser-bin = {
-    pname = "helium-browser-bin";
+  helium-aarch64-darwin = {
+    pname = "helium-aarch64-darwin";
     version = "0.5.2.1";
     src = fetchurl {
       url = "https://github.com/imputnet/helium-macos/releases/download/0.5.2.1/helium_0.5.2.1_arm64-macos.dmg";
       sha256 = "sha256-gw5ziIX9oYSZ0HnMgTNpvdILhsoO5aF+2l/KQzPoPHQ=";
+    };
+  };
+  helium-x86_64-linux = {
+    pname = "helium-x86_64-linux";
+    version = "0.5.2.1";
+    src = fetchurl {
+      url = "https://github.com/imputnet/helium-linux/releases/download/0.5.2.1/helium-0.5.2.1-x86_64.AppImage";
+      sha256 = "sha256-3h0GMMl58NX+PuZRwmksOvlwPuZZwiQJdM5YXkaxlDk=";
     };
   };
   liga-sf-mono-nerd-font = {

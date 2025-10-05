@@ -2,6 +2,7 @@
   lib,
   config,
   pkgs,
+  self',
   ...
 }:
 let
@@ -20,5 +21,9 @@ in
       pwa.enable = lib.mkIf isLinux true;
       zen.enable = true;
     };
+
+    home.packages = [
+      (with self'.packages; if isLinux then helium-linux else helium-macos)
+    ];
   };
 }
