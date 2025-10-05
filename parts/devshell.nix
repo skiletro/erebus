@@ -9,10 +9,9 @@
           nh
           nvfetcher
         ];
-        shellHook =
-          ''
-            just -l -u
-          '';
+        shellHook = ''
+          just -l -u
+        '';
       };
     };
 }
