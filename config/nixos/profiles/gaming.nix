@@ -30,6 +30,8 @@
       osu-lazer-bin
       r2modman
       self'.packages.wheelwizard
+      lsfg-vk
+      lsfg-vk-ui # frame gen
     ];
 
     home-manager.sharedModules = lib.singleton {
