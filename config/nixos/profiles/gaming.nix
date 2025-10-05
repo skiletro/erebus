@@ -29,6 +29,7 @@
       lutris
       osu-lazer-bin
       r2modman
+      ryubing # switch emu
       self'.packages.wheelwizard
       lsfg-vk
       lsfg-vk-ui # frame gen
