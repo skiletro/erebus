@@ -33,38 +33,38 @@
   };
   gpu-screen-recorder-notification = {
     pname = "gpu-screen-recorder-notification";
-    version = "a205222cf499e4f4ec701b91c3323499c424e8e8";
+    version = "54e4f30a692b7f86686d531d0331de32374a4735";
     src = fetchgit {
       url = "https://repo.dec05eba.com/gpu-screen-recorder-notification";
-      rev = "a205222cf499e4f4ec701b91c3323499c424e8e8";
+      rev = "54e4f30a692b7f86686d531d0331de32374a4735";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-ODifZ046DEBNiGT3+S6pQyF8ekrb6LIHWton8nv1MBo=";
+      sha256 = "sha256-aLoDDbhhLUZl/2Zt0swhtD4/vqDEAnbVPKcFhqxvpsQ=";
     };
-    date = "2025-09-28";
+    date = "2025-10-04";
   };
   gpu-screen-recorder-ui = {
     pname = "gpu-screen-recorder-ui";
-    version = "ccf96030da52bf344b21b349812792961dfd0fc7";
+    version = "bb320e97ed1f9cfa12b41b3f5a76f2077b379788";
     src = fetchgit {
       url = "https://repo.dec05eba.com/gpu-screen-recorder-ui";
-      rev = "ccf96030da52bf344b21b349812792961dfd0fc7";
+      rev = "bb320e97ed1f9cfa12b41b3f5a76f2077b379788";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-Ul/jEcgmMiO3EK2wl9MLLBccLEOjV8kgWy+glLrss/4=";
+      sha256 = "sha256-pipI1+K1OGIvRnbWF9AQDyFSTphmtZIPv+MEKLkXZyY=";
     };
-    date = "2025-10-03";
+    date = "2025-10-05";
   };
   helium-browser-bin = {
     pname = "helium-browser-bin";
-    version = "0.4.13.1";
+    version = "0.5.2.1";
     src = fetchurl {
-      url = "https://github.com/imputnet/helium-macos/releases/download/0.4.13.1/helium_0.4.13.1_arm64-macos.dmg";
-      sha256 = "sha256-3j4souWY+4EGPSQR6uURjyqu3bkB5G9xuJbvOk9cZd8=";
+      url = "https://github.com/imputnet/helium-macos/releases/download/0.5.2.1/helium_0.5.2.1_arm64-macos.dmg";
+      sha256 = "sha256-gw5ziIX9oYSZ0HnMgTNpvdILhsoO5aF+2l/KQzPoPHQ=";
     };
   };
   liga-sf-mono-nerd-font = {
