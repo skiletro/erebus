@@ -6,10 +6,12 @@
                               /
 
 README
-  Erebus is my opinionated NixOS, Home Manager, and nix-darwin configuration, built upon flake-parts.
+  Erebus is my opinionated NixOS, Home Manager, and nix-darwin configuration,
+  built upon flake-parts.
 
 FEATURES
-  - Reusable module system for programs not present in nixpkgs, home-manager, or chaotic-nyx.
+  - Reusable module system for programs not present in nixpkgs, home-manager,
+    or chaotic-nyx.
   - Wayland-first configuration.
   - Cohesive styling (courtsey of Stylix, nix-cursors, and more!).
   - Useful packages for a range of systems.
@@ -19,18 +21,22 @@ TODO
   - Game Configs (CS2, VRChat, etc)
   - Proton Drive rclone service
   - KDE Plasma
-  - Other gaming packages and options (https://github.com/skiletro/nixfiles/blob/master/modules/pc/gaming/misc.nix)
-  - Chromium (or chromium-like browser, this is for web dev testing in multiple engines)
-  - Secrets (most likely using sops-nix, needed for GitHub Access Token, Rclone private key, system user password)
+  - Other gaming packages and options
+  - Chromium (or chromium-like browser, this is for web dev testing in
+    multiple engines)
+  - Secrets (most likely using sops-nix, needed for GitHub Access Token,
+    rclone private key, system user password)
 
   And the following is some "nice to haves"
-  - Guest mode (seperate login for when people are over and want to use my computer)
+  - Guest mode (seperate login for when people are over and want to use my
+    computer)
   - Ephemeral root and home, alongside impermanence
   - Btrfs with drive compression (for steam games)
 
 INSTALLATION
-  I wouldn't recommend using the system configurations as they are tailored to my needs, however feel free to import
-  the repository as an input in *your* flake to use its packages!
+  I wouldn't recommend using the system configurations as they are tailored
+  to my needs, however feel free to import the repository as an input in
+  *your* flake to use its packages!
 
 ACKNOWLEDGEMENTS
   https://github.com/different-name/nix-files
