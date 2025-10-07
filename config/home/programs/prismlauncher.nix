@@ -14,9 +14,9 @@
     programs.prismlauncher = {
       enable = true;
       jdks = with pkgs; [
-        graalvmPackages.graalvm-oracle
         graalvmPackages.graalvm-oracle_17
         jdk8
+        temurin-jre-bin # 21
       ];
     };
   };
