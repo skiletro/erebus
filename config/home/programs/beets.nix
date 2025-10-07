@@ -17,6 +17,8 @@
           "fetchart"
           "lyrics"
           "lastgenre"
+          "musicbrainz"
+          "spotify"
         ];
       };
     };
