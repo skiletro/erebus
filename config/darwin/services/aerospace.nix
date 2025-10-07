@@ -95,17 +95,6 @@
               "layout floating tiling"
               "mode main"
             ];
-
-            r = "mode resize";
-          };
-
-          resize.binding = {
-            left = "resize width -50";
-            right = "resize width +50";
-            up = "resize height +50";
-            down = "resize height -50";
-            enter = "mode main";
-            esc = "mode main";
           };
         };
 
