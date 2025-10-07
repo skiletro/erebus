@@ -21,11 +21,21 @@
     }
   );
 
-  system.defaults.NSGlobalDomain = {
-    AppleInterfaceStyle = "Dark";
-    AppleInterfaceStyleSwitchesAutomatically = false;
-    NSStatusItemSpacing = 8; # default=12
-    NSStatusItemSelectionPadding = 6; # default=6
-    _HIHideMenuBar = if config.erebus.services.aerospace.enable then true else false;
-  };
+  system.defaults =
+    let
+      aerospaceIsEnabled = config.erebus.services.aerospace.enable;
+      ifTiling = bool: if aerospaceIsEnabled then bool else !bool;
+    in
+    {
+      NSGlobalDomain = {
+        AppleInterfaceStyle = "Dark";
+        AppleInterfaceStyleSwitchesAutomatically = false;
+        NSStatusItemSpacing = 8; # default=12
+        NSStatusItemSelectionPadding = 6; # default=6
+        _HIHideMenuBar = ifTiling true;
+        NSAutomaticWindowAnimationsEnabled = ifTiling false;
+      };
+      spaces.spans-displays = ifTiling true;
+      dock.expose-group-apps = ifTiling true;
+    };
 }
