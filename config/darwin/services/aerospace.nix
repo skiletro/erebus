@@ -23,7 +23,7 @@
         default-root-container-layout = "tiles";
         default-root-container-orientation = "auto";
 
-        on-focused-monitor-changed = [ "move-mouse monitor-lazy-center" ];
+        on-focus-changed = [ "move-mouse monitor-lazy-center" ];
 
         automatically-unhide-macos-hidden-apps = true;
 
@@ -95,6 +95,14 @@
               "layout floating tiling"
               "mode main"
             ];
+
+            alt-s = "layout v_accordion";
+            alt-w = "layout h_accordion";
+            alt-e = "layout tiles horizontal vertical";
+
+            # TODO: create visualiser to tell which mode user is in
+            alt-h = "split horizontal";
+            alt-v = "split vertical";
           };
         };
 
