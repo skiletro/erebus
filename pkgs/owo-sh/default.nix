@@ -23,6 +23,11 @@ stdenv.mkDerivation {
     make install PREFIX=$out DESTDIR=""
   '';
 
+  patchPhase = ''
+    substituteInPlace bin/owo \
+      --replace "file -bIL" "file -biL"
+  '';
+
   nativeBuildInputs = [ pkgs.curl ];
 
   meta = {
