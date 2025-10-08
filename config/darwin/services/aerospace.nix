@@ -9,11 +9,25 @@
   options.erebus.services.aerospace.enable = lib.mkEnableOption "Aerospace window manager";
 
   config = lib.mkIf config.erebus.services.aerospace.enable {
+    homebrew = {
+      casks = [
+        "sol"
+        "swipeaerospace"
+      ]; # TODO: package and add module
+      taps = [ "mediosz/tap" ];
+    };
+
+    system.activationScripts."aerospace-restart".text = ''
+      launchctl stop org.nixos.aerospace
+    '';
+
     services.aerospace = {
       enable = true;
       settings = {
         after-startup-command = [
           "exec-and-forget open -a Barik.app"
+          "exec-and-forget open -a SwipeAeroSpace.app"
+          "exec-and-forget open -a Sol.app"
           "exec-and-forget ${lib.getExe pkgs.jankyborders} active_color=0xff${config.lib.stylix.colors.base05} inactive_color=0xff${config.lib.stylix.colors.base00} width=4.0"
         ];
 
@@ -23,7 +37,7 @@
         default-root-container-layout = "tiles";
         default-root-container-orientation = "auto";
 
-        on-focus-changed = [ "move-mouse monitor-lazy-center" ];
+        on-focus-changed = [ "move-mouse window-lazy-center" ];
 
         automatically-unhide-macos-hidden-apps = true;
 
@@ -42,7 +56,10 @@
               left = padding;
               bottom = padding;
               right = padding;
-              top = padding + 25;
+              top = [
+                { monitor.main = padding + 25; }
+                padding
+              ];
             };
           };
 
@@ -53,9 +70,35 @@
           }
         ];
 
+        # put the second workspace on laptop in case of docked.
+        workspace-to-monitor-force-assignment."2" = "secondary";
+
         mode = {
           main.binding = lib.mapAttrs' (n: v: lib.nameValuePair "cmd-${n}" v) {
-            enter = "exec-and-forget open -a Ghostty.app";
+            # enter = ''
+            #   exec-and-forget osascript -e '
+            #     tell application "Ghostty"
+            #   	if it is running then
+            #   		activate
+            #   		tell application "System Events" to keystroke "n" using {command down}
+            #   	else
+            #   		activate
+            #   	end if
+            #       end tell'
+            # '';
+            enter = ''
+              exec-and-forget osascript -e '
+                tell application "Ghostty"
+                    if it is running
+                        tell application "System Events" to tell process "Ghostty"
+                            click menu item "New Window" of menu "File" of menu bar 1
+                        end tell
+                    else
+                        activate
+                    end if
+                end tell
+              '
+            '';
             shift-s = "exec-and-forget screencapture -i -c";
 
             left = "focus left";
@@ -99,10 +142,6 @@
             alt-s = "layout v_accordion";
             alt-w = "layout h_accordion";
             alt-e = "layout tiles horizontal vertical";
-
-            # TODO: create visualiser to tell which mode user is in
-            alt-h = "split horizontal";
-            alt-v = "split vertical";
           };
         };
 

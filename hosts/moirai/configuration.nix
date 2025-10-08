@@ -17,7 +17,6 @@
     moonlight-qt
     obsidian
     qbittorrent
-    raycast
     signal-desktop-bin
     utm
     whatsapp-for-mac
