@@ -20,6 +20,7 @@
         vial.enable = true;
       };
       services = {
+        protondrive.enable = true;
         rnnoise.enable = true;
         wireguard.enable = true;
       };
