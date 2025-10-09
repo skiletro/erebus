@@ -8,6 +8,7 @@
           just
           nh
           nvfetcher
+          nixos-rebuild
         ];
         shellHook = ''
           just -l -u
