@@ -8,6 +8,8 @@
           just
           nh
           nvfetcher
+          ssh-to-age
+          sops
           nixos-rebuild
         ];
         shellHook = ''

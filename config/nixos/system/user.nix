@@ -12,9 +12,11 @@
   options.erebus.system.user.enable = lib.mkEnableOption "Jamie user";
 
   config = lib.mkIf config.erebus.system.user.enable {
+    sops.secrets."user-password" = { };
+
     users.users.jamie = {
       isNormalUser = true;
-      password = "pwd"; # TODO: Change me to hashedPasswordFile, embedded in a secret.
+      hashedPasswordFile = config.sops.secrets.user-password.path;
       extraGroups = [
         "users"
         "networkmanager"
