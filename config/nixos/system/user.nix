@@ -12,7 +12,7 @@
   options.erebus.system.user.enable = lib.mkEnableOption "Jamie user";
 
   config = lib.mkIf config.erebus.system.user.enable {
-    sops.secrets."user-password" = { };
+    sops.secrets."user-password".neededForUsers = true;
 
     users.users.jamie = {
       isNormalUser = true;
