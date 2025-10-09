@@ -22,7 +22,8 @@ in
       zen.enable = true;
     };
 
-    home.packages = [
+    home.packages = with pkgs; [
+      tor-browser
       (with self'.packages; if isLinux then helium-linux else helium-macos)
     ];
   };
