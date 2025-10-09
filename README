@@ -19,13 +19,8 @@ FEATURES
 
 TODO
   - Game Configs (CS2, VRChat, etc)
-  - Proton Drive rclone service
   - KDE Plasma
   - Other gaming packages and options
-  - Chromium (or chromium-like browser, this is for web dev testing in
-    multiple engines)
-  - Secrets (most likely using sops-nix, needed for GitHub Access Token,
-    rclone private key, system user password)
 
   And the following is some "nice to haves"
   - Guest mode (seperate login for when people are over and want to use my
