@@ -1,24 +1,44 @@
-[barik]
-src.github = "mocki-toki/barik"
-fetch.url = "https://github.com/mocki-toki/barik/releases/download/$ver/Barik.zip"
+# ------ General Packages ------ #
+[owo-sh]
+src.git = "https://owo.codes/whats-this/owo.sh.git"
+fetch.git = "https://owo.codes/whats-this/owo.sh.git"
 
-[base16-schemes]
-src.git = "https://github.com/tinted-theming/schemes.git"
-fetch.git = "https://github.com/tinted-theming/schemes.git"
+[wheelwizard]
+src.github = "TeamWheelWizard/WheelWizard"
+fetch.git = "https://github.com/TeamWheelWizard/WheelWizard.git"
+
+
+# ------ Linux-specific ------ #
+[gpu-screen-recorder-ui]
+src.git = "https://repo.dec05eba.com/gpu-screen-recorder-ui"
+fetch.git = "https://repo.dec05eba.com/gpu-screen-recorder-ui"
+git.fetchSubmodules = true
 
 [gpu-screen-recorder-notification]
 src.git = "https://repo.dec05eba.com/gpu-screen-recorder-notification"
 fetch.git = "https://repo.dec05eba.com/gpu-screen-recorder-notification"
 git.fetchSubmodules = true
 
-[gpu-screen-recorder-ui]
-src.git = "https://repo.dec05eba.com/gpu-screen-recorder-ui"
-fetch.git = "https://repo.dec05eba.com/gpu-screen-recorder-ui"
-git.fetchSubmodules = true
+[helium-appimage]
+src.github = "imputnet/helium-linux"
+fetch.url = "https://github.com/imputnet/helium-linux/releases/download/$ver/helium-$ver-x86_64.AppImage"
 
-[owo-sh]
-src.git = "https://owo.codes/whats-this/owo.sh.git"
-fetch.git = "https://owo.codes/whats-this/owo.sh.git"
+
+# ------ Darwin-specific ------ #
+[barik-bin]
+src.github = "mocki-toki/barik"
+fetch.url = "https://github.com/mocki-toki/barik/releases/download/$ver/Barik.zip"
+
+[helium-dmg]
+
+src.github = "imputnet/helium-macos"
+fetch.url = "https://github.com/imputnet/helium-macos/releases/download/$ver/helium_$ver_arm64-macos.dmg"
+
+
+# ------ Non-program packages ------ #
+[base16-schemes]
+src.git = "https://github.com/tinted-theming/schemes.git"
+fetch.git = "https://github.com/tinted-theming/schemes.git"
 
 [apple-emoji]
 src.github = "samuelngs/apple-emoji-linux"
@@ -27,15 +47,3 @@ fetch.url = "https://github.com/samuelngs/apple-emoji-linux/releases/download/$v
 [liga-sf-mono-nerd-font]
 src.git = "https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized.git"
 fetch.git = "https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized.git"
-
-[wheelwizard]
-src.github = "TeamWheelWizard/WheelWizard"
-fetch.git = "https://github.com/TeamWheelWizard/WheelWizard.git"
-
-[helium-aarch64-darwin]
-src.github = "imputnet/helium-macos"
-fetch.url = "https://github.com/imputnet/helium-macos/releases/download/$ver/helium_$ver_arm64-macos.dmg"
-
-[helium-x86_64-linux]
-src.github = "imputnet/helium-linux"
-fetch.url = "https://github.com/imputnet/helium-linux/releases/download/$ver/helium-$ver-x86_64.AppImage"

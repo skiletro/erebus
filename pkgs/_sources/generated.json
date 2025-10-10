@@ -14,11 +14,11 @@
         },
         "version": "v18.4"
     },
-    "barik": {
+    "barik-bin": {
         "cargoLocks": null,
         "date": null,
         "extract": null,
-        "name": "barik",
+        "name": "barik-bin",
         "passthru": null,
         "pinned": false,
         "src": {
@@ -89,26 +89,11 @@
         },
         "version": "bb320e97ed1f9cfa12b41b3f5a76f2077b379788"
     },
-    "helium-aarch64-darwin": {
+    "helium-appimage": {
         "cargoLocks": null,
         "date": null,
         "extract": null,
-        "name": "helium-aarch64-darwin",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-QOQEEmUm60Sm197kadhr4Z1/abdsbbQw6Arax8YAIVo=",
-            "type": "url",
-            "url": "https://github.com/imputnet/helium-macos/releases/download/0.5.5.1/helium_0.5.5.1_arm64-macos.dmg"
-        },
-        "version": "0.5.5.1"
-    },
-    "helium-x86_64-linux": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "helium-x86_64-linux",
+        "name": "helium-appimage",
         "passthru": null,
         "pinned": false,
         "src": {
@@ -116,6 +101,21 @@
             "sha256": "sha256-FCLCt0T+U8JqUkFVAfl//OtnWsNoN8lWHIiMJws2Mqo=",
             "type": "url",
             "url": "https://github.com/imputnet/helium-linux/releases/download/0.5.5.1/helium-0.5.5.1-x86_64.AppImage"
+        },
+        "version": "0.5.5.1"
+    },
+    "helium-dmg": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "helium-dmg",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-QOQEEmUm60Sm197kadhr4Z1/abdsbbQw6Arax8YAIVo=",
+            "type": "url",
+            "url": "https://github.com/imputnet/helium-macos/releases/download/0.5.5.1/helium_0.5.5.1_arm64-macos.dmg"
         },
         "version": "0.5.5.1"
     },

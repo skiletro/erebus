@@ -6,7 +6,7 @@
   ...
 }:
 stdenvNoCC.mkDerivation {
-  inherit (sources.barik) pname version src;
+  inherit (sources.barik-bin) pname version src;
 
   unpackPhase = ''
     ${lib.getExe unzip} $src

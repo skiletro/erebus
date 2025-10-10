@@ -9,8 +9,8 @@
       sha256 = "sha256-pP0He9EUN7SUDYzwj0CE4e39SuNZ+SVz7FdmUviF6r0=";
     };
   };
-  barik = {
-    pname = "barik";
+  barik-bin = {
+    pname = "barik-bin";
     version = "0.5.1";
     src = fetchurl {
       url = "https://github.com/mocki-toki/barik/releases/download/0.5.1/Barik.zip";
@@ -59,20 +59,20 @@
     };
     date = "2025-10-05";
   };
-  helium-aarch64-darwin = {
-    pname = "helium-aarch64-darwin";
-    version = "0.5.5.1";
-    src = fetchurl {
-      url = "https://github.com/imputnet/helium-macos/releases/download/0.5.5.1/helium_0.5.5.1_arm64-macos.dmg";
-      sha256 = "sha256-QOQEEmUm60Sm197kadhr4Z1/abdsbbQw6Arax8YAIVo=";
-    };
-  };
-  helium-x86_64-linux = {
-    pname = "helium-x86_64-linux";
+  helium-appimage = {
+    pname = "helium-appimage";
     version = "0.5.5.1";
     src = fetchurl {
       url = "https://github.com/imputnet/helium-linux/releases/download/0.5.5.1/helium-0.5.5.1-x86_64.AppImage";
       sha256 = "sha256-FCLCt0T+U8JqUkFVAfl//OtnWsNoN8lWHIiMJws2Mqo=";
+    };
+  };
+  helium-dmg = {
+    pname = "helium-dmg";
+    version = "0.5.5.1";
+    src = fetchurl {
+      url = "https://github.com/imputnet/helium-macos/releases/download/0.5.5.1/helium_0.5.5.1_arm64-macos.dmg";
+      sha256 = "sha256-QOQEEmUm60Sm197kadhr4Z1/abdsbbQw6Arax8YAIVo=";
     };
   };
   liga-sf-mono-nerd-font = {

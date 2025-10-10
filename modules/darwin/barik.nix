@@ -15,7 +15,7 @@
   };
 
   config = lib.mkIf config.services.barik.enable {
-    environment.systemPackages = [ self'.packages.barik ];
+    environment.systemPackages = [ self'.packages.barik-bin ];
 
     home-manager.sharedModules = lib.singleton {
       home.file.".barik-config.toml" = {

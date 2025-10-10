@@ -21,9 +21,5 @@ in
       spotify.enable = true;
       zen.enable = lib.mkIf isLinux true; # battery life isnt great on mac
     };
-
-    home.packages = with pkgs; [
-      tor-browser
-    ];
   };
 }
