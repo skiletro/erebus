@@ -2,7 +2,6 @@
   lib,
   config,
   pkgs,
-  self',
   ...
 }:
 let
@@ -17,6 +16,7 @@ in
       blender.enable = lib.mkIf isLinux true;
       discord.enable = true;
       ghostty.enable = true;
+      helium.enable = true;
       pwa.enable = lib.mkIf isLinux true;
       spotify.enable = true;
       zen.enable = lib.mkIf isLinux true; # battery life isnt great on mac
@@ -24,7 +24,6 @@ in
 
     home.packages = with pkgs; [
       tor-browser
-      (with self'.packages; if isLinux then helium-linux else helium-macos)
     ];
   };
 }
