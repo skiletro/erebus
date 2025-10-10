@@ -14,12 +14,12 @@ in
 
   config = lib.mkIf config.erebus.profiles.graphical.enable {
     erebus.programs = {
-      discord.enable = true;
       blender.enable = lib.mkIf isLinux true;
+      discord.enable = true;
       ghostty.enable = true;
-      spotify.enable = true;
       pwa.enable = lib.mkIf isLinux true;
-      zen.enable = true;
+      spotify.enable = true;
+      zen.enable = lib.mkIf isLinux true; # battery life isnt great on mac
     };
 
     home.packages = with pkgs; [
