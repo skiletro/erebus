@@ -103,6 +103,17 @@
     };
     date = "2023-04-10";
   };
+  pake = {
+    pname = "pake";
+    version = "V3.3.5";
+    src = fetchFromGitHub {
+      owner = "tw93";
+      repo = "pake";
+      rev = "V3.3.5";
+      fetchSubmodules = false;
+      sha256 = "sha256-c/Sd231iw2+OcgfMI0IdjWEkRDFajOckZdRA+4wE7rE=";
+    };
+  };
   wheelwizard = {
     pname = "wheelwizard";
     version = "2.3.3";

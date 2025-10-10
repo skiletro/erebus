@@ -7,6 +7,10 @@ fetch.git = "https://owo.codes/whats-this/owo.sh.git"
 src.github = "TeamWheelWizard/WheelWizard"
 fetch.git = "https://github.com/TeamWheelWizard/WheelWizard.git"
 
+[pake]
+src.github = "tw93/pake"
+fetch.github = "tw93/pake"
+cargo_lock = ["src-tauri/Cargo.lock", "Cargo.lock"]
 
 # ------ Linux-specific ------ #
 [gpu-screen-recorder-ui]
@@ -30,7 +34,6 @@ src.github = "mocki-toki/barik"
 fetch.url = "https://github.com/mocki-toki/barik/releases/download/$ver/Barik.zip"
 
 [helium-dmg]
-
 src.github = "imputnet/helium-macos"
 fetch.url = "https://github.com/imputnet/helium-macos/releases/download/$ver/helium_$ver_arm64-macos.dmg"
 
