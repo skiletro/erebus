@@ -61,18 +61,18 @@
   };
   helium-aarch64-darwin = {
     pname = "helium-aarch64-darwin";
-    version = "0.5.2.1";
+    version = "0.5.5.1";
     src = fetchurl {
-      url = "https://github.com/imputnet/helium-macos/releases/download/0.5.2.1/helium_0.5.2.1_arm64-macos.dmg";
-      sha256 = "sha256-gw5ziIX9oYSZ0HnMgTNpvdILhsoO5aF+2l/KQzPoPHQ=";
+      url = "https://github.com/imputnet/helium-macos/releases/download/0.5.5.1/helium_0.5.5.1_arm64-macos.dmg";
+      sha256 = "sha256-QOQEEmUm60Sm197kadhr4Z1/abdsbbQw6Arax8YAIVo=";
     };
   };
   helium-x86_64-linux = {
     pname = "helium-x86_64-linux";
-    version = "0.5.2.1";
+    version = "0.5.5.1";
     src = fetchurl {
-      url = "https://github.com/imputnet/helium-linux/releases/download/0.5.2.1/helium-0.5.2.1-x86_64.AppImage";
-      sha256 = "sha256-3h0GMMl58NX+PuZRwmksOvlwPuZZwiQJdM5YXkaxlDk=";
+      url = "https://github.com/imputnet/helium-linux/releases/download/0.5.5.1/helium-0.5.5.1-x86_64.AppImage";
+      sha256 = "sha256-FCLCt0T+U8JqUkFVAfl//OtnWsNoN8lWHIiMJws2Mqo=";
     };
   };
   liga-sf-mono-nerd-font = {
