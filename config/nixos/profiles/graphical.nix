@@ -17,6 +17,7 @@
       };
       programs = {
         lact.enable = true;
+        unity.enable = true;
         vial.enable = true;
       };
       services = {
