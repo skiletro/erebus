@@ -48,6 +48,8 @@
       };
     };
 
-    xdg.autostart.entries = config.lib.erebus.autostartEntry "Discord Silent" "${lib.getExe config.programs.nixcord.discord.package} --start-minimized";
+    # Under normal circumstances, I'd say to use the lib.getExe stuff to get the proper package,
+    # however for some reason if I do that here, my theme and stuff won't activate properly. 🤷
+    xdg.autostart.entries = config.lib.erebus.autostartEntry "Discord Silent" "discord --start-minimized";
   };
 }
