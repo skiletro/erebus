@@ -33,6 +33,7 @@
       self'.packages.wheelwizard
       lsfg-vk
       lsfg-vk-ui # frame gen
+      vrcx
     ];
 
     home-manager.sharedModules = lib.singleton {
