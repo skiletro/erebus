@@ -266,6 +266,27 @@
       "inputs": {
         "flake-utils": "flake-utils",
         "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1760309387,
+        "narHash": "sha256-yCjkJuQbt6DjdS1XJL2uwyLu1AcmDvlyMGojBq8Ua38=",
+        "owner": "9001",
+        "repo": "copyparty",
+        "rev": "d099e5e84e191d67a7bffa574ab39b6d0d4f6adf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "9001",
+        "repo": "copyparty",
+        "type": "github"
+      }
+    },
+    "copyparty_2": {
+      "inputs": {
+        "flake-utils": "flake-utils_2",
+        "nixpkgs": [
           "diffy",
           "nixpkgs"
         ]
@@ -331,7 +352,7 @@
         "anyrun": "anyrun",
         "catppuccin": "catppuccin",
         "catppuccin-gtk": "catppuccin-gtk",
-        "copyparty": "copyparty",
+        "copyparty": "copyparty_2",
         "disko": "disko",
         "flake-parts": "flake-parts",
         "home-manager": "home-manager_2",
@@ -585,6 +606,21 @@
       }
     },
     "flake-utils_2": {
+      "locked": {
+        "lastModified": 1678901627,
+        "narHash": "sha256-U02riOqrKKzwjsxc/400XnElV+UtPUQWpANPlyazjH0=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "93a2b84fc4b70d9e089d029deacc3583435c2ed6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "flake-utils_3": {
       "inputs": {
         "systems": "systems_2"
       },
@@ -602,7 +638,7 @@
         "type": "github"
       }
     },
-    "flake-utils_3": {
+    "flake-utils_4": {
       "inputs": {
         "systems": "systems_3"
       },
@@ -620,7 +656,7 @@
         "type": "github"
       }
     },
-    "flake-utils_4": {
+    "flake-utils_5": {
       "inputs": {
         "systems": [
           "diffy",
@@ -642,7 +678,7 @@
         "type": "github"
       }
     },
-    "flake-utils_5": {
+    "flake-utils_6": {
       "inputs": {
         "systems": [
           "mac-app-util",
@@ -662,7 +698,7 @@
         "type": "indirect"
       }
     },
-    "flake-utils_6": {
+    "flake-utils_7": {
       "inputs": {
         "systems": "systems_7"
       },
@@ -680,7 +716,7 @@
         "type": "github"
       }
     },
-    "flake-utils_7": {
+    "flake-utils_8": {
       "inputs": {
         "systems": [
           "nixpkgs-xr",
@@ -1378,7 +1414,7 @@
       "inputs": {
         "cl-nix-lite": "cl-nix-lite",
         "flake-compat": [],
-        "flake-utils": "flake-utils_5",
+        "flake-utils": "flake-utils_6",
         "nixpkgs": [
           "nixpkgs"
         ],
@@ -1529,7 +1565,7 @@
     "nix-minecraft": {
       "inputs": {
         "flake-compat": "flake-compat_2",
-        "flake-utils": "flake-utils_2",
+        "flake-utils": "flake-utils_3",
         "nixpkgs": [
           "diffy",
           "nixpkgs"
@@ -1552,7 +1588,7 @@
     "nix-minecraft_2": {
       "inputs": {
         "flake-compat": "flake-compat_4",
-        "flake-utils": "flake-utils_6",
+        "flake-utils": "flake-utils_7",
         "nixpkgs": [
           "nixpkgs"
         ]
@@ -1573,7 +1609,7 @@
     },
     "nix-vscode-extensions": {
       "inputs": {
-        "flake-utils": "flake-utils_3",
+        "flake-utils": "flake-utils_4",
         "nixpkgs": [
           "diffy",
           "nixpkgs"
@@ -1724,7 +1760,7 @@
     "nixpkgs-xr": {
       "inputs": {
         "flake-compat": "flake-compat_3",
-        "flake-utils": "flake-utils_4",
+        "flake-utils": "flake-utils_5",
         "nixpkgs": [
           "diffy",
           "nixpkgs"
@@ -1752,7 +1788,7 @@
     "nixpkgs-xr_2": {
       "inputs": {
         "flake-compat": [],
-        "flake-utils": "flake-utils_7",
+        "flake-utils": "flake-utils_8",
         "nixpkgs": [
           "nixpkgs"
         ],
@@ -1900,6 +1936,7 @@
     "root": {
       "inputs": {
         "chaotic": "chaotic",
+        "copyparty": "copyparty",
         "cursors": "cursors",
         "diffy": "diffy",
         "disko": "disko_2",
