@@ -9,6 +9,11 @@
     group = "copyparty";
   };
 
+  sops.secrets."copyparty-mmu-password" = {
+    owner = "copyparty";
+    group = "copyparty";
+  };
+
   services.copyparty = {
     enable = true;
     user = "copyparty";
@@ -35,6 +40,15 @@
           r = "*";
         };
         flags.fk = 8;
+      };
+
+      "/mmu" = {
+        path = "/srv/copyparty/mmu";
+        access = {
+          A = "jamie";
+          r = "*";
+          rw = "mmu";
+        };
       };
     };
   };
