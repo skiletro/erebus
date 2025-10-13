@@ -29,6 +29,7 @@ let
         chaotic.nixosModules.default
         home-manager.nixosModules.default
         stylix.nixosModules.stylix
+        disko.nixosModules.default
 
         stylingModules
         (helperModules hostName system)
