@@ -25,6 +25,7 @@
 
     accounts = {
       jamie.passwordFile = config.sops.secrets.copyparty-jamie-password.path;
+      mmu.passwordFile = config.sops.secrets.copyparty-mmu-password.path;
     };
 
     volumes = {
