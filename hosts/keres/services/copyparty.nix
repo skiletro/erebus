@@ -21,21 +21,22 @@
     accounts = {
       jamie.passwordFile = config.sops.secrets.copyparty-jamie-password.path;
     };
-  };
 
-  volumes = {
-    "/" = {
-      path = "/srv/copyparty";
-      access.A = "jamie";
+    volumes = {
+      "/" = {
+        path = "/srv/copyparty";
+        access.A = "jamie";
+      };
+
+      "/public" = {
+        path = "/srv/copyparty/public";
+        access = {
+          A = "jamie";
+          r = "*";
+        };
+        flags.fk = 8;
+      };
     };
-
-    # "/public" = {
-    #   path = "/srv/copyparty/public";
-    #   access = {
-    #     A = "jamie";
-    #     g = "*";
-    #   };
-    # };
   };
 
 }
