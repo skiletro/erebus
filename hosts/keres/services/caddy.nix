@@ -19,7 +19,7 @@
       '';
 
       "f.warm.vodka".extraConfig = ''
-        reverse_proxy :${config.services.copyparty.settings.p}
+        reverse_proxy :${toString config.services.copyparty.settings.p}
       '';
     };
   };
