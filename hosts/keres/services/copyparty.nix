@@ -1,7 +1,8 @@
-{inputs, config, ...}: {
-  imports = [inputs.copyparty.nixosModules.default];
+{ inputs, config, ... }:
+{
+  imports = [ inputs.copyparty.nixosModules.default ];
 
-  nixpkgs.overlays = [inputs.copyparty.overlays.default];
+  nixpkgs.overlays = [ inputs.copyparty.overlays.default ];
 
   sops.secrets."copyparty-jamie-password" = {
     owner = "copyparty";
