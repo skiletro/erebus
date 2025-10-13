@@ -19,6 +19,6 @@
       services.tailscale.enable = true;
     };
 
-    environment.systemPackages = [pkgs.ghostty.terminfo];
+    environment.systemPackages = [ pkgs.ghostty.terminfo ];
   };
 }
