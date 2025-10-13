@@ -4,7 +4,7 @@
     enable = true;
     virtualHosts = {
       "warm.vodka" = {
-        serverAlises = [
+        serverAliases = [
           "www.warm.vodka"
           "warm.vodka"
         ];
