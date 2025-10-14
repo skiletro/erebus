@@ -8,14 +8,21 @@
   options.erebus.programs.git.enable = lib.mkEnableOption "Git and git tooling";
 
   config = lib.mkIf config.erebus.programs.git.enable {
-    # See https://github.com/uncenter/flake/blob/main/user/programs/git.nix for some options you can steal >:P
     programs = {
       git = {
         enable = true;
-        userName = "skiletro";
-        userEmail = "19377854+skiletro@users.noreply.github.com";
+        userName = "jamie";
+        userEmail = "${"git"}@${"skilet.ro"}"; # bit of scrambling so it cant b scraped as easily
         diff-so-fancy.enable = true;
-        ignores = [ ".DS_Store .envrc" ];
+        ignores = [
+          ".DS_Store"
+          "**/.DS_Store"
+          ".direnv/"
+        ];
+        extraConfig = {
+          pull.rebase = true;
+          push.autoSetupRemote = true;
+        };
       };
 
       lazygit = {
@@ -24,10 +31,12 @@
           gui = {
             nerdFontsVersion = "3";
             spinner.frames = [
-              "◜"
-              "◝"
-              "◞"
-              "◟"
+              "⠟"
+              "⠯"
+              "⠷"
+              "⠾"
+              "⠽"
+              "⠻"
             ];
           };
           git = {
@@ -39,6 +48,9 @@
       fish.shellAbbrs.lg = "lazygit";
     };
 
-    home.packages = [ pkgs.gh ];
+    home.packages = with pkgs; [
+      gh # github
+      codeberg-cli # codeberg
+    ];
   };
 }
