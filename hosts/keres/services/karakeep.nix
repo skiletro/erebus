@@ -1,3 +1,4 @@
+{ config, ... }:
 {
   services.karakeep = {
     enable = true;
@@ -9,4 +10,8 @@
       DISABLE_NEW_RELEASE_CHECK = "true";
     };
   };
+
+  services.caddy.virtualHosts."kk.warm.vodka".extraConfig = ''
+    reverse_proxy :${config.services.karakeep.extraEnvironment.PORT}
+  '';
 }

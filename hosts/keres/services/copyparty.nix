@@ -54,4 +54,7 @@
     };
   };
 
+  services.caddy.virtualHosts."f.warm.vodka".extraConfig = ''
+    reverse_proxy :${toString config.services.copyparty.settings.p}
+  '';
 }
