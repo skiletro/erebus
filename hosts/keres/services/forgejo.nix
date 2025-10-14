@@ -23,7 +23,7 @@
     let
       forgejo = lib.getExe config.services.forgejo.package;
       user = "jamie";
-      passwordPath = config.sops.secrets-forgejo-jamie-password.path;
+      passwordPath = config.sops.secrets.forgejo-jamie-password.path;
     in
     ''
       ${forgejo} admin user create \
