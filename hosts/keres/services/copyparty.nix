@@ -21,6 +21,8 @@
     settings = {
       i = "0.0.0.0";
       p = 3002;
+      ban-404 = false;
+      ban-403 = false;
     };
 
     accounts = {
@@ -50,11 +52,6 @@
           r = "*";
           rw = "mmu";
         };
-      };
-
-      global = {
-        ban-404 = "no";
-        ban-403 = "no";
       };
     };
   };
