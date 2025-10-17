@@ -39,6 +39,7 @@
       "proton-mail"
       "proton-pass"
       "protonvpn"
+      "steam"
       "unity-hub"
     ];
 
