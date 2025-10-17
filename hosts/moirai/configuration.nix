@@ -1,4 +1,3 @@
-{ pkgs, ... }:
 {
   erebus = {
     profiles = {
@@ -8,49 +7,12 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [
-    betterdisplay
-    grandperspective
-    iina # media player
-    inkscape
-    m-cli
-    moonlight-qt
-    obsidian
-    qbittorrent
-    signal-desktop-bin
-    utm
-    whatsapp-for-mac
+  homebrew.casks = [
+    "godot"
+    "microsoft-teams" # for work
+    "steam"
+    "unity-hub"
   ];
-
-  homebrew = {
-    # tui
-    casks = [
-      "blender"
-      "ente"
-      "godot"
-      "handbrake-app" # broken
-      "microsoft-office"
-      "microsoft-teams"
-      "orion"
-      "pearcleaner"
-      "pinta"
-      "plex"
-      "proton-drive"
-      "proton-mail"
-      "proton-pass"
-      "protonvpn"
-      "steam"
-      "unity-hub"
-    ];
-
-    # cli
-    brews = [ ];
-
-    # app store
-    masApps = {
-      Xcode = 497799835;
-    };
-  };
 
   system.stateVersion = 6; # do not change
 }

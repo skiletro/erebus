@@ -61,18 +61,18 @@
   };
   helium-appimage = {
     pname = "helium-appimage";
-    version = "0.5.5.1";
+    version = "0.5.6.1";
     src = fetchurl {
-      url = "https://github.com/imputnet/helium-linux/releases/download/0.5.5.1/helium-0.5.5.1-x86_64.AppImage";
-      sha256 = "sha256-FCLCt0T+U8JqUkFVAfl//OtnWsNoN8lWHIiMJws2Mqo=";
+      url = "https://github.com/imputnet/helium-linux/releases/download/0.5.6.1/helium-0.5.6.1-x86_64.AppImage";
+      sha256 = "sha256-J1hTquA47gim0H7TFMM+JabY5YRcL5snJTpM/elN1zI=";
     };
   };
   helium-dmg = {
     pname = "helium-dmg";
-    version = "0.5.5.1";
+    version = "0.5.6.1";
     src = fetchurl {
-      url = "https://github.com/imputnet/helium-macos/releases/download/0.5.5.1/helium_0.5.5.1_arm64-macos.dmg";
-      sha256 = "sha256-QOQEEmUm60Sm197kadhr4Z1/abdsbbQw6Arax8YAIVo=";
+      url = "https://github.com/imputnet/helium-macos/releases/download/0.5.6.1/helium_0.5.6.1_arm64-macos.dmg";
+      sha256 = "sha256-4ZoSSfeZxZpkOmlxOYiRnJj0at7U3687tQ1SXWFg/ug=";
     };
   };
   liga-sf-mono-nerd-font = {
@@ -102,6 +102,46 @@
       sha256 = "sha256-vwvUiM7mOixyNERjITwcS90jz15QFkwxCEtYzqm+hdg=";
     };
     date = "2023-04-10";
+  };
+  pearcleaner-bin = {
+    pname = "pearcleaner-bin";
+    version = "5.2.6";
+    src = fetchurl {
+      url = "https://github.com/alienator88/Pearcleaner/releases/download/5.2.6/Pearcleaner.dmg";
+      sha256 = "sha256-t+ZqdiFgr8+ghVjwCclTkHOAe9QzwQ2CCP3QSLbL0cI=";
+    };
+  };
+  protonmail-bin = {
+    pname = "protonmail-bin";
+    version = "1.9.1";
+    src = fetchurl {
+      url = "https://proton.me/download/mail/macos/1.9.1/ProtonMail-desktop.dmg";
+      sha256 = "sha256-U+I0ttToDiLLjEaKlvdb7HhE4dMrLryc251GXBVsQEM=";
+    };
+  };
+  protonpass-bin = {
+    pname = "protonpass-bin";
+    version = "1.32.10";
+    src = fetchurl {
+      url = "https://proton.me/download/PassDesktop/darwin/universal/ProtonPass_1.32.10.dmg";
+      sha256 = "sha256-2lVbPifoh8zY3hQmcS0A0eREUON9b38TCF8rLcAA+lA=";
+    };
+  };
+  protonvpn-bin = {
+    pname = "protonvpn-bin";
+    version = "6.0.0";
+    src = fetchurl {
+      url = "https://vpn.protondownload.com/download/macos/6.0.0/ProtonVPN_mac_v6.0.0.dmg";
+      sha256 = "sha256-EtC0426Mj2DekbMDyM7iJKrQLI4tQ0873lpJAvDHxpo=";
+    };
+  };
+  swipeaerospace-bin = {
+    pname = "swipeaerospace-bin";
+    version = "0.2.2";
+    src = fetchurl {
+      url = "https://github.com/MediosZ/SwipeAeroSpace/releases/download/0.2.2/SwipeAeroSpace.zip";
+      sha256 = "sha256-165rrAIz6s0/gXyaGKB5RQiA3lo7k9geCjWcSKV24wk=";
+    };
   };
   wheelwizard = {
     pname = "wheelwizard";

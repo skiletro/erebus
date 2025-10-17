@@ -29,11 +29,32 @@ fetch.url = "https://github.com/imputnet/helium-linux/releases/download/$ver/hel
 src.github = "mocki-toki/barik"
 fetch.url = "https://github.com/mocki-toki/barik/releases/download/$ver/Barik.zip"
 
-[helium-dmg]
+[swipeaerospace-bin]
+src.github = "MediosZ/SwipeAeroSpace"
+fetch.url = "https://github.com/MediosZ/SwipeAeroSpace/releases/download/$ver/SwipeAeroSpace.zip"
 
+[helium-dmg]
 src.github = "imputnet/helium-macos"
 fetch.url = "https://github.com/imputnet/helium-macos/releases/download/$ver/helium_$ver_arm64-macos.dmg"
 
+[pearcleaner-bin]
+src.github = "alienator88/Pearcleaner"
+fetch.url = "https://github.com/alienator88/Pearcleaner/releases/download/$ver/Pearcleaner.dmg"
+
+[protonmail-bin]
+src.webpage = "https://proton.me/download/mail/macos/version.json"
+src.regex = '"Version":\s*"([0-9.]+)"'
+fetch.url = "https://proton.me/download/mail/macos/$ver/ProtonMail-desktop.dmg"
+
+[protonpass-bin]
+src.webpage = "https://proton.me/download/PassDesktop/darwin/universal/version.json"
+src.regex = '"Version":\s*"([0-9.]+)"'
+fetch.url = "https://proton.me/download/PassDesktop/darwin/universal/ProtonPass_$ver.dmg"
+
+[protonvpn-bin]
+src.webpage = "https://protonvpn.com/download/macos/updates/v4/sparkle.xml"
+src.regex = '<title>Version\s+((?!beta)\d+\.\d+\.\d+)</title>'
+fetch.url = "https://vpn.protondownload.com/download/macos/$ver/ProtonVPN_mac_v$ver.dmg"
 
 # ------ Non-program packages ------ #
 [base16-schemes]

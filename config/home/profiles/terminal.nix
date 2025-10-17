@@ -26,10 +26,13 @@
     };
 
     home.packages = with pkgs; [
+      caligula # iso burner
       du-dust # fancy du
       fd # find files
       file # identify files
       fzf # fuzzy finder
+      heh # hex editor
+      iamb # matrix
       jq # json processor
       just # make file but better
       libnotify # notifs through scripts

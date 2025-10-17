@@ -1,6 +1,8 @@
 {
   lib,
   config,
+  pkgs,
+  self',
   ...
 }:
 {
@@ -14,6 +16,18 @@
         barik.enable = true; # bar
       };
     };
+
+    environment.systemPackages = with pkgs; [
+      betterdisplay
+      grandperspective # disk usage visualiser
+      iina # media player
+      m-cli
+      self'.packages.pearcleaner-bin
+      utm
+      whatsapp-for-mac
+    ];
+
+    homebrew.masApps.Xcode = 497799835;
 
     home-manager.sharedModules = lib.singleton {
       erebus.profiles.graphical.enable = true;

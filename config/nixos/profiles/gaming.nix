@@ -27,6 +27,7 @@
       bs-manager
       dolphin-emu
       lutris
+      ludusavi
       osu-lazer-bin
       r2modman
       ryubing # switch emu

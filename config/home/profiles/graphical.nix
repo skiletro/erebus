@@ -13,13 +13,21 @@ in
 
   config = lib.mkIf config.erebus.profiles.graphical.enable {
     erebus.programs = {
-      blender.enable = lib.mkIf isLinux true;
+      blender.enable = true;
       discord.enable = true;
       ghostty.enable = true;
       helium.enable = true;
-      pwa.enable = lib.mkIf isLinux true;
+      libreoffice.enable = true;
+      proton.enable = true;
+      pwa.enable = lib.mkIf isLinux true; # TODO: need to find a solution for pwa declaration on darwin
       spotify.enable = true;
-      zen.enable = lib.mkIf isLinux true; # battery life isnt great on mac
+      zen.enable = lib.mkIf isLinux true; # TODO: compiles but doesn't launch on darwin
     };
+
+    home.packages = with pkgs; [
+      obsidian
+      qbittorrent
+      signal-desktop-bin
+    ];
   };
 }

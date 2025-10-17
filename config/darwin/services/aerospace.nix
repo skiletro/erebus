@@ -2,21 +2,13 @@
   lib,
   config,
   pkgs,
+  self',
   ...
-
 }:
 {
   options.erebus.services.aerospace.enable = lib.mkEnableOption "Aerospace window manager";
 
   config = lib.mkIf config.erebus.services.aerospace.enable {
-    homebrew = {
-      casks = [
-        "sol"
-        "swipeaerospace"
-      ]; # TODO: package and add module
-      taps = [ "mediosz/tap" ];
-    };
-
     system.activationScripts."aerospace-restart".text = ''
       launchctl stop org.nixos.aerospace
     '';
@@ -26,8 +18,7 @@
       settings = {
         after-startup-command = [
           "exec-and-forget open -a Barik.app"
-          "exec-and-forget open -a SwipeAeroSpace.app"
-          "exec-and-forget open -a Sol.app"
+          "exec-and-forget open ${self'.packages.swipeaerospace-bin}/Applications/SwipeAeroSpace.app"
           "exec-and-forget ${lib.getExe pkgs.jankyborders} active_color=0xff${config.lib.stylix.colors.base05} inactive_color=0xff${config.lib.stylix.colors.base00} width=4.0"
         ];
 
