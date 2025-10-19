@@ -6,15 +6,18 @@
       self',
       ...
     }:
+    let
+      pkgDir = ../../pkgs;
+    in
     {
       packages =
-        builtins.readDir ./.
+        builtins.readDir pkgDir
         |> lib.filterAttrs (name: value: value == "directory" && name != "_sources")
         |> lib.mapAttrs (
-          name: _: pkgs.callPackage ./${name} ({ inherit (self') sources; } // self'.packages)
+          name: _: pkgs.callPackage "${pkgDir}/${name}" ({ inherit (self') sources; } // self'.packages)
         );
 
-      sources = import ./_sources/generated.nix {
+      sources = import "${pkgDir}/_sources/generated.nix" {
         inherit (pkgs)
           fetchgit
           fetchurl

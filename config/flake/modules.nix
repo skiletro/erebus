@@ -17,7 +17,7 @@ let
     );
 
   genModuleAttrs = type: {
-    flake."${type}Modules" = importModules ./${type};
+    flake."${type}Modules" = importModules ../../modules/${type};
   };
 in
 {
@@ -28,6 +28,13 @@ in
       "darwin"
     ])
     ++ [
+      (inputs.import-tree ../../modules/flake)
       inputs.home-manager.flakeModules.home-manager
     ];
+
+  flake = {
+    nixosModules.erebus = inputs.import-tree ../nixos;
+    homeModules.erebus = inputs.import-tree ../home;
+    darwinModules.erebus = inputs.import-tree ../darwin;
+  };
 }
