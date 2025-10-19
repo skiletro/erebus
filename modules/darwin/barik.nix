@@ -22,7 +22,7 @@
         source = (pkgs.formats.toml { }).generate "barik-config" config.services.barik.settings;
         onChange = # sh
           ''
-            ${lib.getExe' pkgs.toybox "pkill"} Barik
+            kill $(pgrep Barik)
             open -a Barik.app
           '';
       };
