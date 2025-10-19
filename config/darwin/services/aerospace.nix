@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  pkgs,
   self',
   ...
 }:
@@ -19,7 +18,6 @@
         after-startup-command = [
           "exec-and-forget open -a Barik.app"
           "exec-and-forget open ${self'.packages.swipeaerospace-bin}/Applications/SwipeAeroSpace.app"
-          "exec-and-forget ${lib.getExe pkgs.jankyborders} active_color=0xff${config.lib.stylix.colors.base05} inactive_color=0xff${config.lib.stylix.colors.base00} width=4.0"
         ];
 
         enable-normalization-flatten-containers = true;
