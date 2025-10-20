@@ -23,6 +23,5 @@
       builders-use-substitutes = true;
       accept-flake-config = true;
     };
-    linux-builder.enable = true;
   };
 }
