@@ -2,7 +2,7 @@
   config,
   lib,
   pkgs,
-  inputs,
+  inputs',
   self,
   ...
 }:
@@ -24,7 +24,7 @@
       stylix.enable = true;
       extraCompatPackages = with pkgs; [
         proton-cachyos_x86_64_v3
-        proton-ge-custom
+        inputs'.nixpkgs-xr.packages.proton-ge-rtsp-bin
         steam-play-none # Allows you to run a game without Proton if it is otherwise forced.
       ];
       extest.enable = true;
@@ -32,13 +32,6 @@
     };
 
     home-manager.sharedModules = lib.singleton (userAttrs: {
-      imports = [ inputs.steam-config-nix.homeModules.default ];
-
-      programs.steam.config = {
-        enable = true;
-        closeSteam = true;
-      };
-
       xdg.autostart.entries = userAttrs.config.lib.erebus.autostartEntry "Steam Silent" "${lib.getExe config.programs.steam.package} -silent -console";
     });
 
