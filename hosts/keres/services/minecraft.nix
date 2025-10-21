@@ -8,10 +8,10 @@
     enable = true;
     eula = true;
     openFirewall = true;
-    servers.bta = {
+    servers.bta-1 = {
       enable = true;
       jvmOpts = "-Xmx2G -Xms2G";
-      package = pkgs.minecraftServers.vanilla-1-2.overrideAttrs rec {
+      package = pkgs.minecraftServers.vanilla-1_3.overrideAttrs rec {
         pname = "bta";
         version = "7.3_04";
         src = pkgs.fetchurl {
