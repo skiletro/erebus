@@ -21,6 +21,7 @@ in
       proton.enable = true;
       pwa.enable = lib.mkIf isLinux true; # TODO: need to find a solution for pwa declaration on darwin
       spotify.enable = true;
+      zed.enable = true;
       zen.enable = lib.mkIf isLinux true; # TODO: compiles but doesn't launch on darwin
     };
 
