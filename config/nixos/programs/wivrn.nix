@@ -9,11 +9,20 @@
   options.erebus.programs.wivrn.enable = lib.mkEnableOption "WiVRn";
 
   config = lib.mkIf config.erebus.programs.wivrn.enable {
-    services.wivrn = {
-      enable = true;
-      openFirewall = true;
-      defaultRuntime = true;
-    };
+    services.wivrn =
+      let
+        inherit (inputs'.nixpkgs-xr.packages) wivrn xrizer opencomposite;
+      in
+      {
+        enable = true;
+        package = wivrn.override {
+          ovrCompatSearchPaths = "${xrizer}/lib/xrizer:${opencomposite}/lib/opencomposite";
+        };
+        openFirewall = true;
+        defaultRuntime = true;
+        steam.importOXRRuntimes = true;
+        highPriority = true;
+      };
 
     environment.systemPackages = with pkgs; [
       android-tools
