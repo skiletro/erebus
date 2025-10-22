@@ -49,6 +49,26 @@
         },
         "version": "317a5e10c35825a6c905d912e480dfe8e71c7559"
     },
+    "dzgui": {
+        "cargoLocks": null,
+        "date": "2025-07-07",
+        "extract": null,
+        "name": "dzgui",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "321384dc7bd44339568a3f63630e5fc13a644fc9",
+            "sha256": "sha256-eXNjxv7oLHer1raj0WgIi6OCrXVtkeiFJFGsg2F+FjI=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://codeberg.org/aclist/dztui"
+        },
+        "version": "321384dc7bd44339568a3f63630e5fc13a644fc9"
+    },
     "gpu-screen-recorder-notification": {
         "cargoLocks": null,
         "date": "2025-10-04",

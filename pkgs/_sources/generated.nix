@@ -31,6 +31,20 @@
     };
     date = "2025-09-13";
   };
+  dzgui = {
+    pname = "dzgui";
+    version = "321384dc7bd44339568a3f63630e5fc13a644fc9";
+    src = fetchgit {
+      url = "https://codeberg.org/aclist/dztui";
+      rev = "321384dc7bd44339568a3f63630e5fc13a644fc9";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-eXNjxv7oLHer1raj0WgIi6OCrXVtkeiFJFGsg2F+FjI=";
+    };
+    date = "2025-07-07";
+  };
   gpu-screen-recorder-notification = {
     pname = "gpu-screen-recorder-notification";
     version = "54e4f30a692b7f86686d531d0331de32374a4735";

@@ -26,6 +26,7 @@
     environment.systemPackages = with pkgs; [
       bs-manager
       dolphin-emu
+      self'.packages.dzgui
       lutris
       ludusavi
       osu-lazer-bin

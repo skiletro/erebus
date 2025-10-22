@@ -23,6 +23,10 @@ git.fetchSubmodules = true
 src.github = "imputnet/helium-linux"
 fetch.url = "https://github.com/imputnet/helium-linux/releases/download/$ver/helium-$ver-x86_64.AppImage"
 
+[dzgui]
+src.git = "https://codeberg.org/aclist/dztui"
+fetch.git = "https://codeberg.org/aclist/dztui"
+
 
 # ------ Darwin-specific ------ #
 [barik-bin]
