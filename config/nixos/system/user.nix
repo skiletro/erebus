@@ -26,6 +26,7 @@
           "libvirtd"
           "gamemode"
           "docker"
+          "kvm"
         ];
         openssh.authorizedKeys.keys = [
           "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINnFEMa0S9zuA5cVg+Ktazz9gEevkDCNYIDX0WAMxcAC eos"
