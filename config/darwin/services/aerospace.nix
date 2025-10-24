@@ -102,15 +102,15 @@
             "8" = "workspace 8";
             "9" = "workspace 9";
 
-            shift-1 = "move-node-to-workspace 1";
-            shift-2 = "move-node-to-workspace 2";
-            shift-3 = "move-node-to-workspace 3";
-            shift-4 = "move-node-to-workspace 4";
-            shift-5 = "move-node-to-workspace 5";
-            shift-6 = "move-node-to-workspace 6";
-            shift-7 = "move-node-to-workspace 7";
-            shift-8 = "move-node-to-workspace 8";
-            shift-9 = "move-node-to-workspace 9";
+            shift-1 = "move-node-to-workspace --focus-follows-window 1";
+            shift-2 = "move-node-to-workspace --focus-follows-window 2";
+            shift-3 = "move-node-to-workspace --focus-follows-window 3";
+            shift-4 = "move-node-to-workspace --focus-follows-window 4";
+            shift-5 = "move-node-to-workspace --focus-follows-window 5";
+            shift-6 = "move-node-to-workspace --focus-follows-window 6";
+            shift-7 = "move-node-to-workspace --focus-follows-window 7";
+            shift-8 = "move-node-to-workspace --focus-follows-window 8";
+            shift-9 = "move-node-to-workspace --focus-follows-window 9";
 
             shift-space = [
               "layout floating tiling"
