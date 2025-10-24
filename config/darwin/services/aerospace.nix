@@ -64,17 +64,6 @@
 
         mode = {
           main.binding = lib.mapAttrs' (n: v: lib.nameValuePair "cmd-${n}" v) {
-            # enter = ''
-            #   exec-and-forget osascript -e '
-            #     tell application "Ghostty"
-            #   	if it is running then
-            #   		activate
-            #   		tell application "System Events" to keystroke "n" using {command down}
-            #   	else
-            #   		activate
-            #   	end if
-            #       end tell'
-            # '';
             enter = ''
               exec-and-forget osascript -e '
                 tell application "Ghostty"
