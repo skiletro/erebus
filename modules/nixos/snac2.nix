@@ -17,7 +17,7 @@ in
     };
     dir = lib.mkOption {
       type = lib.types.str;
-      default = "/srv/snac2";
+      default = "/home/snac2";
       description = "Path to the snac2 data directory";
     };
   };
