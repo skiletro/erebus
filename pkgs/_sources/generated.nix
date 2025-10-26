@@ -9,14 +9,6 @@
       sha256 = "sha256-pP0He9EUN7SUDYzwj0CE4e39SuNZ+SVz7FdmUviF6r0=";
     };
   };
-  barik-bin = {
-    pname = "barik-bin";
-    version = "0.5.1";
-    src = fetchurl {
-      url = "https://github.com/mocki-toki/barik/releases/download/0.5.1/Barik.zip";
-      sha256 = "sha256-yFglQoP7wJaqpOYd0VvnoKxWVZUSnSKFKVq5M7XgYLU=";
-    };
-  };
   base16-schemes = {
     pname = "base16-schemes";
     version = "317a5e10c35825a6c905d912e480dfe8e71c7559";

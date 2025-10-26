@@ -32,7 +32,7 @@
         AppleInterfaceStyleSwitchesAutomatically = false;
         NSStatusItemSpacing = 8; # default=12
         NSStatusItemSelectionPadding = 6; # default=6
-        _HIHideMenuBar = ifTiling true;
+        _HIHideMenuBar = false;
         NSAutomaticWindowAnimationsEnabled = ifTiling false;
       };
       spaces.spans-displays = ifTiling true;

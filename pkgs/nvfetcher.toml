@@ -29,10 +29,6 @@ fetch.git = "https://codeberg.org/aclist/dztui"
 
 
 # ------ Darwin-specific ------ #
-[barik-bin]
-src.github = "mocki-toki/barik"
-fetch.url = "https://github.com/mocki-toki/barik/releases/download/$ver/Barik.zip"
-
 [swipeaerospace-bin]
 src.github = "MediosZ/SwipeAeroSpace"
 fetch.url = "https://github.com/MediosZ/SwipeAeroSpace/releases/download/$ver/SwipeAeroSpace.zip"

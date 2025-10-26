@@ -13,7 +13,6 @@
     erebus = {
       services = {
         aerospace.enable = true; # wm
-        barik.enable = true; # bar
         jankyborders.enable = true; # borders
       };
     };

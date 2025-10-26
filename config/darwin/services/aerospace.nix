@@ -16,7 +16,6 @@
       enable = true;
       settings = {
         after-startup-command = [
-          "exec-and-forget open -a Barik.app"
           "exec-and-forget open ${self'.packages.swipeaerospace-bin}/Applications/SwipeAeroSpace.app"
         ];
 
@@ -45,10 +44,7 @@
               left = padding;
               bottom = padding;
               right = padding;
-              top = [
-                { monitor.main = padding + 25; }
-                padding
-              ];
+              top = padding;
             };
           };
 
@@ -125,6 +121,5 @@
 
       };
     };
-    erebus.services.barik.enable = lib.mkDefault true;
   };
 }
