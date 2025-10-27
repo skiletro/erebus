@@ -1,10 +1,11 @@
-{ self, ... }:
 {
-  imports = [ self.nixosModules.snac2 ];
+  # NOTE: Disabled for now as I don't need a fedi account just yet.
 
-  services.snac2.enable = true;
+  # imports = [ self.nixosModules.snac2 ];
 
-  services.caddy.virtualHosts."fedi.warm.vodka".extraConfig = ''
-    reverse_proxy :3004
-  '';
+  # services.snac2.enable = true;
+
+  # services.caddy.virtualHosts."fedi.warm.vodka".extraConfig = ''
+  #   reverse_proxy :3004
+  # '';
 }
