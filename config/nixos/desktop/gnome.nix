@@ -20,6 +20,7 @@
         appindicator
         color-picker
         dash-to-dock
+        gsconnect
         keep-awake
         mpris-label
         search-light
