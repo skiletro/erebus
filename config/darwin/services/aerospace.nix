@@ -36,16 +36,8 @@
             padding = 5;
           in
           {
-            inner = {
-              horizontal = padding + 4;
-              vertical = padding + 4;
-            };
-            outer = {
-              left = padding;
-              bottom = padding;
-              right = padding;
-              top = padding;
-            };
+            inner = lib.genAttrs [ "horizontal" "vertical" ] (_: padding + 4);
+            outer = lib.genAttrs [ "top" "left" "bottom" "right" ] (_: padding);
           };
 
         on-window-detected = [
@@ -108,17 +100,13 @@
             shift-8 = "move-node-to-workspace --focus-follows-window 8";
             shift-9 = "move-node-to-workspace --focus-follows-window 9";
 
-            shift-space = [
-              "layout floating tiling"
-              "mode main"
-            ];
+            alt-space = "layout floating tiling";
 
             alt-s = "layout v_accordion";
             alt-w = "layout h_accordion";
             alt-e = "layout tiles horizontal vertical";
           };
         };
-
       };
     };
   };
