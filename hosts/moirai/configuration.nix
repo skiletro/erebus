@@ -8,6 +8,7 @@
   };
 
   homebrew.casks = [
+    "dolphin" # more gaming!
     "godot"
     "microsoft-teams" # for work
     "steam"
