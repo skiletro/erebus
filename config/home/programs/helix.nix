@@ -11,7 +11,15 @@
   config = lib.mkIf config.erebus.programs.helix.enable {
     programs.helix = {
       enable = true;
-      package = inputs'.helix.packages.helix;
+      package = inputs'.helix.packages.helix.overrideAttrs (_prevAttrs: {
+        patches = [
+          # Keep LSP completions active when typing server-trigger characters
+          (pkgs.fetchurl {
+            url = "https://patch-diff.githubusercontent.com/raw/helix-editor/helix/pull/14556.patch";
+            sha256 = "sha256-YLohyMbQMKcOu16BhyJ0jwTfjX0JkPuX5z7xgwI+AMc=";
+          })
+        ];
+      });
       extraPackages = with pkgs; [
         typescript-language-server # TS
         vscode-langservers-extracted # TS/JS/HTML
