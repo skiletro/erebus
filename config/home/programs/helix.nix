@@ -40,6 +40,8 @@
         omnisharp-roslyn # C#
         csharpier # C#
         netcoredbg # C#
+        mono # C#
+        msbuild # C# Unity
       ];
       defaultEditor = true;
       languages = {
