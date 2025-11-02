@@ -13,9 +13,8 @@
 
       packages = with pkgs; [
         corefonts # Microsoft Fonts
-        vistafonts # More Microsoft Fonts
+        vista-fonts # More Microsoft Fonts
         noto-fonts
-        noto-fonts-extra
         noto-fonts-cjk-sans # Japanese, Korean, Chinese, etc
         noto-fonts-color-emoji
       ];

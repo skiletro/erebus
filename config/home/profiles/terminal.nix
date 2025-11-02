@@ -27,7 +27,7 @@
 
     home.packages = with pkgs; [
       caligula # iso burner
-      du-dust # fancy du
+      dust # fancy du
       fd # find files
       file # identify files
       fzf # fuzzy finder

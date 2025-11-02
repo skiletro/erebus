@@ -30,7 +30,7 @@ pkgs.stdenvNoCC.mkDerivation (finalAttrs: {
   nativeBuildInputs = with pkgs; [
     makeWrapper
     gobject-introspection
-    wrapGAppsHook
+    wrapGAppsHook3
   ];
 
   runtimeDeps = with pkgs; [

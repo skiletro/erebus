@@ -11,18 +11,24 @@
     programs = {
       git = {
         enable = true;
-        userName = "jamie";
-        userEmail = "${"git"}@${"skilet.ro"}"; # bit of scrambling so it cant b scraped as easily
-        diff-so-fancy.enable = true;
         ignores = [
           ".DS_Store"
           "**/.DS_Store"
           ".direnv/"
         ];
-        extraConfig = {
+        settings = {
+          user = {
+            name = "jamie";
+            email = "${"git"}@${"skilet.ro"}"; # bit of scrambling so it cant b scraped as easily
+          };
           pull.rebase = true;
           push.autoSetupRemote = true;
         };
+      };
+
+      diff-so-fancy = {
+        enable = true;
+        enableGitIntegration = true;
       };
 
       lazygit = {
