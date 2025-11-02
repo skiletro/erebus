@@ -44,6 +44,7 @@
               "e" = "exec nautilus";
 
               "Shift+q" = "kill";
+              "Shift+f" = "fullscreen toggle";
 
               "Left" = "focus left";
               "Right" = "focus right";
@@ -96,7 +97,11 @@
             outer = 2;
           };
 
-          input."*".xkb_layout = "gb";
+          input."*" = {
+            xkb_layout = "gb";
+            accel_profile = "flat";
+            pointer_accel = "0.65";
+          };
 
           output.DP-3 = {
             resolution = "3440x1440@165Hz";
@@ -108,6 +113,7 @@
           window.titlebar = false;
         };
         extraConfig = ''
+          for_window [class="Godot"] floating enable
           corner_radius 8
         '';
       };
