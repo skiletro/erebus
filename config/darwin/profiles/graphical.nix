@@ -24,7 +24,6 @@
       m-cli
       self'.packages.pearcleaner-bin
       utm
-      whatsapp-for-mac
     ];
 
     homebrew.masApps.Xcode = 497799835;
