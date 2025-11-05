@@ -33,6 +33,7 @@
             "dms run"
             "${lib.getExe pkgs.autotiling} --splitratio 1.61"
             "${lib.getExe pkgs.dex} -a"
+            "${lib.getExe pkgs.tailscale} systray"
           ];
 
           keybindings =
