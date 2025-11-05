@@ -70,27 +70,15 @@
               "Shift+Right" = move "right";
               "Shift+Up" = move "up";
               "Shift+Down" = move "down";
-
-              "1" = ws 1;
-              "2" = ws 2;
-              "3" = ws 3;
-              "4" = ws 4;
-              "5" = ws 5;
-              "6" = ws 6;
-              "7" = ws 7;
-              "8" = ws 8;
-              "9" = ws 9;
-
-              "Shift+1" = mws 1;
-              "Shift+2" = mws 2;
-              "Shift+3" = mws 3;
-              "Shift+4" = mws 4;
-              "Shift+5" = mws 5;
-              "Shift+6" = mws 6;
-              "Shift+7" = mws 7;
-              "Shift+8" = mws 8;
-              "Shift+9" = mws 9;
             })
+            // (
+              let
+                workspaces = lib.genList (i: i + 1) 9 |> map (x: toString x);
+                goToWorkspaces = map (n: { "${modifier}+${n}" = ws n; }) workspaces;
+                moveWorkspaces = map (n: { "${modifier}+Shift+${n}" = mws n; }) workspaces;
+              in
+              lib.mergeAttrsList (goToWorkspaces ++ moveWorkspaces)
+            )
             // {
               "XF86AudioRaiseVolume" = dms "audio increment 2";
               "XF86AudioLowerVolume" = dms "audio decrement 2";
