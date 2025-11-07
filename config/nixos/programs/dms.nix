@@ -3,6 +3,7 @@
   inputs',
   lib,
   config,
+  pkgs,
   ...
 }:
 {
@@ -30,7 +31,7 @@
 
         home.file =
           let
-            themePath = ".config/DankMaterialShell/stylix-colors.json";
+            dmsPath = ".config/DankMaterialShell";
 
             colorTheme = with config.lib.stylix.colors.withHashtag; {
               dark = {
@@ -79,8 +80,16 @@
             };
           in
           {
-            ${themePath}.text = builtins.toJSON colorTheme;
-            ".config/wall.png".source = config.stylix.image;
+            "${dmsPath}/stylix-colors.json".text = builtins.toJSON colorTheme;
+            "${dmsPath}/plugins/emojiPicker" = {
+              recursive = true;
+              source = pkgs.fetchFromGitHub {
+                owner = "devnullvoid";
+                repo = "dms-emoji-launcher";
+                rev = "bcfa0e72dafd2127d37f9c3d5d1ea6227432c969";
+                sha256 = "sha256-h4+6OurB9yo4mJUye9z1PdUjjqTNIur78Y5IrRPY1g0=";
+              };
+            };
           };
       }
     ];

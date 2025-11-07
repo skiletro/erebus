@@ -61,6 +61,7 @@
               "p" = dms "processlist toggle";
               "n" = dms "notifications toggle";
               "Shift+p" = dms "powermenu toggle";
+              "Period" = dms "spotlight openQuery ':'";
 
               "Left" = focus "left";
               "Right" = focus "right";
