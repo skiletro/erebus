@@ -171,19 +171,13 @@
         };
         keys = {
           normal = {
+            "ret" = "goto_word";
             "X" = "select_line_above";
             "C-e" = [
               ":sh rm -f /tmp/hx-unique-file"
               ":insert-output ${lib.getExe config.programs.yazi.package} %{buffer_name} --chooser-file=/tmp/hx-unique-file"
               ":insert-output echo '\\x1b[?1049h\\x1b[?2004h' > /dev/tty"
               ":open %sh{cat /tmp/hx-unique-file}"
-              ":redraw"
-              ":set-option mouse false"
-              ":set-option mouse true"
-            ];
-            "C-g" = [
-              ":insert-output ${lib.getExe config.programs.lazygit.package}"
-              ":insert-output echo '\\x1b[?1049h\\x1b[?2004h' > /dev/tty"
               ":redraw"
               ":set-option mouse false"
               ":set-option mouse true"
