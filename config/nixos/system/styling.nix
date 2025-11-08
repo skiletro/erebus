@@ -17,4 +17,9 @@
   };
 
   stylix.targets.qt.enable = false; # https://github.com/nix-community/stylix/issues/1946
+  stylix.opacity = {
+    applications = 0.75;
+    popups = 0.75;
+    terminal = 0.75;
+  };
 }
