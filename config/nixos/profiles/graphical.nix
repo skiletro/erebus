@@ -13,6 +13,7 @@
       desktop = {
         gnome.enable = true; # TODO: this is enabled bc im still using gdm. need to seperate.
         sway.enable = true;
+        hyprland.enable = true;
       };
       system = {
         fonts.enable = true;
