@@ -30,10 +30,11 @@
           terminal = "ghostty";
 
           startup = map (cmd: { command = cmd; }) [
-            "dms run"
+            "dbus-update-activation-environment --all"
             "${lib.getExe pkgs.autotiling} --splitratio 1.61"
             "${lib.getExe pkgs.dex} -a"
             "${lib.getExe pkgs.tailscale} systray"
+            "${lib.getExe' pkgs.udiskie "udiskie"}"
           ];
 
           keybindings =
