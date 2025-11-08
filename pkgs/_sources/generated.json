@@ -16,7 +16,7 @@
     },
     "base16-schemes": {
         "cargoLocks": null,
-        "date": "2025-09-13",
+        "date": "2025-11-08",
         "extract": null,
         "name": "base16-schemes",
         "passthru": null,
@@ -26,13 +26,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "317a5e10c35825a6c905d912e480dfe8e71c7559",
-            "sha256": "sha256-d4km8W7w2zCUEmPAPUoLk1NlYrGODuVa3P7St+UrqkM=",
+            "rev": "4ac26dc99141c1b2a26eb7fefe46e22e07eec77c",
+            "sha256": "sha256-pr+RtDs+3qo0v7ZXfcSdtP0PoDDPU9EHw2Oe5EUwWtQ=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/tinted-theming/schemes.git"
         },
-        "version": "317a5e10c35825a6c905d912e480dfe8e71c7559"
+        "version": "4ac26dc99141c1b2a26eb7fefe46e22e07eec77c"
     },
     "dzgui": {
         "cargoLocks": null,
@@ -76,7 +76,7 @@
     },
     "gpu-screen-recorder-ui": {
         "cargoLocks": null,
-        "date": "2025-11-01",
+        "date": "2025-11-08",
         "extract": null,
         "name": "gpu-screen-recorder-ui",
         "passthru": null,
@@ -86,13 +86,13 @@
             "fetchSubmodules": true,
             "leaveDotGit": false,
             "name": null,
-            "rev": "d7f6d2cc0c7c3334c7b519be837d4dc4b6573f74",
-            "sha256": "sha256-5DN0S23c4ZKMESkeio6Lz40bFzw7KR12kRHrJPxglVk=",
+            "rev": "250675024332b6b08078a81bcef1e5355b916255",
+            "sha256": "sha256-5ifMFwsgDNq6yHnI/YAnS1thHyufaYNKeCXd7RdN6/o=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://repo.dec05eba.com/gpu-screen-recorder-ui"
         },
-        "version": "d7f6d2cc0c7c3334c7b519be837d4dc4b6573f74"
+        "version": "250675024332b6b08078a81bcef1e5355b916255"
     },
     "helium-appimage": {
         "cargoLocks": null,
@@ -103,11 +103,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-d8kwLEU6qgEgp7nlEwdfRevB1JrbEKHRe8+GhGpGUig=",
+            "sha256": "sha256-DlEFuFwx2Qjr9eb6uiSYzM/F3r2hdtkMW5drJyJt/YE=",
             "type": "url",
-            "url": "https://github.com/imputnet/helium-linux/releases/download/0.5.8.1/helium-0.5.8.1-x86_64.AppImage"
+            "url": "https://github.com/imputnet/helium-linux/releases/download/0.6.4.1/helium-0.6.4.1-x86_64.AppImage"
         },
-        "version": "0.5.8.1"
+        "version": "0.6.4.1"
     },
     "helium-dmg": {
         "cargoLocks": null,
@@ -118,11 +118,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-ph3SQqIInSlZ9r6Px2jGABX0D+bCMeCwFB/8ieetXxs=",
+            "sha256": "sha256-AA9PQutXxyKQ+m+bGzX5XOB9eiEVMFivaMOCPV1/IhY=",
             "type": "url",
-            "url": "https://github.com/imputnet/helium-macos/releases/download/0.5.8.1/helium_0.5.8.1_arm64-macos.dmg"
+            "url": "https://github.com/imputnet/helium-macos/releases/download/0.6.4.1/helium_0.6.4.1_arm64-macos.dmg"
         },
-        "version": "0.5.8.1"
+        "version": "0.6.4.1"
     },
     "liga-sf-mono-nerd-font": {
         "cargoLocks": null,
@@ -173,11 +173,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-VTnT+hSm+9YhBaxih7Alng8EI0RQhpVC4oZh3hzndN0=",
+            "sha256": "sha256-uTjlY4JulY97Qjb/hajS4zFNVwsCKOsqNVc2E7QMGic=",
             "type": "url",
-            "url": "https://github.com/alienator88/Pearcleaner/releases/download/5.3.5/Pearcleaner.dmg"
+            "url": "https://github.com/alienator88/Pearcleaner/releases/download/5.3.8/Pearcleaner.dmg"
         },
-        "version": "5.3.5"
+        "version": "5.3.8"
     },
     "protonmail-bin": {
         "cargoLocks": null,
@@ -188,11 +188,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-F6QCZL6wrAKlWO9YK5QznerSVfsTybtDQ1ANfEOia7M=",
+            "sha256": "sha256-9+7ry14dw0mC7YKx8v6taFd6chwjFhDVzhsvDTVlR18=",
             "type": "url",
-            "url": "https://proton.me/download/mail/macos/1.10.0/ProtonMail-desktop.dmg"
+            "url": "https://proton.me/download/mail/macos/1.10.1/ProtonMail-desktop.dmg"
         },
-        "version": "1.10.0"
+        "version": "1.10.1"
     },
     "protonpass-bin": {
         "cargoLocks": null,
@@ -218,11 +218,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-EtC0426Mj2DekbMDyM7iJKrQLI4tQ0873lpJAvDHxpo=",
+            "sha256": "sha256-u/J32eIgpQkvF87j4Lc3IKT0YkJHTx4JauL6TsXg/ls=",
             "type": "url",
-            "url": "https://vpn.protondownload.com/download/macos/6.0.0/ProtonVPN_mac_v6.0.0.dmg"
+            "url": "https://vpn.protondownload.com/download/macos/6.1.0/ProtonVPN_mac_v6.1.0.dmg"
         },
-        "version": "6.0.0"
+        "version": "6.1.0"
     },
     "swipeaerospace-bin": {
         "cargoLocks": null,

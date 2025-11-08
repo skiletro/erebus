@@ -18,7 +18,7 @@
           enable = true;
 
           # Core features
-          enableSystemd = true; # Systemd service for auto-start
+          systemd.enable = true; # Systemd service for auto-start
           enableSystemMonitoring = true; # System monitoring widgets (dgop)
           enableVPN = true; # VPN management widget
           enableColorPicker = true; # Color picker tool

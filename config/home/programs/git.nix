@@ -45,9 +45,11 @@
               "⠻"
             ];
           };
-          git = {
-            paging.pager = "diff-so-fancy";
-          };
+          git.pagers = [
+            {
+              pager = "diff-so-fancy";
+            }
+          ];
           disableStartupPopups = true;
         };
       };
