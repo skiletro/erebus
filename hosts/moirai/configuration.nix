@@ -10,9 +10,7 @@
   homebrew.casks = [
     "dolphin" # more gaming!
     "godot"
-    "microsoft-teams" # for work
     "steam"
-    "unity-hub"
   ];
 
   system.stateVersion = 6; # do not change
