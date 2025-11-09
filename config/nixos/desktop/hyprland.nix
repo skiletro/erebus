@@ -38,7 +38,7 @@
 
             bind = [
               "SUPER, Return, exec, ghostty"
-              #SUPER "SHIFT, exec ${lib.getExe self'.packages.skilshot}"
+              "SUPER SHIFT, S, exec, ${lib.getExe pkgs.grimblast} save area - | ${lib.getExe pkgs.satty} -f - --initial-tool=brush --copy-command=wl-copy --actions-on-escape='save-to-clipboard,exit' --disable-notifications"
               "SUPER, Space, exec, ${dms "spotlight toggle"}"
               "SUPER, F, exec, zen"
               "SUPER, E, exec, nautilus"
@@ -119,6 +119,7 @@
               "${lib.getExe pkgs.dex} -a"
               "${lib.getExe pkgs.tailscale} systray"
               "${lib.getExe' pkgs.udiskie "udiskie"}"
+              "${lib.getExe pkgs.wl-clip-persist} --clipboard regular"
             ];
 
             misc = {
