@@ -28,6 +28,7 @@
         protondrive.enable = true;
         rnnoise.enable = true;
         wireguard.enable = true;
+        printing.enable = true;
       };
     };
 
