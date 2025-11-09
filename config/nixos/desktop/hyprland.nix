@@ -128,15 +128,11 @@
               vrr = 3;
             };
 
-            layerrule =
-              let
-                dms = "dms:(modal|control-center|battery|vpn|dash|notification-center|process-list-popout|popout|bar|dock|workspace-overview|notification-popup|osd|slideout)";
-              in
-              [
-                "noanim, ^(quickshell)$"
-                "blur, ${dms}"
-                "ignorealpha 0.3, ${dms}"
-              ];
+            layerrule = [
+              "noanim, ^(quickshell)$"
+              "blur, ^(dms:.*)$"
+              "ignorealpha 0.3, ^(dms:.*)"
+            ];
           };
       };
 
