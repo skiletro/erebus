@@ -98,6 +98,7 @@
       url = "github:hraban/mac-app-util";
       inputs = {
         nixpkgs.follows = "nixpkgs";
+        cl-nix-lite.url = "github:r4v3n6101/cl-nix-lite/url-fix";
         flake-compat.follows = "";
         treefmt-nix.follows = "treefmt-nix";
       };
