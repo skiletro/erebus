@@ -2,6 +2,7 @@
   pkgs,
   lib,
   config,
+  self',
   ...
 }:
 {
@@ -37,11 +38,11 @@
             monitor = "DP-3,3440x1440@165,0x0,1";
 
             bind = [
-              "SUPER, Return, exec, ghostty"
+              "SUPER, Return, exec, ${lib.getExe pkgs.ghostty}"
               "SUPER SHIFT, S, exec, ${lib.getExe pkgs.grimblast} save area - | ${lib.getExe pkgs.satty} -f - --initial-tool=brush --copy-command=wl-copy --actions-on-escape='save-to-clipboard,exit' --disable-notifications"
               "SUPER, Space, exec, ${dms "spotlight toggle"}"
-              "SUPER, F, exec, zen"
-              "SUPER, E, exec, nautilus"
+              "SUPER, F, exec, ${lib.getExe self'.packages.helium-bin}"
+              "SUPER, E, exec, ${lib.getExe pkgs.nautilus}"
 
               "SUPER SHIFT, Q, killactive"
               "SUPER SHIFT, F, fullscreen"
@@ -51,6 +52,8 @@
               "SUPER, N, exec, ${dms "notifications toggle"}"
               "SUPER SHIFT, P, exec, ${dms "powermenu toggle"}"
               "SUPER, Period, exec, ${dms "spotlight openQuery ':'"}"
+              "SUPER, L, exec, ${dms "lock lock"}"
+              "SUPER SHIFT, L, exec, ${lib.getExe pkgs.hyprpicker} | ${lib.getExe' pkgs.wl-clipboard "wl-copy"}"
 
               "SUPER, Left, movefocus, l"
               "SUPER, Right, movefocus, r"
