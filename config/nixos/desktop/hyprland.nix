@@ -66,16 +66,10 @@
               "SUPER SHIFT, Down, movewindow, d"
             ]
             ++ (builtins.concatLists (
-              builtins.genList (
-                i:
-                let
-                  ws = i + 1;
-                in
-                [
-                  "SUPER, code:1${toString i}, workspace, ${toString ws}"
-                  "SUPER SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
-                ]
-              ) 9
+              builtins.genList (i: [
+                "SUPER, code:1${toString i}, workspace, ${toString (i + 1)}"
+                "SUPER SHIFT, code:1${toString i}, movetoworkspace, ${toString (i + 1)}"
+              ]) 9
             ));
 
             bindl = map (command: ", XF86${command}") [
