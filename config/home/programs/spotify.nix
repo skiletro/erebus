@@ -28,6 +28,7 @@
         enabledCustomApps = with apps; [
           newReleases
           lyricsPlus
+          ncsVisualizer
         ];
 
         theme = {
