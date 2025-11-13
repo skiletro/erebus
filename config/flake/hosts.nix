@@ -97,8 +97,8 @@ let
         image =
           let
             wallpaper = pkgs.fetchurl {
-              url = "https://w.wallhaven.cc/full/6o/wallhaven-6oy186.png";
-              sha256 = "1g84y8i8b9njq2mk4ip58wzyspkmkxr86lpddbcz43iywnc9k5bf";
+              url = "https://w.wallhaven.cc/full/8x/wallhaven-8xe57j.jpg";
+              sha256 = "036ld3x0y0frkjcspb1qfsjnqnxl5kq9nh2f0wrp54mlx7rmcmip";
             };
           in
           pkgs.runCommand "output.png" { }
