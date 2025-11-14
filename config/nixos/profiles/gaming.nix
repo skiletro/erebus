@@ -27,6 +27,7 @@
       bs-manager
       dolphin-emu
       self'.packages.dzgui
+      heroic
       ludusavi
       osu-lazer-bin
       r2modman
