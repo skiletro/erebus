@@ -41,8 +41,8 @@
         :root
         {
           /* The main accent color and the matching text value */
-          --adw-accent-bg-rbg: ${base0D-rgb-r}, ${base0D-rgb-g}, ${base0D-rgb-b};
-          --adw-accent-fg-rbg: ${base00-rgb-r}, ${base00-rgb-g}, ${base00-rgb-b};
+          --adw-accent-bg-rgb: ${base0D-rgb-r}, ${base0D-rgb-g}, ${base0D-rgb-b};
+          --adw-accent-fg-rgb: ${base00-rgb-r}, ${base00-rgb-g}, ${base00-rgb-b};
           --adw-accent-rgb: ${base0D-rgb-r}, ${base0D-rgb-g}, ${base0D-rgb-b};
 
           /* destructive-action buttons */
@@ -117,6 +117,10 @@
           /* Miscellaneous */
           --adw-shade-rgb: 0, 0, 0;
           --adw-shade-a: 0.36;
+
+          /* Fonts */
+          --adw-text-font-primary: "${config.stylix.fonts.sansSerif.name}" !important;
+          --adw-text-font-monospace-primary: "${config.stylix.fonts.monospace.name}" !important;
           }
       '';
     });
