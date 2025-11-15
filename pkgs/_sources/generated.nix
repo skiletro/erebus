@@ -53,32 +53,32 @@
   };
   gpu-screen-recorder-ui = {
     pname = "gpu-screen-recorder-ui";
-    version = "250675024332b6b08078a81bcef1e5355b916255";
+    version = "a9a1f9d01c502e17982fda59c44e7a81083482b3";
     src = fetchgit {
       url = "https://repo.dec05eba.com/gpu-screen-recorder-ui";
-      rev = "250675024332b6b08078a81bcef1e5355b916255";
+      rev = "a9a1f9d01c502e17982fda59c44e7a81083482b3";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-5ifMFwsgDNq6yHnI/YAnS1thHyufaYNKeCXd7RdN6/o=";
+      sha256 = "sha256-Y+mjzjgS1k9TKIJouAcJkaatKjo4uRKSFVCAbMFJrpE=";
     };
-    date = "2025-11-08";
-  };
-  helium-appimage = {
-    pname = "helium-appimage";
-    version = "0.6.4.1";
-    src = fetchurl {
-      url = "https://github.com/imputnet/helium-linux/releases/download/0.6.4.1/helium-0.6.4.1-x86_64.AppImage";
-      sha256 = "sha256-DlEFuFwx2Qjr9eb6uiSYzM/F3r2hdtkMW5drJyJt/YE=";
-    };
+    date = "2025-11-12";
   };
   helium-dmg = {
     pname = "helium-dmg";
+    version = "0.6.5.1";
+    src = fetchurl {
+      url = "https://github.com/imputnet/helium-macos/releases/download/0.6.5.1/helium_0.6.5.1_arm64-macos.dmg";
+      sha256 = "sha256-ZzG/SQT4MuAIfgNKGCnHhlS0U4E1DSXdH+Y/BI/eJpw=";
+    };
+  };
+  helium-tarball = {
+    pname = "helium-tarball";
     version = "0.6.4.1";
     src = fetchurl {
-      url = "https://github.com/imputnet/helium-macos/releases/download/0.6.4.1/helium_0.6.4.1_arm64-macos.dmg";
-      sha256 = "sha256-AA9PQutXxyKQ+m+bGzX5XOB9eiEVMFivaMOCPV1/IhY=";
+      url = "https://github.com/imputnet/helium-linux/releases/download/0.6.4.1/helium-0.6.4.1-x86_64_linux.tar.xz";
+      sha256 = "sha256-9xEVnGym579rR6RunS4HWYV3nLk1ODEIGfg8PtNDSUk=";
     };
   };
   liga-sf-mono-nerd-font = {
@@ -111,10 +111,10 @@
   };
   pearcleaner-bin = {
     pname = "pearcleaner-bin";
-    version = "5.3.8";
+    version = "5.4.0";
     src = fetchurl {
-      url = "https://github.com/alienator88/Pearcleaner/releases/download/5.3.8/Pearcleaner.dmg";
-      sha256 = "sha256-uTjlY4JulY97Qjb/hajS4zFNVwsCKOsqNVc2E7QMGic=";
+      url = "https://github.com/alienator88/Pearcleaner/releases/download/5.4.0/Pearcleaner.dmg";
+      sha256 = "sha256-zT2NqNPyRjmiHp8SdpewJ+u61EOs5s4mRF22GMB1Blk=";
     };
   };
   protonmail-bin = {

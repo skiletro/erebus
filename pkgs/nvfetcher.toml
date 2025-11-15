@@ -19,9 +19,9 @@ src.git = "https://repo.dec05eba.com/gpu-screen-recorder-notification"
 fetch.git = "https://repo.dec05eba.com/gpu-screen-recorder-notification"
 git.fetchSubmodules = true
 
-[helium-appimage]
+[helium-tarball]
 src.github = "imputnet/helium-linux"
-fetch.url = "https://github.com/imputnet/helium-linux/releases/download/$ver/helium-$ver-x86_64.AppImage"
+fetch.url = "https://github.com/imputnet/helium-linux/releases/download/$ver/helium-$ver-x86_64_linux.tar.xz"
 
 [dzgui]
 src.git = "https://codeberg.org/aclist/dztui"

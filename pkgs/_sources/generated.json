@@ -76,7 +76,7 @@
     },
     "gpu-screen-recorder-ui": {
         "cargoLocks": null,
-        "date": "2025-11-08",
+        "date": "2025-11-12",
         "extract": null,
         "name": "gpu-screen-recorder-ui",
         "passthru": null,
@@ -86,28 +86,13 @@
             "fetchSubmodules": true,
             "leaveDotGit": false,
             "name": null,
-            "rev": "250675024332b6b08078a81bcef1e5355b916255",
-            "sha256": "sha256-5ifMFwsgDNq6yHnI/YAnS1thHyufaYNKeCXd7RdN6/o=",
+            "rev": "a9a1f9d01c502e17982fda59c44e7a81083482b3",
+            "sha256": "sha256-Y+mjzjgS1k9TKIJouAcJkaatKjo4uRKSFVCAbMFJrpE=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://repo.dec05eba.com/gpu-screen-recorder-ui"
         },
-        "version": "250675024332b6b08078a81bcef1e5355b916255"
-    },
-    "helium-appimage": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "helium-appimage",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-DlEFuFwx2Qjr9eb6uiSYzM/F3r2hdtkMW5drJyJt/YE=",
-            "type": "url",
-            "url": "https://github.com/imputnet/helium-linux/releases/download/0.6.4.1/helium-0.6.4.1-x86_64.AppImage"
-        },
-        "version": "0.6.4.1"
+        "version": "a9a1f9d01c502e17982fda59c44e7a81083482b3"
     },
     "helium-dmg": {
         "cargoLocks": null,
@@ -118,9 +103,24 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-AA9PQutXxyKQ+m+bGzX5XOB9eiEVMFivaMOCPV1/IhY=",
+            "sha256": "sha256-ZzG/SQT4MuAIfgNKGCnHhlS0U4E1DSXdH+Y/BI/eJpw=",
             "type": "url",
-            "url": "https://github.com/imputnet/helium-macos/releases/download/0.6.4.1/helium_0.6.4.1_arm64-macos.dmg"
+            "url": "https://github.com/imputnet/helium-macos/releases/download/0.6.5.1/helium_0.6.5.1_arm64-macos.dmg"
+        },
+        "version": "0.6.5.1"
+    },
+    "helium-tarball": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "helium-tarball",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-9xEVnGym579rR6RunS4HWYV3nLk1ODEIGfg8PtNDSUk=",
+            "type": "url",
+            "url": "https://github.com/imputnet/helium-linux/releases/download/0.6.4.1/helium-0.6.4.1-x86_64_linux.tar.xz"
         },
         "version": "0.6.4.1"
     },
@@ -173,11 +173,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-uTjlY4JulY97Qjb/hajS4zFNVwsCKOsqNVc2E7QMGic=",
+            "sha256": "sha256-zT2NqNPyRjmiHp8SdpewJ+u61EOs5s4mRF22GMB1Blk=",
             "type": "url",
-            "url": "https://github.com/alienator88/Pearcleaner/releases/download/5.3.8/Pearcleaner.dmg"
+            "url": "https://github.com/alienator88/Pearcleaner/releases/download/5.4.0/Pearcleaner.dmg"
         },
-        "version": "5.3.8"
+        "version": "5.4.0"
     },
     "protonmail-bin": {
         "cargoLocks": null,
