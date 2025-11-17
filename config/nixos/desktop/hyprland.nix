@@ -11,6 +11,7 @@
   config = lib.mkIf config.erebus.desktop.hyprland.enable {
     programs.hyprland = {
       enable = true;
+      withUWSM = true;
       package = pkgs.hyprland;
     };
 
@@ -21,6 +22,7 @@
     home-manager.sharedModules = lib.singleton {
       wayland.windowManager.hyprland = {
         enable = true;
+        systemd.enable = false;
         settings =
           let
             dms = cmd: "dms ipc call ${cmd}";
@@ -112,7 +114,6 @@
             ];
 
             exec-once = [
-              "${lib.getExe pkgs.dex} -a"
               "${lib.getExe pkgs.tailscale} systray"
               "${lib.getExe' pkgs.udiskie "udiskie"}"
               "${lib.getExe pkgs.wl-clip-persist} --clipboard regular"
@@ -121,7 +122,7 @@
             misc = {
               disable_hyprland_logo = true;
               disable_splash_rendering = true;
-              vrr = 3;
+              vrr = 2;
             };
 
             layerrule = [
