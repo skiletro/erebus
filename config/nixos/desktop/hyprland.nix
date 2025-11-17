@@ -21,7 +21,6 @@
     home-manager.sharedModules = lib.singleton {
       wayland.windowManager.hyprland = {
         enable = true;
-        plugins = with pkgs.hyprlandPlugins; [ hypr-dynamic-cursors ];
         settings =
           let
             dms = cmd: "dms ipc call ${cmd}";
