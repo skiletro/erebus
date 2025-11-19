@@ -111,10 +111,10 @@
   };
   pearcleaner-bin = {
     pname = "pearcleaner-bin";
-    version = "5.4.0";
+    version = "5.4.1";
     src = fetchurl {
-      url = "https://github.com/alienator88/Pearcleaner/releases/download/5.4.0/Pearcleaner.dmg";
-      sha256 = "sha256-zT2NqNPyRjmiHp8SdpewJ+u61EOs5s4mRF22GMB1Blk=";
+      url = "https://github.com/alienator88/Pearcleaner/releases/download/5.4.1/Pearcleaner.dmg";
+      sha256 = "sha256-JhP8CHF4wCg2CmJ6xL/ZCCKoD4eSHj4KA4w5tAwGFCI=";
     };
   };
   protonmail-bin = {
