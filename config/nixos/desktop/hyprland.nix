@@ -107,9 +107,18 @@
               };
             };
 
+            dwindle = {
+              split_width_multiplier = 1.35;
+              single_window_aspect_ratio = "16 9";
+            };
+
+            bezier = [
+              "defout, 0.16, 1, 0.3, 1"
+            ];
+
             animation = [
-              "workspaces, 1, 1, default, slidevert"
-              "windows, 1, 1, default"
+              "workspaces, 1, 3, defout, slidefadevert 15%"
+              "windows, 1, 1.5, defout, popin"
               "fade, 0"
             ];
 
