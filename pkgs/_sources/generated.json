@@ -103,11 +103,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-ZzG/SQT4MuAIfgNKGCnHhlS0U4E1DSXdH+Y/BI/eJpw=",
+            "sha256": "sha256-eU+A9U9eONushaR1cnOtHGw7qejsN0OswJ5hd7CIbow=",
             "type": "url",
-            "url": "https://github.com/imputnet/helium-macos/releases/download/0.6.5.1/helium_0.6.5.1_arm64-macos.dmg"
+            "url": "https://github.com/imputnet/helium-macos/releases/download/0.6.7.1/helium_0.6.7.1_arm64-macos.dmg"
         },
-        "version": "0.6.5.1"
+        "version": "0.6.7.1"
     },
     "helium-tarball": {
         "cargoLocks": null,
@@ -118,11 +118,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-9xEVnGym579rR6RunS4HWYV3nLk1ODEIGfg8PtNDSUk=",
+            "sha256": "sha256-VB218vOY/9tI97Yhx2MNlNPb46jJHv/FqY96tJaokBE=",
             "type": "url",
-            "url": "https://github.com/imputnet/helium-linux/releases/download/0.6.4.1/helium-0.6.4.1-x86_64_linux.tar.xz"
+            "url": "https://github.com/imputnet/helium-linux/releases/download/0.6.7.1/helium-0.6.7.1-x86_64_linux.tar.xz"
         },
-        "version": "0.6.4.1"
+        "version": "0.6.7.1"
     },
     "liga-sf-mono-nerd-font": {
         "cargoLocks": null,
