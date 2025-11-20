@@ -40,7 +40,7 @@
 
             bind = [
               "SUPER, Return, exec, ${lib.getExe pkgs.ghostty}"
-              "SUPER SHIFT, S, exec, ${lib.getExe pkgs.grimblast} save area - | ${lib.getExe pkgs.satty} -f - --initial-tool=brush --copy-command=wl-copy --actions-on-escape='save-to-clipboard,exit' --disable-notifications"
+              "SUPER SHIFT, S, exec, ${lib.getExe pkgs.grimblast} copy area"
               "SUPER, Space, exec, ${dms "spotlight toggle"}"
               "SUPER, F, exec, ${lib.getExe self'.packages.helium-bin}"
               "SUPER, E, exec, ${lib.getExe pkgs.nautilus}"
