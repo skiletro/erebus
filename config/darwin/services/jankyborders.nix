@@ -6,8 +6,8 @@
     home-manager.sharedModules = lib.singleton {
       services.jankyborders = {
         enable = true;
-        settings = {
-          style = "round";
+        settings = with config.lib.stylix.colors; {
+          style = "square";
           width = "4.0";
           hidpi = true;
           blacklist =
@@ -19,8 +19,8 @@
               ];
             in
             "\"${builtins.concatStringsSep "," list}\"";
-          active_color = lib.mkDefault "0xffffffff"; # so that stylix can override
-          inactive_color = lib.mkDefault "0x00000000"; # so that stylix can override
+          active_color = lib.mkForce "0xff${lib.toLower base08}";
+          inactive_color = lib.mkForce "0xff${lib.toLower base00}";
         };
       };
     };
