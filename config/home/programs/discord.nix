@@ -15,6 +15,9 @@
       enable = true;
       discord = {
         enable = true;
+        vencord.enable = false;
+        equicord.enable = true;
+        openASAR.enable = true;
         autoscroll.enable = true;
       };
       config = {
@@ -22,11 +25,18 @@
         themeLinks = lib.optional pkgs.stdenvNoCC.hostPlatform.isLinux "https://chloecinders.github.io/visual-refresh-compact-title-bar/browser.css";
         plugins = {
           betterGifPicker.enable = true;
+          clearURLs.enable = true;
           crashHandler.enable = true;
           fakeNitro.enable = true;
           favoriteGifSearch.enable = true;
           fixSpotifyEmbeds.enable = true;
           fixYoutubeEmbeds.enable = true;
+          limitMiddleClickPaste.enable = true;
+          listenBrainzRpc = {
+            enable = true;
+            hideWithSpotify = true;
+            username = "skiletro";
+          };
           noSystemBadge.enable = true;
           messageLogger.enable = true;
           openInApp.enable = true;
