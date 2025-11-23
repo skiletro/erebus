@@ -69,6 +69,7 @@ in
       gnome-maps
       gnome-tour
       gnome-software
+      orca
       seahorse
       simple-scan
       totem
