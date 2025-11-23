@@ -11,17 +11,17 @@
   };
   base16-schemes = {
     pname = "base16-schemes";
-    version = "4ac26dc99141c1b2a26eb7fefe46e22e07eec77c";
+    version = "1bacf7d9a61d1fe402d72303ee38d9fbc512aa35";
     src = fetchgit {
       url = "https://github.com/tinted-theming/schemes.git";
-      rev = "4ac26dc99141c1b2a26eb7fefe46e22e07eec77c";
+      rev = "1bacf7d9a61d1fe402d72303ee38d9fbc512aa35";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-pr+RtDs+3qo0v7ZXfcSdtP0PoDDPU9EHw2Oe5EUwWtQ=";
+      sha256 = "sha256-hx7cwVCF7w5jkJgjQ9GKdTLRGkYb+XoZWHMpLphw6/c=";
     };
-    date = "2025-11-08";
+    date = "2025-11-18";
   };
   dzgui = {
     pname = "dzgui";
@@ -53,17 +53,17 @@
   };
   gpu-screen-recorder-ui = {
     pname = "gpu-screen-recorder-ui";
-    version = "a9a1f9d01c502e17982fda59c44e7a81083482b3";
+    version = "5a13bd24918e75018448c380a14beb922caac4e4";
     src = fetchgit {
       url = "https://repo.dec05eba.com/gpu-screen-recorder-ui";
-      rev = "a9a1f9d01c502e17982fda59c44e7a81083482b3";
+      rev = "5a13bd24918e75018448c380a14beb922caac4e4";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-Y+mjzjgS1k9TKIJouAcJkaatKjo4uRKSFVCAbMFJrpE=";
+      sha256 = "sha256-/9QDgJQ80N7e9K8intx1c0i6gu2AYOit5+RrvrJSn5A=";
     };
-    date = "2025-11-12";
+    date = "2025-11-20";
   };
   helium-dmg = {
     pname = "helium-dmg";
@@ -111,26 +111,26 @@
   };
   pearcleaner-bin = {
     pname = "pearcleaner-bin";
-    version = "5.4.1";
+    version = "5.4.2";
     src = fetchurl {
-      url = "https://github.com/alienator88/Pearcleaner/releases/download/5.4.1/Pearcleaner.dmg";
-      sha256 = "sha256-JhP8CHF4wCg2CmJ6xL/ZCCKoD4eSHj4KA4w5tAwGFCI=";
+      url = "https://github.com/alienator88/Pearcleaner/releases/download/5.4.2/Pearcleaner.dmg";
+      sha256 = "sha256-R2uv83YCOAHaEGfLSsgigDulzBixhIvV+bJXR+PE3Vk=";
     };
   };
   protonmail-bin = {
     pname = "protonmail-bin";
-    version = "1.10.1";
+    version = "1.10.8";
     src = fetchurl {
-      url = "https://proton.me/download/mail/macos/1.10.1/ProtonMail-desktop.dmg";
-      sha256 = "sha256-9+7ry14dw0mC7YKx8v6taFd6chwjFhDVzhsvDTVlR18=";
+      url = "https://proton.me/download/mail/macos/1.10.8/ProtonMail-desktop.dmg";
+      sha256 = "sha256-hPYaqusXoF2iQhwY8NTFvAPjahKm7qIhxg/5+ZJpSXE=";
     };
   };
   protonpass-bin = {
     pname = "protonpass-bin";
-    version = "1.32.11";
+    version = "1.33.0";
     src = fetchurl {
-      url = "https://proton.me/download/PassDesktop/darwin/universal/ProtonPass_1.32.11.dmg";
-      sha256 = "sha256-LeLzwBTm43Ga22B0Xnd0yxBPBNqVhqtQhvEef24mUK0=";
+      url = "https://proton.me/download/PassDesktop/darwin/universal/ProtonPass_1.33.0.dmg";
+      sha256 = "sha256-zYQ7CV4tzpxkjO11oFzWTRy0CD4CDIVN6SL9VlhCUHQ=";
     };
   };
   protonvpn-bin = {

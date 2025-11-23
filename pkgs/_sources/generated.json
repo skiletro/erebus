@@ -16,7 +16,7 @@
     },
     "base16-schemes": {
         "cargoLocks": null,
-        "date": "2025-11-08",
+        "date": "2025-11-18",
         "extract": null,
         "name": "base16-schemes",
         "passthru": null,
@@ -26,13 +26,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "4ac26dc99141c1b2a26eb7fefe46e22e07eec77c",
-            "sha256": "sha256-pr+RtDs+3qo0v7ZXfcSdtP0PoDDPU9EHw2Oe5EUwWtQ=",
+            "rev": "1bacf7d9a61d1fe402d72303ee38d9fbc512aa35",
+            "sha256": "sha256-hx7cwVCF7w5jkJgjQ9GKdTLRGkYb+XoZWHMpLphw6/c=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/tinted-theming/schemes.git"
         },
-        "version": "4ac26dc99141c1b2a26eb7fefe46e22e07eec77c"
+        "version": "1bacf7d9a61d1fe402d72303ee38d9fbc512aa35"
     },
     "dzgui": {
         "cargoLocks": null,
@@ -76,7 +76,7 @@
     },
     "gpu-screen-recorder-ui": {
         "cargoLocks": null,
-        "date": "2025-11-12",
+        "date": "2025-11-20",
         "extract": null,
         "name": "gpu-screen-recorder-ui",
         "passthru": null,
@@ -86,13 +86,13 @@
             "fetchSubmodules": true,
             "leaveDotGit": false,
             "name": null,
-            "rev": "a9a1f9d01c502e17982fda59c44e7a81083482b3",
-            "sha256": "sha256-Y+mjzjgS1k9TKIJouAcJkaatKjo4uRKSFVCAbMFJrpE=",
+            "rev": "5a13bd24918e75018448c380a14beb922caac4e4",
+            "sha256": "sha256-/9QDgJQ80N7e9K8intx1c0i6gu2AYOit5+RrvrJSn5A=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://repo.dec05eba.com/gpu-screen-recorder-ui"
         },
-        "version": "a9a1f9d01c502e17982fda59c44e7a81083482b3"
+        "version": "5a13bd24918e75018448c380a14beb922caac4e4"
     },
     "helium-dmg": {
         "cargoLocks": null,
@@ -173,11 +173,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-JhP8CHF4wCg2CmJ6xL/ZCCKoD4eSHj4KA4w5tAwGFCI=",
+            "sha256": "sha256-R2uv83YCOAHaEGfLSsgigDulzBixhIvV+bJXR+PE3Vk=",
             "type": "url",
-            "url": "https://github.com/alienator88/Pearcleaner/releases/download/5.4.1/Pearcleaner.dmg"
+            "url": "https://github.com/alienator88/Pearcleaner/releases/download/5.4.2/Pearcleaner.dmg"
         },
-        "version": "5.4.1"
+        "version": "5.4.2"
     },
     "protonmail-bin": {
         "cargoLocks": null,
@@ -188,11 +188,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-9+7ry14dw0mC7YKx8v6taFd6chwjFhDVzhsvDTVlR18=",
+            "sha256": "sha256-hPYaqusXoF2iQhwY8NTFvAPjahKm7qIhxg/5+ZJpSXE=",
             "type": "url",
-            "url": "https://proton.me/download/mail/macos/1.10.1/ProtonMail-desktop.dmg"
+            "url": "https://proton.me/download/mail/macos/1.10.8/ProtonMail-desktop.dmg"
         },
-        "version": "1.10.1"
+        "version": "1.10.8"
     },
     "protonpass-bin": {
         "cargoLocks": null,
@@ -203,11 +203,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-LeLzwBTm43Ga22B0Xnd0yxBPBNqVhqtQhvEef24mUK0=",
+            "sha256": "sha256-zYQ7CV4tzpxkjO11oFzWTRy0CD4CDIVN6SL9VlhCUHQ=",
             "type": "url",
-            "url": "https://proton.me/download/PassDesktop/darwin/universal/ProtonPass_1.32.11.dmg"
+            "url": "https://proton.me/download/PassDesktop/darwin/universal/ProtonPass_1.33.0.dmg"
         },
-        "version": "1.32.11"
+        "version": "1.33.0"
     },
     "protonvpn-bin": {
         "cargoLocks": null,
