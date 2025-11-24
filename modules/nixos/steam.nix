@@ -12,13 +12,15 @@
       home.activation =
         let
           winControlSettings =
-            if
-              attrs.config.dconf.settings."org/gnome/desktop/wm/preferences".button-layout
-              == "close,minimize,maximize:"
-            then
+            let
+              inherit (attrs.config.dconf.settings."org/gnome/desktop/wm/preferences") button-layout;
+            in
+            if button-layout == "close,minimize,maximize:" then
               "macos"
+            else if button-layout == ":minimize,maximize,close" then
+              "windows"
             else
-              "windows";
+              "elementary"; # left side aligned
           applySteamTheme = pkgs.writeShellScript "applySteamTheme" ''
             # This file gets copied with read-only permission from the nix store
             # if it is present, it causes an error when the theme is applied. Delete it.
