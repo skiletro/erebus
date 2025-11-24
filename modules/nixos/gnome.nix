@@ -50,6 +50,7 @@ in
       ++ (with pkgs; [
         adwaita-icon-theme # fixes some missing icons
         adwaita-icon-theme-legacy # fixes some missing icons
+        gapless
         gjs # fixes ding ext
         libheif
         libheif.out # HEIC Image Previews
@@ -67,6 +68,7 @@ in
       gnome-contacts
       gnome-console
       gnome-maps
+      gnome-music
       gnome-tour
       gnome-software
       orca
