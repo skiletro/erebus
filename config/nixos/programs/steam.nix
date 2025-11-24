@@ -16,6 +16,7 @@
       enable = true;
       package = pkgs.steam.override {
         extraProfile = ''
+          export DXVK_HUD=compiler,fps
           export PROTON_ENABLE_WAYLAND=1
           export PRESSURE_VESSEL_IMPORT_OPENXR_1_RUNTIMES=1
           unset TZ
@@ -29,6 +30,7 @@
       ];
       extest.enable = true;
       protontricks.enable = true;
+      gamescopeSession.enable = true;
     };
 
     home-manager.sharedModules = lib.singleton (userAttrs: {
