@@ -17,7 +17,7 @@
       };
       system = {
         fonts.enable = true;
-        greeter = "gdm";
+        greeter = "dankgreeter";
         virtualisation.enable = true;
       };
       programs = {
