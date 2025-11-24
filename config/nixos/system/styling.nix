@@ -27,5 +27,7 @@
     targets.qt.enable = false; # https://github.com/nix-community/stylix/issues/1946
   };
 
+  home-manager.sharedModules = lib.singleton {
+    xdg.configFile."stylix/wall.png".source = config.stylix.image;
   };
 }
