@@ -11,12 +11,13 @@
   config = lib.mkIf config.erebus.profiles.graphical.enable {
     erebus = {
       desktop = {
-        gnome.enable = true; # TODO: this is enabled bc im still using gdm. need to seperate.
+        gnome.enable = true;
         sway.enable = true;
         hyprland.enable = true;
       };
       system = {
         fonts.enable = true;
+        greeter = "gdm";
         virtualisation.enable = true;
       };
       programs = {

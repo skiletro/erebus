@@ -11,8 +11,6 @@
   imports = [ self.nixosModules.gnome ];
 
   config = lib.mkIf config.erebus.desktop.gnome.enable {
-    services.displayManager.gdm.enable = true;
-
     services.desktopManager.gnome = {
       enable = true;
       extensions = with pkgs.gnomeExtensions; [
