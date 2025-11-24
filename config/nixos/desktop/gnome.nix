@@ -30,9 +30,10 @@
       ];
       thumbnailers = with pkgs; [
         ffmpegthumbnailer # fixes video thumbnails without totem
-        bign-handheld-thumbnailer # for nintendo ds and 3ds roms
         nufraw-thumbnailer # for raw images
         gnome-epub-thumbnailer # for epub and mobi books
+        gst_all_1.gst-plugins-ugly
+        gst_all_1.gst-libav
       ];
 
       settings = {
