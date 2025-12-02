@@ -14,18 +14,20 @@
     programs.nixcord = {
       enable = true;
       discord = {
-        enable = true;
+        enable = false;
         vencord.enable = false;
         equicord.enable = true;
-        openASAR.enable = true;
+      };
+      equibop = {
+        enable = true;
         autoscroll.enable = true;
       };
       config = {
         useQuickCss = true;
-        themeLinks = lib.optional pkgs.stdenvNoCC.hostPlatform.isLinux "https://chloecinders.github.io/visual-refresh-compact-title-bar/browser.css";
+        themeLinks = lib.optional pkgs.stdenvNoCC.hostPlatform.isLinux "https://chloecinders.github.io/visual-refresh-compact-title-bar/hidden.css";
         plugins = {
           betterGifPicker.enable = true;
-          clearURLs.enable = true;
+          clearUrLs.enable = true;
           crashHandler.enable = true;
           fakeNitro.enable = true;
           favoriteGifSearch.enable = true;
@@ -58,8 +60,6 @@
       };
     };
 
-    # Under normal circumstances, I'd say to use the lib.getExe stuff to get the proper package,
-    # however for some reason if I do that here, my theme and stuff won't activate properly. 🤷
-    xdg.autostart.entries = config.lib.erebus.autostartEntry "Discord Silent" "discord --start-minimized";
+    xdg.autostart.entries = config.lib.erebus.autostartEntry "Discord Silent" "${lib.getExe config.programs.nixcord.finalPackage.equibop} --start-minimized";
   };
 }
