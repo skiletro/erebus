@@ -11,17 +11,17 @@
   };
   base16-schemes = {
     pname = "base16-schemes";
-    version = "1bacf7d9a61d1fe402d72303ee38d9fbc512aa35";
+    version = "0f6be815d258e435c9b137befe5ef4ff24bea32c";
     src = fetchgit {
       url = "https://github.com/tinted-theming/schemes.git";
-      rev = "1bacf7d9a61d1fe402d72303ee38d9fbc512aa35";
+      rev = "0f6be815d258e435c9b137befe5ef4ff24bea32c";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-hx7cwVCF7w5jkJgjQ9GKdTLRGkYb+XoZWHMpLphw6/c=";
+      sha256 = "sha256-Hju0WtMf3iForxtOwXqGp3Ynipo0EYx1AqMKLPp9BJw=";
     };
-    date = "2025-11-18";
+    date = "2025-11-23";
   };
   dzgui = {
     pname = "dzgui";
@@ -53,32 +53,32 @@
   };
   gpu-screen-recorder-ui = {
     pname = "gpu-screen-recorder-ui";
-    version = "5a13bd24918e75018448c380a14beb922caac4e4";
+    version = "2c2633ec58fa14ca452d94c7b0ea5ae720ceec19";
     src = fetchgit {
       url = "https://repo.dec05eba.com/gpu-screen-recorder-ui";
-      rev = "5a13bd24918e75018448c380a14beb922caac4e4";
+      rev = "2c2633ec58fa14ca452d94c7b0ea5ae720ceec19";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-/9QDgJQ80N7e9K8intx1c0i6gu2AYOit5+RrvrJSn5A=";
+      sha256 = "sha256-y9GDFclLFDHhXSzpSNTo8VeRKMJgRXjH6HcQSIgDciQ=";
     };
-    date = "2025-11-20";
+    date = "2025-12-01";
   };
   helium-dmg = {
     pname = "helium-dmg";
-    version = "0.6.7.1";
+    version = "0.6.9.1";
     src = fetchurl {
-      url = "https://github.com/imputnet/helium-macos/releases/download/0.6.7.1/helium_0.6.7.1_arm64-macos.dmg";
-      sha256 = "sha256-eU+A9U9eONushaR1cnOtHGw7qejsN0OswJ5hd7CIbow=";
+      url = "https://github.com/imputnet/helium-macos/releases/download/0.6.9.1/helium_0.6.9.1_arm64-macos.dmg";
+      sha256 = "sha256-zqgZNZ9qKCtW7hTATtkBidXGaOHXY4yDk4tJTU3ftZw=";
     };
   };
   helium-tarball = {
     pname = "helium-tarball";
-    version = "0.6.7.1";
+    version = "0.6.9.1";
     src = fetchurl {
-      url = "https://github.com/imputnet/helium-linux/releases/download/0.6.7.1/helium-0.6.7.1-x86_64_linux.tar.xz";
-      sha256 = "sha256-VB218vOY/9tI97Yhx2MNlNPb46jJHv/FqY96tJaokBE=";
+      url = "https://github.com/imputnet/helium-linux/releases/download/0.6.9.1/helium-0.6.9.1-x86_64_linux.tar.xz";
+      sha256 = "sha256-DLcJCECE5yWcwZuRwNJs3q+sqrZbTbouGF5bDTIFYWM=";
     };
   };
   liga-sf-mono-nerd-font = {
@@ -111,18 +111,18 @@
   };
   pearcleaner-bin = {
     pname = "pearcleaner-bin";
-    version = "5.4.2";
+    version = "5.4.3";
     src = fetchurl {
-      url = "https://github.com/alienator88/Pearcleaner/releases/download/5.4.2/Pearcleaner.dmg";
-      sha256 = "sha256-R2uv83YCOAHaEGfLSsgigDulzBixhIvV+bJXR+PE3Vk=";
+      url = "https://github.com/alienator88/Pearcleaner/releases/download/5.4.3/Pearcleaner.dmg";
+      sha256 = "sha256-+hTyxyRhCbM3OzRiqoFxel+iSIr6QcpcWoc4TIh0mqY=";
     };
   };
   protonmail-bin = {
     pname = "protonmail-bin";
-    version = "1.10.8";
+    version = "1.11.0";
     src = fetchurl {
-      url = "https://proton.me/download/mail/macos/1.10.8/ProtonMail-desktop.dmg";
-      sha256 = "sha256-hPYaqusXoF2iQhwY8NTFvAPjahKm7qIhxg/5+ZJpSXE=";
+      url = "https://proton.me/download/mail/macos/1.11.0/ProtonMail-desktop.dmg";
+      sha256 = "sha256-IPOHSSHxdSaLkYX0deH1RFpi17liq0tenfpNniAlNUc=";
     };
   };
   protonpass-bin = {
@@ -143,10 +143,10 @@
   };
   swipeaerospace-bin = {
     pname = "swipeaerospace-bin";
-    version = "0.2.2";
+    version = "0.2.5";
     src = fetchurl {
-      url = "https://github.com/MediosZ/SwipeAeroSpace/releases/download/0.2.2/SwipeAeroSpace.zip";
-      sha256 = "sha256-165rrAIz6s0/gXyaGKB5RQiA3lo7k9geCjWcSKV24wk=";
+      url = "https://github.com/MediosZ/SwipeAeroSpace/releases/download/0.2.5/SwipeAeroSpace.zip";
+      sha256 = "sha256-v3zjXCxCS2Vsjqoc+vYvbN3hiBKy2Jh+uIrG2ZSPmn0=";
     };
   };
   wheelwizard = {
