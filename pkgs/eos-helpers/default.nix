@@ -34,9 +34,12 @@ let
           }
 
           let specs = echo ...$packages | each { |pkg| $"nixpkgs#($pkg)"}
-          
           with-env { NIXPKGS_ALLOW_UNFREE: "1" } {
-            nix shell ...$specs --impure
+            if (($specs | describe) == "list<string>") {
+              nix shell ...$specs --impure
+            } else {
+              nix shell $specs --impure
+            }
           }
         }
       '';
