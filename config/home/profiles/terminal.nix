@@ -28,6 +28,7 @@
     home.packages = with pkgs; [
       caligula # iso burner
       dust # fancy du
+      self'.packages.eos-cli
       fd # find files
       file # identify files
       fzf # fuzzy finder
