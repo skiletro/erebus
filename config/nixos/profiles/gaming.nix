@@ -38,9 +38,11 @@
       vrcx
     ];
 
-    home-manager.sharedModules = lib.singleton {
+    home-manager.sharedModules = lib.singleton (userAttrs: {
       erebus.programs.prismlauncher.enable = true;
       programs.mangohud.enable = true;
-    };
+
+      xdg.autostart.entries = userAttrs.config.lib.erebus.autostartEntry "VRCX Silent" "${lib.getExe' pkgs.vrcx "vrcx"} --startup";
+    });
   };
 }
