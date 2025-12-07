@@ -29,6 +29,7 @@
       caligula # iso burner
       dust # fancy du
       self'.packages.eos-cli
+      self'.packages.eos-helpers
       fd # find files
       file # identify files
       fzf # fuzzy finder
