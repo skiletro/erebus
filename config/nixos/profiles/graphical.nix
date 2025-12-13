@@ -34,7 +34,10 @@
       };
     };
 
-    environment.systemPackages = with pkgs; [ wineWowPackages.stable ];
+    environment.systemPackages = with pkgs; [
+      wineWowPackages.stable
+      rustdesk-flutter
+    ];
 
     home-manager.sharedModules = lib.singleton {
       erebus.profiles.graphical.enable = true;
