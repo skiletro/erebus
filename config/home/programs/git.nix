@@ -53,12 +53,14 @@
           disableStartupPopups = true;
         };
       };
-      fish.shellAbbrs.lg = "lazygit";
     };
 
-    home.packages = with pkgs; [
-      gh # github
-      codeberg-cli # codeberg
-    ];
+    home = {
+      shellAliases.lg = "lazygit";
+      packages = with pkgs; [
+        gh # github
+        codeberg-cli # codeberg
+      ];
+    };
   };
 }

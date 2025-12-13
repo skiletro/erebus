@@ -11,14 +11,13 @@
 
   config = lib.mkIf config.erebus.profiles.terminal.enable {
     erebus.programs = {
-      bat.enable = true;
       beets.enable = lib.mkIf pkgs.stdenvNoCC.hostPlatform.isLinux true;
       btop.enable = true;
       carapace.enable = true;
       direnv.enable = true;
-      eza.enable = true;
       fastfetch.enable = true;
       fish.enable = true;
+      nu.enable = true;
       git.enable = true;
       helix.enable = true;
       tmux.enable = true;
@@ -51,5 +50,9 @@
       imagemagick
       yt-dlp
     ];
+
+    home.shellAliases = {
+      n = "cd ~/Projects/erebus";
+    };
   };
 }

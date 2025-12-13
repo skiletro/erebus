@@ -16,6 +16,7 @@
           padding = 6;
         in
         {
+          command = lib.getExe config.programs.nushell.package;
           adjust-cell-width = "-1";
           window-padding-x = padding;
           window-padding-y = padding;

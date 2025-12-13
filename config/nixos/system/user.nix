@@ -40,15 +40,10 @@
       settings.PasswordAuthentication = false;
     };
 
-    # set default shell to fish
     programs.fish.enable = true; # For autocompletions. We will use the home manager module for configuration.
-
-    # Set as default shell. See https://wiki.nixos.org/wiki/Fish#Setting_fish_as_default_shell
     programs.bash.interactiveShellInit = ''
-      if [[ $(${lib.getExe' pkgs.procps "ps"} --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
-      then
-        shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
-        exec ${lib.getExe pkgs.fish} $LOGIN_OPTION
+      if ! [ "$TERM" = "dumb" ] && [ -z "$BASH_EXECUTION_STRING" ]; then
+        exec ${lib.getExe pkgs.nushell}
       fi
     '';
 

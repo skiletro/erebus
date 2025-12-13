@@ -23,9 +23,9 @@
 
           ${lib.getExe pkgs.nix-your-shell} fish | source
         '';
-
-      shellAbbrs.n = "cd ~/Projects/erebus";
     };
+
+    home.shell.enableFishIntegration = true;
 
     # prompt
     programs.starship = {

@@ -5,7 +5,6 @@
   inputs',
   self,
   self',
-  pkgs,
   ...
 }:
 {
@@ -25,8 +24,6 @@
       ];
     };
 
-    programs.fish.enable = true; # idk why i need it here too, but i do
-
     home-manager = {
       useGlobalPkgs = true;
       useUserPackages = true;
@@ -44,9 +41,6 @@
           self.homeModules.erebus
           self.homeModules.autostart
           inputs.chaotic.homeManagerModules.default
-          {
-            programs.ghostty.settings.command = lib.getExe pkgs.fish;
-          }
         ];
       };
     };
