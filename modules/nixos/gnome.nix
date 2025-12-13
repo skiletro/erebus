@@ -50,6 +50,7 @@ in
       ++ (with pkgs; [
         adwaita-icon-theme # fixes some missing icons
         adwaita-icon-theme-legacy # fixes some missing icons
+        file-roller
         gapless
         gjs # fixes ding ext
         libheif

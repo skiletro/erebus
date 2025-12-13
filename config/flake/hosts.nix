@@ -26,7 +26,6 @@ let
         (import-tree (self + /hosts/${hostName}))
 
         # Modules
-        chaotic.nixosModules.default
         home-manager.nixosModules.default
         stylix.nixosModules.stylix
         disko.nixosModules.default

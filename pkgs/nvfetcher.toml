@@ -27,6 +27,13 @@ fetch.url = "https://github.com/imputnet/helium-linux/releases/download/$ver/hel
 src.git = "https://codeberg.org/aclist/dztui"
 fetch.git = "https://codeberg.org/aclist/dztui"
 
+[morewaita-icon-theme]
+src.github = "somepaulo/MoreWaita"
+fetch.git = "https://github.com/somepaulo/MoreWaita.git"
+
+[proton-cachyos_x86_64_v3]
+src.github = "CachyOS/proton-cachyos"
+fetch.url = "https://github.com/CachyOS/proton-cachyos/releases/download/$ver/proton-$ver-x86_64_v3.tar.xz"
 
 # ------ Darwin-specific ------ #
 [swipeaerospace-bin]

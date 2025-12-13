@@ -10,8 +10,7 @@ README
   built upon flake-parts.
 
 FEATURES
-  - Reusable module system for programs not present in nixpkgs, home-manager,
-    or chaotic-nyx.
+  - Reusable module system for programs not present in nixpkgs or home-manager
   - Wayland-first configuration.
   - Cohesive styling (courtsey of Stylix, nix-cursors, and more!).
   - Useful packages for a range of systems.

@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  inputs,
   ...
 }:
 let
@@ -14,10 +13,6 @@ let
     ;
 in
 {
-  imports = [
-    inputs.dankMaterialShell.nixosModules.greeter
-  ];
-
   options.erebus.system.greeter = mkOption {
     type = types.nullOr (
       types.enum [
@@ -33,14 +28,10 @@ in
       services.displayManager.gdm.enable = true;
     })
     (mkIf (greeter == "dankgreeter") {
-      programs.dankMaterialShell.greeter = {
+      services.displayManager.dms-greeter = {
         enable = true;
-        compositor.name = "sway"; # compositor to run the greeter
+        compositor.name = "hyprland";
         configHome = "/home/jamie";
-        logs = {
-          save = true;
-          path = "/tmp/dms-greeter.log";
-        };
       };
     })
   ];

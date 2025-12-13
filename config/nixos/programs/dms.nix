@@ -1,6 +1,4 @@
 {
-  inputs,
-  inputs',
   lib,
   config,
   pkgs,
@@ -10,24 +8,18 @@
   options.erebus.programs.dms.enable = lib.mkEnableOption "Dank Material Shell";
 
   config = lib.mkIf config.erebus.programs.dms.enable {
+    programs.dms-shell = {
+      enable = true;
+      enableDynamicTheming = false; # we use stylix instead
+      systemd.target = "wayland-session.target";
+    };
+
     home-manager.sharedModules = [
       {
-        imports = [ inputs.dankMaterialShell.homeModules.dankMaterialShell.default ];
-
-        programs.dankMaterialShell = {
-          enable = true;
-
-          # Core features
-          systemd.enable = true; # Systemd service for auto-start
-          enableSystemMonitoring = true; # System monitoring widgets (dgop)
-          enableVPN = true; # VPN management widget
-          enableColorPicker = true; # Color picker tool
-          enableAudioWavelength = true; # Audio visualizer (cava)
-          enableCalendarEvents = true; # Calendar integration (khal)
-          enableSystemSound = true; # System sound effects
-        };
-
-        home.packages = [ inputs'.dsearch.packages.default ];
+        home.packages = with pkgs; [
+          dgop
+          dsearch
+        ];
 
         home.file =
           let
@@ -86,8 +78,8 @@
               source = pkgs.fetchFromGitHub {
                 owner = "devnullvoid";
                 repo = "dms-emoji-launcher";
-                rev = "bcfa0e72dafd2127d37f9c3d5d1ea6227432c969";
-                sha256 = "sha256-h4+6OurB9yo4mJUye9z1PdUjjqTNIur78Y5IrRPY1g0=";
+                rev = "2951ec7f823c983c11b6b231403581a386a7c9f6";
+                sha256 = "sha256-aub5pXRMlMs7dxiv5P+/Rz/dA4weojr+SGZAItmbOvo=";
               };
             };
           };

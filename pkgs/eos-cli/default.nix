@@ -70,7 +70,7 @@ let
         export def "main repl" [...args: string] {
             cd-to-flake
             print $"(ansi purple)! (ansi reset):q to quit!"
-            ${nh} repl ...$args
+            nh repl ...$args
         }
 
         # garbage-collect and optimise the nix store

@@ -16,7 +16,7 @@
     },
     "base16-schemes": {
         "cargoLocks": null,
-        "date": "2025-11-23",
+        "date": "2025-12-10",
         "extract": null,
         "name": "base16-schemes",
         "passthru": null,
@@ -26,13 +26,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "0f6be815d258e435c9b137befe5ef4ff24bea32c",
-            "sha256": "sha256-Hju0WtMf3iForxtOwXqGp3Ynipo0EYx1AqMKLPp9BJw=",
+            "rev": "6563443434dd05b006782f6c3ca63026b4249733",
+            "sha256": "sha256-sZkRpDXWfAlf9oZWPzYQXuZ10uw48rq0Unwa9KS6DfE=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/tinted-theming/schemes.git"
         },
-        "version": "0f6be815d258e435c9b137befe5ef4ff24bea32c"
+        "version": "6563443434dd05b006782f6c3ca63026b4249733"
     },
     "dzgui": {
         "cargoLocks": null,
@@ -76,7 +76,7 @@
     },
     "gpu-screen-recorder-ui": {
         "cargoLocks": null,
-        "date": "2025-12-01",
+        "date": "2025-12-07",
         "extract": null,
         "name": "gpu-screen-recorder-ui",
         "passthru": null,
@@ -86,13 +86,13 @@
             "fetchSubmodules": true,
             "leaveDotGit": false,
             "name": null,
-            "rev": "2c2633ec58fa14ca452d94c7b0ea5ae720ceec19",
-            "sha256": "sha256-y9GDFclLFDHhXSzpSNTo8VeRKMJgRXjH6HcQSIgDciQ=",
+            "rev": "245dcf573024db017b5428155177de7c96fda95f",
+            "sha256": "sha256-KB4N5DwzPKYhqIi+IlvkS6ZRh3ByFPCfF75Hg+na7Q8=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://repo.dec05eba.com/gpu-screen-recorder-ui"
         },
-        "version": "2c2633ec58fa14ca452d94c7b0ea5ae720ceec19"
+        "version": "245dcf573024db017b5428155177de7c96fda95f"
     },
     "helium-dmg": {
         "cargoLocks": null,
@@ -103,11 +103,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-zqgZNZ9qKCtW7hTATtkBidXGaOHXY4yDk4tJTU3ftZw=",
+            "sha256": "sha256-9EEECuaiALU/LzdkrjllgUN+cHcxkDvPgyc52nouFrw=",
             "type": "url",
-            "url": "https://github.com/imputnet/helium-macos/releases/download/0.6.9.1/helium_0.6.9.1_arm64-macos.dmg"
+            "url": "https://github.com/imputnet/helium-macos/releases/download/0.7.4.1/helium_0.7.4.1_arm64-macos.dmg"
         },
-        "version": "0.6.9.1"
+        "version": "0.7.4.1"
     },
     "helium-tarball": {
         "cargoLocks": null,
@@ -118,11 +118,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-DLcJCECE5yWcwZuRwNJs3q+sqrZbTbouGF5bDTIFYWM=",
+            "sha256": "sha256-0azvPplorlQcEJq8saMllxGrQiBJBgnEdHmqTSReUt8=",
             "type": "url",
-            "url": "https://github.com/imputnet/helium-linux/releases/download/0.6.9.1/helium-0.6.9.1-x86_64_linux.tar.xz"
+            "url": "https://github.com/imputnet/helium-linux/releases/download/0.7.4.1/helium-0.7.4.1-x86_64_linux.tar.xz"
         },
-        "version": "0.6.9.1"
+        "version": "0.7.4.1"
     },
     "liga-sf-mono-nerd-font": {
         "cargoLocks": null,
@@ -143,6 +143,26 @@
             "url": "https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized.git"
         },
         "version": "dc5a3e6fcc2e16ad476b7be3c3c17c2273b260ea"
+    },
+    "morewaita-icon-theme": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "morewaita-icon-theme",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "v49",
+            "sha256": "sha256-DxZ7XnIIF3EKGMPXahD+aHp6lCLRmrnywn7+qWCVflo=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/somepaulo/MoreWaita.git"
+        },
+        "version": "v49"
     },
     "owo-sh": {
         "cargoLocks": null,
@@ -178,6 +198,21 @@
             "url": "https://github.com/alienator88/Pearcleaner/releases/download/5.4.3/Pearcleaner.dmg"
         },
         "version": "5.4.3"
+    },
+    "proton-cachyos_x86_64_v3": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "proton-cachyos_x86_64_v3",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-BhgEKWyNnpUuSmNSbwINxAb1q8tYCQOMIdL8zAAht2E=",
+            "type": "url",
+            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20251126-slr/proton-cachyos-10.0-20251126-slr-x86_64_v3.tar.xz"
+        },
+        "version": "cachyos-10.0-20251126-slr"
     },
     "protonmail-bin": {
         "cargoLocks": null,

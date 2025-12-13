@@ -11,17 +11,17 @@
   };
   base16-schemes = {
     pname = "base16-schemes";
-    version = "0f6be815d258e435c9b137befe5ef4ff24bea32c";
+    version = "6563443434dd05b006782f6c3ca63026b4249733";
     src = fetchgit {
       url = "https://github.com/tinted-theming/schemes.git";
-      rev = "0f6be815d258e435c9b137befe5ef4ff24bea32c";
+      rev = "6563443434dd05b006782f6c3ca63026b4249733";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-Hju0WtMf3iForxtOwXqGp3Ynipo0EYx1AqMKLPp9BJw=";
+      sha256 = "sha256-sZkRpDXWfAlf9oZWPzYQXuZ10uw48rq0Unwa9KS6DfE=";
     };
-    date = "2025-11-23";
+    date = "2025-12-10";
   };
   dzgui = {
     pname = "dzgui";
@@ -53,32 +53,32 @@
   };
   gpu-screen-recorder-ui = {
     pname = "gpu-screen-recorder-ui";
-    version = "2c2633ec58fa14ca452d94c7b0ea5ae720ceec19";
+    version = "245dcf573024db017b5428155177de7c96fda95f";
     src = fetchgit {
       url = "https://repo.dec05eba.com/gpu-screen-recorder-ui";
-      rev = "2c2633ec58fa14ca452d94c7b0ea5ae720ceec19";
+      rev = "245dcf573024db017b5428155177de7c96fda95f";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-y9GDFclLFDHhXSzpSNTo8VeRKMJgRXjH6HcQSIgDciQ=";
+      sha256 = "sha256-KB4N5DwzPKYhqIi+IlvkS6ZRh3ByFPCfF75Hg+na7Q8=";
     };
-    date = "2025-12-01";
+    date = "2025-12-07";
   };
   helium-dmg = {
     pname = "helium-dmg";
-    version = "0.6.9.1";
+    version = "0.7.4.1";
     src = fetchurl {
-      url = "https://github.com/imputnet/helium-macos/releases/download/0.6.9.1/helium_0.6.9.1_arm64-macos.dmg";
-      sha256 = "sha256-zqgZNZ9qKCtW7hTATtkBidXGaOHXY4yDk4tJTU3ftZw=";
+      url = "https://github.com/imputnet/helium-macos/releases/download/0.7.4.1/helium_0.7.4.1_arm64-macos.dmg";
+      sha256 = "sha256-9EEECuaiALU/LzdkrjllgUN+cHcxkDvPgyc52nouFrw=";
     };
   };
   helium-tarball = {
     pname = "helium-tarball";
-    version = "0.6.9.1";
+    version = "0.7.4.1";
     src = fetchurl {
-      url = "https://github.com/imputnet/helium-linux/releases/download/0.6.9.1/helium-0.6.9.1-x86_64_linux.tar.xz";
-      sha256 = "sha256-DLcJCECE5yWcwZuRwNJs3q+sqrZbTbouGF5bDTIFYWM=";
+      url = "https://github.com/imputnet/helium-linux/releases/download/0.7.4.1/helium-0.7.4.1-x86_64_linux.tar.xz";
+      sha256 = "sha256-0azvPplorlQcEJq8saMllxGrQiBJBgnEdHmqTSReUt8=";
     };
   };
   liga-sf-mono-nerd-font = {
@@ -94,6 +94,19 @@
       sha256 = "sha256-AYjKrVLISsJWXN6Cj74wXmbJtREkFDYOCRw1t2nVH2w=";
     };
     date = "2023-07-01";
+  };
+  morewaita-icon-theme = {
+    pname = "morewaita-icon-theme";
+    version = "v49";
+    src = fetchgit {
+      url = "https://github.com/somepaulo/MoreWaita.git";
+      rev = "v49";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-DxZ7XnIIF3EKGMPXahD+aHp6lCLRmrnywn7+qWCVflo=";
+    };
   };
   owo-sh = {
     pname = "owo-sh";
@@ -115,6 +128,14 @@
     src = fetchurl {
       url = "https://github.com/alienator88/Pearcleaner/releases/download/5.4.3/Pearcleaner.dmg";
       sha256 = "sha256-+hTyxyRhCbM3OzRiqoFxel+iSIr6QcpcWoc4TIh0mqY=";
+    };
+  };
+  proton-cachyos_x86_64_v3 = {
+    pname = "proton-cachyos_x86_64_v3";
+    version = "cachyos-10.0-20251126-slr";
+    src = fetchurl {
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20251126-slr/proton-cachyos-10.0-20251126-slr-x86_64_v3.tar.xz";
+      sha256 = "sha256-BhgEKWyNnpUuSmNSbwINxAb1q8tYCQOMIdL8zAAht2E=";
     };
   };
   protonmail-bin = {
