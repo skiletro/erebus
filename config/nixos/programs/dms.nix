@@ -16,6 +16,8 @@
 
     home-manager.sharedModules = [
       {
+        erebus.services.calendar.enable = true;
+
         home.packages = with pkgs; [
           dgop
           dsearch
