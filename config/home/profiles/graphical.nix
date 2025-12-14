@@ -25,6 +25,7 @@ in
     };
 
     home.packages = with pkgs; [
+      newsflash
       obsidian
       qbittorrent
       signal-desktop-bin
