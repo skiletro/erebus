@@ -7,14 +7,15 @@ let
 
   importModules =
     dir:
-    builtins.readDir dir
-    |> lib.filterAttrs (name: type: isImportable (lib.path.append dir name) type)
-    |> lib.mapAttrs' (
-      name: _: {
-        name = lib.toCamelCase (lib.removeSuffix ".nix" name);
-        value = import (lib.path.append dir name);
-      }
-    );
+    lib.pipe (builtins.readDir dir) [
+      (lib.filterAttrs (name: type: isImportable (lib.path.append dir name) type))
+      (lib.mapAttrs' (
+        name: _: {
+          name = lib.toCamelCase (lib.removeSuffix ".nix" name);
+          value = import (lib.path.append dir name);
+        }
+      ))
+    ];
 
   genModuleAttrs = type: {
     flake."${type}Modules" = importModules ../../modules/${type};

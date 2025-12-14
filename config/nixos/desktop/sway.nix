@@ -76,7 +76,9 @@
             })
             // (
               let
-                workspaces = lib.genList (i: i + 1) 9 |> map (x: toString x);
+                workspaces = lib.pipe (lib.genList (i: i + 1) 9) [
+                  (map toString)
+                ];
                 goToWorkspaces = map (n: { "${modifier}+${n}" = ws n; }) workspaces;
                 moveWorkspaces = map (n: { "${modifier}+Shift+${n}" = mws n; }) workspaces;
               in

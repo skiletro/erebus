@@ -29,19 +29,25 @@
   config =
     let
       genUlid =
-        string: "0123456789${builtins.hashString "md5" string |> builtins.substring 0 16 |> lib.toUpper}";
+        string:
+        "0123456789${
+          lib.pipe (builtins.hashString "md5" string) [
+            (builtins.substring 0 16)
+            lib.toUpper
+          ]
+        }";
 
       mkWebapp =
         name: cfg:
         lib.nameValuePair "${genUlid cfg.url}" {
           sites."${genUlid cfg.manifestUrl}" = {
-            name = name;
-            url = cfg.url;
-            manifestUrl = cfg.manifestUrl;
+            inherit name;
+            inherit (cfg) url;
+            inherit (cfg) manifestUrl;
             desktopEntry = {
               enable = true;
-              categories = cfg.categories;
-              icon = cfg.icon;
+              inherit (cfg) categories;
+              inherit (cfg) icon;
             };
           };
         };

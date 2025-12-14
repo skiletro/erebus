@@ -143,7 +143,10 @@ in
         # css
         ''
           :root {
-            ${cfg.settings |> lib.mapAttrsToList settingToCss |> lib.concatStringsSep "\n  "}
+            ${lib.pipe cfg.settings [
+              (lib.mapAttrsToList settingToCss)
+              (lib.concatStringsSep "\n  ")
+            ]}
           }
         '';
     };

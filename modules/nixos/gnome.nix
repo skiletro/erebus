@@ -129,7 +129,9 @@ in
               "org/gnome/shell".favorite-apps = cfg.settings.pinned-apps;
 
               "org/gnome/settings-daemon/plugins/media-keys" = {
-                custom-keybindings = lib.attrNames mkCustomKeybindings |> map (x: "/${x}/");
+                custom-keybindings = lib.pipe (lib.attrNames mkCustomKeybindings) [
+                  (map (x: "/${x}/"))
+                ];
               };
 
               "org/gnome/shell/extensions/search-light" =
