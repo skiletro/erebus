@@ -4,6 +4,7 @@
   gtk3,
   xdg-utils,
   sources,
+  ...
 }:
 stdenvNoCC.mkDerivation (_finalAttrs: {
   inherit (sources.morewaita-icon-theme) pname version src;
