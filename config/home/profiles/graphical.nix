@@ -18,6 +18,7 @@ in
       ghostty.enable = true;
       helium.enable = true;
       libreoffice.enable = true;
+      obsidian.enable = true;
       proton.enable = true;
       pwa.enable = lib.mkIf isLinux true; # TODO: need to find a solution for pwa declaration on darwin
       spotify.enable = true;
@@ -26,7 +27,6 @@ in
 
     home.packages = with pkgs; [
       newsflash
-      obsidian
       qbittorrent
       signal-desktop-bin
     ];
