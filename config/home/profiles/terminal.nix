@@ -32,6 +32,7 @@
       fd # find files
       file # identify files
       fzf # fuzzy finder
+      gdu # disk utiliser
       heh # hex editor
       iamb # matrix
       jq # json processor
@@ -39,7 +40,6 @@
       libnotify # notifs through scripts
       ngrok # reverse proxy
       nixfmt # nix formatter
-      ncdu
       ouch # cli for compressing and decompressing formats
       outfieldr # `tldr` client
       pik # Interactive pkill
