@@ -11,7 +11,6 @@
     programs.dms-shell = {
       enable = true;
       enableDynamicTheming = false; # we use stylix instead
-      systemd.target = "wayland-session.target";
     };
 
     home-manager.sharedModules = [

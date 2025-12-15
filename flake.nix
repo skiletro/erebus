@@ -102,6 +102,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        pre-commit-hooks.follows = "";
+      };
+    };
+
     ### Theming
     # Inputs that provide themes or anything to do with the style of the system(s).
     cursors.url = "github:lilleaila/nix-cursors";

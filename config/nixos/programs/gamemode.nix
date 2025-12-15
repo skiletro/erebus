@@ -19,7 +19,7 @@
         custom =
           let
             powerprofilesctl = lib.getExe pkgs.power-profiles-daemon;
-            hyprctl = lib.getExe' pkgs.hyprland "hyprctl";
+            hyprctl = lib.getExe' config.programs.hyprland.package "hyprctl";
           in
           {
             start =

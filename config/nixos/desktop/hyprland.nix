@@ -3,6 +3,7 @@
   lib,
   config,
   self',
+  inputs',
   ...
 }:
 {
@@ -12,7 +13,8 @@
     programs.hyprland = {
       enable = true;
       withUWSM = true;
-      package = pkgs.hyprland;
+      package = inputs'.hyprland.packages.hyprland;
+      portalPackage = inputs'.hyprland.packages.xdg-desktop-portal-hyprland;
     };
 
     security.polkit.enable = lib.mkDefault true;
@@ -92,7 +94,6 @@
               gaps_in = 3;
               gaps_out = 6;
               border_size = 2;
-              no_border_on_floating = true;
             };
 
             decoration = {
@@ -135,9 +136,11 @@
             };
 
             layerrule = [
-              "noanim, ^(quickshell)$"
-              "blur, ^(dms:.*)$"
-              "ignorealpha 0.3, ^(dms:.*)"
+              # "no_anim on, ^(quickshell)$"
+              # "blur on, ^(dms:.*)$"
+              # "ignore_alpha 0.3, ^(dms:.*)"
+              "match:namespace ^quickshell.*$, no_anim on"
+              "match:namespace ^dms.*$, blur on, ignore_alpha 0.3"
             ];
           };
       };
