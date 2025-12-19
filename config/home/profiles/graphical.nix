@@ -26,7 +26,6 @@ in
     };
 
     home.packages = with pkgs; [
-      newsflash
       qbittorrent
       signal-desktop-bin
     ];
