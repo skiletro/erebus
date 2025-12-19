@@ -16,7 +16,6 @@
         ];
         shellHook = ''
           eos
-          echo "Usage: eos [cmd]"
         '';
       };
     };
