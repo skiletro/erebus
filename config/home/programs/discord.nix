@@ -5,6 +5,10 @@
   pkgs,
   ...
 }:
+let
+  inherit (pkgs.stdenvNoCC.hostPlatform) isLinux;
+  ifLinux = bool: if isLinux then bool else !bool;
+in
 {
   imports = [ self.homeModules.disblock ];
 
@@ -14,9 +18,9 @@
     programs.nixcord = {
       enable = true;
       discord = {
-        enable = false;
+        enable = ifLinux false;
         vencord.enable = false;
-        equicord.enable = true;
+        equicord.enable = ifLinux true;
       };
       equibop = {
         enable = true;
@@ -60,6 +64,8 @@
       };
     };
 
-    xdg.autostart.entries = config.lib.erebus.autostartEntry "Discord Silent" "${lib.getExe config.programs.nixcord.finalPackage.equibop} --start-minimized";
+    xdg.autostart.entries = lib.mkIf isLinux (
+      config.lib.erebus.autostartEntry "Discord Silent" "${lib.getExe config.programs.nixcord.finalPackage.equibop} --start-minimized"
+    );
   };
 }
