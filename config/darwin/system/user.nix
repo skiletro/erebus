@@ -5,6 +5,7 @@
   inputs',
   self,
   self',
+  pkgs,
   ...
 }:
 {
@@ -21,6 +22,13 @@
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIcAzqMv0//j1mUVb/NBUiMgv2brdPv9HbNs83OkQZzq moirai"
       ];
     };
+
+    programs.zsh.interactiveShellInit = ''
+      if [[ $TERM != "dumb" && -z $ZSH_EXECUTION_STRING ]]; then
+        exec ${lib.getExe pkgs.nushell} --config ~/.config/nushell/config.nu
+      fi
+
+    '';
 
     home-manager = {
       useGlobalPkgs = true;
