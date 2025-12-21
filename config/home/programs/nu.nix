@@ -19,6 +19,7 @@
                 enable: true
               }
             }
+            highlight_resolved_externals: true
           };
         '';
       loginFile.text =
