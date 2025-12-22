@@ -12,7 +12,6 @@
     erebus = {
       desktop = {
         gnome.enable = true;
-        sway.enable = true;
         hyprland.enable = true;
       };
       system = {
