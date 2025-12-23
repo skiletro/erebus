@@ -9,24 +9,35 @@
     lib.mkEnableOption "calendar syncing with khal and vdirsyncer";
 
   config = lib.mkIf config.erebus.services.calendar.enable {
-    sops.secrets."proton-calendar-url" = { };
+    sops.secrets = {
+      "proton-calendar-url" = { };
+      "proton-calendar-work-url" = { };
+    };
 
     accounts.calendar = {
       basePath = ".calendars";
 
-      accounts.proton = {
-        khal = {
-          enable = true;
-          readOnly = true;
+      accounts =
+        let
+          mkCalReadOnly = name: {
+            khal = {
+              enable = true;
+              readOnly = true;
+            };
+            remote.type = "http";
+            vdirsyncer = {
+              enable = true;
+              urlCommand = [
+                (pkgs.writeShellScript "fetch-${lib.removeSuffix "-url" name}" "cat ${
+                  config.sops.secrets.${name}.path
+                }").outPath
+              ];
+            };
+          };
+        in
+        {
+          personal = mkCalReadOnly "proton-calendar-url";
         };
-        remote.type = "http";
-        vdirsyncer = {
-          enable = true;
-          # i should probably get shot for this horrendous abomination.
-          urlCommand = lib.singleton (pkgs.writeShellScript "fetch-vdirsyncer-url" "cat ${config.sops.secrets.proton-calendar-url.path}")
-          .outPath;
-        };
-      };
     };
 
     programs = {
