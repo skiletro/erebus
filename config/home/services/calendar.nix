@@ -37,6 +37,7 @@
         in
         {
           personal = mkCalReadOnly "proton-calendar-url";
+          work = mkCalReadOnly "proton-calendar-work-url";
         };
     };
 
