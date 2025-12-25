@@ -24,7 +24,7 @@ let
         export def "main switch" --wrapped [...args: string] {
             nix fmt
             git add -A 
-            nh $SYSTEM switch --use-substitutes -- ...$args
+            nh $SYSTEM switch -- ...$args
         }
 
         # rebuild and boot into the new generation
@@ -32,13 +32,13 @@ let
             exit-if-darwin
             nix fmt
             git add -A
-            nh $SYSTEM boot --use-substitutes -- ...$args
+            nh $SYSTEM boot -- ...$args
         }
 
         # build and activate, without adding to bootloader
         export def "main test" --wrapped [...args: string] {
             exit-if-darwin
-            nh $SYSTEM test --use-substitutes --impure -- ...$args
+            nh $SYSTEM test --impure -- ...$args
         }
 
         # update flake inputs and nvfetcher sources
