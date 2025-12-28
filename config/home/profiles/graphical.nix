@@ -21,6 +21,7 @@ in
       obsidian.enable = true;
       proton.enable = true;
       pwa.enable = lib.mkIf isLinux true; # TODO: need to find a solution for pwa declaration on darwin
+      rider.enable = true;
       spotify.enable = true;
       zen.enable = lib.mkIf isLinux true; # TODO: compiles but doesn't launch on darwin
     };
