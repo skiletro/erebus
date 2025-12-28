@@ -39,7 +39,7 @@
           "zen-twilight.desktop"
           "org.gnome.Nautilus.desktop"
           "proton-mail.desktop"
-          "com.mitchellh.ghostty.desktop"
+          # "com.mitchellh.ghostty.desktop"
           "discord.desktop"
           "spotify.desktop"
           "steam.desktop"
@@ -51,7 +51,7 @@
         custom-keybindings = [
           {
             binding = "<Super>Return";
-            command = "ghostty";
+            command = "kitty";
             name = "Launch Terminal";
           }
 

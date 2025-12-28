@@ -41,7 +41,7 @@
             monitor = "DP-3,3440x1440@165,0x0,1";
 
             bind = [
-              "SUPER, Return, exec, ${lib.getExe pkgs.ghostty}"
+              "SUPER, Return, exec, ${lib.getExe pkgs.kitty}"
               "SUPER SHIFT, S, exec, ${lib.getExe pkgs.grimblast} copy area"
               "SUPER, Space, exec, ${dms "spotlight toggle"}"
               "SUPER, F, exec, ${lib.getExe self'.packages.helium-bin}"

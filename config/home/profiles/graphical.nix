@@ -5,7 +5,7 @@
   ...
 }:
 let
-  inherit (pkgs.stdenvNoCC.hostPlatform) isLinux;
+  inherit (pkgs.stdenvNoCC.hostPlatform) isDarwin isLinux;
 in
 {
   options.erebus.profiles.graphical.enable =
@@ -15,8 +15,9 @@ in
     erebus.programs = {
       blender.enable = true;
       discord.enable = true;
-      ghostty.enable = true;
+      ghostty.enable = lib.mkIf isDarwin true; # TODO: Transfer over to kitty on macOS too.
       helium.enable = true;
+      kitty.enable = lib.mkIf isLinux true;
       libreoffice.enable = true;
       obsidian.enable = true;
       proton.enable = true;

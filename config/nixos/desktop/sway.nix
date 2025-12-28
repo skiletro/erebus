@@ -27,7 +27,7 @@
         wrapperFeatures.gtk = true; # Fixes common issues with GTK 3 apps
         config = rec {
           modifier = "Mod4"; # Super
-          terminal = "ghostty";
+          terminal = "kitty";
 
           startup = map (cmd: { command = cmd; }) [
             "dbus-update-activation-environment --all"
