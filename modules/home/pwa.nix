@@ -42,17 +42,23 @@
         lib.nameValuePair "${genUlid cfg.url}" {
           sites."${genUlid cfg.manifestUrl}" = {
             inherit name;
-            inherit (cfg) url;
-            inherit (cfg) manifestUrl;
+            inherit (cfg) url manifestUrl;
             desktopEntry = {
               enable = true;
-              inherit (cfg) categories;
-              inherit (cfg) icon;
+              inherit (cfg) categories icon;
             };
           };
         };
     in
     lib.mkIf config.programs.firefoxpwa.enable {
-      programs.firefoxpwa.profiles = lib.mapAttrs' mkWebapp config.programs.firefoxpwa.webapps;
+      programs.firefoxpwa = {
+        profiles = lib.mapAttrs' mkWebapp config.programs.firefoxpwa.webapps;
+        settings = {
+          use_linked_runtime = true;
+          runtime_use_portals = true;
+          runtime_enable_wayland = true;
+          always_patch = true;
+        };
+      };
     };
 }

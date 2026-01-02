@@ -15,13 +15,13 @@
       webapps = {
         "WhatsApp" = {
           url = "https://web.whatsapp.com";
-          manifestUrl = "https://web.whatsapp.com/manifest.json";
+          manifestUrl = "https://web.whatsapp.com/data/manifest.json";
           categories = [ "Network" ];
           icon = "whatsapp";
         };
         "Instagram" = {
           url = "https://instagram.com";
-          manifestUrl = "https://instagram.com/manifest.json";
+          manifestUrl = "https://instagram.com/data/manifest.json";
           categories = [ "Network" ];
           icon = "instagram";
         };
