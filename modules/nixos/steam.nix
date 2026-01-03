@@ -24,7 +24,10 @@
   };
 
   config = lib.mkIf config.programs.steam.enable {
-    environment.systemPackages = [ pkgs.sgdboop ]; # Setting SteamGridDB art easier
+    environment.systemPackages = with pkgs; [
+      sgdboop # Setting SteamGridDB art easier
+      steamtinkerlaunch
+    ];
     boot.kernel.sysctl."vm.max_map_count" = 2147483642; # Some Steam games like this, idk why
 
     programs.steam.package = pkgs.steam.override {
