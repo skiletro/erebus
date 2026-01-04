@@ -21,6 +21,10 @@
     services.gnome.gnome-keyring.enable = lib.mkDefault true;
     erebus.programs.dms.enable = true;
 
+    environment.systemPackages = with pkgs; [
+      pavucontrol
+    ];
+
     home-manager.sharedModules = lib.singleton {
       wayland.windowManager.hyprland = {
         enable = true;
@@ -133,14 +137,69 @@
               disable_hyprland_logo = true;
               disable_splash_rendering = true;
               vrr = 2;
+              focus_on_activate = true;
+              enable_swallow = true;
+              swallow_regex = "^(kitty|ghostty|alacritty|foot)$";
+              mouse_move_enables_dpms = true;
+              key_press_enables_dpms = true;
+              middle_click_paste = false;
             };
 
             layerrule = [
-              # "no_anim on, ^(quickshell)$"
-              # "blur on, ^(dms:.*)$"
-              # "ignore_alpha 0.3, ^(dms:.*)"
-              "match:namespace ^quickshell.*$, no_anim on"
-              "match:namespace ^dms.*$, blur on, ignore_alpha 0.3"
+              "match:class ^(quickshell)$, no_anim on"
+              "match:class ^(quickshell)$, blur on"
+              "match:class ^(dms:.*)$, ignore_alpha 0.3"
+            ];
+
+            windowrule = [
+              "match:class ^(org.quickshell)$, float on"
+
+              "match:class ^(org.pulseaudio.pavucontrol)$, float on"
+              "match:class ^(org.pulseaudio.pavucontrol)$, center on"
+              "match:class ^(org.pulseaudio.pavucontrol)$, size (monitor_w*.45) (monitor_h*.45)"
+
+              "match:class ^(nm-connection-editor)$, float on"
+              "match:class ^(nm-connection-editor)$, size (monitor_w*.45) (monitor_h*.45)"
+              "match:class ^(nm-connection-editor)$, center on"
+
+              "match:class org.freedesktop.impl.portal.desktop.gnome, float on"
+              "match:class org.freedesktop.impl.portal.desktop.gnome, size (monitor_w*.60) (monitor_h*.65)"
+
+              "match:class org.gnome.FileRoller, float on"
+              "match:class org.gnome.FileRoller, center on"
+              "match:class org.gnome.NautilusPreviewer, float on"
+              "match:class org.gnome.NautilusPreviewer, center on"
+
+              ''match:class ^jetbrains-.*$, match:float 1, match:title ^$|^\s$|^win\d+$, no_initial_focus on''
+
+              "match:class steam, float on"
+              ''match:class steam, match:title ^(?!\s*$).+, center on''
+              "match:title Steam, float off" # floats everything but the main steam window
+
+              "match:class xdg-desktop-portal-gtk, float on"
+              "match:class xdg-desktop-portal-gtk, center on"
+              "match:title ^(Open File)(.*)$, center on"
+              "match:title ^(Open File)(.*)$, float on"
+              "match:title ^(Select a File)(.*)$, center on"
+              "match:title ^(Select a File)(.*)$, float on"
+              "match:title ^(Open Folder)(.*)$, center on"
+              "match:title ^(Open Folder)(.*)$, float on"
+              "match:title ^(Save As)(.*)$, center on"
+              "match:title ^(Save As)(.*)$, float on"
+              "match:title ^(Library)(.*)$, center on"
+              "match:title ^(Library)(.*)$, float on"
+              "match:title ^(File Upload)(.*)$, center on"
+              "match:title ^(File Upload)(.*)$, float on"
+              "match:title ^(.*)(wants to save)$, center on"
+              "match:title ^(.*)(wants to save)$, float on"
+              "match:title ^(.*)(wants to open)$, center on"
+              "match:title ^(.*)(wants to open)$, float on"
+              "match:class crashreporter, float on"
+              "match:class crashreporter, center on"
+
+              "match:class ^(gsr-ui)$, float on"
+              "match:class ^(gsr-ui)$, pin on"
+              "match:class ^(gsr-ui)$, move 0 0"
             ];
           };
       };
