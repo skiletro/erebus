@@ -25,6 +25,28 @@ in
       equibop = {
         enable = true;
         autoscroll.enable = true;
+        package = pkgs.equibop.overrideAttrs (_oldAttrs: {
+            postBuild = ''
+              pushd build
+              ${lib.getExe pkgs.python313Packages.icnsutil} e icon.icns
+              popd
+            '';
+
+            installPhase = ''
+              runHook preInstall
+              mkdir -p $out/opt/Equibop
+              cp -r dist/*unpacked/resources $out/opt/Equibop/
+
+              for file in build/icon.icns.export/*\@2x.png; do
+                base=''${file##*/}
+                size=''${base/x*/}
+                targetSize=$((size * 2))
+                install -Dm0644 $file $out/share/icons/hicolor/''${targetSize}x''${targetSize}/apps/equibop.png
+              done
+
+              runHook postInstall
+            '';
+          });
       };
       config = {
         useQuickCss = true;
