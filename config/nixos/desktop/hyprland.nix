@@ -172,6 +172,8 @@
 
               ''match:class ^jetbrains-.*$, match:float 1, match:title ^$|^\s$|^win\d+$, no_initial_focus on''
 
+              "match:class Kodi, fullscreen on"
+
               "match:class steam, float on"
               ''match:class steam, match:title ^(?!\s*$).+, center on''
               "match:title Steam, float off" # floats everything but the main steam window
