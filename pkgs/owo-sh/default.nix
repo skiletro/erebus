@@ -33,7 +33,6 @@ stdenv.mkDerivation {
   meta = {
     description = "Shell uploader/shortener script for whats-th.is";
     homepage = "https://owo.codes/whats-this/owo.sh/";
-    maintainers = with lib.maintainers; [ skiletro ];
     license = lib.licenses.gpl3;
   };
 }

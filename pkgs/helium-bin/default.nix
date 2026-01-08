@@ -105,6 +105,5 @@ in
 lib.mergeAttrs {
   meta = {
     description = "Chromium-based web browser";
-    maintainers = with lib.maintainers; [ skiletro ];
   };
 } (if isDarwin then darwinDerivation else linuxDerivation)

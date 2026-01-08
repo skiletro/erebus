@@ -3,7 +3,6 @@
   fetchFromGitHub,
   jq,
   curlMinimal,
-  lib,
   ...
 }:
 let
@@ -33,7 +32,6 @@ stdenvNoCC.mkDerivation {
   meta = {
     description = "Simple utility to fix Steam shortcuts so the icon of the games RUNNING WITH PROTON is displayed correctly on GNOME instead of the default 'no icon' program";
     platforms = [ "x86_64-linux" ];
-    maintainers = with lib.maintainers; [ skiletro ];
     mainProgram = pname;
   };
 

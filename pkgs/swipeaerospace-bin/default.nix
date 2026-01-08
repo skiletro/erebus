@@ -18,7 +18,6 @@ stdenvNoCC.mkDerivation {
   '';
 
   meta = {
-    maintainers = with lib.maintainers; [ skiletro ];
     mainProgram = "SwipeAeroSpace";
     platforms = lib.platforms.darwin;
     sourceProvenance = [ lib.sourceTypes.binaryNativeCode ];

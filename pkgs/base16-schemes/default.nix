@@ -19,7 +19,6 @@ stdenv.mkDerivation {
   meta = {
     description = "All the color schemes for use in base16 packages";
     homepage = "https://github.com/tinted-theming/schemes";
-    maintainers = with lib.maintainers; [ skiletro ];
     license = lib.licenses.mit;
   };
 }

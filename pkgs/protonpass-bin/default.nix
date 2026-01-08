@@ -25,6 +25,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   '';
 
   meta = {
-    maintainers = with lib.maintainers; [ skiletro ];
+    platforms = lib.platforms.darwin;
+    sourceProvenance = [ lib.sourceTypes.binaryNativeCode ];
   };
 })
