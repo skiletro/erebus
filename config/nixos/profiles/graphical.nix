@@ -34,8 +34,11 @@
     };
 
     environment.systemPackages = with pkgs; [
-      wineWowPackages.stable
+      # keep-sorted start
+      gnome-logs
       rustdesk-flutter
+      wineWowPackages.stable
+      # keep-sorted end
     ];
 
     home-manager.sharedModules = lib.singleton {
