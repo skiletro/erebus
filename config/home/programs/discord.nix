@@ -18,55 +18,58 @@ in
     programs.nixcord = {
       enable = true;
       discord = {
-        enable = ifLinux false;
-        vencord.enable = false;
+        enable = false;
+        vencord.enable = ifLinux false;
         equicord.enable = ifLinux true;
       };
       equibop = {
         enable = true;
         autoscroll.enable = true;
         package = pkgs.equibop.overrideAttrs (_oldAttrs: {
-            postBuild = ''
-              pushd build
-              ${lib.getExe pkgs.python313Packages.icnsutil} e icon.icns
-              popd
-            '';
+          postBuild = ''
+            pushd build
+            ${lib.getExe pkgs.python313Packages.icnsutil} e icon.icns
+            popd
+          '';
 
-            installPhase = ''
-              runHook preInstall
-              mkdir -p $out/opt/Equibop
-              cp -r dist/*unpacked/resources $out/opt/Equibop/
+          installPhase = ''
+            runHook preInstall
+            mkdir -p $out/opt/Equibop
+            cp -r dist/*unpacked/resources $out/opt/Equibop/
 
-              for file in build/icon.icns.export/*\@2x.png; do
-                base=''${file##*/}
-                size=''${base/x*/}
-                targetSize=$((size * 2))
-                install -Dm0644 $file $out/share/icons/hicolor/''${targetSize}x''${targetSize}/apps/equibop.png
-              done
+            for file in build/icon.icns.export/*\@2x.png; do
+              base=''${file##*/}
+              size=''${base/x*/}
+              targetSize=$((size * 2))
+              install -Dm0644 $file $out/share/icons/hicolor/''${targetSize}x''${targetSize}/apps/equibop.png
+            done
 
-              runHook postInstall
-            '';
-          });
+            runHook postInstall
+          '';
+        });
       };
       config = {
         useQuickCss = true;
-        themeLinks = lib.optional pkgs.stdenvNoCC.hostPlatform.isLinux "https://chloecinders.github.io/visual-refresh-compact-title-bar/hidden.css";
+        themeLinks = lib.optional pkgs.stdenvNoCC.hostPlatform.isLinux "https://chloecinders.github.io/visual-refresh-compact-title-bar/browser.css";
+        transparent = true;
         plugins = {
           betterGifPicker.enable = true;
-          clearUrLs.enable = true;
+          ClearURLs.enable = true;
           crashHandler.enable = true;
           fakeNitro.enable = true;
           favoriteGifSearch.enable = true;
           fixSpotifyEmbeds.enable = true;
           fixYoutubeEmbeds.enable = true;
-          limitMiddleClickPaste.enable = true;
-          listenBrainzRpc = {
+          limitMiddleClickPaste = {
             enable = true;
-            hideWithSpotify = true;
-            username = "skiletro";
+            limitTo = "never";
           };
           noSystemBadge.enable = true;
-          messageLogger.enable = true;
+          messageLogger = {
+            ignoreBots = true;
+            ignoreSelf = true;
+            collapseDeleted = true;
+          };
           openInApp.enable = true;
           serverInfo.enable = true;
           unindent.enable = true;

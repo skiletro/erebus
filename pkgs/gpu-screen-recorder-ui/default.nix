@@ -1,7 +1,8 @@
+# https://github.com/NixOS/nixpkgs/pull/369574/
 {
   lib,
   stdenv,
-  sources,
+  fetchgit,
   pkg-config,
   meson,
   ninja,
@@ -20,18 +21,25 @@
   wayland,
   wayland-scanner,
   wrapperDir ? "/run/wrappers/bin",
+  gitUpdater,
   ...
 }:
 
 stdenv.mkDerivation rec {
-  inherit (sources.gpu-screen-recorder-ui) pname version src;
+  pname = "gpu-screen-recorder-ui";
+  version = "1.8.3";
+
+  src = fetchgit {
+    url = "https://repo.dec05eba.com/gpu-screen-recorder-ui";
+    tag = version;
+    hash = "sha256-KB4N5DwzPKYhqIi+IlvkS6ZRh3ByFPCfF75Hg+na7Q8=";
+  };
 
   postPatch = ''
     substituteInPlace depends/mglpp/depends/mgl/src/gl.c \
       --replace-fail "libGL.so.1" "${lib.getLib libglvnd}/lib/libGL.so.1" \
       --replace-fail "libGLX.so.0" "${lib.getLib libglvnd}/lib/libGLX.so.0" \
       --replace-fail "libEGL.so.1" "${lib.getLib libglvnd}/lib/libEGL.so.1"
-
     substituteInPlace extra/gpu-screen-recorder-ui.service \
       --replace-fail "ExecStart=${meta.mainProgram}" "ExecStart=$out/bin/${meta.mainProgram}"
   '';
@@ -79,11 +87,14 @@ stdenv.mkDerivation rec {
         }"
     '';
 
+  passthru.updateScript = gitUpdater { };
+
   meta = {
     description = "Fullscreen overlay UI for GPU Screen Recorder in the style of ShadowPlay";
-    homepage = "https://git.dec05eba.com/${pname}/about/";
+    homepage = "https://git.dec05eba.com/gpu-screen-recorder-ui/about/";
     license = lib.licenses.gpl3Only;
     mainProgram = "gsr-ui";
+    maintainers = with lib.maintainers; [ js6pak ];
     platforms = lib.platforms.linux;
   };
 }

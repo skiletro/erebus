@@ -9,16 +9,6 @@ fetch.git = "https://github.com/TeamWheelWizard/WheelWizard.git"
 
 
 # ------ Linux-specific ------ #
-[gpu-screen-recorder-ui]
-src.git = "https://repo.dec05eba.com/gpu-screen-recorder-ui"
-fetch.git = "https://repo.dec05eba.com/gpu-screen-recorder-ui"
-git.fetchSubmodules = true
-
-[gpu-screen-recorder-notification]
-src.git = "https://repo.dec05eba.com/gpu-screen-recorder-notification"
-fetch.git = "https://repo.dec05eba.com/gpu-screen-recorder-notification"
-git.fetchSubmodules = true
-
 [helium-tarball]
 src.github = "imputnet/helium-linux"
 fetch.url = "https://github.com/imputnet/helium-linux/releases/download/$ver/helium-$ver-x86_64_linux.tar.xz"

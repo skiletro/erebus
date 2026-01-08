@@ -29,7 +29,7 @@
         rnnoise.enable = true;
         kdeconnect.enable = true;
         wireguard.enable = true;
-        printing.enable = true;
+        # printing.enable = true;
       };
     };
 

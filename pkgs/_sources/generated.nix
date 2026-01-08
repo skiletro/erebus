@@ -11,74 +11,46 @@
   };
   base16-schemes = {
     pname = "base16-schemes";
-    version = "6563443434dd05b006782f6c3ca63026b4249733";
+    version = "0d5462e6fa58e24fd8bd3e50bfa843f81afb62a4";
     src = fetchgit {
       url = "https://github.com/tinted-theming/schemes.git";
-      rev = "6563443434dd05b006782f6c3ca63026b4249733";
+      rev = "0d5462e6fa58e24fd8bd3e50bfa843f81afb62a4";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-sZkRpDXWfAlf9oZWPzYQXuZ10uw48rq0Unwa9KS6DfE=";
+      sha256 = "sha256-r3ccgb+hukOCP7wNHO3iUUaC80Jx6P1NVpDE9vhLX/U=";
     };
-    date = "2025-12-10";
+    date = "2026-01-02";
   };
   dzgui = {
     pname = "dzgui";
-    version = "a1d14669c7139c764bf14fceeac9f26e7d38750d";
+    version = "236a5dd0a33bff94afded40ee1f3b36291c1e8ad";
     src = fetchgit {
       url = "https://codeberg.org/aclist/dztui";
-      rev = "a1d14669c7139c764bf14fceeac9f26e7d38750d";
+      rev = "236a5dd0a33bff94afded40ee1f3b36291c1e8ad";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-o00Qon4lB/RICiHT/MI0hXUMmyctnYH469rOGB8V/HI=";
+      sha256 = "sha256-jxMfXblyIYGzVDNCgom2mnRdMbGGNFVyj7s3Agy2Z8A=";
     };
-    date = "2025-10-30";
-  };
-  gpu-screen-recorder-notification = {
-    pname = "gpu-screen-recorder-notification";
-    version = "54e4f30a692b7f86686d531d0331de32374a4735";
-    src = fetchgit {
-      url = "https://repo.dec05eba.com/gpu-screen-recorder-notification";
-      rev = "54e4f30a692b7f86686d531d0331de32374a4735";
-      fetchSubmodules = true;
-      deepClone = false;
-      leaveDotGit = false;
-      sparseCheckout = [ ];
-      sha256 = "sha256-aLoDDbhhLUZl/2Zt0swhtD4/vqDEAnbVPKcFhqxvpsQ=";
-    };
-    date = "2025-10-04";
-  };
-  gpu-screen-recorder-ui = {
-    pname = "gpu-screen-recorder-ui";
-    version = "245dcf573024db017b5428155177de7c96fda95f";
-    src = fetchgit {
-      url = "https://repo.dec05eba.com/gpu-screen-recorder-ui";
-      rev = "245dcf573024db017b5428155177de7c96fda95f";
-      fetchSubmodules = true;
-      deepClone = false;
-      leaveDotGit = false;
-      sparseCheckout = [ ];
-      sha256 = "sha256-KB4N5DwzPKYhqIi+IlvkS6ZRh3ByFPCfF75Hg+na7Q8=";
-    };
-    date = "2025-12-07";
+    date = "2026-01-04";
   };
   helium-dmg = {
     pname = "helium-dmg";
-    version = "0.7.5.1";
+    version = "0.7.9.1";
     src = fetchurl {
-      url = "https://github.com/imputnet/helium-macos/releases/download/0.7.5.1/helium_0.7.5.1_arm64-macos.dmg";
-      sha256 = "sha256-clP9xrinrpvsiWKBI1oD4DIJSGHzoPmOqTJv2j1Pykc=";
+      url = "https://github.com/imputnet/helium-macos/releases/download/0.7.9.1/helium_0.7.9.1_arm64-macos.dmg";
+      sha256 = "sha256-swFxWgHONhdzfLpwGVoje/ceTwCZFmoO3FBeIbjqIaY=";
     };
   };
   helium-tarball = {
     pname = "helium-tarball";
-    version = "0.7.5.1";
+    version = "0.7.9.1";
     src = fetchurl {
-      url = "https://github.com/imputnet/helium-linux/releases/download/0.7.5.1/helium-0.7.5.1-x86_64_linux.tar.xz";
-      sha256 = "sha256-VYwe1T5Ml0wjJf+vDKfAnZwZsieWywg5QJx1/kwW76E=";
+      url = "https://github.com/imputnet/helium-linux/releases/download/0.7.9.1/helium-0.7.9.1-x86_64_linux.tar.xz";
+      sha256 = "sha256-/NcL8aDA5S0zvulKcPwzcmoY+RHeyr78TZUVqv9VAjY=";
     };
   };
   liga-sf-mono-nerd-font = {
@@ -132,10 +104,10 @@
   };
   proton-cachyos_x86_64_v3 = {
     pname = "proton-cachyos_x86_64_v3";
-    version = "cachyos-10.0-20251126-slr";
+    version = "cachyos-10.0-20260101-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20251126-slr/proton-cachyos-10.0-20251126-slr-x86_64_v3.tar.xz";
-      sha256 = "sha256-BhgEKWyNnpUuSmNSbwINxAb1q8tYCQOMIdL8zAAht2E=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260101-slr/proton-cachyos-10.0-20260101-slr-x86_64_v3.tar.xz";
+      sha256 = "sha256-LeLYdMhaaTpw+MAtfZfAiU9svNxq8ZZymql+3eL/tzw=";
     };
   };
   protonmail-bin = {
@@ -148,10 +120,10 @@
   };
   protonpass-bin = {
     pname = "protonpass-bin";
-    version = "1.33.0";
+    version = "1.33.3";
     src = fetchurl {
-      url = "https://proton.me/download/PassDesktop/darwin/universal/ProtonPass_1.33.0.dmg";
-      sha256 = "sha256-zYQ7CV4tzpxkjO11oFzWTRy0CD4CDIVN6SL9VlhCUHQ=";
+      url = "https://proton.me/download/PassDesktop/darwin/universal/ProtonPass_1.33.3.dmg";
+      sha256 = "sha256-JdlpkYC5UAufirulzmqW1U8sxp7hcE6/dFARnTDDtq4=";
     };
   };
   protonvpn-bin = {

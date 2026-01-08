@@ -1,7 +1,8 @@
+# https://github.com/NixOS/nixpkgs/pull/369574/
 {
   lib,
   stdenv,
-  sources,
+  fetchgit,
   pkg-config,
   meson,
   ninja,
@@ -12,11 +13,19 @@
   libglvnd,
   wayland,
   wayland-scanner,
+  gitUpdater,
   ...
 }:
 
-stdenv.mkDerivation {
-  inherit (sources.gpu-screen-recorder-notification) pname version src;
+stdenv.mkDerivation rec {
+  pname = "gpu-screen-recorder-notification";
+  version = "1.1.0";
+
+  src = fetchgit {
+    url = "https://repo.dec05eba.com/gpu-screen-recorder-notification";
+    tag = version;
+    hash = "sha256-ODifZ046DEBNiGT3+S6pQyF8ekrb6LIHWton8nv1MBo=";
+  };
 
   postPatch = ''
     substituteInPlace depends/mglpp/depends/mgl/src/gl.c \
@@ -41,11 +50,14 @@ stdenv.mkDerivation {
     wayland-scanner
   ];
 
+  passthru.updateScript = gitUpdater { };
+
   meta = {
     description = "Notification in the style of ShadowPlay";
     homepage = "https://git.dec05eba.com/gpu-screen-recorder-notification/about/";
     license = lib.licenses.gpl3Only;
     mainProgram = "gsr-notify";
+    maintainers = with lib.maintainers; [ js6pak ];
     platforms = lib.platforms.linux;
   };
 }
