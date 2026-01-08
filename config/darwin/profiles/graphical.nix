@@ -18,12 +18,14 @@
     };
 
     environment.systemPackages = with pkgs; [
+      # keep-sorted start ignore_prefixes=self'.packages.
       betterdisplay
       grandperspective # disk usage visualiser
       iina # media player
       m-cli
       self'.packages.pearcleaner-bin
       utm
+      # keep-sorted end
     ];
 
     homebrew.masApps.Xcode = 497799835;

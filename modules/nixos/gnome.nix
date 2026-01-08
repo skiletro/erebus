@@ -48,6 +48,7 @@ in
       cfg.extensions
       ++ cfg.thumbnailers
       ++ (with pkgs; [
+        # keep-sorted start
         adwaita-icon-theme # fixes some missing icons
         adwaita-icon-theme-legacy # fixes some missing icons
         file-roller
@@ -59,23 +60,26 @@ in
         papers # Pdf viewer
         showtime # Video Player
         smile # Emoji picker
+        # keep-sorted end
       ]);
 
     environment.gnome.excludePackages = with pkgs; [
+      # keep-sorted start
       epiphany
       evince
       geary
       gnome-connections
-      gnome-contacts
       gnome-console
+      gnome-contacts
       gnome-maps
       gnome-music
-      gnome-tour
       gnome-software
+      gnome-tour
       orca
       seahorse
       simple-scan
       totem
+      # keep-sorted end
     ];
 
     environment.pathsToLink = mkIf (cfg.thumbnailers != [ ]) [

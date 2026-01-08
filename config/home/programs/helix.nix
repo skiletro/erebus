@@ -21,43 +21,75 @@
         ];
       });
       extraPackages = with pkgs; [
-        typescript-language-server # TS
-        vscode-langservers-extracted # TS/JS/HTML
+        # keep-sorted start
+        bash-language-server # Bash
+        clippy # Rust
+        csharpier # C#
+        deadnix # Nix
+        docker-compose-language-service # Docker Compose
+        dockerfile-language-server # Dockerfile
+        gopls # Go
+        marksman # Markdown
+        mono # C#
+        msbuild # C# Unity
+        netcoredbg # C#
+        nil # Nix
+        nixd # Nix
+        omnisharp-roslyn # C#
         prettier # HTML/CSS/JS
         rust-analyzer # Rust
         rustfmt # Rust
-        clippy # Rust
-        deadnix # Nix
-        nixd # Nix
-        nil # Nix
-        gopls # Go
-        bash-language-server # Bash
-        docker-compose-language-service # Docker Compose
-        dockerfile-language-server # Dockerfile
-        marksman # Markdown
         taplo # TOML
+        typescript-language-server # TS
+        vscode-langservers-extracted # TS/JS/HTML
         yaml-language-server # YAML
-        omnisharp-roslyn # C#
-        csharpier # C#
-        netcoredbg # C#
-        mono # C#
-        msbuild # C# Unity
+        # keep-sorted end
       ];
       defaultEditor = true;
       languages = {
         language-server = {
+          # keep-sorted start block=yes newline_separated=yes
           emmet-lsp = {
             command = lib.getExe pkgs.emmet-language-server;
             args = [ "--stdio" ];
           };
+
           gopls.config.gofumpt = true;
+
           harper = {
             command = lib.getExe pkgs.harper;
             args = [ "--stdio" ];
             config.harper-ls.dialect = "British";
           };
+          # keep-sorted end
         };
         language = [
+          # keep-sorted start block=yes newline_separated=yes
+          {
+            name = "c";
+            formatter.command = lib.getExe' pkgs.clang-tools "clang-format";
+            language-servers = [ "clangd" ];
+          }
+
+          {
+            name = "markdown";
+            language-servers = [
+              "marksman"
+              "harper"
+            ];
+          }
+
+          {
+            name = "fish";
+            formatter.command = "fish_indent";
+            auto-format = true;
+          }
+
+          {
+            name = "go";
+            auto-format = true;
+          }
+
           {
             name = "html";
             formatter = {
@@ -72,6 +104,15 @@
               "emmet-lsp"
             ];
           }
+
+          {
+            name = "nix";
+            formatter = {
+              command = lib.getExe pkgs.nixfmt;
+              auto-format = true;
+            };
+          }
+
           {
             name = "tsx";
             formatter = {
@@ -86,34 +127,7 @@
               "emmet-lsp"
             ];
           }
-          {
-            name = "nix";
-            formatter = {
-              command = lib.getExe pkgs.nixfmt;
-              auto-format = true;
-            };
-          }
-          {
-            name = "fish";
-            formatter.command = "fish_indent";
-            auto-format = true;
-          }
-          {
-            name = "go";
-            auto-format = true;
-          }
-          {
-            name = "c";
-            formatter.command = lib.getExe' pkgs.clang-tools "clang-format";
-            language-servers = [ "clangd" ];
-          }
-          {
-            name = "markdown";
-            language-servers = [
-              "marksman"
-              "harper"
-            ];
-          }
+          # keep-sorted end
         ];
       };
       settings = {

@@ -11,30 +11,35 @@
 
   config = lib.mkIf config.erebus.profiles.terminal.enable {
     erebus.programs = {
+      # keep-sorted start
       beets.enable = lib.mkIf pkgs.stdenvNoCC.hostPlatform.isLinux true;
       btop.enable = true;
       carapace.enable = true;
       direnv.enable = true;
       fastfetch.enable = true;
       fish.enable = true;
-      nu.enable = true;
       git.enable = true;
       helix.enable = true;
+      nu.enable = true;
       tmux.enable = true;
       yazi.enable = true;
+      # keep-sorted end
     };
 
     home.packages = with pkgs; [
+      # keep-sorted start ignore_prefixes=self'.packages.
       caligula # iso burner
       dust # fancy du
       self'.packages.eos-cli
       self'.packages.eos-helpers
       fd # find files
+      ffmpeg
       file # identify files
       fzf # fuzzy finder
       gdu # disk utiliser
       heh # hex editor
       iamb # matrix
+      imagemagick
       jq # json processor
       just # make file but better
       libnotify # notifs through scripts
@@ -42,15 +47,13 @@
       nixfmt # nix formatter
       ouch # cli for compressing and decompressing formats
       outfieldr # `tldr` client
-      pik # Interactive pkill
       self'.packages.owo-sh
+      pik # Interactive pkill
       unrar
       wget
-      ffmpeg
-      imagemagick
       yt-dlp
+      # keep-sorted end
     ];
-
     home.shellAliases = {
       n = "cd ~/Projects/erebus";
     };

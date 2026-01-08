@@ -8,6 +8,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    # keep-sorted start
     fsearch # Fast File Search
     godot_4 # Godot Engine
     handbrake # Video Encoder
@@ -16,5 +17,6 @@
     tenacity # Audio Editor
     video-trimmer # Trims Videos
     vlc # Media Player, mostly used for m3u files
+    # keep-sorted end
   ];
 }

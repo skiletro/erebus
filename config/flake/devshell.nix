@@ -4,15 +4,17 @@
     {
       devShells.default = pkgs.mkShellNoCC {
         buildInputs = with pkgs; [
+          # keep-sorted start ignore_prefixes=self'.packages.
+          self'.packages.eos-cli
           git
           lazygit
-          nh
-          nvfetcher
-          ssh-to-age
-          sops
-          nixos-rebuild
           neovim
-          self'.packages.eos-cli
+          nh
+          nixos-rebuild
+          nvfetcher
+          sops
+          ssh-to-age
+          # keep-sorted end
         ];
         shellHook = ''
           eos

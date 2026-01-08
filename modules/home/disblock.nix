@@ -8,61 +8,61 @@ let
   cfg = config.services.disblock;
 
   disblockOriginSettings = {
-    badges = {
-      isBool = false;
-      default = false;
-      description = "Nitro and Booster badges on user profiles";
-    };
-    gif-button = {
-      isBool = false;
-      default = false;
-      description = "GIF button in chat bar";
-    };
-    sticker-button = {
-      isBool = false;
-      default = false;
-      description = "Sticker button in chat bar";
-    };
-    hover-reaction-emoji = {
-      isBool = false;
-      default = true;
-      description = "Emoji suggestions on message hover";
-    };
-    app-launcher = {
-      isBool = false;
-      default = false;
-      description = "App launcher right of chat bar";
-    };
-    super-reactions = {
-      isBool = false;
-      default = false;
-      description = "Hide super reactions entirely";
-    };
-    super-reaction-hide-anim = {
-      isBool = true;
-      default = true;
-      description = "Replace Super Reactions with a blink animation";
-    };
-    profile-effects = {
-      isBool = false;
-      default = false;
-      description = "Avatar decorations & profile effects";
-    };
-    nameplates = {
-      isBool = false;
-      default = false;
-      description = "Hide nameplates in the members list";
-    };
+    # keep-sorted start block=yes newline_separated=yes
     active-now = {
       isBool = false;
       default = true;
       description = "Active Now column in friends list";
     };
+
+    app-launcher = {
+      isBool = false;
+      default = false;
+      description = "App launcher right of chat bar";
+    };
+
+    badges = {
+      isBool = false;
+      default = false;
+      description = "Nitro and Booster badges on user profiles";
+    };
+
     clan-tags = {
       isBool = false;
       default = true;
       description = "Clan tags next to the usernames";
     };
+
+    gif-button = {
+      isBool = false;
+      default = false;
+      description = "GIF button in chat bar";
+    };
+
+    hover-reaction-emoji = {
+      isBool = false;
+      default = true;
+      description = "Emoji suggestions on message hover";
+    };
+
+    nameplates = {
+      isBool = false;
+      default = false;
+      description = "Hide nameplates in the members list";
+    };
+
+    nitro-features = {
+      isBool = false;
+      default = false;
+      description = "Settings menu Billing tab, Super React toggle, GIF Avatar";
+    };
+
+    profile-effects = {
+      isBool = false;
+      default = false;
+      description = "Avatar decorations & profile effects";
+    };
+
     server-settings-boost-tab = {
       isBool = false;
       default = false;
@@ -74,31 +74,49 @@ let
       default = true;
       description = "Settings menu Billing Settings header";
     };
-    settings-nitro-tab = {
-      isBool = false;
-      default = false;
-      description = "Settings menu Nitro tab";
-    };
-    settings-server-boost-tab = {
-      isBool = false;
-      default = false;
-      description = "Settings menu Server Boost tab";
-    };
-    settings-subscriptions-tab = {
-      isBool = false;
-      default = false;
-      description = "Settings menu Subscriptions tab";
-    };
+
     settings-gift-inventory-tab = {
       isBool = false;
       default = true;
       description = "Settings menu Gift Inventory tab";
     };
-    nitro-features = {
+
+    settings-nitro-tab = {
       isBool = false;
       default = false;
-      description = "Settings menu Billing tab, Super React toggle, GIF Avatar";
+      description = "Settings menu Nitro tab";
     };
+
+    settings-server-boost-tab = {
+      isBool = false;
+      default = false;
+      description = "Settings menu Server Boost tab";
+    };
+
+    settings-subscriptions-tab = {
+      isBool = false;
+      default = false;
+      description = "Settings menu Subscriptions tab";
+    };
+
+    sticker-button = {
+      isBool = false;
+      default = false;
+      description = "Sticker button in chat bar";
+    };
+
+    super-reaction-hide-anim = {
+      isBool = true;
+      default = true;
+      description = "Replace Super Reactions with a blink animation";
+    };
+
+    super-reactions = {
+      isBool = false;
+      default = false;
+      description = "Hide super reactions entirely";
+    };
+    # keep-sorted end
   };
 
   mkSetting =

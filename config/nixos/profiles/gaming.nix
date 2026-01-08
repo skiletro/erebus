@@ -24,18 +24,20 @@
     };
 
     environment.systemPackages = with pkgs; [
+      # keep-sorted start ignore_prefixes=self'.packages.
       bs-manager
       dolphin-emu
       self'.packages.dzgui
       heroic
+      lsfg-vk
+      lsfg-vk-ui # frame gen
       ludusavi
       osu-lazer-bin
       r2modman
       ryubing # switch emu
-      self'.packages.wheelwizard
-      lsfg-vk
-      lsfg-vk-ui # frame gen
       vrcx
+      self'.packages.wheelwizard
+      # keep-sorted end
     ];
 
     home-manager.sharedModules = lib.singleton (userAttrs: {

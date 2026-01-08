@@ -15,10 +15,13 @@
           "pkgs/_sources/generated.nix"
         ];
         programs = {
+          # keep-sorted start
           deadnix.enable = true;
           just.enable = true;
+          keep-sorted.enable = true;
           nixfmt.enable = true;
           statix.enable = true;
+          # keep-sorted end
         };
       };
     };

@@ -13,6 +13,7 @@ in
 
   config = lib.mkIf config.erebus.profiles.graphical.enable {
     erebus.programs = {
+      # keep-sorted start
       blender.enable = true;
       discord.enable = true;
       ghostty.enable = lib.mkIf isDarwin true; # TODO: Transfer over to kitty on macOS too.
@@ -25,11 +26,14 @@ in
       rider.enable = true;
       spotify.enable = true;
       zen.enable = lib.mkIf isLinux true; # TODO: compiles but doesn't launch on darwin
+      # keep-sorted end
     };
 
     home.packages = with pkgs; [
+      # keep-sorted start
       qbittorrent
       signal-desktop-bin
+      # keep-sorted end
     ];
   };
 }
