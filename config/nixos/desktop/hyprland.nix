@@ -153,17 +153,18 @@
 
             windowrule = [
               "match:class ^(org.quickshell)$, float on"
+              "match:class ^(org.quickshell)$, center on"
+              "match:class ^(org.quickshell)$, size (monitor_h*.70) (monitor_h*.80)"
 
               "match:class ^(org.pulseaudio.pavucontrol)$, float on"
               "match:class ^(org.pulseaudio.pavucontrol)$, center on"
               "match:class ^(org.pulseaudio.pavucontrol)$, size (monitor_w*.45) (monitor_h*.45)"
 
-              "match:class ^(nm-connection-editor)$, float on"
-              "match:class ^(nm-connection-editor)$, size (monitor_w*.45) (monitor_h*.45)"
-              "match:class ^(nm-connection-editor)$, center on"
-
               "match:class org.freedesktop.impl.portal.desktop.gnome, float on"
               "match:class org.freedesktop.impl.portal.desktop.gnome, size (monitor_w*.60) (monitor_h*.65)"
+
+              "match:class fsearch, float on"
+              "match:class fsearch, center on"
 
               "match:class org.gnome.FileRoller, float on"
               "match:class org.gnome.FileRoller, center on"
