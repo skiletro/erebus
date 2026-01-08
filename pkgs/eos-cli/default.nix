@@ -41,6 +41,13 @@ let
             nh $SYSTEM test --impure -- ...$args
         }
 
+        # build and compare
+        export def "main build" --wrapped [...args: string] {
+            nix fmt
+            git add -A
+            nh $SYSTEM switch -- ...$args
+        }
+
         # update flake inputs and nvfetcher sources
         export def "main update" [] {
             nix flake update --refresh
