@@ -33,7 +33,10 @@ in
         compositor.name = "sway";
         configHome = "/home/jamie";
       };
-      programs.sway.enable = true;
+      programs.sway = {
+        enable = true;
+        extraPackages = lib.mkDefault [ ];
+      };
     })
   ];
 }
