@@ -10,10 +10,7 @@
 
   config = lib.mkIf config.erebus.profiles.graphical.enable {
     erebus = {
-      desktop = {
-        gnome.enable = true;
-        hyprland.enable = true;
-      };
+      desktop.hyprland.enable = true;
       system = {
         fonts.enable = true;
         greeter = "dankgreeter";
