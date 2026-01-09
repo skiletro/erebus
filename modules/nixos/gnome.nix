@@ -103,13 +103,6 @@ in
     ];
 
     home-manager.sharedModules = lib.singleton (userAttrs: {
-      stylix.iconTheme = {
-        enable = true;
-        package = self'.packages.morewaita-icon-theme;
-        dark = "MoreWaita";
-        light = "MoreWaita";
-      };
-
       dconf = {
         enable = lib.mkDefault true;
         settings =
