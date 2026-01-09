@@ -19,9 +19,14 @@
       services.tailscale.enable = true;
     };
 
-    environment.systemPackages = with pkgs; [
-      ghostty.terminfo
-      kitty.terminfo
+    environment.systemPackages = map (x: pkgs.${x}.terminfo) [
+      # keep-sorted start
+      "alacritty"
+      "foot"
+      "ghostty"
+      "kitty"
+      "wezterm"
+      # keep-sorted end
     ];
   };
 }
