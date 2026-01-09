@@ -21,8 +21,23 @@
     services.gnome.gnome-keyring.enable = lib.mkDefault true;
     erebus.programs.dms.enable = true;
 
+    # TODO: make application suites desktop-agnostic
+    # currently I use the gnome suite of apps because they look nice, but i'll probably swap to dolphin file mgr
+    # at the very least soon-ish.
     environment.systemPackages = with pkgs; [
+      # keep-sorted start
+      decibels # audio player
+      file-roller # archive manager (just use ouch on cli)
+      gapless # music player
+      gnome-calculator
+      gnome-disk-utility
+      gnome-font-viewer
+      loupe # image viewer
+      nautilus # file manager
+      papers # document viewer
       pavucontrol
+      showtime # video player
+      # keep-sorted end
     ];
 
     home-manager.sharedModules = lib.singleton {
