@@ -62,7 +62,7 @@
             bind = [
               "SUPER, Return, exec, ${lib.getExe pkgs.kitty}"
               "SUPER SHIFT, S, exec, ${lib.getExe pkgs.grimblast} copy area"
-              "SUPER, Space, exec, ${dms "spotlight toggle"}"
+              "SUPER, Space, exec, vicinae toggle"
               "SUPER, F, exec, ${lib.getExe self'.packages.helium-bin}"
               "SUPER, E, exec, ${lib.getExe pkgs.nautilus}"
 
@@ -73,7 +73,7 @@
               "SUPER, P, exec, ${dms "processlist toggle"}"
               "SUPER, N, exec, ${dms "notifications toggle"}"
               "SUPER SHIFT, P, exec, ${dms "powermenu toggle"}"
-              "SUPER, Period, exec, ${dms "spotlight openQuery ':'"}"
+              "SUPER, Period, exec, vicinae vicinae://extensions/vicinae/core/search-emojis"
               "SUPER, L, exec, ${dms "lock lock"}"
               "SUPER SHIFT, L, exec, ${lib.getExe pkgs.hyprpicker} | ${lib.getExe' pkgs.wl-clipboard "wl-copy"}"
 
@@ -226,6 +226,8 @@
         enable = lib.mkForce true;
         settings."org/gnome/desktop/wm/preferences".button-layout = lib.mkForce "";
       };
+
+      erebus.services.vicinae.enable = true;
     };
   };
 }
