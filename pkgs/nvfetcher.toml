@@ -1,67 +1,62 @@
-# ------ General Packages ------ #
-[owo-sh]
-src.git = "https://owo.codes/whats-this/owo.sh.git"
-fetch.git = "https://owo.codes/whats-this/owo.sh.git"
+[apple-emoji]
+fetch.url = "https://github.com/samuelngs/apple-emoji-linux/releases/download/$ver/AppleColorEmoji.ttf"
+src.github = "samuelngs/apple-emoji-linux"
 
-[wheelwizard]
-src.github = "TeamWheelWizard/WheelWizard"
-fetch.git = "https://github.com/TeamWheelWizard/WheelWizard.git"
-
-
-# ------ Linux-specific ------ #
-[helium-tarball]
-src.github = "imputnet/helium-linux"
-fetch.url = "https://github.com/imputnet/helium-linux/releases/download/$ver/helium-$ver-x86_64_linux.tar.xz"
+[base16-schemes]
+fetch.git = "https://github.com/tinted-theming/schemes.git"
+src.git = "https://github.com/tinted-theming/schemes.git"
 
 [dzgui]
-src.git = "https://codeberg.org/aclist/dztui"
 fetch.git = "https://codeberg.org/aclist/dztui"
-
-[morewaita-icon-theme]
-src.github = "somepaulo/MoreWaita"
-fetch.git = "https://github.com/somepaulo/MoreWaita.git"
-
-[proton-cachyos_x86_64_v3]
-src.github = "CachyOS/proton-cachyos"
-fetch.url = "https://github.com/CachyOS/proton-cachyos/releases/download/$ver/proton-$ver-x86_64_v3.tar.xz"
-
-# ------ Darwin-specific ------ #
-[swipeaerospace-bin]
-src.github = "MediosZ/SwipeAeroSpace"
-fetch.url = "https://github.com/MediosZ/SwipeAeroSpace/releases/download/$ver/SwipeAeroSpace.zip"
+src.git = "https://codeberg.org/aclist/dztui"
 
 [helium-dmg]
-src.github = "imputnet/helium-macos"
 fetch.url = "https://github.com/imputnet/helium-macos/releases/download/$ver/helium_$ver_arm64-macos.dmg"
+src.github = "imputnet/helium-macos"
 
-[pearcleaner-bin]
-src.github = "alienator88/Pearcleaner"
-fetch.url = "https://github.com/alienator88/Pearcleaner/releases/download/$ver/Pearcleaner.dmg"
-
-[protonmail-bin]
-src.webpage = "https://proton.me/download/mail/macos/version.json"
-src.regex = '"Version":\s*"([0-9.]+)"'
-fetch.url = "https://proton.me/download/mail/macos/$ver/ProtonMail-desktop.dmg"
-
-[protonpass-bin]
-src.webpage = "https://proton.me/download/PassDesktop/darwin/universal/version.json"
-src.regex = '"Version":\s*"([0-9.]+)"'
-fetch.url = "https://proton.me/download/PassDesktop/darwin/universal/ProtonPass_$ver.dmg"
-
-[protonvpn-bin]
-src.webpage = "https://protonvpn.com/download/macos/updates/v4/sparkle.xml"
-src.regex = '<title>Version\s+((?!beta)\d+\.\d+\.\d+)</title>'
-fetch.url = "https://vpn.protondownload.com/download/macos/$ver/ProtonVPN_mac_v$ver.dmg"
-
-# ------ Non-program packages ------ #
-[base16-schemes]
-src.git = "https://github.com/tinted-theming/schemes.git"
-fetch.git = "https://github.com/tinted-theming/schemes.git"
-
-[apple-emoji]
-src.github = "samuelngs/apple-emoji-linux"
-fetch.url = "https://github.com/samuelngs/apple-emoji-linux/releases/download/$ver/AppleColorEmoji.ttf"
+[helium-tarball]
+fetch.url = "https://github.com/imputnet/helium-linux/releases/download/$ver/helium-$ver-x86_64_linux.tar.xz"
+src.github = "imputnet/helium-linux"
 
 [liga-sf-mono-nerd-font]
-src.git = "https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized.git"
 fetch.git = "https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized.git"
+src.git = "https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized.git"
+
+[morewaita-icon-theme]
+fetch.git = "https://github.com/somepaulo/MoreWaita.git"
+src.github = "somepaulo/MoreWaita"
+
+[owo-sh]
+fetch.git = "https://owo.codes/whats-this/owo.sh.git"
+src.git = "https://owo.codes/whats-this/owo.sh.git"
+
+[pearcleaner-bin]
+fetch.url = "https://github.com/alienator88/Pearcleaner/releases/download/$ver/Pearcleaner.dmg"
+src.github = "alienator88/Pearcleaner"
+
+[proton-cachyos_x86_64_v3]
+fetch.url = "https://github.com/CachyOS/proton-cachyos/releases/download/$ver/proton-$ver-x86_64_v3.tar.xz"
+src.github = "CachyOS/proton-cachyos"
+
+[protonmail-bin]
+fetch.url = "https://proton.me/download/mail/macos/$ver/ProtonMail-desktop.dmg"
+src.webpage = "https://proton.me/download/mail/macos/version.json"
+src.regex = '"Version":\s*"([0-9.]+)"'
+
+[protonpass-bin]
+fetch.url = "https://proton.me/download/PassDesktop/darwin/universal/ProtonPass_$ver.dmg"
+src.webpage = "https://proton.me/download/PassDesktop/darwin/universal/version.json"
+src.regex = '"Version":\s*"([0-9.]+)"'
+
+[protonvpn-bin]
+fetch.url = "https://vpn.protondownload.com/download/macos/$ver/ProtonVPN_mac_v$ver.dmg"
+src.webpage = "https://protonvpn.com/download/macos/updates/v4/sparkle.xml"
+src.regex = '<title>Version\s+((?!beta)\d+\.\d+\.\d+)</title>'
+
+[swipeaerospace-bin]
+fetch.url = "https://github.com/MediosZ/SwipeAeroSpace/releases/download/$ver/SwipeAeroSpace.zip"
+src.github = "MediosZ/SwipeAeroSpace"
+
+[wheelwizard]
+fetch.git = "https://github.com/TeamWheelWizard/WheelWizard.git"
+src.github = "TeamWheelWizard/WheelWizard"

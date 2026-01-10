@@ -21,6 +21,7 @@
           keep-sorted.enable = true;
           nixfmt.enable = true;
           statix.enable = true;
+          toml-sort.enable = true;
           # keep-sorted end
         };
       };
