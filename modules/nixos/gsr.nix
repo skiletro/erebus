@@ -1,11 +1,11 @@
 {
   config,
   lib,
-  self',
+  pkgs',
   ...
 }:
 let
-  package = self'.packages.gpu-screen-recorder-ui.override {
+  package = pkgs'.gpu-screen-recorder-ui.override {
     inherit (config.security) wrapperDir;
   };
 in

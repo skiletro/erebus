@@ -2,7 +2,7 @@
   lib,
   config,
   pkgs,
-  self',
+  pkgs',
   ...
 }:
 {
@@ -18,12 +18,12 @@
     };
 
     environment.systemPackages = with pkgs; [
-      # keep-sorted start ignore_prefixes=self'.packages.
+      # keep-sorted start ignore_prefixes=pkgs'.
       betterdisplay
       grandperspective # disk usage visualiser
       iina # media player
       m-cli
-      self'.packages.pearcleaner-bin
+      pkgs'.pearcleaner-bin
       utm
       # keep-sorted end
     ];

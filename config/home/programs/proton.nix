@@ -2,7 +2,7 @@
   lib,
   config,
   pkgs,
-  self',
+  pkgs',
   ...
 }:
 {
@@ -12,7 +12,7 @@
   config = lib.mkIf config.erebus.programs.proton.enable {
     home.packages =
       if pkgs.stdenvNoCC.hostPlatform.isDarwin then
-        (with self'.packages; [
+        (with pkgs'; [
           protonmail-bin
           protonpass-bin
           protonvpn-bin

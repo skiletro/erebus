@@ -2,7 +2,7 @@
   pkgs,
   lib,
   config,
-  self',
+  pkgs',
   ...
 }:
 {
@@ -50,7 +50,7 @@
             (lib.mapAttrs' (key: command: lib.nameValuePair "${modifier}+${key}" command) {
 
               "Return" = exec terminal;
-              "Shift+s" = exec (lib.getExe self'.packages.skilshot);
+              "Shift+s" = exec (lib.getExe pkgs'.skilshot);
               "space" = dms "spotlight toggle";
               "f" = exec "zen";
               "e" = exec "nautilus";

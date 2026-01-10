@@ -2,7 +2,7 @@
   lib,
   config,
   pkgs,
-  self',
+  pkgs',
   ...
 }:
 {
@@ -24,10 +24,10 @@
     };
 
     environment.systemPackages = with pkgs; [
-      # keep-sorted start ignore_prefixes=self'.packages.
+      # keep-sorted start ignore_prefixes=pkgs'.
       bs-manager
       dolphin-emu
-      self'.packages.dzgui
+      pkgs'.dzgui
       heroic
       lsfg-vk
       lsfg-vk-ui # frame gen
@@ -36,7 +36,7 @@
       r2modman
       ryubing # switch emu
       vrcx
-      self'.packages.wheelwizard
+      pkgs'.wheelwizard
       # keep-sorted end
     ];
 

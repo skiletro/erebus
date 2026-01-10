@@ -6,6 +6,7 @@
   self,
   self',
   pkgs,
+  pkgs',
   ...
 }:
 {
@@ -39,6 +40,7 @@
           inputs'
           self
           self'
+          pkgs'
           ;
       };
       users.jamie = {

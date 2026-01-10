@@ -2,9 +2,9 @@
   config,
   lib,
   pkgs,
+  pkgs',
   inputs',
   self,
-  self',
   ...
 }:
 {
@@ -16,7 +16,7 @@
     programs.steam = {
       enable = true;
       extraCompatPackages = with pkgs; [
-        self'.packages.proton-cachyos_x86_64_v3
+        pkgs'.proton-cachyos_x86_64_v3
         inputs'.nixpkgs-xr.packages.proton-ge-rtsp-bin
         steam-play-none # Allows you to run a game without Proton if it is otherwise forced.
       ];

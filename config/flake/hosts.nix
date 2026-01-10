@@ -73,6 +73,7 @@ let
       }:
       {
         inherit self' inputs';
+        pkgs' = self'.packages;
       }
     );
     # Sets some stuff that we need that doesn't really make sense elsewhere.
@@ -83,15 +84,15 @@ let
   # TODO: I should probably move this into its own flake parts module but it's fine here for now.
   stylingModules =
     {
-      self',
       pkgs,
+      pkgs',
       config,
       ...
     }:
     {
       stylix = {
         enable = true;
-        base16Scheme = "${self'.packages.base16-schemes}/share/themes/penumbra-dark-contrast-plus-plus.yaml";
+        base16Scheme = "${pkgs'.base16-schemes}/share/themes/penumbra-dark-contrast-plus-plus.yaml";
         polarity = "dark";
         image =
           let
@@ -109,11 +110,11 @@ let
           };
           serif = config.stylix.fonts.sansSerif; # Set serif font to the same as the sans-serif
           monospace = {
-            package = self'.packages.liga-sf-mono-nerd-font;
+            package = pkgs'.liga-sf-mono-nerd-font;
             name = "Liga SFMono Nerd Font";
           };
           emoji = {
-            package = self'.packages.apple-emoji;
+            package = pkgs'.apple-emoji;
             name = "Apple Color Emoji";
           };
 

@@ -2,7 +2,7 @@
   lib,
   config,
   pkgs,
-  self',
+  pkgs',
   ...
 }:
 {
@@ -27,11 +27,11 @@
     };
 
     home.packages = with pkgs; [
-      # keep-sorted start ignore_prefixes=self'.packages.
+      # keep-sorted start ignore_prefixes=pkgs'.
       caligula # iso burner
       dust # fancy du
-      self'.packages.eos-cli
-      self'.packages.eos-helpers
+      pkgs'.eos-cli
+      pkgs'.eos-helpers
       fd # find files
       ffmpeg
       file # identify files
@@ -47,7 +47,7 @@
       nixfmt # nix formatter
       ouch # cli for compressing and decompressing formats
       outfieldr # `tldr` client
-      self'.packages.owo-sh
+      pkgs'.owo-sh
       pik # Interactive pkill
       unrar
       wget

@@ -2,7 +2,7 @@
   lib,
   config,
   pkgs,
-  self',
+  pkgs',
   ...
 }:
 let
@@ -174,7 +174,7 @@ in
       home.activation.gnome-steam-shortcut-fixer = mkIf config.erebus.programs.steam.enable (
         userAttrs.lib.hm.dag.entryAfter [ "writeBoundary" ] # sh
           ''
-            run ${lib.getExe self'.packages.gnome-steam-shortcut-fixer} -f
+            run ${lib.getExe pkgs'.gnome-steam-shortcut-fixer} -f
           ''
       );
     });

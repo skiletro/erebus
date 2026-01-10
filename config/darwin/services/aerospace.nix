@@ -1,7 +1,7 @@
 {
   lib,
   config,
-  self',
+  pkgs',
   ...
 }:
 {
@@ -16,7 +16,7 @@
       enable = true;
       settings = {
         after-startup-command = [
-          "exec-and-forget open ${self'.packages.swipeaerospace-bin}/Applications/SwipeAeroSpace.app"
+          "exec-and-forget open ${pkgs'.swipeaerospace-bin}/Applications/SwipeAeroSpace.app"
         ];
 
         enable-normalization-flatten-containers = true;

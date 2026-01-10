@@ -1,7 +1,7 @@
 {
   config,
   inputs',
-  self',
+  pkgs',
   lib,
   ...
 }:
@@ -33,7 +33,7 @@
 
     stylix.iconTheme = {
       enable = true;
-      package = self'.packages.morewaita-icon-theme;
+      package = pkgs'.morewaita-icon-theme;
       dark = "MoreWaita";
       light = "MoreWaita";
     };

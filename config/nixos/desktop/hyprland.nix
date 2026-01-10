@@ -1,8 +1,8 @@
 {
   pkgs,
+  pkgs',
   lib,
   config,
-  self',
   inputs',
   ...
 }:
@@ -63,7 +63,7 @@
               "SUPER, Return, exec, ${lib.getExe pkgs.kitty}"
               "SUPER SHIFT, S, exec, ${lib.getExe pkgs.grimblast} copy area"
               "SUPER, Space, exec, vicinae toggle"
-              "SUPER, F, exec, ${lib.getExe self'.packages.helium-bin}"
+              "SUPER, F, exec, ${lib.getExe pkgs'.helium-bin}"
               "SUPER, E, exec, ${lib.getExe pkgs.nautilus}"
 
               "SUPER SHIFT, Q, killactive"
