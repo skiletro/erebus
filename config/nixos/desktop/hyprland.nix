@@ -31,12 +31,12 @@
       gapless # music player
       gnome-calculator
       gnome-disk-utility
-      gnome-font-viewer
       loupe # image viewer
       nautilus # file manager
       papers # document viewer
       pavucontrol
       showtime # video player
+      sushi # quick previewer for nautilus
       # keep-sorted end
     ];
 
