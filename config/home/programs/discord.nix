@@ -28,7 +28,7 @@ in
         package = pkgs.equibop.overrideAttrs (_oldAttrs: {
           postBuild = ''
             pushd build
-            ${lib.getExe pkgs.python313Packages.icnsutil} e icon.icns
+            ${lib.getExe' pkgs.python313Packages.icnsutil "icnsutil"} e icon.icns
             popd
           '';
 

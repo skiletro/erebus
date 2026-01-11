@@ -11,17 +11,17 @@
   };
   base16-schemes = {
     pname = "base16-schemes";
-    version = "0d5462e6fa58e24fd8bd3e50bfa843f81afb62a4";
+    version = "0c25cbcb7bc5e656577f60adf25be5011feabbe5";
     src = fetchgit {
       url = "https://github.com/tinted-theming/schemes.git";
-      rev = "0d5462e6fa58e24fd8bd3e50bfa843f81afb62a4";
+      rev = "0c25cbcb7bc5e656577f60adf25be5011feabbe5";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-r3ccgb+hukOCP7wNHO3iUUaC80Jx6P1NVpDE9vhLX/U=";
+      sha256 = "sha256-kKUjOPC5UKZfWAtI7Drj+wB+zGs17J61kg7FH3j7Et8=";
     };
-    date = "2026-01-02";
+    date = "2026-01-08";
   };
   dzgui = {
     pname = "dzgui";
@@ -39,18 +39,18 @@
   };
   helium-dmg = {
     pname = "helium-dmg";
-    version = "0.7.9.1";
+    version = "0.7.10.1";
     src = fetchurl {
-      url = "https://github.com/imputnet/helium-macos/releases/download/0.7.9.1/helium_0.7.9.1_arm64-macos.dmg";
-      sha256 = "sha256-swFxWgHONhdzfLpwGVoje/ceTwCZFmoO3FBeIbjqIaY=";
+      url = "https://github.com/imputnet/helium-macos/releases/download/0.7.10.1/helium_0.7.10.1_arm64-macos.dmg";
+      sha256 = "sha256-h3nWjmoiKCmPa7xkMn02uxRtEwKhcOrTTtBspQqR/Hs=";
     };
   };
   helium-tarball = {
     pname = "helium-tarball";
-    version = "0.7.9.1";
+    version = "0.7.10.1";
     src = fetchurl {
-      url = "https://github.com/imputnet/helium-linux/releases/download/0.7.9.1/helium-0.7.9.1-x86_64_linux.tar.xz";
-      sha256 = "sha256-/NcL8aDA5S0zvulKcPwzcmoY+RHeyr78TZUVqv9VAjY=";
+      url = "https://github.com/imputnet/helium-linux/releases/download/0.7.10.1/helium-0.7.10.1-x86_64_linux.tar.xz";
+      sha256 = "sha256-A+/30GMtAQ8B5x1dH/mxbJP1hSp6widrR1HFenhqb3g=";
     };
   };
   liga-sf-mono-nerd-font = {
@@ -120,10 +120,10 @@
   };
   protonpass-bin = {
     pname = "protonpass-bin";
-    version = "1.33.3";
+    version = "1.33.4";
     src = fetchurl {
-      url = "https://proton.me/download/PassDesktop/darwin/universal/ProtonPass_1.33.3.dmg";
-      sha256 = "sha256-JdlpkYC5UAufirulzmqW1U8sxp7hcE6/dFARnTDDtq4=";
+      url = "https://proton.me/download/PassDesktop/darwin/universal/ProtonPass_1.33.4.dmg";
+      sha256 = "sha256-jbjIBfp1IuUGr27su58GgN6hm7NT8tg4objSnVSHAuY=";
     };
   };
   protonvpn-bin = {
