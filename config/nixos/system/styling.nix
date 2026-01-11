@@ -31,7 +31,7 @@
   home-manager.sharedModules = lib.singleton {
     xdg.configFile."stylix/wall.png".source = config.stylix.image;
 
-    stylix.iconTheme = {
+    stylix.icons = {
       enable = true;
       package = pkgs'.morewaita-icon-theme;
       dark = "MoreWaita";
