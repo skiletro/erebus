@@ -40,6 +40,12 @@
       # keep-sorted end
     ];
 
+    hardware = {
+      xone.enable = true;
+      xpadneo.enable = true;
+      xpad-noone.enable = true;
+    };
+
     home-manager.sharedModules = lib.singleton (userAttrs: {
       erebus.programs.prismlauncher.enable = true;
       programs.mangohud.enable = true;
