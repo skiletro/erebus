@@ -23,12 +23,12 @@
             {
               name = "Steam Big Picture";
               detached = [
-                "${lib.getExe' pkgs.util-linux "setsid"} ${lib.getExe config.programs.steam.package} steam://open/bigpicture"
-              ]; # TODO: This doesn't work all of the time.
+                "${lib.getExe' pkgs.xdg-utils "xdg-open"} steam://open/bigpicture"
+              ];
             }
             {
               name = "Pegasus";
-              cmd = "kstart ${lib.getExe pkgs.pegasus-frontend}";
+              cmd = "exec ${lib.getExe pkgs.pegasus-frontend}";
             }
           ]
           (
@@ -50,6 +50,11 @@
                   {
                     do = ''sh -c "${gnome-randr} modify -m ${sunshineMode} ${monitor}"'';
                     undo = "${gnome-randr} modify -m ${defaultMode}.001+vrr ${monitor}";
+                  }
+                else if config.erebus.desktop.hyprland.enable then
+                  {
+                    do = ''sh -c "hyprctl keyword monitor ${monitor},${sunshineMode},auto,auto"'';
+                    undo = ''sh -c "hyprctl keyword monitor ${monitor},${defaultMode},auto,auto"'';
                   }
                 else
                   {
