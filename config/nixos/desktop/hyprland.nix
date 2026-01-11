@@ -18,25 +18,60 @@
     };
 
     security.polkit.enable = lib.mkDefault true;
-    services.gnome.gnome-keyring.enable = lib.mkDefault true;
+    services = {
+      gnome = {
+        core-apps.enable = true;
+        gnome-keyring.enable = true;
+      };
+      gvfs.enable = true;
+      tumbler.enable = true;
+    };
+    environment.pathsToLink = [ "share/thumbnailers" ];
     erebus.programs.dms.enable = true;
+    environment.gnome.excludePackages = lib.mkDefault (
+      with pkgs;
+      [
+        # keep-sorted start
+        baobab
+        epiphany
+        evince
+        geary
+        gnome-calendar
+        gnome-characters
+        gnome-clocks
+        gnome-connections
+        gnome-console
+        gnome-contacts
+        gnome-font-viewer
+        gnome-maps
+        gnome-music
+        gnome-software
+        gnome-system-monitor
+        gnome-tour
+        gnome-weather
+        orca
+        seahorse
+        simple-scan
+        snapshot
+        totem
+        yelp
+        # keep-sorted end
+      ]
+    );
 
     # TODO: make application suites desktop-agnostic
     # currently I use the gnome suite of apps because they look nice, but i'll probably swap to dolphin file mgr
     # at the very least soon-ish.
     environment.systemPackages = with pkgs; [
       # keep-sorted start
-      decibels # audio player
+      adwaita-icon-theme # fixes some missing icons
+      adwaita-icon-theme-legacy # fixes some missing icons
       file-roller # archive manager (just use ouch on cli)
       gapless # music player
-      gnome-calculator
       gnome-disk-utility
-      loupe # image viewer
-      nautilus # file manager
-      papers # document viewer
-      pavucontrol
-      showtime # video player
-      sushi # quick previewer for nautilus
+      libheif # nautilus heic img preview
+      libheif.out # nautilus heic img preview
+      pwvucontrol
       # keep-sorted end
     ];
 
@@ -174,9 +209,9 @@
               "match:class ^(org.quickshell)$, center on"
               "match:class ^(org.quickshell)$, size (monitor_h*.70) (monitor_h*.80)"
 
-              "match:class ^(org.pulseaudio.pavucontrol)$, float on"
-              "match:class ^(org.pulseaudio.pavucontrol)$, center on"
-              "match:class ^(org.pulseaudio.pavucontrol)$, size (monitor_w*.45) (monitor_h*.45)"
+              "match:class ^(com.saivert.pwvucontrol)$, float on"
+              "match:class ^(com.saivert.pwvucontrol)$, center on"
+              "match:class ^(com.saivert.pwvucontrol)$, size (monitor_w*.45) (monitor_h*.45)"
 
               "match:class org.freedesktop.impl.portal.desktop.gnome, float on"
               "match:class org.freedesktop.impl.portal.desktop.gnome, size (monitor_w*.60) (monitor_h*.65)"
