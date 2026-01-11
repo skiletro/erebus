@@ -86,6 +86,9 @@
               "SUPER SHIFT, Right, movewindow, r"
               "SUPER SHIFT, Up, movewindow, u"
               "SUPER SHIFT, Down, movewindow, d"
+
+              "SUPER, code:49, togglespecialworkspace" # code:49 = `
+              "SUPER SHIFT, code:49, movetoworkspace, special"
             ]
             ++ (builtins.concatLists (
               builtins.genList (i: [
