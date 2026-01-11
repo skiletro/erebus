@@ -35,6 +35,7 @@
         netcoredbg # C#
         nil # Nix
         nixd # Nix
+        nufmt # Nu
         omnisharp-roslyn # C#
         prettier # HTML/CSS/JS
         rust-analyzer # Rust
