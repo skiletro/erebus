@@ -265,6 +265,21 @@
         settings."org/gnome/desktop/wm/preferences".button-layout = lib.mkForce "";
       };
 
+      xdg.mimeApps = {
+        enable = true;
+        defaultApplications = {
+          "inode/directory" = "org.gnome.Nautilus.desktop";
+          "application/zip" = "org.gnome.FileRoller.desktop";
+          "application/pdf" = "org.gnome.Papers.desktop";
+          "image/png" = "org.gnome.Loupe.desktop";
+          "image/jpeg" = "org.gnome.Loupe.desktop";
+          "audio/flac" = "org.gnome.Decibels.desktop";
+          "video/mp4" = "org.gnome.Showtime.desktop";
+          "video/mov" = "org.gnome.Showtime.desktop";
+          "text/plain" = "org.gnome.TextEditor.desktop";
+        };
+      };
+
       erebus.services.vicinae.enable = true;
     };
   };

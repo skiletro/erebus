@@ -89,6 +89,10 @@ in
       };
     };
 
+    xdg.mimeApps.defaultApplications = {
+      "x-scheme-handler/discord" = "equibop.desktop";
+    };
+
     xdg.autostart.entries = lib.mkIf isLinux (
       config.lib.erebus.autostartEntry "Discord Silent" "${lib.getExe config.programs.nixcord.finalPackage.equibop} --start-minimized"
     );

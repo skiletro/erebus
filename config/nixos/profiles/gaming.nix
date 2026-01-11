@@ -50,6 +50,10 @@
       erebus.programs.prismlauncher.enable = true;
       programs.mangohud.enable = true;
 
+      xdg.mimeApps.defaultApplications = {
+        "x-scheme-handler/ror2mm" = "r2modman.desktop";
+      };
+
       xdg.autostart.entries = userAttrs.config.lib.erebus.autostartEntry "VRCX Silent" "${lib.getExe' pkgs.vrcx "vrcx"} --startup";
     });
   };
