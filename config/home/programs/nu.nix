@@ -30,7 +30,7 @@
       environmentVariables = {
 
       }
-      // (builtins.mapAttrs (_name: value: builtins.toString value) config.home.sessionVariables);
+      // (builtins.mapAttrs (_name: toString) config.home.sessionVariables);
     };
 
     home.shell.enableNushellIntegration = true;
