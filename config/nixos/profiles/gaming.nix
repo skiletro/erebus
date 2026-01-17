@@ -46,6 +46,8 @@
       xpad-noone.enable = true;
     };
 
+    services.flatpak.enable = true;
+
     home-manager.sharedModules = lib.singleton (userAttrs: {
       erebus.programs.prismlauncher.enable = true;
       programs.mangohud.enable = true;
