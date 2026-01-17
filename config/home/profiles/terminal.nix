@@ -13,6 +13,7 @@
     erebus.programs = {
       # keep-sorted start
       beets.enable = lib.mkIf pkgs.stdenvNoCC.hostPlatform.isLinux true;
+      broot.enable = true;
       btop.enable = true;
       carapace.enable = true;
       direnv.enable = true;
