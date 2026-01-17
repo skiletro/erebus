@@ -69,6 +69,7 @@
       file-roller # archive manager (just use ouch on cli)
       gapless # music player
       gnome-disk-utility
+      hyprprop
       libheif # nautilus heic img preview
       libheif.out # nautilus heic img preview
       pwvucontrol
