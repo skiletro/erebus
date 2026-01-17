@@ -34,22 +34,5 @@
     };
 
     home.shell.enableNushellIntegration = true;
-
-    # prompt
-    programs.starship = {
-      enable = true;
-      enableTransience = true;
-      settings = {
-        character = {
-          success_symbol = "[](bold purple)";
-          error_symbol = "[](bold red)";
-        };
-        nix_shell = {
-          symbol = "";
-          impure_msg = "";
-          heuristic = true;
-        };
-      };
-    };
   };
 }
