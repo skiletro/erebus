@@ -9,6 +9,7 @@
 
   environment.systemPackages = with pkgs; [
     # keep-sorted start
+    calibre-no-speech
     fsearch # Fast File Search
     godot_4 # Godot Engine
     handbrake # Video Encoder
