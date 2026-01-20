@@ -23,7 +23,6 @@
       };
       services = {
         protondrive.enable = true;
-        rnnoise.enable = true;
         kdeconnect.enable = true;
         wireguard.enable = true;
         # printing.enable = true;
