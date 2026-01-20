@@ -26,7 +26,7 @@
 
     environment.systemPackages = with pkgs; [
       android-tools
-      wlx-overlay-s
+      wayvr
     ];
 
     home-manager.sharedModules = lib.singleton (userAttrs: {
@@ -53,23 +53,6 @@
           "version" : 1
         }
       '';
-
-      xdg.configFile."wlxoverlay/wayvr.yaml".source = (pkgs.formats.yaml { }).generate "wayvr.yaml" {
-        version = 1;
-        run_compositor_at_start = false;
-        auto_hide = true;
-        auto_hide_delay = 750;
-
-        dashboard = {
-          exec = lib.getExe inputs'.nixpkgs-xr.packages.wayvr-dashboard;
-          blit_method = "software";
-          env = [
-            "GDK_BACKEND=wayland"
-            "WEBKIT_DISABLE_DMABUF_RENDERER=1"
-            "WEBKIT_DISABLE_COMPOSITING_MODE=1"
-          ];
-        };
-      };
     });
   };
 }

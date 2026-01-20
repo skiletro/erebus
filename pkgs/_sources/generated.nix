@@ -11,46 +11,46 @@
   };
   base16-schemes = {
     pname = "base16-schemes";
-    version = "0c25cbcb7bc5e656577f60adf25be5011feabbe5";
+    version = "43dd14f6466a782bd57419fdfb5f398c74d6ac53";
     src = fetchgit {
       url = "https://github.com/tinted-theming/schemes.git";
-      rev = "0c25cbcb7bc5e656577f60adf25be5011feabbe5";
+      rev = "43dd14f6466a782bd57419fdfb5f398c74d6ac53";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-kKUjOPC5UKZfWAtI7Drj+wB+zGs17J61kg7FH3j7Et8=";
+      sha256 = "sha256-AWTIYZ1tZab0YwAQwgt5yO4ucqZoc4iXX002Byy7pRY=";
     };
-    date = "2026-01-08";
+    date = "2026-01-15";
   };
   dzgui = {
     pname = "dzgui";
-    version = "236a5dd0a33bff94afded40ee1f3b36291c1e8ad";
+    version = "2d58bb491e44acff34aa9b4b4bda44ba2b057575";
     src = fetchgit {
       url = "https://codeberg.org/aclist/dztui";
-      rev = "236a5dd0a33bff94afded40ee1f3b36291c1e8ad";
+      rev = "2d58bb491e44acff34aa9b4b4bda44ba2b057575";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-jxMfXblyIYGzVDNCgom2mnRdMbGGNFVyj7s3Agy2Z8A=";
+      sha256 = "sha256-5MGYhoo5V6tNDXV61z15kLMVFMnWfblKMeLEXEBkBj0=";
     };
-    date = "2026-01-04";
+    date = "2026-01-17";
   };
   helium-dmg = {
     pname = "helium-dmg";
-    version = "0.7.10.1";
+    version = "0.8.2.1";
     src = fetchurl {
-      url = "https://github.com/imputnet/helium-macos/releases/download/0.7.10.1/helium_0.7.10.1_arm64-macos.dmg";
-      sha256 = "sha256-h3nWjmoiKCmPa7xkMn02uxRtEwKhcOrTTtBspQqR/Hs=";
+      url = "https://github.com/imputnet/helium-macos/releases/download/0.8.2.1/helium_0.8.2.1_arm64-macos.dmg";
+      sha256 = "sha256-Y42Fj+5KPZ2aO7XazV1CFB7liAmWSsafcXpvukJRqoM=";
     };
   };
   helium-tarball = {
     pname = "helium-tarball";
-    version = "0.7.10.1";
+    version = "0.8.2.1";
     src = fetchurl {
-      url = "https://github.com/imputnet/helium-linux/releases/download/0.7.10.1/helium-0.7.10.1-x86_64_linux.tar.xz";
-      sha256 = "sha256-A+/30GMtAQ8B5x1dH/mxbJP1hSp6widrR1HFenhqb3g=";
+      url = "https://github.com/imputnet/helium-linux/releases/download/0.8.2.1/helium-0.8.2.1-x86_64_linux.tar.xz";
+      sha256 = "sha256-hljL7KlafD1TYPmA+U8HRdXKOUdsb6Lnk4XiAYfmPI8=";
     };
   };
   liga-sf-mono-nerd-font = {
@@ -104,26 +104,34 @@
   };
   proton-cachyos_x86_64_v3 = {
     pname = "proton-cachyos_x86_64_v3";
-    version = "cachyos-10.0-20260101-slr";
+    version = "cachyos-10.0-20260102-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260101-slr/proton-cachyos-10.0-20260101-slr-x86_64_v3.tar.xz";
-      sha256 = "sha256-LeLYdMhaaTpw+MAtfZfAiU9svNxq8ZZymql+3eL/tzw=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260102-slr/proton-cachyos-10.0-20260102-slr-x86_64_v3.tar.xz";
+      sha256 = "sha256-bDlgsRNxA35YW91AsXhvA7dLsSq6cZ8Umczbw+Zj+2k=";
+    };
+  };
+  proton-cachyos_x86_64_v4 = {
+    pname = "proton-cachyos_x86_64_v4";
+    version = "cachyos-10.0-20260102-slr";
+    src = fetchurl {
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260102-slr/proton-cachyos-10.0-20260102-slr-x86_64_v4.tar.xz";
+      sha256 = "sha256-e2A9jrAGUHlD8KUuGjkLUhknclBxVZVYKJFElUEs0Us=";
     };
   };
   protonmail-bin = {
     pname = "protonmail-bin";
-    version = "1.11.0";
+    version = "1.12.0";
     src = fetchurl {
-      url = "https://proton.me/download/mail/macos/1.11.0/ProtonMail-desktop.dmg";
-      sha256 = "sha256-IPOHSSHxdSaLkYX0deH1RFpi17liq0tenfpNniAlNUc=";
+      url = "https://proton.me/download/mail/macos/1.12.0/ProtonMail-desktop.dmg";
+      sha256 = "sha256-34KO4h2t95k2o2JREyK5jFdTc5ONuRdFEYuQSjlvNkA=";
     };
   };
   protonpass-bin = {
     pname = "protonpass-bin";
-    version = "1.33.4";
+    version = "1.33.5";
     src = fetchurl {
-      url = "https://proton.me/download/PassDesktop/darwin/universal/ProtonPass_1.33.4.dmg";
-      sha256 = "sha256-jbjIBfp1IuUGr27su58GgN6hm7NT8tg4objSnVSHAuY=";
+      url = "https://proton.me/download/PassDesktop/darwin/universal/ProtonPass_1.33.5.dmg";
+      sha256 = "sha256-yTLSCJ9TpTfe5jThBY7nivT9pQwjvmHMp6IUZLCg9kk=";
     };
   };
   protonvpn-bin = {
@@ -144,15 +152,15 @@
   };
   wheelwizard = {
     pname = "wheelwizard";
-    version = "2.3.3";
+    version = "2.3.4";
     src = fetchgit {
       url = "https://github.com/TeamWheelWizard/WheelWizard.git";
-      rev = "2.3.3";
+      rev = "2.3.4";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-DuEI6bmvNP6wRuZX9Do0FGDsu80ldy0SCefBk6gqT9s=";
+      sha256 = "sha256-EWNknLymehCcxXygsuo5jKrtWUNP3TnLr3H+Q3T2Ygs=";
     };
   };
 }

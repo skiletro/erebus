@@ -13,8 +13,8 @@
     programs.hyprland = {
       enable = true;
       withUWSM = true;
-      package = inputs'.hyprland.packages.hyprland;
-      portalPackage = inputs'.hyprland.packages.xdg-desktop-portal-hyprland;
+      package = inputs'.hyprnix.packages.hyprland;
+      portalPackage = inputs'.hyprnix.packages.xdg-desktop-portal-hyprland;
     };
 
     security.polkit.enable = lib.mkDefault true;

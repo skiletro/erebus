@@ -38,6 +38,10 @@ src.github = "alienator88/Pearcleaner"
 fetch.url = "https://github.com/CachyOS/proton-cachyos/releases/download/$ver/proton-$ver-x86_64_v3.tar.xz"
 src.github = "CachyOS/proton-cachyos"
 
+[proton-cachyos_x86_64_v4]
+fetch.url = "https://github.com/CachyOS/proton-cachyos/releases/download/$ver/proton-$ver-x86_64_v4.tar.xz"
+src.github = "CachyOS/proton-cachyos"
+
 [protonmail-bin]
 fetch.url = "https://proton.me/download/mail/macos/$ver/ProtonMail-desktop.dmg"
 src.webpage = "https://proton.me/download/mail/macos/version.json"

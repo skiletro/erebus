@@ -16,7 +16,7 @@
     },
     "base16-schemes": {
         "cargoLocks": null,
-        "date": "2026-01-08",
+        "date": "2026-01-15",
         "extract": null,
         "name": "base16-schemes",
         "passthru": null,
@@ -26,17 +26,17 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "0c25cbcb7bc5e656577f60adf25be5011feabbe5",
-            "sha256": "sha256-kKUjOPC5UKZfWAtI7Drj+wB+zGs17J61kg7FH3j7Et8=",
+            "rev": "43dd14f6466a782bd57419fdfb5f398c74d6ac53",
+            "sha256": "sha256-AWTIYZ1tZab0YwAQwgt5yO4ucqZoc4iXX002Byy7pRY=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/tinted-theming/schemes.git"
         },
-        "version": "0c25cbcb7bc5e656577f60adf25be5011feabbe5"
+        "version": "43dd14f6466a782bd57419fdfb5f398c74d6ac53"
     },
     "dzgui": {
         "cargoLocks": null,
-        "date": "2026-01-04",
+        "date": "2026-01-17",
         "extract": null,
         "name": "dzgui",
         "passthru": null,
@@ -46,13 +46,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "236a5dd0a33bff94afded40ee1f3b36291c1e8ad",
-            "sha256": "sha256-jxMfXblyIYGzVDNCgom2mnRdMbGGNFVyj7s3Agy2Z8A=",
+            "rev": "2d58bb491e44acff34aa9b4b4bda44ba2b057575",
+            "sha256": "sha256-5MGYhoo5V6tNDXV61z15kLMVFMnWfblKMeLEXEBkBj0=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://codeberg.org/aclist/dztui"
         },
-        "version": "236a5dd0a33bff94afded40ee1f3b36291c1e8ad"
+        "version": "2d58bb491e44acff34aa9b4b4bda44ba2b057575"
     },
     "helium-dmg": {
         "cargoLocks": null,
@@ -63,11 +63,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-h3nWjmoiKCmPa7xkMn02uxRtEwKhcOrTTtBspQqR/Hs=",
+            "sha256": "sha256-Y42Fj+5KPZ2aO7XazV1CFB7liAmWSsafcXpvukJRqoM=",
             "type": "url",
-            "url": "https://github.com/imputnet/helium-macos/releases/download/0.7.10.1/helium_0.7.10.1_arm64-macos.dmg"
+            "url": "https://github.com/imputnet/helium-macos/releases/download/0.8.2.1/helium_0.8.2.1_arm64-macos.dmg"
         },
-        "version": "0.7.10.1"
+        "version": "0.8.2.1"
     },
     "helium-tarball": {
         "cargoLocks": null,
@@ -78,11 +78,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-A+/30GMtAQ8B5x1dH/mxbJP1hSp6widrR1HFenhqb3g=",
+            "sha256": "sha256-hljL7KlafD1TYPmA+U8HRdXKOUdsb6Lnk4XiAYfmPI8=",
             "type": "url",
-            "url": "https://github.com/imputnet/helium-linux/releases/download/0.7.10.1/helium-0.7.10.1-x86_64_linux.tar.xz"
+            "url": "https://github.com/imputnet/helium-linux/releases/download/0.8.2.1/helium-0.8.2.1-x86_64_linux.tar.xz"
         },
-        "version": "0.7.10.1"
+        "version": "0.8.2.1"
     },
     "liga-sf-mono-nerd-font": {
         "cargoLocks": null,
@@ -168,11 +168,26 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-LeLYdMhaaTpw+MAtfZfAiU9svNxq8ZZymql+3eL/tzw=",
+            "sha256": "sha256-bDlgsRNxA35YW91AsXhvA7dLsSq6cZ8Umczbw+Zj+2k=",
             "type": "url",
-            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260101-slr/proton-cachyos-10.0-20260101-slr-x86_64_v3.tar.xz"
+            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260102-slr/proton-cachyos-10.0-20260102-slr-x86_64_v3.tar.xz"
         },
-        "version": "cachyos-10.0-20260101-slr"
+        "version": "cachyos-10.0-20260102-slr"
+    },
+    "proton-cachyos_x86_64_v4": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "proton-cachyos_x86_64_v4",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-e2A9jrAGUHlD8KUuGjkLUhknclBxVZVYKJFElUEs0Us=",
+            "type": "url",
+            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260102-slr/proton-cachyos-10.0-20260102-slr-x86_64_v4.tar.xz"
+        },
+        "version": "cachyos-10.0-20260102-slr"
     },
     "protonmail-bin": {
         "cargoLocks": null,
@@ -183,11 +198,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-IPOHSSHxdSaLkYX0deH1RFpi17liq0tenfpNniAlNUc=",
+            "sha256": "sha256-34KO4h2t95k2o2JREyK5jFdTc5ONuRdFEYuQSjlvNkA=",
             "type": "url",
-            "url": "https://proton.me/download/mail/macos/1.11.0/ProtonMail-desktop.dmg"
+            "url": "https://proton.me/download/mail/macos/1.12.0/ProtonMail-desktop.dmg"
         },
-        "version": "1.11.0"
+        "version": "1.12.0"
     },
     "protonpass-bin": {
         "cargoLocks": null,
@@ -198,11 +213,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-jbjIBfp1IuUGr27su58GgN6hm7NT8tg4objSnVSHAuY=",
+            "sha256": "sha256-yTLSCJ9TpTfe5jThBY7nivT9pQwjvmHMp6IUZLCg9kk=",
             "type": "url",
-            "url": "https://proton.me/download/PassDesktop/darwin/universal/ProtonPass_1.33.4.dmg"
+            "url": "https://proton.me/download/PassDesktop/darwin/universal/ProtonPass_1.33.5.dmg"
         },
-        "version": "1.33.4"
+        "version": "1.33.5"
     },
     "protonvpn-bin": {
         "cargoLocks": null,
@@ -246,12 +261,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "2.3.3",
-            "sha256": "sha256-DuEI6bmvNP6wRuZX9Do0FGDsu80ldy0SCefBk6gqT9s=",
+            "rev": "2.3.4",
+            "sha256": "sha256-EWNknLymehCcxXygsuo5jKrtWUNP3TnLr3H+Q3T2Ygs=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/TeamWheelWizard/WheelWizard.git"
         },
-        "version": "2.3.3"
+        "version": "2.3.4"
     }
 }
