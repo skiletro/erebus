@@ -54,6 +54,21 @@
         },
         "version": "2d58bb491e44acff34aa9b4b4bda44ba2b057575"
     },
+    "equibop-bin": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "equibop-bin",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-vWx/woOEQWTKrbujgCw5JDPaTZMPpK0YEaiZj7VBsdM=",
+            "type": "url",
+            "url": "https://github.com/Equicord/Equibop/releases/download/v3.1.6/Equibop-3.1.6-universal.dmg"
+        },
+        "version": "3.1.6"
+    },
     "helium-dmg": {
         "cargoLocks": null,
         "date": null,

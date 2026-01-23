@@ -3,10 +3,11 @@
   config,
   self,
   pkgs,
+  pkgs',
   ...
 }:
 let
-  inherit (pkgs.stdenvNoCC.hostPlatform) isLinux;
+  inherit (pkgs.stdenvNoCC.hostPlatform) isLinux isDarwin;
   ifLinux = bool: if isLinux then bool else !bool;
 in
 {
@@ -14,7 +15,10 @@ in
 
   options.erebus.programs.discord.enable = lib.mkEnableOption "Discord (+ Nixcord/Vencord)";
 
+  # TODO: submit PR to nixcord to make assertion a bit nicer.
   config = lib.mkIf config.erebus.programs.discord.enable {
+    home.packages = [ (lib.mkIf isDarwin pkgs'.equibop-patched) ]; # workaround for nixcord
+
     programs.nixcord = {
       enable = true;
       discord = {
@@ -25,28 +29,7 @@ in
       equibop = {
         enable = true;
         autoscroll.enable = true;
-        package = pkgs.equibop.overrideAttrs (_oldAttrs: {
-          postBuild = ''
-            pushd build
-            ${lib.getExe' pkgs.python313Packages.icnsutil "icnsutil"} e icon.icns
-            popd
-          '';
-
-          installPhase = ''
-            runHook preInstall
-            mkdir -p $out/opt/Equibop
-            cp -r dist/*unpacked/resources $out/opt/Equibop/
-
-            for file in build/icon.icns.export/*\@2x.png; do
-              base=''${file##*/}
-              size=''${base/x*/}
-              targetSize=$((size * 2))
-              install -Dm0644 $file $out/share/icons/hicolor/''${targetSize}x''${targetSize}/apps/equibop.png
-            done
-
-            runHook postInstall
-          '';
-        });
+        package = if isLinux then pkgs'.equibop-patched else null; # workaround for nixcord
       };
       config = {
         useQuickCss = true;

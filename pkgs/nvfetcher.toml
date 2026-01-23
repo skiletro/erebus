@@ -10,6 +10,11 @@ src.git = "https://github.com/tinted-theming/schemes.git"
 fetch.git = "https://codeberg.org/aclist/dztui"
 src.git = "https://codeberg.org/aclist/dztui"
 
+[equibop-bin]
+fetch.url = "https://github.com/Equicord/Equibop/releases/download/v$ver/Equibop-$ver-universal.dmg"
+src.github = "Equicord/Equibop"
+src.prefix = "v"
+
 [helium-dmg]
 fetch.url = "https://github.com/imputnet/helium-macos/releases/download/$ver/helium_$ver_arm64-macos.dmg"
 src.github = "imputnet/helium-macos"

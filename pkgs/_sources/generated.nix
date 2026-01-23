@@ -37,6 +37,14 @@
     };
     date = "2026-01-17";
   };
+  equibop-bin = {
+    pname = "equibop-bin";
+    version = "3.1.6";
+    src = fetchurl {
+      url = "https://github.com/Equicord/Equibop/releases/download/v3.1.6/Equibop-3.1.6-universal.dmg";
+      sha256 = "sha256-vWx/woOEQWTKrbujgCw5JDPaTZMPpK0YEaiZj7VBsdM=";
+    };
+  };
   helium-dmg = {
     pname = "helium-dmg";
     version = "0.8.2.1";
