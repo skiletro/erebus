@@ -9,11 +9,12 @@
   ...
 }:
 let
-  flakeLocation = "/home/jamie/Projects/erebus";
+  home = if stdenvNoCC.hostPlatform.isDarwin then "/Users/jamie" else "/home/jamie";
+  flakeLocation = "${home}/Projects/erebus";
 in
 stdenvNoCC.mkDerivation (attrs: {
   pname = "eos-cli";
-  version = "0.2";
+  version = "0.2.1";
 
   src = ./.;
 
@@ -26,7 +27,7 @@ stdenvNoCC.mkDerivation (attrs: {
     nh
   ];
 
-  NH_FLAKE = "$HOME/Projects/erebus";
+  NH_FLAKE = flakeLocation;
 
   installPhase = ''
     runHook preInstall
