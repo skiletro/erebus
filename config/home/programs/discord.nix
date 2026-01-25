@@ -35,6 +35,9 @@ in
         useQuickCss = true;
         themeLinks = lib.optional pkgs.stdenvNoCC.hostPlatform.isLinux "https://chloecinders.github.io/visual-refresh-compact-title-bar/browser.css";
         transparent = true;
+        autoUpdate = true;
+        autoUpdateNotification = false;
+        notifyAboutUpdates = false;
         plugins = {
           betterGifPicker.enable = true;
           ClearURLs.enable = true;
