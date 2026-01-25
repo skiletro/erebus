@@ -93,7 +93,19 @@
               accel_profile = "flat";
             };
 
-            monitor = "DP-3,3440x1440@165,0x0,1";
+            monitorv2 = {
+              output = "DP-3";
+              mode = "3440x1440@165";
+              position = "0x0";
+              scale = 1;
+              bitdepth = 10;
+              vrr = true;
+            };
+
+            ecosystem = {
+              no_update_news = true;
+              no_donation_nag = true;
+            };
 
             bind = [
               "SUPER, Return, exec, ${lib.getExe pkgs.kitty}"
