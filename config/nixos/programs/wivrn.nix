@@ -34,25 +34,18 @@
       xdg.configFile."openxr/1/active_runtime.json".source =
         "${config.services.wivrn.package}/share/openxr/1/openxr_wivrn.json";
 
-      xdg.configFile."openvr/openvrpaths.vrpath".text = ''
-        {
-          "config" :
-          [
-            "${userAttrs.config.xdg.dataHome}/Steam/config"
-          ],
-          "external_drivers" : null,
-          "jsonid" : "vrpathreg",
-          "log" :
-          [
-            "${userAttrs.config.xdg.dataHome}/Steam/logs"
-          ],
-          "runtime" :
-          [
-            "${pkgs.opencomposite}/lib/opencomposite"
-          ],
-          "version" : 1
-        }
-      '';
+      xdg.configFile."openvr/openvrpaths.vrpath".text =
+        let
+          steam = "${userAttrs.config.xdg.dataHome}/Steam";
+        in
+        builtins.toJSON {
+          version = 1;
+          jsonid = "vrpathreg";
+          external_drivers = null;
+          config = [ "${steam}/config" ];
+          log = [ "${steam}/logs" ];
+          "runtime" = lib.singleton "${pkgs.xrizer}/lib/xrizer";
+        };
     });
   };
 }
