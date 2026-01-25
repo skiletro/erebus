@@ -26,6 +26,7 @@
       gvfs.enable = true;
       tumbler.enable = true;
     };
+    networking.networkmanager.enable = true;
     environment.pathsToLink = [ "share/thumbnailers" ];
     erebus.programs.dms.enable = true;
     environment.gnome.excludePackages = lib.mkDefault (
