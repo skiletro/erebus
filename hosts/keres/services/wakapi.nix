@@ -23,6 +23,7 @@ in
         inherit port;
       };
       db.dialect = "sqlite3";
+      security.allow_signup = false;
       app = {
         aggregation_time = "0 15 2 * * *";
         report_time_weekly = "0 0 18 * * 5";
