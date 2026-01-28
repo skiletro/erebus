@@ -23,6 +23,7 @@
       helix.enable = true;
       nu.enable = true;
       tmux.enable = true;
+      wakatime.enable = true;
       yazi.enable = true;
       # keep-sorted end
     };
