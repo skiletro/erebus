@@ -4,11 +4,6 @@
 
   inputs = {
     # keep-sorted start block=yes newline_separated=yes
-    copyparty = {
-      url = "github:9001/copyparty";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     cursors.url = "github:lilleaila/nix-cursors";
 
     disko = {
@@ -56,11 +51,6 @@
     };
 
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
-
-    nix-minecraft = {
-      url = "github:Infinidoge/nix-minecraft";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     nix-rosetta-builder = {
       url = "github:cpick/nix-rosetta-builder";
