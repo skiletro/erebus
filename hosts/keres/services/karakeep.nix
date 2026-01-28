@@ -1,17 +1,22 @@
 { config, ... }:
+let
+  inherit (config.erebus.selfhost) domain;
+  subdomain = "kk";
+  port = 3001;
+in
 {
   services.karakeep = {
     enable = true;
     meilisearch.enable = false; # what is the POINT of stateVersion if it doesn't WORK
     extraEnvironment = {
-      NEXTAUTH_URL = "https://kk.warm.vodka";
-      PORT = "3001";
+      NEXTAUTH_URL = "https://${subdomain}.${domain}";
+      PORT = port;
       DISABLE_SIGNUPS = "true";
       DISABLE_NEW_RELEASE_CHECK = "true";
     };
   };
 
-  services.caddy.virtualHosts."kk.warm.vodka".extraConfig = ''
-    reverse_proxy :${config.services.karakeep.extraEnvironment.PORT}
-  '';
+  erebus.selfhost.services = {
+    ${subdomain} = port;
+  };
 }

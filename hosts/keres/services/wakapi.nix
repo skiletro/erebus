@@ -1,6 +1,7 @@
 { config, ... }:
 let
-  domain = "wt.warm.vodka";
+  inherit (config.erebus.selfhost) domain;
+  subdomain = "wt";
   port = 3009;
 in
 {
@@ -16,7 +17,7 @@ in
     passwordSaltFile = config.sops.secrets.wakapi-salt.path;
     settings = {
       server = {
-        public_url = "https://${domain}";
+        public_url = "https://${subdomain}.${domain}";
         listen_ipv4 = "127.0.0.1";
         listen_ipv6 = "-";
         inherit port;
@@ -32,8 +33,7 @@ in
     };
   };
 
-  services.caddy.virtualHosts."${domain}".extraConfig = ''
-    encode zstd gzip
-    reverse_proxy :${toString port}
-  '';
+  erebus.selfhost.services = {
+    ${subdomain} = port;
+  };
 }
