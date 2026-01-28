@@ -10,7 +10,7 @@ in
     meilisearch.enable = false; # what is the POINT of stateVersion if it doesn't WORK
     extraEnvironment = {
       NEXTAUTH_URL = "https://${subdomain}.${domain}";
-      PORT = port;
+      PORT = toString port;
       DISABLE_SIGNUPS = "true";
       DISABLE_NEW_RELEASE_CHECK = "true";
     };
