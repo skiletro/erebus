@@ -2,22 +2,25 @@
   lib,
   config,
   pkgs,
+  inputs',
   ...
 }:
 {
   options.erebus.programs.wakatime.enable = lib.mkEnableOption "WakaTime";
 
   config = lib.mkIf config.erebus.programs.wakatime.enable {
-    home.packages = [ pkgs.wakatime-cli ];
+    home.packages = [
+      pkgs.wakatime-cli
+      inputs'.wakatime-ls.packages.default
+    ];
 
-    home.file.".wakatime.cfg" = {
-      source = (pkgs.formats.ini { }).generate ".wakatime.cfg" {
-        settings = {
-          api_url = "https://wt.warm.vodka";
-          api_key_vault_cmd = "cat ${config.sops.secrets.wakapi-key.path}";
-        };
+    home.sessionVariables.WAKATIME_HOME = "${config.xdg.configHome}/wakatime";
+
+    xdg.configFile."wakatime/.wakatime.cfg".source = (pkgs.formats.ini { }).generate "wakatime-config" {
+      settings = {
+        api_url = "https://wt.warm.vodka/api";
+        api_key_vault_cmd = "${pkgs.writeShellScript "cat-wakatime-api-key" "cat ${config.sops.secrets.wakapi-key.path}"}";
       };
-      force = true;
     };
 
     sops.secrets."wakapi-key" = { };

@@ -9,6 +9,8 @@
   options.erebus.programs.helix.enable = lib.mkEnableOption "Helix editor";
 
   config = lib.mkIf config.erebus.programs.helix.enable {
+    erebus.programs.wakatime.enable = lib.mkForce true; # config required
+
     programs.helix = {
       enable = true;
       package = inputs'.helix.packages.helix.overrideAttrs (_prevAttrs: {
@@ -24,6 +26,7 @@
         # keep-sorted start
         bash-language-server # Bash
         clippy # Rust
+        csharp-ls
         csharpier # C#
         deadnix # Nix
         docker-compose-language-service # Docker Compose
@@ -49,87 +52,133 @@
       defaultEditor = true;
       languages = {
         language-server = {
-          # keep-sorted start block=yes newline_separated=yes
+          # keep-sorted start block=yes
           emmet-lsp = {
             command = lib.getExe pkgs.emmet-language-server;
             args = [ "--stdio" ];
           };
-
           gopls.config.gofumpt = true;
-
           harper = {
             command = lib.getExe pkgs.harper;
             args = [ "--stdio" ];
             config.harper-ls.dialect = "British";
           };
+          wakatime = {
+            command = "wakatime-ls";
+          };
           # keep-sorted end
         };
-        language = [
-          # keep-sorted start block=yes newline_separated=yes
-          {
-            name = "c";
-            formatter.command = lib.getExe' pkgs.clang-tools "clang-format";
-            language-servers = [ "clangd" ];
-          }
+        language =
+          map
+            (
+              elem:
+              elem
+              // {
+                language-servers = (elem.language-servers or [ ]) ++ [ "wakatime" ];
+              }
+            )
+            [
+              # keep-sorted start block=yes by_regex=['name = "(.*)"']
+              {
+                name = "c";
+                formatter.command = lib.getExe' pkgs.clang-tools "clang-format";
+                language-servers = [ "clangd" ];
+              }
+              {
+                name = "fish";
+                formatter.command = "fish_indent";
+                language-servers = [ "fish-lsp" ];
+                auto-format = true;
+              }
+              {
+                name = "go";
+                language-servers = [ "gopls" ];
+                auto-format = true;
+              }
+              {
+                name = "html";
+                formatter = {
+                  command = "prettier";
+                  args = [
+                    "--parser"
+                    "html"
+                  ];
+                };
+                language-servers = [
+                  "vscode-html-language-server"
+                  "emmet-lsp"
+                ];
+              }
+              {
+                name = "nix";
+                formatter = {
+                  command = lib.getExe pkgs.nixfmt;
+                  auto-format = true;
+                };
+                language-servers = [
+                  "nixd"
+                  "nil"
+                ];
+              }
+              {
+                name = "tsx";
+                formatter = {
+                  command = "prettier";
+                  args = [
+                    "--parser"
+                    "typescript"
+                  ];
+                };
+                language-servers = [
+                  "vscode-html-language-server"
+                  "emmet-lsp"
+                ];
+              }
+              {
+                name = "c-sharp";
+                formatter = {
+                  command = "csharpier";
+                  args = [ "format" ];
+                };
+                language-servers = [
+                  "omnisharp"
+                  "csharp-ls"
+                ];
+              }
+              {
+                name = "css";
+                language-servers = [ "vscode-css-language-server" ];
+              }
+              {
+                name = "scss";
+                language-servers = [ "vscode-css-language-server" ];
+              }
+              {
+                name = "nu";
+                language-servers = [ "nu" ];
+              }
+              {
+                name = "javascript";
+                language-servers = [ "typescript-language-server" ];
+              }
+              {
+                name = "typescript";
+                language-servers = [ "typescript-language-server" ];
+              }
+              {
+                name = "rust";
+                language-servers = [ "rust-analyzer" ];
 
-          {
-            name = "markdown";
-            language-servers = [
-              "marksman"
-              "harper"
+              }
+              {
+                name = "markdown";
+                language-servers = [
+                  "marksman"
+                  "harper"
+                ];
+              }
+              # keep-sorted end
             ];
-          }
-
-          {
-            name = "fish";
-            formatter.command = "fish_indent";
-            auto-format = true;
-          }
-
-          {
-            name = "go";
-            auto-format = true;
-          }
-
-          {
-            name = "html";
-            formatter = {
-              command = "prettier";
-              args = [
-                "--parser"
-                "html"
-              ];
-            };
-            language-servers = [
-              "vscode-html-language-server"
-              "emmet-lsp"
-            ];
-          }
-
-          {
-            name = "nix";
-            formatter = {
-              command = lib.getExe pkgs.nixfmt;
-              auto-format = true;
-            };
-          }
-
-          {
-            name = "tsx";
-            formatter = {
-              command = "prettier";
-              args = [
-                "--parser"
-                "typescript"
-              ];
-            };
-            language-servers = [
-              "vscode-html-language-server"
-              "emmet-lsp"
-            ];
-          }
-          # keep-sorted end
-        ];
       };
       settings = {
         editor = {

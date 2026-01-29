@@ -104,6 +104,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    wakatime-ls = {
+      url = "github:mrnossiom/wakatime-ls";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     zen = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
