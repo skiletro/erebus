@@ -224,23 +224,8 @@
               "match:class ^(org.quickshell)$, center on"
               "match:class ^(org.quickshell)$, size (monitor_h*.70) (monitor_h*.80)"
 
-              "match:class ^(com.saivert.pwvucontrol)$, float on"
-              "match:class ^(com.saivert.pwvucontrol)$, center on"
-              "match:class ^(com.saivert.pwvucontrol)$, size (monitor_w*.45) (monitor_h*.45)"
-
               "match:class org.freedesktop.impl.portal.desktop.gnome, float on"
               "match:class org.freedesktop.impl.portal.desktop.gnome, size (monitor_w*.60) (monitor_h*.65)"
-
-              "match:class fsearch, float on"
-              "match:class fsearch, center on"
-
-              "match:class org.gnome.FileRoller, float on"
-              "match:class org.gnome.FileRoller, center on"
-              "match:class org.gnome.NautilusPreviewer, float on"
-              "match:class org.gnome.NautilusPreviewer, center on"
-
-              "match:initial_title ^(Signal Sticker Pack Creator)$, float on"
-              "match:initial_title ^(Signal Sticker Pack Creator)$, center on"
 
               ''match:class ^jetbrains-.*$, match:float 1, match:title ^$|^\s$|^win\d+$, no_initial_focus on''
 
@@ -250,31 +235,31 @@
               ''match:class steam, match:title ^(?!\s*$).+, center on''
               "match:title Steam, float off" # floats everything but the main steam window
 
-              "match:class xdg-desktop-portal-gtk, float on"
-              "match:class xdg-desktop-portal-gtk, center on"
-              "match:title ^(Open File)(.*)$, center on"
-              "match:title ^(Open File)(.*)$, float on"
-              "match:title ^(Select a File)(.*)$, center on"
-              "match:title ^(Select a File)(.*)$, float on"
-              "match:title ^(Open Folder)(.*)$, center on"
-              "match:title ^(Open Folder)(.*)$, float on"
-              "match:title ^(Save As)(.*)$, center on"
-              "match:title ^(Save As)(.*)$, float on"
-              "match:title ^(Library)(.*)$, center on"
-              "match:title ^(Library)(.*)$, float on"
-              "match:title ^(File Upload)(.*)$, center on"
-              "match:title ^(File Upload)(.*)$, float on"
-              "match:title ^(.*)(wants to save)$, center on"
-              "match:title ^(.*)(wants to save)$, float on"
-              "match:title ^(.*)(wants to open)$, center on"
-              "match:title ^(.*)(wants to open)$, float on"
-              "match:class crashreporter, float on"
-              "match:class crashreporter, center on"
-
               "match:class ^(gsr-ui)$, float on"
               "match:class ^(gsr-ui)$, pin on"
               "match:class ^(gsr-ui)$, move 0 0"
-            ];
+            ]
+            ++ [
+              "match:tag floater, float on"
+              "match:tag floater, center on"
+            ]
+            ++ (map (x: "match:${x}, tag +floater") [
+              "class fsearch"
+              "class ^(com.saivert.pwvucontrol)$"
+              "class xdg-desktop-portal-gtk"
+              "title ^(Open File)(.*)$"
+              "title ^(Select a File)(.*)$"
+              "title ^(Open Folder)(.*)$"
+              "title ^(Save As)(.*)$"
+              "title ^(Library)(.*)$"
+              "title ^(File Upload)(.*)$"
+              "title ^(.*)(wants to save)$"
+              "title ^(.*)(wants to open)$"
+              "class crashreporter"
+              "class org.gnome.FileRoller"
+              "class org.gnome.NautilusPreviewer"
+              "initial_title ^(Signal Sticker Pack Creator)$"
+            ]);
           };
       };
 
