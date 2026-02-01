@@ -239,6 +239,9 @@
               "match:class org.gnome.NautilusPreviewer, float on"
               "match:class org.gnome.NautilusPreviewer, center on"
 
+              "match:initial_title ^(Signal Sticker Pack Creator)$, float on"
+              "match:initial_title ^(Signal Sticker Pack Creator)$, center on"
+
               ''match:class ^jetbrains-.*$, match:float 1, match:title ^$|^\s$|^win\d+$, no_initial_focus on''
 
               "match:class Kodi, fullscreen on"
