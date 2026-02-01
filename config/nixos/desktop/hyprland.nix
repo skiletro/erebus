@@ -213,6 +213,8 @@
               middle_click_paste = false;
             };
 
+            cursor.no_warps = true;
+
             layerrule = [
               "match:class ^(quickshell)$, no_anim on"
               "match:class ^(quickshell)$, blur on"
