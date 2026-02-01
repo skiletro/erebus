@@ -192,6 +192,26 @@
         "type": "github"
       }
     },
+    "dms-plugin-registry": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1769898589,
+        "narHash": "sha256-FIKJLTzyKI9wCM3CyzOpOJEx/eX0tllJEarDDzkkNPs=",
+        "owner": "AvengeMedia",
+        "repo": "dms-plugin-registry",
+        "rev": "65a5a56978bd5be5e43c4c71b76654457196dcba",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AvengeMedia",
+        "repo": "dms-plugin-registry",
+        "type": "github"
+      }
+    },
     "firefox-gnome-theme": {
       "flake": false,
       "locked": {
@@ -1608,6 +1628,7 @@
         "cursors": "cursors",
         "disko": "disko",
         "dms": "dms",
+        "dms-plugin-registry": "dms-plugin-registry",
         "flake-parts": "flake-parts",
         "helix": "helix",
         "home-manager": "home-manager",

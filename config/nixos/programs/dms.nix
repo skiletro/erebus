@@ -22,13 +22,20 @@
     };
 
     home-manager.sharedModules = lib.singleton {
-      imports = [ inputs.dms.homeModules.dank-material-shell ];
+      imports = with inputs; [
+        dms.homeModules.dank-material-shell
+        dms-plugin-registry.modules.default
+      ];
 
       erebus.services.calendar.enable = true;
 
       programs.dank-material-shell = {
         enable = true;
         managePluginSettings = true;
+        plugins = {
+          dankKDEConnect.enable = true;
+          powerUsagePlugin.enable = true;
+        };
         settings = {
           fontFamily = config.stylix.fonts.sansSerif.name;
           monoFontFamily = config.stylix.fonts.monospace.name;
@@ -37,6 +44,7 @@
           showSeconds = false;
           useFahrenheit = false;
           use24HourClock = false;
+          padHours12Hour = true;
 
           modalDarkenBackground = false;
 
@@ -79,6 +87,15 @@
           privacyShowCameraIcon = false;
           privacyShowScreenShareIcon = false;
 
+          lockScreenShowPowerActions = false;
+          lockScreenShowSystemIcons = true;
+          lockScreenShowTime = true;
+          lockScreenShowDate = true;
+          lockScreenShowProfileImage = false;
+          lockScreenShowPasswordField = false;
+          lockScreenShowMediaPlayer = true;
+          lockScreenPowerOffMonitorsOnLock = false;
+
           # Screen settings
           screenPreferences = {
             dankBar = [
@@ -98,7 +115,7 @@
               type = "exact";
             }
             {
-              pattern = "^steam_app_(\\d+)$";
+              pattern = ''^steam_app_(\\d+)$'';
               replacement = "steam_icon_$1";
               type = "regex";
             }
@@ -118,105 +135,82 @@
           showDock = true;
           dockAutoHide = false;
           dockSmartAutoHide = true;
-          dockGroupByApp = false;
+          dockGroupByApp = true;
           dockOpenOnOverview = false;
-          dockPosition = 1;
-          dockSpacing = 9;
+          dockPosition = 3; # right hand side
+          dockSpacing = 15; # %
           dockMargin = 10;
-          dockIconSize = 50;
+          dockIconSize = 45;
+          dockIndicatorStyle = "line"; # one of "line", "circle"
 
           # Bar settings
-          barConfigs = [
-            {
-              id = "default";
-              name = "Main Bar";
-              enabled = true;
-              position = 2;
-              screenPreferences = [
-                "all"
-              ];
-              showOnLastDisplay = true;
-              leftWidgets = [
-                {
-                  id = "workspaceSwitcher";
-                  enabled = true;
-                }
-              ];
-              centerWidgets = [
-                {
-                  id = "clock";
-                  enabled = true;
-                }
-                {
-                  id = "spacer";
-                  enabled = true;
-                  size = 20;
-                }
-                {
-                  id = "weather";
-                  enabled = true;
-                }
-              ];
-              rightWidgets = [
-                {
-                  id = "music";
-                  enabled = true;
-                }
-                {
-                  id = "spacer";
-                  enabled = true;
-                  size = 15;
-                }
-                {
-                  id = "systemTray";
-                  enabled = true;
-                }
-                {
-                  id = "spacer";
-                  enabled = true;
-                  size = 10;
-                }
-                {
-                  id = "notificationButton";
-                  enabled = true;
-                }
-                {
-                  id = "controlCenterButton";
-                  enabled = true;
-                }
-                {
-                  id = "spacer";
-                  enabled = true;
-                  size = 5;
-                }
-              ];
-              spacing = 5;
-              innerPadding = 4;
-              bottomGap = 0;
-              transparency = 0;
-              widgetTransparency = 0;
-              squareCorners = true;
-              noBackground = false;
-              gothCornersEnabled = false;
-              gothCornerRadiusOverride = false;
-              gothCornerRadiusValue = 54;
-              borderEnabled = false;
-              borderColor = "surfaceText";
-              borderOpacity = 1;
-              borderThickness = 1;
-              fontScale = 1;
-              autoHide = false;
-              autoHideDelay = 250;
-              openOnOverview = false;
-              visible = true;
-              popupGapsAuto = true;
-              popupGapsManual = 4;
-              maximizeDetection = true;
-              widgetOutlineEnabled = false;
-              widgetOutlineThickness = 2;
-              widgetOutlineColor = "surfaceText";
-            }
-          ];
+          barConfigs =
+            let
+              w = id: {
+                inherit id;
+                enabled = true;
+              };
+              spacer = {
+                id = "spacer";
+                enabled = true;
+                size = 5;
+              };
+            in
+            [
+              {
+                id = "default";
+                name = "Main Bar";
+                enabled = true;
+                position = 2; # left hand side
+                screenPreferences = [
+                  "all"
+                ];
+                showOnLastDisplay = true;
+                leftWidgets = [
+                  (w "workspaceSwitcher")
+                ];
+                centerWidgets = [
+                  (w "clock")
+                  spacer
+                  (w "weather")
+                ];
+                rightWidgets = [
+                  (w "music")
+                  (w "dankKDEConnect")
+                  spacer
+                  (w "systemTray")
+                  spacer
+                  (w "notificationButton")
+                  (w "controlCenterButton")
+                  spacer
+                ];
+                spacing = 5;
+                innerPadding = 4;
+                bottomGap = 0;
+                transparency = 0;
+                widgetTransparency = 0;
+                squareCorners = true;
+                noBackground = false;
+                gothCornersEnabled = false;
+                gothCornerRadiusOverride = false;
+                gothCornerRadiusValue = 54;
+                borderEnabled = false;
+                borderColor = "surfaceText";
+                borderOpacity = 1;
+                borderThickness = 1;
+                fontScale = 1;
+                autoHide = false;
+                autoHideDelay = 250;
+                openOnOverview = false;
+                visible = true;
+                popupGapsAuto = true;
+                popupGapsManual = 4;
+                maximizeDetection = true;
+                widgetOutlineEnabled = false;
+                widgetOutlineThickness = 2;
+                widgetOutlineColor = "surfaceText";
+              }
+            ];
           showWorkspaceApps = true;
           showWorkspaceIndex = true;
           maxWorkspaceIcons = 5;
@@ -276,60 +270,25 @@
             pkgs.writers.writeJSON "dms-stylix.json" colorTheme;
 
           # Control center settings
-          controlCenterWidgets = [
-            {
-              id = "volumeSlider";
-              enabled = true;
-              width = 50;
-            }
-            {
-              id = "brightnessSlider";
-              enabled = true;
-              width = 50;
-            }
-            {
-              id = "bluetooth";
-              enabled = true;
-              width = 50;
-            }
-            {
-              id = "audioOutput";
-              enabled = true;
-              width = 50;
-            }
-            {
-              id = "audioInput";
-              enabled = true;
-              width = 50;
-            }
-            {
-              id = "colorPicker";
-              enabled = true;
-              width = 50;
-            }
-            {
-              id = "builtin_vpn";
-              enabled = true;
-              width = 50;
-            }
-            {
-              id = "diskUsage";
-              enabled = true;
-              width = 50;
-              instanceId = "mktvkfz3tysbvmtwsns9t6c9d1ya5";
-              mountPath = "/";
-            }
-            {
-              id = "builtin_cups";
-              enabled = true;
-              width = 50;
-            }
-            {
-              id = "nightMode";
-              enabled = true;
-              width = 50;
-            }
-          ];
+          controlCenterWidgets =
+            let
+              w = id: {
+                inherit id;
+                width = 50;
+                enabled = true;
+              };
+              du = instanceId: mountPath: w "diskUsage" // { inherit instanceId mountPath; };
+            in
+            [
+              (w "volumeSlider")
+              (w "brightnessSlider")
+              (w "bluetooth")
+              (w "audioOutput")
+              (w "audioInput")
+              (w "builtin_vpn")
+              (du "mktvkfz3tysbvmtwsns9t6c9d1ya5" "/")
+              (w "builtin_cups")
+            ];
         };
       };
     };
