@@ -26,8 +26,6 @@
         # keep-sorted start
         bash-language-server # Bash
         clippy # Rust
-        csharp-ls
-        csharpier # C#
         deadnix # Nix
         docker-compose-language-service # Docker Compose
         dockerfile-language-server # Dockerfile
@@ -39,7 +37,6 @@
         nil # Nix
         nixd # Nix
         nufmt # Nu
-        omnisharp-roslyn # C#
         prettier # HTML/CSS/JS
         rust-analyzer # Rust
         rustfmt # Rust
@@ -132,17 +129,6 @@
                 language-servers = [
                   "vscode-html-language-server"
                   "emmet-lsp"
-                ];
-              }
-              {
-                name = "c-sharp";
-                formatter = {
-                  command = "csharpier";
-                  args = [ "format" ];
-                };
-                language-servers = [
-                  "omnisharp"
-                  "csharp-ls"
                 ];
               }
               {
