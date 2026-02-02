@@ -14,6 +14,7 @@
       services = {
         aerospace.enable = true; # wm
         jankyborders.enable = true; # borders
+        raycast.enable = true;
       };
     };
 
