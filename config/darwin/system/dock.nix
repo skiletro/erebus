@@ -2,7 +2,7 @@
   system.defaults = {
     dock = {
       autohide = true;
-      orientation = "left";
+      orientation = "right";
       show-process-indicators = false;
       show-recents = false;
       static-only = true;
