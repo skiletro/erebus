@@ -7,7 +7,7 @@ let
 in
 {
   services.calibre-web = {
-    enabled = true;
+    enable = true;
     listen = {
       ip = "127.0.0.1";
       inherit port;
