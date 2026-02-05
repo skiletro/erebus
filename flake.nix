@@ -4,6 +4,8 @@
 
   inputs = {
     # keep-sorted start block=yes newline_separated=yes
+    cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
+
     cursors.url = "github:lilleaila/nix-cursors";
 
     disko = {
@@ -122,10 +124,13 @@
   };
 
   nixConfig = {
-    extra-substituters = [ "https://hyprland.cachix.org" ];
-    extra-trusted-substituters = [ "https://hyprland.cachix.org" ];
+    extra-substituters = [
+      "https://hyprland.cachix.org"
+      "https://attic.xuyh0120.win/lantian"
+    ];
     extra-trusted-public-keys = [
       "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+      "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
     ];
   };
 }
