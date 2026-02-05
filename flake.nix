@@ -33,8 +33,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprnix = {
-      url = "github:hyprwm/hyprnix";
+    hyprland = {
+      url = "github:hyprwm/hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

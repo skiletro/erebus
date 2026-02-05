@@ -25,40 +25,40 @@
   };
   dzgui = {
     pname = "dzgui";
-    version = "2d58bb491e44acff34aa9b4b4bda44ba2b057575";
+    version = "c14fb10d23690aec1d11e569d45fb3e2794e1542";
     src = fetchgit {
       url = "https://codeberg.org/aclist/dztui";
-      rev = "2d58bb491e44acff34aa9b4b4bda44ba2b057575";
+      rev = "c14fb10d23690aec1d11e569d45fb3e2794e1542";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-5MGYhoo5V6tNDXV61z15kLMVFMnWfblKMeLEXEBkBj0=";
+      sha256 = "sha256-E9t+nJfw9wXxO20EyuSCxpoRd7+pCc50qcPwpIsh/n8=";
     };
-    date = "2026-01-17";
+    date = "2026-01-26";
   };
   equibop-bin = {
     pname = "equibop-bin";
-    version = "3.1.6";
+    version = "3.1.7";
     src = fetchurl {
-      url = "https://github.com/Equicord/Equibop/releases/download/v3.1.6/Equibop-3.1.6-universal.dmg";
-      sha256 = "sha256-vWx/woOEQWTKrbujgCw5JDPaTZMPpK0YEaiZj7VBsdM=";
+      url = "https://github.com/Equicord/Equibop/releases/download/v3.1.7/Equibop-3.1.7-universal.dmg";
+      sha256 = "sha256-DvXMVEvI/sQA1ktxJSXE0C1j2cpoXcRo3ZCwbhKoczk=";
     };
   };
   helium-dmg = {
     pname = "helium-dmg";
-    version = "0.8.2.1";
+    version = "0.8.4.1";
     src = fetchurl {
-      url = "https://github.com/imputnet/helium-macos/releases/download/0.8.2.1/helium_0.8.2.1_arm64-macos.dmg";
-      sha256 = "sha256-Y42Fj+5KPZ2aO7XazV1CFB7liAmWSsafcXpvukJRqoM=";
+      url = "https://github.com/imputnet/helium-macos/releases/download/0.8.4.1/helium_0.8.4.1_arm64-macos.dmg";
+      sha256 = "sha256-0WZQDI/AVNQSl/m7QM47Yw2d+GyHRaCtj849hs854nM=";
     };
   };
   helium-tarball = {
     pname = "helium-tarball";
-    version = "0.8.2.1";
+    version = "0.8.4.1";
     src = fetchurl {
-      url = "https://github.com/imputnet/helium-linux/releases/download/0.8.2.1/helium-0.8.2.1-x86_64_linux.tar.xz";
-      sha256 = "sha256-hljL7KlafD1TYPmA+U8HRdXKOUdsb6Lnk4XiAYfmPI8=";
+      url = "https://github.com/imputnet/helium-linux/releases/download/0.8.4.1/helium-0.8.4.1-x86_64_linux.tar.xz";
+      sha256 = "sha256-M/1wGewl500vJsoYfhbgXHQ4vlI6d0PRGGGGsRol6sc=";
     };
   };
   liga-sf-mono-nerd-font = {
@@ -112,34 +112,34 @@
   };
   proton-cachyos_x86_64_v3 = {
     pname = "proton-cachyos_x86_64_v3";
-    version = "cachyos-10.0-20260102-slr";
+    version = "cachyos-10.0-20260203-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260102-slr/proton-cachyos-10.0-20260102-slr-x86_64_v3.tar.xz";
-      sha256 = "sha256-bDlgsRNxA35YW91AsXhvA7dLsSq6cZ8Umczbw+Zj+2k=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260203-slr/proton-cachyos-10.0-20260203-slr-x86_64_v3.tar.xz";
+      sha256 = "sha256-5Lyg5gdy2SL4L7KlDCjmmXtTy+LEhS4sQDYDzxwo8o4=";
     };
   };
   proton-cachyos_x86_64_v4 = {
     pname = "proton-cachyos_x86_64_v4";
-    version = "cachyos-10.0-20260102-slr";
+    version = "cachyos-10.0-20260203-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260102-slr/proton-cachyos-10.0-20260102-slr-x86_64_v4.tar.xz";
-      sha256 = "sha256-e2A9jrAGUHlD8KUuGjkLUhknclBxVZVYKJFElUEs0Us=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260203-slr/proton-cachyos-10.0-20260203-slr-x86_64_v4.tar.xz";
+      sha256 = "sha256-Ble4VSLZQyb2cUqEp68XQx4IK0RG0gJGGxEorW2mwb8=";
     };
   };
   protonmail-bin = {
     pname = "protonmail-bin";
-    version = "1.12.0";
+    version = "1.12.1";
     src = fetchurl {
-      url = "https://proton.me/download/mail/macos/1.12.0/ProtonMail-desktop.dmg";
-      sha256 = "sha256-34KO4h2t95k2o2JREyK5jFdTc5ONuRdFEYuQSjlvNkA=";
+      url = "https://proton.me/download/mail/macos/1.12.1/ProtonMail-desktop.dmg";
+      sha256 = "sha256-y8KgHm8pIbLQAb1/pIApNBbsaEi5ldInY4VXNBiTQlI=";
     };
   };
   protonpass-bin = {
     pname = "protonpass-bin";
-    version = "1.33.5";
+    version = "1.34.2";
     src = fetchurl {
-      url = "https://proton.me/download/PassDesktop/darwin/universal/ProtonPass_1.33.5.dmg";
-      sha256 = "sha256-yTLSCJ9TpTfe5jThBY7nivT9pQwjvmHMp6IUZLCg9kk=";
+      url = "https://proton.me/download/PassDesktop/darwin/universal/ProtonPass_1.34.2.dmg";
+      sha256 = "sha256-NiVO6DinG7MsR/B+dg0t2eOS6yKNJmUYawyz42l5Aj4=";
     };
   };
   protonvpn-bin = {

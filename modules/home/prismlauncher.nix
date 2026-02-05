@@ -9,7 +9,7 @@ let
   inherit (lib.types) listOf package;
 in
 {
-  options.programs.prismlauncher = {
+  options.programs.prismlauncher' = {
     enable = mkEnableOption "Prism Launcher";
     jdks = mkOption {
       type = listOf package;
@@ -21,10 +21,10 @@ in
     };
   };
 
-  config = lib.mkIf config.programs.prismlauncher.enable {
+  config = lib.mkIf config.programs.prismlauncher'.enable {
     home.packages = lib.singleton (
       pkgs.prismlauncher.override {
-        inherit (config.programs.prismlauncher) jdks;
+        inherit (config.programs.prismlauncher') jdks;
       }
     );
   };

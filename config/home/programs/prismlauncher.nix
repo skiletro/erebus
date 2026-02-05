@@ -11,7 +11,7 @@
   options.erebus.programs.prismlauncher.enable = lib.mkEnableOption "Prism Launcher";
 
   config = lib.mkIf config.erebus.programs.prismlauncher.enable {
-    programs.prismlauncher = {
+    programs.prismlauncher' = {
       enable = true;
       jdks = with pkgs; [
         graalvmPackages.graalvm-oracle_17

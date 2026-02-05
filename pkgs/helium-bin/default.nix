@@ -54,8 +54,6 @@ let
            
       cp -r helium-${version}-x86_64_linux/* $out/bin/
 
-      mv $out/bin/chrome $out/bin/helium
-
       cp "helium-${version}-x86_64_linux/helium.desktop" $out/share/applications/helium.desktop
 
       cp "helium-${version}-x86_64_linux/product_logo_256.png" $out/share/icons/hicolor/256x256/apps/helium.png
@@ -66,10 +64,6 @@ let
     postInstall = ''
       # Make the desktop file executable and fix any paths if necessary
       chmod +x $out/share/applications/helium.desktop
-
-      # You might need to update the Exec line in the desktop file
-      substituteInPlace $out/share/applications/helium.desktop \
-        --replace "Exec=chromium" "Exec=$out/bin/helium"
     '';
 
     autoPatchelfIgnoreMissingDeps = [
