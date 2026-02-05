@@ -17,6 +17,7 @@
       settings = {
         after-startup-command = [
           "exec-and-forget open ${pkgs'.swipeaerospace-bin}/Applications/SwipeAeroSpace.app"
+          "exec-and-forget open -a Raycast.app"
         ];
 
         enable-normalization-flatten-containers = true;
@@ -65,6 +66,10 @@
                 end tell
               '
             '';
+
+            ctrl-e = "exec-and-forget open -na Finder.app";
+            ctrl-f = "exec-and-forget open -na Helium.app";
+
             shift-s = "exec-and-forget screencapture -i -c";
 
             left = "focus left";
@@ -100,7 +105,7 @@
             shift-8 = "move-node-to-workspace --focus-follows-window 8";
             shift-9 = "move-node-to-workspace --focus-follows-window 9";
 
-            alt-space = "layout floating tiling";
+            shift-space = "layout floating tiling";
 
             alt-s = "layout v_accordion";
             alt-w = "layout h_accordion";
