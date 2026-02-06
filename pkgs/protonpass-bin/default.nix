@@ -5,27 +5,33 @@
   pkgs,
   ...
 }:
-stdenvNoCC.mkDerivation (finalAttrs: {
-  inherit (sources.protonpass-bin) pname version src;
+let
+  linuxDerivation = pkgs.proton-pass;
 
-  phases = [
-    "unpackPhase"
-    "installPhase"
-  ];
+  darwinDerivation = stdenvNoCC.mkDerivation (finalAttrs: {
+    inherit (sources.protonpass-bin) pname version src;
 
-  buildInputs = [ pkgs._7zz ];
+    phases = [
+      "unpackPhase"
+      "installPhase"
+    ];
 
-  unpackPhase = ''
-    7zz x -snld $src
-  '';
+    buildInputs = [ pkgs._7zz ];
 
-  installPhase = ''
-    mkdir -p $out/Applications
-    mv "ProtonPass_${finalAttrs.version}/Proton Pass.app" $out/Applications
-  '';
+    unpackPhase = ''
+      7zz x -snld $src
+    '';
 
-  meta = {
-    platforms = lib.platforms.darwin;
-    sourceProvenance = [ lib.sourceTypes.binaryNativeCode ];
-  };
-})
+    installPhase = ''
+      mkdir -p $out/Applications
+      mv "ProtonPass_${finalAttrs.version}/Proton Pass.app" $out/Applications
+    '';
+
+    meta = {
+      platforms = lib.platforms.darwin;
+      sourceProvenance = [ lib.sourceTypes.binaryNativeCode ];
+    };
+  });
+in
+with pkgs.stdenvNoCC.hostPlatform;
+(if isDarwin then darwinDerivation else linuxDerivation)

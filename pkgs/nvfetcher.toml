@@ -47,11 +47,6 @@ src.github = "CachyOS/proton-cachyos"
 fetch.url = "https://github.com/CachyOS/proton-cachyos/releases/download/$ver/proton-$ver-x86_64_v4.tar.xz"
 src.github = "CachyOS/proton-cachyos"
 
-[protonmail-bin]
-fetch.url = "https://proton.me/download/mail/macos/$ver/ProtonMail-desktop.dmg"
-src.webpage = "https://proton.me/download/mail/macos/version.json"
-src.regex = '"Version":\s*"([0-9.]+)"'
-
 [protonpass-bin]
 fetch.url = "https://proton.me/download/PassDesktop/darwin/universal/ProtonPass_$ver.dmg"
 src.webpage = "https://proton.me/download/PassDesktop/darwin/universal/version.json"

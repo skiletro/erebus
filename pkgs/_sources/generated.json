@@ -1,6 +1,6 @@
 {
     "apple-emoji": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "apple-emoji",
@@ -15,7 +15,7 @@
         "version": "v18.4"
     },
     "base16-schemes": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2026-01-15",
         "extract": null,
         "name": "base16-schemes",
@@ -35,7 +35,7 @@
         "version": "43dd14f6466a782bd57419fdfb5f398c74d6ac53"
     },
     "dzgui": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2026-01-26",
         "extract": null,
         "name": "dzgui",
@@ -55,7 +55,7 @@
         "version": "c14fb10d23690aec1d11e569d45fb3e2794e1542"
     },
     "equibop-bin": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "equibop-bin",
@@ -70,7 +70,7 @@
         "version": "3.1.7"
     },
     "helium-dmg": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "helium-dmg",
@@ -78,14 +78,14 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-0WZQDI/AVNQSl/m7QM47Yw2d+GyHRaCtj849hs854nM=",
+            "sha256": "sha256-erlRR3QTHvzNCSXcGtpR27d2ElNrrRvS7ZLHEnZK0wI=",
             "type": "url",
-            "url": "https://github.com/imputnet/helium-macos/releases/download/0.8.4.1/helium_0.8.4.1_arm64-macos.dmg"
+            "url": "https://github.com/imputnet/helium-macos/releases/download/0.8.5.1/helium_0.8.5.1_arm64-macos.dmg"
         },
-        "version": "0.8.4.1"
+        "version": "0.8.5.1"
     },
     "helium-tarball": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "helium-tarball",
@@ -93,14 +93,14 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-M/1wGewl500vJsoYfhbgXHQ4vlI6d0PRGGGGsRol6sc=",
+            "sha256": "sha256-/cp201tiw2N+xsj89Ms06efJyYnfgc04uoJnvsjDUog=",
             "type": "url",
-            "url": "https://github.com/imputnet/helium-linux/releases/download/0.8.4.1/helium-0.8.4.1-x86_64_linux.tar.xz"
+            "url": "https://github.com/imputnet/helium-linux/releases/download/0.8.5.1/helium-0.8.5.1-x86_64_linux.tar.xz"
         },
-        "version": "0.8.4.1"
+        "version": "0.8.5.1"
     },
     "liga-sf-mono-nerd-font": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2023-07-01",
         "extract": null,
         "name": "liga-sf-mono-nerd-font",
@@ -120,7 +120,7 @@
         "version": "dc5a3e6fcc2e16ad476b7be3c3c17c2273b260ea"
     },
     "morewaita-icon-theme": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "morewaita-icon-theme",
@@ -132,7 +132,7 @@
             "leaveDotGit": false,
             "name": null,
             "rev": "v49",
-            "sha256": "sha256-DxZ7XnIIF3EKGMPXahD+aHp6lCLRmrnywn7+qWCVflo=",
+            "sha256": "sha256-GUvEMVGFbGA0Vjvl22xHAtELKasT2V0vcQkkpytQPuE=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/somepaulo/MoreWaita.git"
@@ -140,7 +140,7 @@
         "version": "v49"
     },
     "owo-sh": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2023-04-10",
         "extract": null,
         "name": "owo-sh",
@@ -160,7 +160,7 @@
         "version": "d6ffda964cd6c81030f8e5516ca57c80a5a5dcb2"
     },
     "pearcleaner-bin": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "pearcleaner-bin",
@@ -175,7 +175,7 @@
         "version": "5.4.3"
     },
     "proton-cachyos_x86_64_v3": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "proton-cachyos_x86_64_v3",
@@ -190,7 +190,7 @@
         "version": "cachyos-10.0-20260203-slr"
     },
     "proton-cachyos_x86_64_v4": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "proton-cachyos_x86_64_v4",
@@ -204,23 +204,8 @@
         },
         "version": "cachyos-10.0-20260203-slr"
     },
-    "protonmail-bin": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "protonmail-bin",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-y8KgHm8pIbLQAb1/pIApNBbsaEi5ldInY4VXNBiTQlI=",
-            "type": "url",
-            "url": "https://proton.me/download/mail/macos/1.12.1/ProtonMail-desktop.dmg"
-        },
-        "version": "1.12.1"
-    },
     "protonpass-bin": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "protonpass-bin",
@@ -228,14 +213,14 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-NiVO6DinG7MsR/B+dg0t2eOS6yKNJmUYawyz42l5Aj4=",
+            "sha256": "sha256-oo02IYOKZEsr0+4zimSFkutTGuS63ZvMZTeUTapZrVw=",
             "type": "url",
             "url": "https://proton.me/download/PassDesktop/darwin/universal/ProtonPass_1.34.2.dmg"
         },
         "version": "1.34.2"
     },
     "protonvpn-bin": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "protonvpn-bin",
@@ -250,7 +235,7 @@
         "version": "6.1.0"
     },
     "swipeaerospace-bin": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "swipeaerospace-bin",
@@ -265,7 +250,7 @@
         "version": "0.2.5"
     },
     "wheelwizard": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "wheelwizard",

@@ -33,7 +33,7 @@ let
     '';
   });
 
-  darwinDerivation = stdenvNoCC.mkDerivation {
+  darwinDerivation = stdenvNoCC.mkDerivation rec {
     inherit (sources.equibop-bin) pname version src;
 
     phases = [
@@ -49,7 +49,7 @@ let
 
     installPhase = ''
       mkdir -p $out/Applications
-      mv Equibop.app $out/Applications
+      mv "equibop ${version}-universal/equibop.app" $out/Applications
     '';
   };
 

@@ -49,14 +49,6 @@ let
         home-manager.darwinModules.home-manager
         stylix.darwinModules.stylix
 
-        # Fixes
-        mac-app-util.darwinModules.default # fixes .app programs in Spotlight
-        {
-          home-manager.sharedModules = [
-            inputs.mac-app-util.homeManagerModules.default
-          ];
-        }
-
         stylingModules
         (helperModules hostName system)
       ];
