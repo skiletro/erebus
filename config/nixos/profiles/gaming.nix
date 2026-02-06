@@ -2,7 +2,6 @@
   lib,
   config,
   pkgs,
-  pkgs',
   ...
 }:
 {
@@ -24,19 +23,11 @@
     };
 
     environment.systemPackages = with pkgs; [
-      # keep-sorted start ignore_prefixes=pkgs'.
-      bs-manager
-      dolphin-emu
-      pkgs'.dzgui
-      heroic
+      # keep-sorted start
+      bazaar
       lsfg-vk
       lsfg-vk-ui # frame gen
       ludusavi
-      osu-lazer-bin
-      r2modman
-      ryubing # switch emu
-      vrcx
-      pkgs'.wheelwizard
       # keep-sorted end
     ];
 
@@ -46,17 +37,12 @@
       xpad-noone.enable = true;
     };
 
+    # for games, I am going to install them imperatively from now on, hence the bazaar install
     services.flatpak.enable = true;
 
     home-manager.sharedModules = lib.singleton (userAttrs: {
       erebus.programs.prismlauncher.enable = true;
       programs.mangohud.enable = true;
-
-      xdg.mimeApps.defaultApplications = {
-        "x-scheme-handler/ror2mm" = "r2modman.desktop";
-      };
-
-      xdg.autostart.entries = userAttrs.config.lib.erebus.autostartEntry "VRCX Silent" "${lib.getExe' pkgs.vrcx "vrcx"} --startup";
     });
   };
 }

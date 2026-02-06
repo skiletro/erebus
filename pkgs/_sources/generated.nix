@@ -28,20 +28,6 @@
     };
     date = "2026-01-15";
   };
-  dzgui = {
-    pname = "dzgui";
-    version = "c14fb10d23690aec1d11e569d45fb3e2794e1542";
-    src = fetchgit {
-      url = "https://codeberg.org/aclist/dztui";
-      rev = "c14fb10d23690aec1d11e569d45fb3e2794e1542";
-      fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = false;
-      sparseCheckout = [ ];
-      sha256 = "sha256-E9t+nJfw9wXxO20EyuSCxpoRd7+pCc50qcPwpIsh/n8=";
-    };
-    date = "2026-01-26";
-  };
   equibop-bin = {
     pname = "equibop-bin";
     version = "3.1.7";
@@ -90,7 +76,7 @@
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-GUvEMVGFbGA0Vjvl22xHAtELKasT2V0vcQkkpytQPuE=";
+      sha256 = "sha256-DxZ7XnIIF3EKGMPXahD+aHp6lCLRmrnywn7+qWCVflo=";
     };
   };
   owo-sh = {
@@ -153,19 +139,6 @@
     src = fetchurl {
       url = "https://github.com/MediosZ/SwipeAeroSpace/releases/download/0.2.5/SwipeAeroSpace.zip";
       sha256 = "sha256-v3zjXCxCS2Vsjqoc+vYvbN3hiBKy2Jh+uIrG2ZSPmn0=";
-    };
-  };
-  wheelwizard = {
-    pname = "wheelwizard";
-    version = "2.3.4";
-    src = fetchgit {
-      url = "https://github.com/TeamWheelWizard/WheelWizard.git";
-      rev = "2.3.4";
-      fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = false;
-      sparseCheckout = [ ];
-      sha256 = "sha256-EWNknLymehCcxXygsuo5jKrtWUNP3TnLr3H+Q3T2Ygs=";
     };
   };
 }
