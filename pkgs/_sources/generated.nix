@@ -6,14 +6,6 @@
   dockerTools,
 }:
 {
-  apple-emoji = {
-    pname = "apple-emoji";
-    version = "v18.4";
-    src = fetchurl {
-      url = "https://github.com/samuelngs/apple-emoji-linux/releases/download/v18.4/AppleColorEmoji.ttf";
-      sha256 = "sha256-pP0He9EUN7SUDYzwj0CE4e39SuNZ+SVz7FdmUviF6r0=";
-    };
-  };
   base16-schemes = {
     pname = "base16-schemes";
     version = "43dd14f6466a782bd57419fdfb5f398c74d6ac53";
@@ -52,20 +44,6 @@
       sha256 = "sha256-/cp201tiw2N+xsj89Ms06efJyYnfgc04uoJnvsjDUog=";
     };
   };
-  liga-sf-mono-nerd-font = {
-    pname = "liga-sf-mono-nerd-font";
-    version = "dc5a3e6fcc2e16ad476b7be3c3c17c2273b260ea";
-    src = fetchgit {
-      url = "https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized.git";
-      rev = "dc5a3e6fcc2e16ad476b7be3c3c17c2273b260ea";
-      fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = false;
-      sparseCheckout = [ ];
-      sha256 = "sha256-AYjKrVLISsJWXN6Cj74wXmbJtREkFDYOCRw1t2nVH2w=";
-    };
-    date = "2023-07-01";
-  };
   morewaita-icon-theme = {
     pname = "morewaita-icon-theme";
     version = "v49";
@@ -78,20 +56,6 @@
       sparseCheckout = [ ];
       sha256 = "sha256-DxZ7XnIIF3EKGMPXahD+aHp6lCLRmrnywn7+qWCVflo=";
     };
-  };
-  owo-sh = {
-    pname = "owo-sh";
-    version = "d6ffda964cd6c81030f8e5516ca57c80a5a5dcb2";
-    src = fetchgit {
-      url = "https://owo.codes/whats-this/owo.sh.git";
-      rev = "d6ffda964cd6c81030f8e5516ca57c80a5a5dcb2";
-      fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = false;
-      sparseCheckout = [ ];
-      sha256 = "sha256-vwvUiM7mOixyNERjITwcS90jz15QFkwxCEtYzqm+hdg=";
-    };
-    date = "2023-04-10";
   };
   pearcleaner-bin = {
     pname = "pearcleaner-bin";

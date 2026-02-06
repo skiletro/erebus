@@ -1,10 +1,15 @@
 {
   stdenvNoCC,
-  sources,
+  fetchurl,
   ...
 }:
-stdenvNoCC.mkDerivation {
-  inherit (sources.apple-emoji) pname version src;
+stdenvNoCC.mkDerivation rec {
+    pname = "apple-emoji";
+    version = "v18.4";
+    src = fetchurl {
+      url = "https://github.com/samuelngs/apple-emoji-linux/releases/download/${version}/AppleColorEmoji.ttf";
+      sha256 = "sha256-pP0He9EUN7SUDYzwj0CE4e39SuNZ+SVz7FdmUviF6r0=";
+    };
 
   phases = [ "installPhase" ];
 

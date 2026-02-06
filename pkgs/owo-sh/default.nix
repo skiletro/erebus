@@ -1,12 +1,24 @@
 {
   pkgs,
   stdenv,
-  sources,
   lib,
   ...
 }:
 stdenv.mkDerivation {
-  inherit (sources.owo-sh) pname version src;
+  owo-sh = {
+    pname = "owo-sh";
+    version = "d6ffda964cd6c81030f8e5516ca57c80a5a5dcb2";
+    src = fetchgit {
+      url = "https://owo.codes/whats-this/owo.sh.git";
+      rev = "d6ffda964cd6c81030f8e5516ca57c80a5a5dcb2";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-vwvUiM7mOixyNERjITwcS90jz15QFkwxCEtYzqm+hdg=";
+    };
+    date = "2023-04-10";
+  };
 
   makeFlags = [
     "PREFIX=${placeholder "out"}"

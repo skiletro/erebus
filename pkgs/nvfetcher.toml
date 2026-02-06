@@ -1,7 +1,3 @@
-[apple-emoji]
-fetch.url = "https://github.com/samuelngs/apple-emoji-linux/releases/download/$ver/AppleColorEmoji.ttf"
-src.github = "samuelngs/apple-emoji-linux"
-
 [base16-schemes]
 fetch.git = "https://github.com/tinted-theming/schemes.git"
 src.git = "https://github.com/tinted-theming/schemes.git"
@@ -19,17 +15,9 @@ src.github = "imputnet/helium-macos"
 fetch.url = "https://github.com/imputnet/helium-linux/releases/download/$ver/helium-$ver-x86_64_linux.tar.xz"
 src.github = "imputnet/helium-linux"
 
-[liga-sf-mono-nerd-font]
-fetch.git = "https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized.git"
-src.git = "https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized.git"
-
 [morewaita-icon-theme]
 fetch.git = "https://github.com/somepaulo/MoreWaita.git"
 src.github = "somepaulo/MoreWaita"
-
-[owo-sh]
-fetch.git = "https://owo.codes/whats-this/owo.sh.git"
-src.git = "https://owo.codes/whats-this/owo.sh.git"
 
 [pearcleaner-bin]
 fetch.url = "https://github.com/alienator88/Pearcleaner/releases/download/$ver/Pearcleaner.dmg"
